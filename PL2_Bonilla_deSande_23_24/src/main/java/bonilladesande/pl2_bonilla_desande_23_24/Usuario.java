@@ -53,4 +53,14 @@ public class Usuario {
     }
     
     
+    // CONSTRUCTOR
+
+    public Usuario(String dni, String nombre, String correo, String clave, int telefono) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.clave = clave;
+        this.telefono = telefono;
+    }
+    
 }

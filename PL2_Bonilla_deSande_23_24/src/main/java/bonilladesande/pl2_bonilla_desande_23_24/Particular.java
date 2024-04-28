@@ -27,4 +27,12 @@ public class Particular extends Cliente{
     }
     
     
+    // CONSTRUCTOR
+
+    public Particular(boolean vip, TarjetaCredito tarjeta, String dni, String nombre, String correo, String clave, int telefono) {
+        super(dni, nombre, correo, clave, telefono);
+        this.vip = vip;
+        this.tarjeta = tarjeta;
+    }
+    
 }

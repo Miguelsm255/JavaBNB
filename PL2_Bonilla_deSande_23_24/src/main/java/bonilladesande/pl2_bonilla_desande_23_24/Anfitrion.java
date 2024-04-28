@@ -29,4 +29,12 @@ public class Anfitrion extends Cliente{
     }
     
     
+    // CONSTRUCTOR
+
+    public Anfitrion(LocalDate fechaRegistro, boolean superanfitrion, String dni, String nombre, String correo, String clave, int telefono) {
+        super(dni, nombre, correo, clave, telefono);
+        this.fechaRegistro = fechaRegistro;
+        this.superanfitrion = superanfitrion;
+    }
+    
 }

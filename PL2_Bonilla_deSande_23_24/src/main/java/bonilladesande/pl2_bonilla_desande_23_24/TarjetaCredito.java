@@ -46,6 +46,15 @@ public class TarjetaCredito {
     public void setCvv(int cvv) {
         this.cvv = cvv;
     }
+
     
+    // CONSTRUCTOR
+    
+    public TarjetaCredito(String titular, int numero, LocalDate caducidad, int cvv) {
+        this.titular = titular;
+        this.numero = numero;
+        this.caducidad = caducidad;
+        this.cvv = cvv;
+    }
     
 }
