@@ -10,10 +10,6 @@ package bonilladesande.pl2_bonilla_desande_23_24;
  */
 class DatosInmueble {
 
-    @Override
-    public String toString() {
-        return "DatosInmueble{" + "huespedes=" + huespedes + ", habitaciones=" + habitaciones + ", camas=" + camas + ", ba\u00f1os=" + baños + '}';
-    }
 
     
     public int huespedes;
@@ -59,5 +55,9 @@ class DatosInmueble {
     public void setBaños(int baños) {
         this.baños = baños;
     }
-        
+    
+     @Override
+    public String toString() {
+        return "DatosInmueble{" + "huespedes=" + huespedes + ", habitaciones=" + habitaciones + ", camas=" + camas + ", ba\u00f1os=" + baños + '}';
+    }
 }
