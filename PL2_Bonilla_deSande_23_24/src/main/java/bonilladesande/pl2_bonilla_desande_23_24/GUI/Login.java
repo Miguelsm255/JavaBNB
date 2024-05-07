@@ -4,6 +4,8 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import java.awt.Color;
+
 /**
  *
  * @author Miguel
@@ -30,8 +32,8 @@ public class Login extends javax.swing.JFrame {
         emailLabelLogin = new javax.swing.JLabel();
         claveLabelLogin = new javax.swing.JLabel();
         emailFieldLogin = new javax.swing.JTextField();
-        iniciarSesionButton = new javax.swing.JButton();
-        crearCuentaButton = new javax.swing.JLabel();
+        iniciarSesionButtonLogin = new javax.swing.JButton();
+        crearCuentaButtonLogin = new javax.swing.JLabel();
         claveFieldLogin = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,17 +54,25 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        iniciarSesionButton.setText("Iniciar Sesión");
-        iniciarSesionButton.addActionListener(new java.awt.event.ActionListener() {
+        iniciarSesionButtonLogin.setText("Iniciar Sesión");
+        iniciarSesionButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                iniciarSesionButtonActionPerformed(evt);
+                iniciarSesionButtonLoginActionPerformed(evt);
             }
         });
 
-        crearCuentaButton.setText("No tienes cuenta? Regístrate aquí.");
-        crearCuentaButton.addFocusListener(new java.awt.event.FocusAdapter() {
+        crearCuentaButtonLogin.setText("No tienes cuenta? Regístrate aquí.");
+        crearCuentaButtonLogin.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                crearCuentaButtonFocusGained(evt);
+                crearCuentaButtonLoginFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                crearCuentaButtonLoginFocusLost(evt);
+            }
+        });
+        crearCuentaButtonLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                crearCuentaButtonLoginMouseClicked(evt);
             }
         });
 
@@ -71,30 +81,26 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addComponent(tituloLabelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 81, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(emailLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                                    .addComponent(claveLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(emailFieldLogin)
-                                    .addComponent(claveFieldLogin)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(iniciarSesionButton)
-                                .addGap(84, 84, 84))
-                            .addComponent(crearCuentaButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(tituloLabelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(crearCuentaButtonLogin)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(emailLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                                .addComponent(claveLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(emailFieldLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                                .addComponent(claveFieldLogin)))))
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(iniciarSesionButtonLogin)
+                .addGap(90, 90, 90))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,10 +116,10 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(claveLabelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(claveFieldLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(iniciarSesionButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(crearCuentaButton)
-                .addGap(15, 15, 15))
+                .addComponent(iniciarSesionButtonLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(crearCuentaButtonLogin)
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -123,13 +129,31 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_emailFieldLoginActionPerformed
 
-    private void iniciarSesionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionButtonActionPerformed
+    private void iniciarSesionButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionButtonLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_iniciarSesionButtonActionPerformed
+    }//GEN-LAST:event_iniciarSesionButtonLoginActionPerformed
 
-    private void crearCuentaButtonFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_crearCuentaButtonFocusGained
+    private void crearCuentaButtonLoginFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_crearCuentaButtonFocusGained
+        crearCuentaButtonLogin.setForeground(new Color(81, 186, 255)); //Azul claro
+    }//GEN-LAST:event_crearCuentaButtonLoginFocusGained
+
+    private void crearCuentaButtonLoginFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginFocusLost
+        // TODO add your handling code here:
+        crearCuentaButtonLogin.setForeground(new Color(53, 53, 239)); //Azul oscuro
+    }//GEN-LAST:event_crearCuentaButtonLoginFocusLost
+
+    private void crearCuentaButtonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMouseClicked
+        
+        //ABRIR VENTANA DE CREAR CUENTA
+                
+        CrearCuenta crearCuenta = new CrearCuenta();
+        crearCuenta.setVisible(true);
+        
+        //CERRAR VENTANA DE LOGIN
+        
+        dispose();
+    }//GEN-LAST:event_crearCuentaButtonLoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -170,10 +194,10 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField claveFieldLogin;
     private javax.swing.JLabel claveLabelLogin;
-    private javax.swing.JLabel crearCuentaButton;
+    private javax.swing.JLabel crearCuentaButtonLogin;
     private javax.swing.JTextField emailFieldLogin;
     private javax.swing.JLabel emailLabelLogin;
-    private javax.swing.JButton iniciarSesionButton;
+    private javax.swing.JButton iniciarSesionButtonLogin;
     private javax.swing.JLabel tituloLabelLogin;
     // End of variables declaration//GEN-END:variables
 }
