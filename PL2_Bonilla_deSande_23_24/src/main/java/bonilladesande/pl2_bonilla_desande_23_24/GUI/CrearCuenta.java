@@ -144,6 +144,11 @@ public class CrearCuenta extends javax.swing.JFrame {
         });
 
         crearCuentaButton.setText("Crear Cuenta");
+        crearCuentaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearCuentaButtonActionPerformed(evt);
+            }
+        });
 
         confirmaClaveFieldCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -312,6 +317,24 @@ public class CrearCuenta extends javax.swing.JFrame {
     private void confirmaClaveFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmaClaveFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmaClaveFieldCrearCuentaActionPerformed
+
+    private void crearCuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaButtonActionPerformed
+        
+        // SI LOS DATOS SON CORRECTOS:
+        
+            // FUNCIÓN PARA CREAR LA NUEVA CUENTA
+        
+            // FUNCIÓN PARA INICIAR SESIÓN CON LA NUEVA CUENTA
+        
+            // ABRIR PÁGINA PRINCIPAL
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
+            paginaPrincipal.setVisible(true);
+            
+            // CERRAR VENTANA
+            dispose();
+        
+        // SI NO, CORREGIRLOS
+    }//GEN-LAST:event_crearCuentaButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -130,7 +130,18 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_emailFieldLoginActionPerformed
 
     private void iniciarSesionButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionButtonLoginActionPerformed
-        // TODO add your handling code here:
+        // SI LOS DATOS SON CORRECTOS:
+        
+            // FUNCIÓN PARA INICIAR SESIÓN CON LA NUEVA CUENTA
+        
+            // ABRIR PÁGINA PRINCIPAL
+            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
+            paginaPrincipal.setVisible(true);
+            
+            // CERRAR VENTANA
+            dispose();
+        
+        // SI NO, CORREGIRLOS
     }//GEN-LAST:event_iniciarSesionButtonLoginActionPerformed
 
     private void crearCuentaButtonLoginFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginFocusGained
@@ -145,13 +156,11 @@ public class Login extends javax.swing.JFrame {
 
     private void crearCuentaButtonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMouseClicked
         
-        //ABRIR VENTANA DE CREAR CUENTA
-                
+        //ABRIR VENTANA DE CREAR CUENTA      
         CrearCuenta crearCuenta = new CrearCuenta();
         crearCuenta.setVisible(true);
         
         //CERRAR VENTANA DE LOGIN
-        
         dispose();
     }//GEN-LAST:event_crearCuentaButtonLoginMouseClicked
 
