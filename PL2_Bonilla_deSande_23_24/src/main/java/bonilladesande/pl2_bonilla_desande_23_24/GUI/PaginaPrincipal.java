@@ -14,7 +14,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
      * Creates new form PaginaPrincipal
      */
     public PaginaPrincipal() {
-        initComponents();
+        initComponents();    
     }
 
     /**
@@ -29,6 +29,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         tituloLabelPaginaPrincipal = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
+        listaAlojamientos1 = new bonilladesande.pl2_bonilla_desande_23_24.GUI.ListaAlojamientos();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -36,28 +37,29 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         tituloLabelPaginaPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloLabelPaginaPrincipal.setText("JavaBNB");
 
+        jScrollPane1.setViewportView(listaAlojamientos1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 573, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(21, 21, 21)
                 .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -101,6 +103,7 @@ public class PaginaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JScrollPane jScrollPane1;
+    private bonilladesande.pl2_bonilla_desande_23_24.GUI.ListaAlojamientos listaAlojamientos1;
     private javax.swing.JLabel tituloLabelPaginaPrincipal;
     // End of variables declaration//GEN-END:variables
 }
