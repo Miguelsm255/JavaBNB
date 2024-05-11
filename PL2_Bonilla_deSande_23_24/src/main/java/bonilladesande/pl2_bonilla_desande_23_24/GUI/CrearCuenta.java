@@ -1,18 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
-/**
- *
- * @author Miguel
- */
 public class CrearCuenta extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CrearCuenta
-     */
     public CrearCuenta() {
         initComponents();
     }
@@ -327,7 +316,7 @@ public class CrearCuenta extends javax.swing.JFrame {
             // FUNCIÓN PARA INICIAR SESIÓN CON LA NUEVA CUENTA
         
             // ABRIR PÁGINA PRINCIPAL
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
+            JavaBNB paginaPrincipal = new JavaBNB();
             paginaPrincipal.setVisible(true);
             
             // CERRAR VENTANA

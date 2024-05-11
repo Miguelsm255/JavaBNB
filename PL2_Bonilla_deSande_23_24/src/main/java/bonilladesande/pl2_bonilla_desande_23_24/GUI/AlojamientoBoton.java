@@ -1,18 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
-/**
- *
- * @author Miguel
- */
 public class AlojamientoBoton extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AlojamientoBoton
-     */
     public AlojamientoBoton() {
         initComponents();
     }
@@ -30,6 +19,12 @@ public class AlojamientoBoton extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -78,6 +73,12 @@ public class AlojamientoBoton extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        //CERRAR PÁGINA PRINCIPAL DEL FRAME
+        //ABRIR PÁGINA DEL ALOJAMIENTO EN EL FRAME
+        
+    }//GEN-LAST:event_formMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

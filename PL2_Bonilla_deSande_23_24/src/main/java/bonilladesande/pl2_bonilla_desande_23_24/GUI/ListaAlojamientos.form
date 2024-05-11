@@ -16,18 +16,14 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="alojamientoBoton1" pref="478" max="32767" attributes="0"/>
-                          <Component id="alojamientoBoton2" max="32767" attributes="0"/>
-                          <Component id="alojamientoBoton3" alignment="0" max="32767" attributes="0"/>
-                          <Component id="alojamientoBoton4" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Component id="alojamientoBoton5" alignment="0" max="32767" attributes="0"/>
+                  <Component id="alojamientoBoton5" max="32767" attributes="0"/>
+                  <Component id="alojamientoBoton1" max="32767" attributes="0"/>
+                  <Component id="alojamientoBoton2" max="32767" attributes="0"/>
+                  <Component id="alojamientoBoton3" alignment="0" max="32767" attributes="0"/>
+                  <Component id="alojamientoBoton4" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -53,6 +49,9 @@
   </Layout>
   <SubComponents>
     <Component class="bonilladesande.pl2_bonilla_desande_23_24.GUI.AlojamientoBoton" name="alojamientoBoton1">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="alojamientoBoton1MouseClicked"/>
+      </Events>
     </Component>
     <Component class="bonilladesande.pl2_bonilla_desande_23_24.GUI.AlojamientoBoton" name="alojamientoBoton2">
     </Component>

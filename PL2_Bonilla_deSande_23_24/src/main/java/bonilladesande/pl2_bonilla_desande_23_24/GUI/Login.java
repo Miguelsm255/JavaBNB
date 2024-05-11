@@ -1,20 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import java.awt.Color;
 
-/**
- *
- * @author Miguel
- */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NewJFrame
-     */
     public Login() {
         initComponents();
     }
@@ -135,7 +124,7 @@ public class Login extends javax.swing.JFrame {
             // FUNCIÓN PARA INICIAR SESIÓN CON LA NUEVA CUENTA
         
             // ABRIR PÁGINA PRINCIPAL
-            PaginaPrincipal paginaPrincipal = new PaginaPrincipal();
+            JavaBNB paginaPrincipal = new JavaBNB();
             paginaPrincipal.setVisible(true);
             
             // CERRAR VENTANA
