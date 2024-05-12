@@ -11,7 +11,7 @@ package bonilladesande.pl2_bonilla_desande_23_24;
 import java.util.ArrayList;
 
 
-public class Inmuebles {
+public class Inmueble {
 
    
     public String titulo;
@@ -23,7 +23,7 @@ public class Inmuebles {
     public int calificacion;
     public String rutaFoto;
 
-    public Inmuebles(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, int precioNoche, ArrayList<Servicio> servicios, int calificacion, String rutaFoto) {
+    public Inmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, int precioNoche, ArrayList<Servicio> servicios, int calificacion, String rutaFoto) {
         this.titulo = titulo;
         this.direccion = direccion;
         this.datos = datos;
