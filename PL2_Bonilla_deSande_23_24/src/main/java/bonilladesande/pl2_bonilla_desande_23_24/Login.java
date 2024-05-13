@@ -9,38 +9,57 @@ public class Login {
     public static ArrayList<Anfitrion> anfitriones = new ArrayList<>();
     public static ArrayList<Inmueble> inmuebles;
     
+    // POR DEFECTO ES -1, QUE SIGNIFICA QUE NO SE HA ENCONTRADO O NO EXISTE
+    private static int tipoUsuario = -1;
+    private static int posicionArrayList = -1;
+    
+    
+    
     
     
     // FUNCIÓN PRINCIPAL
-    
-    //public static void login(String email, String clave){
-        
-    //}
-    
-    public static boolean login(String email, String clave){  //ESTA FUNCIÓN SE LLAMARÁ "COMPROBAR USUARIO"
+    public static UserLoged login(String email, String clave){
 
-        int tipoUsuario = -1;
-        int posicionArrayList = -1;
+        comprobarUsuario(email, clave);
+        UserLoged user = new UserLoged(tipoUsuario, posicionArrayList);
         
-        // SI ES CLIENTE
-        for (int i = 0; i < clientes.size(); i++){
-            Cliente cliente = clientes.get(i);
-            if (email == cliente.getCorreo()){
-                tipoUsuario = 1;
-                posicionArrayList = i;
-                break;
-            }
+        if(tipoUsuario == 1){
+            
+            Cliente cliente = clientes.get(posicionArrayList);
+            user.setDni(cliente.getDni());
+            user.setNombre(cliente.getNombre());
+            user.setTelefono(cliente.getTelefono());
+            user.setCorreo(cliente.getCorreo());
+            user.setClave(cliente.getClave());
         }
         
-        // SI ES ANFITRIÓN
-        for (int i = 0; i < anfitriones.size(); i++){
-            Anfitrion anfitrion = anfitriones.get(i);
-            if (email == anfitrion.getCorreo()){
-                tipoUsuario = 2;
-                posicionArrayList = i;
-                break;
-            }
+        if(tipoUsuario == 2){
+            
+            Anfitrion anfitrion = anfitriones.get(posicionArrayList);
+            user.setDni(anfitrion.getDni());
+            user.setNombre(anfitrion.getNombre());
+            user.setTelefono(anfitrion.getTelefono());
+            user.setCorreo(anfitrion.getCorreo());
+            user.setClave(anfitrion.getClave());
         }
+        
+        return user;
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    public static boolean comprobarUsuario(String email, String clave){  
+        
+        int resultadoBusqueda[] = busquedaUsuario(email);
+        tipoUsuario = resultadoBusqueda[0];
+        posicionArrayList = resultadoBusqueda[1];
+        
         
         // SI HA ENCONTRADO AL USUARIO
         if (tipoUsuario != -1 && posicionArrayList != -1){
@@ -48,14 +67,72 @@ public class Login {
                 return true;
             }
             else{
+                tipoUsuario = -1;
+                posicionArrayList = -1;
                 return false;
             }
         }
-        else{
+        else{                  
             return false;
         }
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    public static int[] busquedaUsuario(String email){
+        
+        int tipoUsuario = -1;
+        int posicionArrayList = -1;
+        
+        // PRIMERO BUSCA SI ES UN CLIENTE, ITERANDO LA LISTA DE CLIENTES
+        for (int i = 0; i < clientes.size(); i++){
+            Cliente cliente = clientes.get(i);
+            
+            // SI ES UN CLIENTE:
+            if (email == cliente.getCorreo()){
+                
+                // TIPO USUARIO ES 1 (TIPO CLIENTE) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE CLIENTE
+                tipoUsuario = 1;
+                posicionArrayList = i;
+                break;
+            }
+        }
+        
+        // SI NO ES CLIENTE BUSCA SI ESTÁ EN LA LISTA DE ANFITIRONES
+        for (int i = 0; i < anfitriones.size(); i++){
+            Anfitrion anfitrion = anfitriones.get(i);
+            
+            // SI ES ANFITRIÓN:
+            if (email == anfitrion.getCorreo()){
+                
+                // TIPO DE USUARIO ES 2 (TIPO ANFITRIÓN) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE ANFITRIÓN
+                tipoUsuario = 2;
+                posicionArrayList = i;
+                break;
+            }
+        }
+        
+        // GUARDA EL RESULADO DE LA BÚSQUEDA EN UN ARRAY Y LO DEVUELVE PARA SER TRATADO DESPUÉS
+        int resultado[] = {tipoUsuario, posicionArrayList};
+        return resultado;
+    }
     
     
     // COMPROBAR SI LA CLAVE ES CORRECTA
@@ -77,24 +154,7 @@ public class Login {
             if (clave == anfitrion.getClave()){
                 esCorrecta = true;
             }
-
         }
         return esCorrecta;
     }
-    
-    public static Cliente returnUser(Cliente cliente){
-        System.out.println("hola");
-        return null;
-    }
-    
-    public static Anfitrion returnUser(Anfitrion anfitrion){
-        System.out.println("hola");
-        return null;
-    }
-        
-    public static Administrador returnUser(Administrador administrador){
-        System.out.println("hola");
-        return null;
-    }
-
 }
