@@ -43,6 +43,13 @@ public class Login {
             user.setClave(anfitrion.getClave());
         }
         
+        System.out.println(user.getTipo());
+        System.out.println(user.getDni());
+        System.out.println(user.getNombre());
+        System.out.println(user.getCorreo());
+        System.out.println(user.getClave());
+        System.out.println(user.getTelefono());
+        
         return user;
         
     }
