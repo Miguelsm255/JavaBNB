@@ -10,18 +10,17 @@ public class AAA_PRUEBAS_MIGUEL {
         Cliente c1 = new Cliente("12345678w","Miguel","miguelsm255@outlook.es","holacaracola",669928305);
     
         LocalDate ahora = LocalDate.now();
-        Anfitrion a1 = new Anfitrion(ahora, false, "78945612G", "Marcos", "fdsa@fdas", "fdsafdsa", 789654123);
+        Anfitrion a1 = new Anfitrion(ahora, "78945612G", "Marcos", "hola", "fdsafdsa", 789654123);
         
         Login.clientes.add(c1);
         Login.anfitriones.add(a1);
         
-        //CrearCuenta.crearCuenta("11", "miguel", "fsa@fdas", "fdsafdsa", 0);
+        CrearCuenta.crearCuenta(false, "11", "pepe", "adios", "fdsafdsa", 0, ahora);
         
         
         
         
-        UserLoged resultado = Login.login("fdsa@fdas","fdsafdsa");
-        System.out.println(resultado.getDni());
+        //UserLoged resultado = Login.login("miguelsm255@outlook.es","holacaracola");
     }
     
 }
