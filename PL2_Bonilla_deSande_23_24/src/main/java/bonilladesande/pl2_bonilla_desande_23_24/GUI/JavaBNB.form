@@ -72,7 +72,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="bonilladesande.pl2_bonilla_desande_23_24.GUI.PaginaPrincipal" name="paginaPrincipal">
+        <Component class="bonilladesande.pl2_bonilla_desande_23_24.GUI.AjustesUsuario" name="ajustesUsuario1">
         </Component>
       </SubComponents>
     </Container>

@@ -18,7 +18,7 @@ public class JavaBNB extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         tituloLabelPaginaPrincipal = new javax.swing.JLabel();
         frameJavaBNB = new javax.swing.JScrollPane();
-        paginaPrincipal = new bonilladesande.pl2_bonilla_desande_23_24.GUI.PaginaPrincipal();
+        ajustesUsuario1 = new bonilladesande.pl2_bonilla_desande_23_24.GUI.AjustesUsuario();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -29,7 +29,7 @@ public class JavaBNB extends javax.swing.JFrame {
         frameJavaBNB.setBorder(null);
         frameJavaBNB.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         frameJavaBNB.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        frameJavaBNB.setViewportView(paginaPrincipal);
+        frameJavaBNB.setViewportView(ajustesUsuario1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,9 +94,9 @@ public class JavaBNB extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private bonilladesande.pl2_bonilla_desande_23_24.GUI.AjustesUsuario ajustesUsuario1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JScrollPane frameJavaBNB;
-    private bonilladesande.pl2_bonilla_desande_23_24.GUI.PaginaPrincipal paginaPrincipal;
     private javax.swing.JLabel tituloLabelPaginaPrincipal;
     // End of variables declaration//GEN-END:variables
 }
