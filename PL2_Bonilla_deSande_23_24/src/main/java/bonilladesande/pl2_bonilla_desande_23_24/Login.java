@@ -20,11 +20,18 @@ public class Login {
     // FUNCIÓN PRINCIPAL
     public static UserLoged login(String email, String clave){
 
+        // COMPROBAR SI EL EMAIL Y LA CONTRASEÑA ESTÁN BIEN (INCLUYE COMPROBAR LA EXISTENCIA DE LA CUENTA)
         comprobarUsuario(email, clave);
+        
+        // CREAR UN NUEVO OBJETO CON LOS DATOS NECESARIOS PARA OBTENER LA INFORMACIÓN DE LA SESIÓN
         UserLoged user = new UserLoged(tipoUsuario, posicionArrayList);
         
+        
+        // SI ES UN CLIENTE
         if(tipoUsuario == 1){
             
+            
+            // AÑADIR LOS DATOS DEL CLIENTE
             Cliente cliente = clientes.get(posicionArrayList);
             user.setDni(cliente.getDni());
             user.setNombre(cliente.getNombre());
@@ -33,8 +40,10 @@ public class Login {
             user.setClave(cliente.getClave());
         }
         
+        // SI ES UN ANFITRIÓN
         if(tipoUsuario == 2){
             
+            // AÑADIR LOS DATOS DEL ANFITRIÓN
             Anfitrion anfitrion = anfitriones.get(posicionArrayList);
             user.setDni(anfitrion.getDni());
             user.setNombre(anfitrion.getNombre());
@@ -43,6 +52,7 @@ public class Login {
             user.setClave(anfitrion.getClave());
         }
         
+        // MOSTRAR POR TERMINAL LA INFORMACIÓN DE LA SESIÓN
         System.out.println(user.getTipo());
         System.out.println(user.getDni());
         System.out.println(user.getNombre());
@@ -50,6 +60,7 @@ public class Login {
         System.out.println(user.getClave());
         System.out.println(user.getTelefono());
         
+        // DEVOLVER EL OBJETO DEL USUARIO LOGEADO CON TODA SU INFORMACIÓN
         return user;
         
     }
@@ -57,12 +68,10 @@ public class Login {
     
     
     
-    
-    
-    
-    
+    // COMPROBAR SI EXISTE EL USUARIO Y, EN ESE CASO, COMPROBAR QUE LA CONTRASEÑA ES CORRECTA
     public static boolean comprobarUsuario(String email, String clave){  
         
+        // SE BUSCA SI EXISTE Y GUARDO LA INFORMACIÓN
         int resultadoBusqueda[] = busquedaUsuario(email);
         tipoUsuario = resultadoBusqueda[0];
         posicionArrayList = resultadoBusqueda[1];
@@ -70,41 +79,38 @@ public class Login {
         
         // SI HA ENCONTRADO AL USUARIO
         if (tipoUsuario != -1 && posicionArrayList != -1){
+            
+            // SI LA CLAVE ES CORRECTA
             if (claveCorrecta(tipoUsuario, posicionArrayList, clave)){
+                
+                // DEVOLVER VERDADERO
                 return true;
             }
+            
+            // SI NO
             else{
+                
+                // DEVOLVER FALSO Y COLOCAR -1 EN LAS VARIABLES PARA INDICAR ERROR
                 tipoUsuario = -1;
                 posicionArrayList = -1;
                 return false;
             }
         }
-        else{                  
+        
+        // SI NO SE HA ENCONTRADO AL USUARIO
+        else{
+            
+            // DEVOLVER FALSO
             return false;
         }
     }
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
+    // BUSCA SI EXISTE EL USUARIO EN LA "BASE DE DATOS"
     public static int[] busquedaUsuario(String email){
         
+        // SE INICIALIZAN VARIABLES LOCALES A -1 POR DEFECTO
         int tipoUsuario = -1;
         int posicionArrayList = -1;
         
@@ -142,26 +148,44 @@ public class Login {
     }
     
     
+    
+    
+    
     // COMPROBAR SI LA CLAVE ES CORRECTA
     public static boolean claveCorrecta(int tipoUsuario, int posicionArrayList, String clave){
         
+        // POR DEFECTO SE DA POR HECHO QUE NO ES CORRECTA
         boolean esCorrecta = false;
         
         // SI ES UN USUARIO BUSCAR EN EL ARRAYLIST DE USUARIOS
         if(tipoUsuario == 1){
+            
+            // CREAR UN OBJETO CLIENTE TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
             Cliente cliente = clientes.get(posicionArrayList);
+            
+            // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
             if (clave == cliente.getClave()){
+                
+                // CAMBIAR ESCORRECTA A TRUE
                 esCorrecta = true;
             }
         }
         
         // SI ES UN ANFITRIÓN BUSCAR EN EL ARRAYLIST DE ANFITRIONES
         if(tipoUsuario == 2){
+            
+            // CREAR UN OBJETO TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
             Anfitrion anfitrion = anfitriones.get(posicionArrayList);
+            
+            // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
             if (clave == anfitrion.getClave()){
+                
+                // CAMBIAR ESCORRECTA A TRUE
                 esCorrecta = true;
             }
         }
+        
+        // DEVOLVER EL RESULTADO
         return esCorrecta;
     }
 }
