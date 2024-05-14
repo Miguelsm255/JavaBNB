@@ -1,29 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package bonilladesande.pl2_bonilla_desande_23_24;
 
-/**
- *
- * @author marco
- */
 import java.util.ArrayList;
 
 
-public class Inmuebles {
+public class Inmueble {
 
-   
-    public String titulo;
-    public Direccion direccion;
-    public DatosInmueble datos;
-    public boolean casa;
-    public int precioNoche;
-    public ArrayList<Servicio> servicios;
-    public int calificacion;
-    public String rutaFoto;
+    // ATRIBUTOS
+    
+    private String titulo;
+    private Direccion direccion;
+    private DatosInmueble datos;
+    private boolean casa;
+    private int precioNoche;
+    private ArrayList<Servicio> servicios;
+    private int calificacion;
+    private String rutaFoto;
 
-    public Inmuebles(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, int precioNoche, ArrayList<Servicio> servicios, int calificacion, String rutaFoto) {
+    
+    // CONSTRUCTOR
+    
+    public Inmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, int precioNoche, ArrayList<Servicio> servicios, int calificacion, String rutaFoto) {
         this.titulo = titulo;
         this.direccion = direccion;
         this.datos = datos;
@@ -36,6 +32,7 @@ public class Inmuebles {
     }
     
     
+    // GETTERS Y SETTERS
 
     public String getTitulo() {
         return titulo;
@@ -115,6 +112,9 @@ public class Inmuebles {
     public void isCasa(){
         casa = true;
     }
+    
+    
+    
     
     @Override
     public String toString() {

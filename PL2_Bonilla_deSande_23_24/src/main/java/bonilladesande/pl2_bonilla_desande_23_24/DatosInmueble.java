@@ -1,21 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package bonilladesande.pl2_bonilla_desande_23_24;
 
-/**
- *
- * @author marco
- */
 class DatosInmueble {
 
-
+    // ATRIBUTOS
     
-    public int huespedes;
-    public int habitaciones;
-    public int camas;
-    public int baños;
+    private int huespedes;
+    private int habitaciones;
+    private int camas;
+    private int baños;
+    
+    
+    // CONSTRUCTOR
     
     public DatosInmueble(int huespedes, int habitaciones, int camas, int baños) {
         this.huespedes = huespedes;
@@ -24,6 +19,9 @@ class DatosInmueble {
         this.baños = baños;
     }
 
+    
+    // GETTERS Y SETTERS
+    
     public int getHuespedes() {
         return huespedes;
     }
@@ -55,6 +53,8 @@ class DatosInmueble {
     public void setBaños(int baños) {
         this.baños = baños;
     }
+    
+    
     
      @Override
     public String toString() {
