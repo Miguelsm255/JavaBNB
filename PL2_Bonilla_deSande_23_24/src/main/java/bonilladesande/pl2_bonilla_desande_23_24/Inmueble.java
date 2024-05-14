@@ -5,7 +5,8 @@ import java.util.ArrayList;
 
 public class Inmueble {
 
-   
+    // ATRIBUTOS
+    
     private String titulo;
     private Direccion direccion;
     private DatosInmueble datos;
@@ -15,6 +16,9 @@ public class Inmueble {
     private int calificacion;
     private String rutaFoto;
 
+    
+    // CONSTRUCTOR
+    
     public Inmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, int precioNoche, ArrayList<Servicio> servicios, int calificacion, String rutaFoto) {
         this.titulo = titulo;
         this.direccion = direccion;
@@ -28,6 +32,7 @@ public class Inmueble {
     }
     
     
+    // GETTERS Y SETTERS
 
     public String getTitulo() {
         return titulo;
@@ -107,6 +112,9 @@ public class Inmueble {
     public void isCasa(){
         casa = true;
     }
+    
+    
+    
     
     @Override
     public String toString() {
