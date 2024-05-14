@@ -15,7 +15,7 @@ public class UserLoged{
     private String clave;
     private int telefono;
     
-    // ATRIBUTOS SI ES ANFITRIÓN (SI NO LO ES, NO SE USAN)
+    // ATRIBUTOS ESPECÍFICOS DEL ANFITRIÓN (SI NO LO ES, NO SE USAN)
     private LocalDate fechaRegistro;
     private boolean superanfitrion;
 
@@ -94,6 +94,8 @@ public class UserLoged{
         this.superanfitrion = superanfitrion;
     }
     
+    
+    // CONSTRUCTOR
     
     public UserLoged(int tipo, int posicionArrayList) {
         this.tipo = tipo;
