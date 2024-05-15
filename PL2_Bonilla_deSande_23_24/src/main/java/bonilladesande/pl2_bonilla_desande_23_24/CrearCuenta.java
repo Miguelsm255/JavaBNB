@@ -35,7 +35,7 @@ public class CrearCuenta {
 
             // CREAR UN NUEVO OBJETO TIPO ANFITRIÓN Y AÑADIRLO A LA LISTA (HAY QUE HACER UN TRY, POR SI FALTAN DATOS)
             Anfitrion nuevoAnfitrion = new Anfitrion(fechaRegistro, dni, nombre, email, clave, telefono);
-            Login.anfitriones.add(nuevoAnfitrion);
+            BaseDatos.anfitriones.add(nuevoAnfitrion);
         }
         
         // SI NO ES ANFITRIÓN ES QUE ES UN CLIENTE
@@ -43,7 +43,7 @@ public class CrearCuenta {
             
             // CREAR UN NUEVO OBJETO TIPO CLIENTE Y AÑADIRLO A LA LISTA (AQUÍ IGUAL, HAY QUE HACER UN TRY POR SI FALTAN DATOS)
             Cliente nuevoCliente = new Cliente(dni, nombre, email, clave, telefono);
-            Login.clientes.add(nuevoCliente);
+            BaseDatos.clientes.add(nuevoCliente);
         }
     }
 }

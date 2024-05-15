@@ -12,8 +12,8 @@ public class AAA_PRUEBAS_MIGUEL {
         LocalDate ahora = LocalDate.now();
         Anfitrion a1 = new Anfitrion(ahora, "78945612G", "Marcos", "hola", "fdsafdsa", 789654123);
         
-        Login.clientes.add(c1);
-        Login.anfitriones.add(a1);
+        BaseDatos.clientes.add(c1);
+        BaseDatos.anfitriones.add(a1);
         
         CrearCuenta.crearCuenta(false, "11", "pepe", "adios", "fdsafdsa", 0, ahora);
         
