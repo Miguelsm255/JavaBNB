@@ -7,16 +7,18 @@ public class AAA_PRUEBAS_MIGUEL {
  
     public static void main(String[] args) {
                 
-        Cliente c1 = new Cliente("12345678w","Miguel","miguelsm255@outlook.es","holacaracola",669928305);
+        Cliente c1 = new Cliente("12345678w","Miguel","aa","aa",669928305);
     
         LocalDate ahora = LocalDate.now();
         Anfitrion a1 = new Anfitrion(ahora, "78945612G", "Marcos", "hola", "fdsafdsa", 789654123);
         
-        Login.clientes.add(c1);
-        Login.anfitriones.add(a1);
+        //Login.clientes.add(c1);
+        //Login.anfitriones.add(a1);
         
-        CrearCuenta.crearCuenta(false, "11", "pepe", "adios", "fdsafdsa", 0, ahora);
+        //CrearCuenta.crearCuenta(false, "11", "pepe", "adios", "fdsafdsa", 0, ahora);
         
+        bonilladesande.pl2_bonilla_desande_23_24.GUI.Login ventanaLogin = new bonilladesande.pl2_bonilla_desande_23_24.GUI.Login();
+        ventanaLogin.setVisible(true);
         
         
         
