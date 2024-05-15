@@ -4,11 +4,7 @@ import java.util.ArrayList;
 
 public class Login {
     
-    // "BASE DE DATOS" DE LOS CLIENTES Y INMUEBLES DISPONIBLES
-    public static ArrayList<Cliente> clientes = new ArrayList<>();
-    public static ArrayList<Anfitrion> anfitriones = new ArrayList<>();
-    public static ArrayList<Inmueble> inmuebles;
-    
+
     // POR DEFECTO ES -1, QUE SIGNIFICA QUE NO SE HA ENCONTRADO O NO EXISTE
     private static int tipoUsuario = -1;
     private static int posicionArrayList = -1;
@@ -32,7 +28,7 @@ public class Login {
             
             
             // AÑADIR LOS DATOS DEL CLIENTE
-            Cliente cliente = clientes.get(posicionArrayList);
+            Cliente cliente = BaseDatos.clientes.get(posicionArrayList);
             user.setDni(cliente.getDni());
             user.setNombre(cliente.getNombre());
             user.setTelefono(cliente.getTelefono());
@@ -44,7 +40,7 @@ public class Login {
         if(tipoUsuario == 2){
             
             // AÑADIR LOS DATOS DEL ANFITRIÓN
-            Anfitrion anfitrion = anfitriones.get(posicionArrayList);
+            Anfitrion anfitrion = BaseDatos.anfitriones.get(posicionArrayList);
             user.setDni(anfitrion.getDni());
             user.setNombre(anfitrion.getNombre());
             user.setTelefono(anfitrion.getTelefono());
@@ -115,8 +111,8 @@ public class Login {
         int posicionArrayList = -1;
         
         // PRIMERO BUSCA SI ES UN CLIENTE, ITERANDO LA LISTA DE CLIENTES
-        for (int i = 0; i < clientes.size(); i++){
-            Cliente cliente = clientes.get(i);
+        for (int i = 0; i < BaseDatos.clientes.size(); i++){
+            Cliente cliente = BaseDatos.clientes.get(i);
             
             // SI ES UN CLIENTE:
             if (email == cliente.getCorreo()){
@@ -129,8 +125,8 @@ public class Login {
         }
         
         // SI NO ES CLIENTE BUSCA SI ESTÁ EN LA LISTA DE ANFITIRONES
-        for (int i = 0; i < anfitriones.size(); i++){
-            Anfitrion anfitrion = anfitriones.get(i);
+        for (int i = 0; i < BaseDatos.anfitriones.size(); i++){
+            Anfitrion anfitrion = BaseDatos.anfitriones.get(i);
             
             // SI ES ANFITRIÓN:
             if (email == anfitrion.getCorreo()){
@@ -161,7 +157,7 @@ public class Login {
         if(tipoUsuario == 1){
             
             // CREAR UN OBJETO CLIENTE TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
-            Cliente cliente = clientes.get(posicionArrayList);
+            Cliente cliente = BaseDatos.clientes.get(posicionArrayList);
             
             // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
             if (clave == cliente.getClave()){
@@ -175,7 +171,7 @@ public class Login {
         if(tipoUsuario == 2){
             
             // CREAR UN OBJETO TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
-            Anfitrion anfitrion = anfitriones.get(posicionArrayList);
+            Anfitrion anfitrion = BaseDatos.anfitriones.get(posicionArrayList);
             
             // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
             if (clave == anfitrion.getClave()){
