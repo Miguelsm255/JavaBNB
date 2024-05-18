@@ -1,5 +1,9 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.*;
+import java.time.LocalDate;
+import java.time.Month;
+
 public class CrearCuenta extends javax.swing.JFrame {
 
     public CrearCuenta() {
@@ -27,7 +31,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         claveLabelCrearCuenta = new javax.swing.JLabel();
         tarjetaLabelCrearCuenta = new javax.swing.JLabel();
         noTarjetaFieldCrearCuenta = new javax.swing.JTextField();
-        cvvTarjetaCrearCuenta = new javax.swing.JTextField();
+        cvvTarjetaFieldCrearCuenta = new javax.swing.JTextField();
         confirmaClaveLabelCrearCuenta = new javax.swing.JLabel();
         claveFieldCrearCuenta = new javax.swing.JPasswordField();
         caducidadTarjetaCrearCuenta1 = new javax.swing.JTextField();
@@ -88,9 +92,9 @@ public class CrearCuenta extends javax.swing.JFrame {
             }
         });
 
-        cvvTarjetaCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
+        cvvTarjetaFieldCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cvvTarjetaCrearCuentaActionPerformed(evt);
+                cvvTarjetaFieldCrearCuentaActionPerformed(evt);
             }
         });
 
@@ -213,7 +217,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(caducidadTarjetaCrearCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cvvTarjetaCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(cvvTarjetaFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(23, 23, 23))))
         );
         layout.setVerticalGroup(
@@ -255,7 +259,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(noTarjetaFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cvvTarjetaCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cvvTarjetaFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(caducidadTarjetaCrearCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -283,9 +287,9 @@ public class CrearCuenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_noTarjetaFieldCrearCuentaActionPerformed
 
-    private void cvvTarjetaCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cvvTarjetaCrearCuentaActionPerformed
+    private void cvvTarjetaFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cvvTarjetaFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cvvTarjetaCrearCuentaActionPerformed
+    }//GEN-LAST:event_cvvTarjetaFieldCrearCuentaActionPerformed
 
     private void claveFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claveFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
@@ -309,20 +313,40 @@ public class CrearCuenta extends javax.swing.JFrame {
 
     private void crearCuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaButtonActionPerformed
         
+        boolean anfitrion = anfitrionChekboxCrearCuenta.isSelected();
+        String dni = dniFieldCrearCuenta.getText();
+        String nombre = nombreFieldCrearCuenta.getText();
+        String email = emailFieldCrearCuenta.getText();
+        
+        char[] claveChar = claveFieldCrearCuenta.getPassword();
+        String clave = new String(claveChar);
+        
+        int telefono = Integer.parseInt(telefonoFieldCrearCuenta.getText());
+        LocalDate fechaRegistro = LocalDate.now();
+        
+        int dia = 5;
+        int mes = 5;
+        int ano = 1971;
+        LocalDate caducidad = LocalDate.of(ano, mes, dia);
+        TarjetaCredito tarjeta = new TarjetaCredito(nombre, Long.parseLong(noTarjetaFieldCrearCuenta.getText()), caducidad, Integer.parseInt(cvvTarjetaFieldCrearCuenta.getText()));
+        boolean vip = false;
+        
+        UserLoged user = bonilladesande.pl2_bonilla_desande_23_24.CrearCuenta.crearCuenta(anfitrion, dni, nombre, email, clave, telefono, fechaRegistro, tarjeta, vip);
+       
+        // SI LA INFORMACIÓN NO ES CORRECTA
+        if (user.getTipo() == -1){
+            // MOSTRAR LABEL DE "FALTAN DATOS / DATOS INCORRECTOS / DATOS INVÁLIDOS"
+            user = null;
+        }
         // SI LOS DATOS SON CORRECTOS:
-        
-            // FUNCIÓN PARA CREAR LA NUEVA CUENTA
-        
-            // FUNCIÓN PARA INICIAR SESIÓN CON LA NUEVA CUENTA
-        
+        else{
             // ABRIR PÁGINA PRINCIPAL
-            JavaBNB paginaPrincipal = new JavaBNB();
+            Login paginaPrincipal = new Login();
             paginaPrincipal.setVisible(true);
             
             // CERRAR VENTANA
             dispose();
-        
-        // SI NO, CORREGIRLOS
+        }
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
 
     /**
@@ -369,7 +393,7 @@ public class CrearCuenta extends javax.swing.JFrame {
     private javax.swing.JPasswordField confirmaClaveFieldCrearCuenta;
     private javax.swing.JLabel confirmaClaveLabelCrearCuenta;
     private javax.swing.JButton crearCuentaButton;
-    private javax.swing.JTextField cvvTarjetaCrearCuenta;
+    private javax.swing.JTextField cvvTarjetaFieldCrearCuenta;
     private javax.swing.JLabel cvvTarjetaLabelCrearCuenta;
     private javax.swing.JTextField dniFieldCrearCuenta;
     private javax.swing.JLabel dniLabelCrearCuenta;
