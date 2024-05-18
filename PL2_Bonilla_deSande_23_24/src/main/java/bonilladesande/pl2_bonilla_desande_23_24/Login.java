@@ -115,7 +115,7 @@ public class Login {
             Cliente cliente = BaseDatos.clientes.get(i);
             
             // SI ES UN CLIENTE:
-            if (email == cliente.getCorreo()){
+            if (email.equals(cliente.getCorreo())){
                 
                 // TIPO USUARIO ES 1 (TIPO CLIENTE) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE CLIENTE
                 tipoUsuario = 1;
@@ -129,7 +129,7 @@ public class Login {
             Anfitrion anfitrion = BaseDatos.anfitriones.get(i);
             
             // SI ES ANFITRIÓN:
-            if (email == anfitrion.getCorreo()){
+            if (email.equals(anfitrion.getCorreo())){
                 
                 // TIPO DE USUARIO ES 2 (TIPO ANFITRIÓN) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE ANFITRIÓN
                 tipoUsuario = 2;
@@ -160,7 +160,7 @@ public class Login {
             Cliente cliente = BaseDatos.clientes.get(posicionArrayList);
             
             // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
-            if (clave == cliente.getClave()){
+            if (clave.equals(cliente.getClave())){
                 
                 // CAMBIAR ESCORRECTA A TRUE
                 esCorrecta = true;
@@ -174,7 +174,7 @@ public class Login {
             Anfitrion anfitrion = BaseDatos.anfitriones.get(posicionArrayList);
             
             // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
-            if (clave == anfitrion.getClave()){
+            if (clave.equals(anfitrion.getClave())){
                 
                 // CAMBIAR ESCORRECTA A TRUE
                 esCorrecta = true;

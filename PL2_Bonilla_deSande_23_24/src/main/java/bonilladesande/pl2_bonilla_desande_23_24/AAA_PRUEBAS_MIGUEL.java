@@ -23,18 +23,19 @@ public class AAA_PRUEBAS_MIGUEL {
         System.out.println(BaseDatos.clientes.get(0).getCorreo());
         System.out.println(BaseDatos.clientes.get(0).getClave());
         
-        //bonilladesande.pl2_bonilla_desande_23_24.GUI.Login ventanaLogin = new bonilladesande.pl2_bonilla_desande_23_24.GUI.Login();
-        //ventanaLogin.setVisible(true);
+        bonilladesande.pl2_bonilla_desande_23_24.GUI.Login ventanaLogin = new bonilladesande.pl2_bonilla_desande_23_24.GUI.Login();
+        ventanaLogin.setVisible(true);
         
-        String correo = scanner.nextLine();
-        String clave = scanner.nextLine();
-        
-        char[] correoChar = correo.toCharArray();
-        
-        System.out.println(correoChar.length);
+        //String correo = scanner.nextLine();
+        //String clave = scanner.nextLine();
         
         
-        Login.login(correo, clave );
+        //char[] correoChar = correo.toCharArray();
+        
+        //System.out.println(correoChar.length);
+        
+        
+        //Login.login(correo, clave);
         
         //UserLoged resultado = Login.login("miguelsm255@outlook.es","holacaracola");
     }
