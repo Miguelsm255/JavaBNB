@@ -1,6 +1,8 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.*;
 import java.awt.Color;
+
 
 public class Login extends javax.swing.JFrame {
 
@@ -80,7 +82,6 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(tituloLabelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(crearCuentaButtonLogin)
-                            .addComponent(iniciarSesionButtonLogin)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(emailLabelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
@@ -90,6 +91,10 @@ public class Login extends javax.swing.JFrame {
                                     .addComponent(emailFieldLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                                     .addComponent(claveFieldLogin))))))
                 .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(iniciarSesionButtonLogin)
+                .addGap(85, 85, 85))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,18 +126,30 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_emailFieldLoginActionPerformed
 
     private void iniciarSesionButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionButtonLoginActionPerformed
-        // SI LOS DATOS SON CORRECTOS:
         
-            // FUNCIÓN PARA INICIAR SESIÓN CON LA NUEVA CUENTA
+        char[] passwordChars = claveFieldLogin.getPassword();
+        String password = new String(passwordChars);
+        String email = emailFieldLogin.getText();
         
+        System.out.println(email);
+        System.out.println(password);
+        
+        UserLoged user = bonilladesande.pl2_bonilla_desande_23_24.Login.login(email, password);
+       
+        // SI LA INFORMACIÓN NO ES CORRECTA
+        if (user.getTipo() == -1){
+            // MOSTRAR LABEL DE "CORREO O CONTRASEÑA INCORRECTOS"
+            user = null;
+        }
+        // SI LA INFORMACIÓN SI ES CORRECTA
+        else{
             // ABRIR PÁGINA PRINCIPAL
             JavaBNB paginaPrincipal = new JavaBNB();
             paginaPrincipal.setVisible(true);
             
             // CERRAR VENTANA
             dispose();
-        
-        // SI NO, CORREGIRLOS
+        }
     }//GEN-LAST:event_iniciarSesionButtonLoginActionPerformed
 
     private void crearCuentaButtonLoginFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginFocusGained
