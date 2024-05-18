@@ -4,11 +4,7 @@ import java.util.ArrayList;
 
 public class Login {
     
-    // "BASE DE DATOS" DE LOS CLIENTES Y INMUEBLES DISPONIBLES
-    public static ArrayList<Cliente> clientes = new ArrayList<>();
-    public static ArrayList<Anfitrion> anfitriones = new ArrayList<>();
-    public static ArrayList<Inmueble> inmuebles;
-    
+
     // POR DEFECTO ES -1, QUE SIGNIFICA QUE NO SE HA ENCONTRADO O NO EXISTE
     private static int tipoUsuario = -1;
     private static int posicionArrayList = -1;
@@ -32,19 +28,19 @@ public class Login {
             
             
             // AÑADIR LOS DATOS DEL CLIENTE
-            Cliente cliente = clientes.get(posicionArrayList);
-            user.setDni(cliente.getDni());
-            user.setNombre(cliente.getNombre());
-            user.setTelefono(cliente.getTelefono());
-            user.setCorreo(cliente.getCorreo());
-            user.setClave(cliente.getClave());
+            Particular particular = BaseDatos.particulares.get(posicionArrayList);
+            user.setDni(particular.getDni());
+            user.setNombre(particular.getNombre());
+            user.setTelefono(particular.getTelefono());
+            user.setCorreo(particular.getCorreo());
+            user.setClave(particular.getClave());
         }
         
         // SI ES UN ANFITRIÓN
         if(tipoUsuario == 2){
             
             // AÑADIR LOS DATOS DEL ANFITRIÓN
-            Anfitrion anfitrion = anfitriones.get(posicionArrayList);
+            Anfitrion anfitrion = BaseDatos.anfitriones.get(posicionArrayList);
             user.setDni(anfitrion.getDni());
             user.setNombre(anfitrion.getNombre());
             user.setTelefono(anfitrion.getTelefono());
@@ -114,26 +110,26 @@ public class Login {
         int tipoUsuario = -1;
         int posicionArrayList = -1;
         
-        // PRIMERO BUSCA SI ES UN CLIENTE, ITERANDO LA LISTA DE CLIENTES
-        for (int i = 0; i < clientes.size(); i++){
-            Cliente cliente = clientes.get(i);
+        // PRIMERO BUSCA SI ES UN PARTICULAR, ITERANDO LA LISTA DE PARTICULARES
+        for (int i = 0; i < BaseDatos.particulares.size(); i++){
+            Particular particular = BaseDatos.particulares.get(i);
             
-            // SI ES UN CLIENTE:
-            if (email == cliente.getCorreo()){
+            // SI ES UN PARTICULAR:
+            if (email.equals(particular.getCorreo())){
                 
-                // TIPO USUARIO ES 1 (TIPO CLIENTE) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE CLIENTE
+                // TIPO USUARIO ES 1 (TIPO PARTICULAR) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE PARTICULAR
                 tipoUsuario = 1;
                 posicionArrayList = i;
                 break;
             }
         }
         
-        // SI NO ES CLIENTE BUSCA SI ESTÁ EN LA LISTA DE ANFITIRONES
-        for (int i = 0; i < anfitriones.size(); i++){
-            Anfitrion anfitrion = anfitriones.get(i);
+        // SI NO ES PARTICULAR BUSCA SI ESTÁ EN LA LISTA DE ANFITIRONES
+        for (int i = 0; i < BaseDatos.anfitriones.size(); i++){
+            Anfitrion anfitrion = BaseDatos.anfitriones.get(i);
             
             // SI ES ANFITRIÓN:
-            if (email == anfitrion.getCorreo()){
+            if (email.equals(anfitrion.getCorreo())){
                 
                 // TIPO DE USUARIO ES 2 (TIPO ANFITRIÓN) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE ANFITRIÓN
                 tipoUsuario = 2;
@@ -160,11 +156,11 @@ public class Login {
         // SI ES UN USUARIO BUSCAR EN EL ARRAYLIST DE USUARIOS
         if(tipoUsuario == 1){
             
-            // CREAR UN OBJETO CLIENTE TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
-            Cliente cliente = clientes.get(posicionArrayList);
+            // CREAR UN OBJETO PARTICULAR TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
+            Particular particular = BaseDatos.particulares.get(posicionArrayList);
             
             // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
-            if (clave == cliente.getClave()){
+            if (clave.equals(particular.getClave())){
                 
                 // CAMBIAR ESCORRECTA A TRUE
                 esCorrecta = true;
@@ -175,10 +171,10 @@ public class Login {
         if(tipoUsuario == 2){
             
             // CREAR UN OBJETO TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
-            Anfitrion anfitrion = anfitriones.get(posicionArrayList);
+            Anfitrion anfitrion = BaseDatos.anfitriones.get(posicionArrayList);
             
             // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
-            if (clave == anfitrion.getClave()){
+            if (clave.equals(anfitrion.getClave())){
                 
                 // CAMBIAR ESCORRECTA A TRUE
                 esCorrecta = true;
