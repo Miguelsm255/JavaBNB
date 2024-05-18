@@ -28,12 +28,12 @@ public class Login {
             
             
             // AÑADIR LOS DATOS DEL CLIENTE
-            Cliente cliente = BaseDatos.clientes.get(posicionArrayList);
-            user.setDni(cliente.getDni());
-            user.setNombre(cliente.getNombre());
-            user.setTelefono(cliente.getTelefono());
-            user.setCorreo(cliente.getCorreo());
-            user.setClave(cliente.getClave());
+            Particular particular = BaseDatos.particulares.get(posicionArrayList);
+            user.setDni(particular.getDni());
+            user.setNombre(particular.getNombre());
+            user.setTelefono(particular.getTelefono());
+            user.setCorreo(particular.getCorreo());
+            user.setClave(particular.getClave());
         }
         
         // SI ES UN ANFITRIÓN
@@ -110,21 +110,21 @@ public class Login {
         int tipoUsuario = -1;
         int posicionArrayList = -1;
         
-        // PRIMERO BUSCA SI ES UN CLIENTE, ITERANDO LA LISTA DE CLIENTES
-        for (int i = 0; i < BaseDatos.clientes.size(); i++){
-            Cliente cliente = BaseDatos.clientes.get(i);
+        // PRIMERO BUSCA SI ES UN PARTICULAR, ITERANDO LA LISTA DE PARTICULARES
+        for (int i = 0; i < BaseDatos.particulares.size(); i++){
+            Particular particular = BaseDatos.particulares.get(i);
             
-            // SI ES UN CLIENTE:
-            if (email.equals(cliente.getCorreo())){
+            // SI ES UN PARTICULAR:
+            if (email.equals(particular.getCorreo())){
                 
-                // TIPO USUARIO ES 1 (TIPO CLIENTE) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE CLIENTE
+                // TIPO USUARIO ES 1 (TIPO PARTICULAR) Y GUARDA LA POSICIÓN EN EL ARRAYLIST DE ESE PARTICULAR
                 tipoUsuario = 1;
                 posicionArrayList = i;
                 break;
             }
         }
         
-        // SI NO ES CLIENTE BUSCA SI ESTÁ EN LA LISTA DE ANFITIRONES
+        // SI NO ES PARTICULAR BUSCA SI ESTÁ EN LA LISTA DE ANFITIRONES
         for (int i = 0; i < BaseDatos.anfitriones.size(); i++){
             Anfitrion anfitrion = BaseDatos.anfitriones.get(i);
             
@@ -156,11 +156,11 @@ public class Login {
         // SI ES UN USUARIO BUSCAR EN EL ARRAYLIST DE USUARIOS
         if(tipoUsuario == 1){
             
-            // CREAR UN OBJETO CLIENTE TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
-            Cliente cliente = BaseDatos.clientes.get(posicionArrayList);
+            // CREAR UN OBJETO PARTICULAR TEMPORAL EN EL QUE GUARDAR LA INFO DE LA ITERACIÓN ACTUAL
+            Particular particular = BaseDatos.particulares.get(posicionArrayList);
             
             // SI LA CLAVE INTRODUCIDA COINCIDE CON LA CLAVE GUARDADA
-            if (clave.equals(cliente.getClave())){
+            if (clave.equals(particular.getClave())){
                 
                 // CAMBIAR ESCORRECTA A TRUE
                 esCorrecta = true;
