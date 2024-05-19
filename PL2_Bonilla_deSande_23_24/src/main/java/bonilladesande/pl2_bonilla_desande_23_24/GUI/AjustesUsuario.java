@@ -78,6 +78,11 @@ public class AjustesUsuario extends javax.swing.JPanel {
         });
 
         jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -163,6 +168,10 @@ public class AjustesUsuario extends javax.swing.JPanel {
         edicion.setVisible(true);
         
     }//GEN-LAST:event_SettingsActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        GestorVentanas.cambioVentana("AjustesUsuario", "PaginaPrincipal");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

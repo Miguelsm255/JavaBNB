@@ -18,7 +18,7 @@ public class JavaBNB extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         tituloLabelPaginaPrincipal = new javax.swing.JLabel();
         frameJavaBNB = new javax.swing.JScrollPane();
-        ajustesUsuario1 = new bonilladesande.pl2_bonilla_desande_23_24.GUI.AjustesUsuario();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -29,7 +29,13 @@ public class JavaBNB extends javax.swing.JFrame {
         frameJavaBNB.setBorder(null);
         frameJavaBNB.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         frameJavaBNB.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-        frameJavaBNB.setViewportView(ajustesUsuario1);
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -38,17 +44,21 @@ public class JavaBNB extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(832, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(74, 74, 74))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(frameJavaBNB)
+                .addComponent(frameJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(frameJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
                 .addContainerGap())
@@ -56,6 +66,11 @@ public class JavaBNB extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        GestorVentanas.cambioVentana("JavaBNB", "AjustesUsuario");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,13 +105,13 @@ public class JavaBNB extends javax.swing.JFrame {
             public void run() {
                 new JavaBNB().setVisible(true);
             }
-        });        
+        });    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private bonilladesande.pl2_bonilla_desande_23_24.GUI.AjustesUsuario ajustesUsuario1;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JScrollPane frameJavaBNB;
+    public javax.swing.JScrollPane frameJavaBNB;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel tituloLabelPaginaPrincipal;
     // End of variables declaration//GEN-END:variables
 }
