@@ -143,12 +143,7 @@ public class Login extends javax.swing.JFrame {
         }
         // SI LA INFORMACIÓN SI ES CORRECTA
         else{
-            // ABRIR PÁGINA PRINCIPAL
-            JavaBNB paginaPrincipal = new JavaBNB();
-            paginaPrincipal.setVisible(true);
-            
-            // CERRAR VENTANA
-            dispose();
+            GestorVentanas.cambioVentana("Login", "PaginaPrincipal");
         }
     }//GEN-LAST:event_iniciarSesionButtonLoginActionPerformed
 
@@ -165,11 +160,7 @@ public class Login extends javax.swing.JFrame {
     private void crearCuentaButtonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMouseClicked
         
         //ABRIR VENTANA DE CREAR CUENTA      
-        CrearCuenta crearCuenta = new CrearCuenta();
-        crearCuenta.setVisible(true);
-        
-        //CERRAR VENTANA DE LOGIN
-        dispose();
+        GestorVentanas.cambioVentana("Login", "CrearCuenta");
     }//GEN-LAST:event_crearCuentaButtonLoginMouseClicked
 
     /**

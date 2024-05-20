@@ -1,4 +1,5 @@
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$8.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$2.class
 bonilladesande\pl2_bonilla_desande_23_24\BaseDatos.class
 bonilladesande\pl2_bonilla_desande_23_24\AAA_PRUEBAS_MIGUEL.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto.class
@@ -20,9 +21,12 @@ bonilladesande\pl2_bonilla_desande_23_24\Cliente.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$1.class
 bonilladesande\pl2_bonilla_desande_23_24\Administrador.class
 bonilladesande\pl2_bonilla_desande_23_24\AAA_PRUEBAS_MARCOS.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$6.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$12.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$6.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\ObjetoGestorVentanas.class
 bonilladesande\pl2_bonilla_desande_23_24\Inmueble.class
 bonilladesande\pl2_bonilla_desande_23_24\OperacionesInmuebles.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$9.class
@@ -40,6 +44,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$5.class
 bonilladesande\pl2_bonilla_desande_23_24\CrearCuenta.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaPrincipal.class
 bonilladesande\pl2_bonilla_desande_23_24\Anfitrion.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$3.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$11.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$7.class
 bonilladesande\pl2_bonilla_desande_23_24\UserLoged.class
@@ -51,6 +56,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$4.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$4.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\GestorVentanas.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$2.class
