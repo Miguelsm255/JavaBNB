@@ -57,6 +57,7 @@ public class Login {
         System.out.println(user.getTelefono());
         
         // DEVOLVER EL OBJETO DEL USUARIO LOGEADO CON TODA SU INFORMACIÓN
+        BaseDatos.user = user;
         return user;
         
     }
