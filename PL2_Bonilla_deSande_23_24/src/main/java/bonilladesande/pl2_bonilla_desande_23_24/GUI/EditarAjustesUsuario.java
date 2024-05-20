@@ -158,6 +158,10 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         char[] nuevaClave = nuevaContra.getPassword();
         int nuevoTelefono = Integer.parseInt(nuevoTelef.getText());
         
+        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setNombre(nuevoUsername);
+        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setCorreo(nuevoEmail);
+        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setTelefono(nuevoTelefono);
+        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setClave(nuevaClave.toString());
         
         dispose();
     }//GEN-LAST:event_GuardarCambiosActionPerformed
