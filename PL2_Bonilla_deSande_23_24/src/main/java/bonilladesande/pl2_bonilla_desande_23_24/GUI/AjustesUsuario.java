@@ -4,6 +4,13 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import java.awt.Dimension;
+import java.awt.Image;
+import java.io.File;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
 /**
  *
  * @author marco
@@ -15,6 +22,10 @@ public class AjustesUsuario extends javax.swing.JPanel {
      */
     public AjustesUsuario() {
         initComponents();
+        
+        String userDir = System.getProperty("user.dir");
+        String ruta = userDir + File.separator + "resources" + File.separator + "Michi.png";
+        perfil.setIcon(setIcono(ruta, perfil));
     }
 
     /**
@@ -39,7 +50,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        perfil = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -83,7 +94,11 @@ public class AjustesUsuario extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setText("jButton2");
+        perfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perfilActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Mis Reservas");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +131,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(58, 58, 58)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -173,7 +188,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
                             .addComponent(jLabel5)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Settings, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -198,6 +213,28 @@ public class AjustesUsuario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_perfilActionPerformed
+    
+    public Icon setIcono (String url, JButton boton){
+        //ImageIcon icon = new ImageIcon(getClass().getResource(url));
+        ImageIcon icon = new ImageIcon(System.getProperty("user.dir") + url);
+        if (icon == null) {
+            System.out.println("Error de Localización: No se pudo encontrar la imagen en el classpath \n");
+            return null;
+        }
+        perfil.setPreferredSize(new Dimension(300, 300));
+        int ancho = boton.getWidth();
+        int alto = boton.getHeight();
+        if (ancho == 0 || alto == 0){
+            System.out.print("Error de Tamaño: No se puede colocar una foto de perfil con ancho o largo 0 \n");
+            return null;
+        }
+        
+        ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(ancho, alto, Image.SCALE_DEFAULT));
+        return icono;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PasswordPlaceHolder;
@@ -205,7 +242,6 @@ public class AjustesUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel TeléfonoPlaceholder;
     private javax.swing.JLabel UsernamePlaceHolder;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -215,5 +251,6 @@ public class AjustesUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton perfil;
     // End of variables declaration//GEN-END:variables
 }
