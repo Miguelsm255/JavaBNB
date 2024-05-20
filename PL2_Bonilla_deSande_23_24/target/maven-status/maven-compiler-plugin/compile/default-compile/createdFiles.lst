@@ -25,6 +25,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$6.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$12.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$6.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\ObjetoGestorVentanas.class
 bonilladesande\pl2_bonilla_desande_23_24\Inmueble.class
 bonilladesande\pl2_bonilla_desande_23_24\OperacionesInmuebles.class
@@ -43,6 +44,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$5.class
 bonilladesande\pl2_bonilla_desande_23_24\CrearCuenta.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaPrincipal.class
 bonilladesande\pl2_bonilla_desande_23_24\Anfitrion.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$3.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$11.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$7.class
 bonilladesande\pl2_bonilla_desande_23_24\UserLoged.class
