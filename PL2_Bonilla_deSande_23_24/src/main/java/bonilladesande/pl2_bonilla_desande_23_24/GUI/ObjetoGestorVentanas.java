@@ -24,6 +24,8 @@ public class ObjetoGestorVentanas {
     
     public void iniciarPrograma(){
         ventanaLogin = new Login();
+        ventanaJavaBNB.setLocationRelativeTo(null);
+        ventanaLogin.setLocationRelativeTo(null);
         ventanaLogin.setVisible(true);
         
     }
@@ -35,16 +37,19 @@ public class ObjetoGestorVentanas {
             
             case "Login" -> {
                 ventanaLogin = new Login();
+                ventanaLogin.setLocationRelativeTo(null);
                 ventanaLogin.setVisible(true);
             }
             
             case "CrearCuenta" -> {
                 ventanaCrearCuenta = new CrearCuenta();
+                ventanaCrearCuenta.setLocationRelativeTo(null);
                 ventanaCrearCuenta.setVisible(true);
             }
             
             case "EditarAjustesUsuario" -> {
                 ventanaEditarAjustesUsuario = new EditarAjustesUsuario();
+                ventanaEditarAjustesUsuario.setLocationRelativeTo(null);
                 ventanaEditarAjustesUsuario.setVisible(true);
             }
             
