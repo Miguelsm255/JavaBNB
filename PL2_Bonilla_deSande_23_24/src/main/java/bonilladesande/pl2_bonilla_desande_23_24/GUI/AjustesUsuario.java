@@ -200,8 +200,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsActionPerformed
-        EditarAjustesUsuario edicion = new EditarAjustesUsuario();
-        edicion.setVisible(true);
+        GestorVentanas.cambioVentana("AjustesUsuario", "EditarAjustesUsuario");
         
     }//GEN-LAST:event_SettingsActionPerformed
 
