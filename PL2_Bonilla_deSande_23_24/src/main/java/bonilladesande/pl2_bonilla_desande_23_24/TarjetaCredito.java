@@ -7,7 +7,7 @@ public class TarjetaCredito {
     // ATRIBUTOS
     
     private String titular;
-    private int numero;
+    private long numero;
     private LocalDate caducidad;
     private int cvv;
 
@@ -23,7 +23,7 @@ public class TarjetaCredito {
         this.titular = titular;
     }
 
-    public int getNumero() {
+    public long getNumero() {
         return numero;
     }
 
@@ -50,7 +50,7 @@ public class TarjetaCredito {
     
     // CONSTRUCTOR
     
-    public TarjetaCredito(String titular, int numero, LocalDate caducidad, int cvv) {
+    public TarjetaCredito(String titular, long numero, LocalDate caducidad, int cvv) {
         this.titular = titular;
         this.numero = numero;
         this.caducidad = caducidad;
