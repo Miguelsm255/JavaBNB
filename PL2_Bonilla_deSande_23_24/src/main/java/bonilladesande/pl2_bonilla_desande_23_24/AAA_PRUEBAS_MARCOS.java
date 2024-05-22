@@ -33,19 +33,16 @@ public class AAA_PRUEBAS_MARCOS {
         String particularFinal = String.valueOf(particularFactura);
         Inmueble inmuebleFactura = factura1.getInmueble();
         String inmuebleFinal = String.valueOf(inmuebleFactura);
+        String NombreUser = System.getProperty("user.name");
+        System.out.println(NombreUser);
 
-        String ruta = "C:/Users/marco/Desktop/ComoEstánMuchacho.txt";
-        //File PruebaInconfundible = new File(ruta);
-        //BufferedWriter bw;
+        String ruta = "C:/Users/" + NombreUser + "/Desktop/ComoEstánMuchacho.txt";
         FileWriter Prueba = new FileWriter(ruta);
         Prueba.write(precioFinal + "\n" + finFinal + "\n" + inicioFinal + "\n" + particularFinal + "\n" + inmuebleFinal);
         Prueba.close();
-        //if (PruebaInconfundible.exists()) {
-        //    System.out.println("El archivo está creado con éxito");
-        //} else {
-        //    System.out.println("El archivo no existe en este directorio.");
-        //}
-
+            
+        
+        
     }
 
 }
