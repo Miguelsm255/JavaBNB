@@ -1,6 +1,7 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Reserva {
     
@@ -16,8 +17,29 @@ public class Reserva {
     
     // MÉTODOS
     
-    public static double pago(double precioNoche, int noches, boolean vip){
-        return -1;
+    
+    public static void anadirReserva(Particular particular, Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin, double precio){
+        Reserva reserva = new Reserva(particular, inmueble, fechaInicio, fechaFin);
+        BaseDatos.reservas.add(reserva);
+    }
+    
+    //public static void pago(double precio, Particular particular){
+        // Sacar la tarjeta de credito del particular
+        // comprobar si tiene saldo y si es así sacarlo y reservar.
+    //}
+    
+    
+    public static double calcularPrecio(double precioNoche, LocalDate fechaInicio, LocalDate fechaFin, boolean vip){
+        
+        int dias = (int) ChronoUnit.DAYS.between(fechaInicio, fechaFin);
+        
+        double precioTotal = dias * precioNoche;
+        
+        if (vip){
+            precioTotal = precioTotal * 0.9;
+        }
+        
+        return precioTotal;
     }
     
     public static void cancelarReserva(int posReserva){
@@ -90,6 +112,8 @@ public class Reserva {
         this.inmueble = inmueble;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
+        this.precio = calcularPrecio(inmueble.getPrecioNoche(), fechaInicio, fechaFin, particular.isVip());
+        this.factura = generarFactura(particular, inmueble, fechaInicio, fechaFin, precio);
     }
     
     

@@ -12,7 +12,11 @@ public class Factura {
     private LocalDate fechaFin;
     private double precio;
 
+    // MÉTODOS
     
+    public void imprimirFactura(Particular particular, Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin, double precio){
+        // GENERAR EL ARCHIVO, AÚN HAY QUE MIRAR CÓMO.
+    }
     // GETTERS 
     
     public Particular getParticular() {
