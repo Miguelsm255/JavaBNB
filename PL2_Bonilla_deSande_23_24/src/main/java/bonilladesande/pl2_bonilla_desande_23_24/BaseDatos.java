@@ -8,6 +8,7 @@ public class BaseDatos {
     public static ArrayList<Particular> particulares = new ArrayList<>();
     public static ArrayList<Anfitrion> anfitriones = new ArrayList<>();
     public static ArrayList<Inmueble> inmuebles = new ArrayList<>();;
+    public static ArrayList<Reserva> reservas = new ArrayList<>();
     
     public static UserLoged user;
 
