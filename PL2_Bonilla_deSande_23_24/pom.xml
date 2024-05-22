@@ -5,6 +5,14 @@
     <artifactId>PL2_Bonilla_deSande_23_24</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>at.yawk.dbus</groupId>
+            <artifactId>dbus-client</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>

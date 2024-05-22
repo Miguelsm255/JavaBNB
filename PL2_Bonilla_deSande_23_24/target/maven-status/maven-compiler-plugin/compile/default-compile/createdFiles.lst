@@ -1,11 +1,14 @@
+bonilladesande\pl2_bonilla_desande_23_24\Factura.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$8.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$2.class
 bonilladesande\pl2_bonilla_desande_23_24\BaseDatos.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$4.class
 bonilladesande\pl2_bonilla_desande_23_24\AAA_PRUEBAS_MIGUEL.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$3.class
 bonilladesande\pl2_bonilla_desande_23_24\Login.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AlojamientoBoton$2.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$2.class
 bonilladesande\pl2_bonilla_desande_23_24\Usuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$10.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$1.class
@@ -13,6 +16,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\ListaAlojamientos.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$3.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$2.class
@@ -40,11 +44,14 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$1.class
 bonilladesande\pl2_bonilla_desande_23_24\Servicios.class
 bonilladesande\pl2_bonilla_desande_23_24\Direccion.class
+bonilladesande\pl2_bonilla_desande_23_24\Reserva.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$5.class
 bonilladesande\pl2_bonilla_desande_23_24\CrearCuenta.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$3.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaPrincipal.class
 bonilladesande\pl2_bonilla_desande_23_24\Anfitrion.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$3.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaAlojamiento$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$11.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$7.class
 bonilladesande\pl2_bonilla_desande_23_24\UserLoged.class
