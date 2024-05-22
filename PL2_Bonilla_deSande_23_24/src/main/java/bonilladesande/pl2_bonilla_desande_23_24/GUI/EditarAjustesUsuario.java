@@ -38,7 +38,7 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         CancelarAjustes = new javax.swing.JButton();
         nuevaContra = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("¡Esta es la pestaña para realizar Ajustes de Usuario!");
