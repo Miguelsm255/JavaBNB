@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import java.awt.Dimension;
@@ -11,10 +7,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-/**
- *
- * @author marco
- */
 public class AjustesUsuario extends javax.swing.JPanel {
 
     /**
@@ -38,43 +30,44 @@ public class AjustesUsuario extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        UsernamePlaceHolder = new javax.swing.JLabel();
+        nombreLabelAjustesUsuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        PasswordPlaceHolder = new javax.swing.JLabel();
+        claveLabelAjustesUsuario = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        TeléfonoPlaceholder = new javax.swing.JLabel();
+        telefonoLabelAjustesUsuario = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        correoLabelAjustesUsuario = new javax.swing.JLabel();
+        saludoLabelAjustesUsuario = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         perfil = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        verClave = new javax.swing.JToggleButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Nombre de Usuario:");
 
-        UsernamePlaceHolder.setText("Aquí va el nombre de Usuario");
+        nombreLabelAjustesUsuario.setText("Aquí va el nombre de Usuario");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("Contraseña Actual: ");
 
-        PasswordPlaceHolder.setText("Aquí va la contraseña");
+        claveLabelAjustesUsuario.setText("Aquí va la contraseña");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("Teléfono Actual:");
 
-        TeléfonoPlaceholder.setText("Aquí va el teléfono");
+        telefonoLabelAjustesUsuario.setText("Aquí va el teléfono");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("Correo Actual:");
 
-        jLabel5.setText("Aquí va el correo");
+        correoLabelAjustesUsuario.setText("Aquí va el correo");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel6.setText("¡Hola, ---------!");
+        saludoLabelAjustesUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        saludoLabelAjustesUsuario.setText("¡Hola, ---------!");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("¡Esta es tu página de Usuario!");
@@ -104,6 +97,13 @@ public class AjustesUsuario extends javax.swing.JPanel {
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
+            }
+        });
+
+        verClave.setText("jToggleButton1");
+        verClave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verClaveActionPerformed(evt);
             }
         });
 
@@ -146,25 +146,28 @@ public class AjustesUsuario extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(TeléfonoPlaceholder, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(UsernamePlaceHolder))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE))
+                                            .addComponent(correoLabelAjustesUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(telefonoLabelAjustesUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nombreLabelAjustesUsuario))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(PasswordPlaceHolder, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(claveLabelAjustesUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(verClave, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addComponent(saludoLabelAjustesUsuario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(89, 89, 89))))
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(43, 43, 43)))
+                        .addGap(46, 46, 46))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saludoLabelAjustesUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,19 +176,20 @@ public class AjustesUsuario extends javax.swing.JPanel {
                         .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(UsernamePlaceHolder))
+                            .addComponent(nombreLabelAjustesUsuario))
                         .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(PasswordPlaceHolder))
+                            .addComponent(claveLabelAjustesUsuario)
+                            .addComponent(verClave))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(TeléfonoPlaceholder))
+                            .addComponent(telefonoLabelAjustesUsuario))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)))
+                            .addComponent(correoLabelAjustesUsuario)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -215,6 +219,10 @@ public class AjustesUsuario extends javax.swing.JPanel {
     private void perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_perfilActionPerformed
+
+    private void verClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verClaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verClaveActionPerformed
     
     public Icon setIcono (String url, JButton boton){
         //ImageIcon icon = new ImageIcon(getClass().getResource(url));
@@ -236,20 +244,21 @@ public class AjustesUsuario extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel PasswordPlaceHolder;
     private javax.swing.JButton Settings;
-    private javax.swing.JLabel TeléfonoPlaceholder;
-    private javax.swing.JLabel UsernamePlaceHolder;
+    public javax.swing.JLabel claveLabelAjustesUsuario;
+    public javax.swing.JLabel correoLabelAjustesUsuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel nombreLabelAjustesUsuario;
     private javax.swing.JButton perfil;
+    public javax.swing.JLabel saludoLabelAjustesUsuario;
+    public javax.swing.JLabel telefonoLabelAjustesUsuario;
+    private javax.swing.JToggleButton verClave;
     // End of variables declaration//GEN-END:variables
 }
