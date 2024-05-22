@@ -341,11 +341,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         // SI LOS DATOS SON CORRECTOS:
         else{
             // ABRIR PÁGINA PRINCIPAL
-            Login paginaPrincipal = new Login();
-            paginaPrincipal.setVisible(true);
-            
-            // CERRAR VENTANA
-            dispose();
+            GestorVentanas.cambioVentana("CrearCuenta", "Login");
         }
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
 
