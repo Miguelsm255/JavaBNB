@@ -78,6 +78,16 @@ public class ObjetoGestorVentanas {
                 paginaAjustesUsuario.correoLabelAjustesUsuario.setText(BaseDatos.user.getCorreo());
                 paginaAjustesUsuario.telefonoLabelAjustesUsuario.setText(String.valueOf(BaseDatos.user.getTelefono()));
             }
+            
+            case "PaginaAlojamiento" -> {
+                paginaPaginaAlojamiento = new PaginaAlojamiento();
+                ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaAlojamiento);
+                ventanaJavaBNB.setVisible(true);
+                ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
+                ventanaJavaBNB.fotoUsuarioJavaBNBboton.setVisible(true);
+                
+                ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
+            }
         }
         
         switch(origen){
