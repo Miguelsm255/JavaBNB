@@ -9,7 +9,16 @@ public class JavaBNB extends javax.swing.JFrame {
     public JavaBNB() {
         initComponents();    
         
-        
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                // Llamar a la función guardarDatos al cerrar la ventana
+                BaseDatos.guardarDatosAnfitriones(BaseDatos.anfitriones);
+                BaseDatos.guardarDatosInmuebles(BaseDatos.inmuebles);
+                BaseDatos.guardarDatosParticulares(BaseDatos.particulares);
+                BaseDatos.guardarDatosReservas(BaseDatos.reservas);
+            }
+        });
     }
 
     /**

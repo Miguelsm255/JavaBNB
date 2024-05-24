@@ -9,6 +9,9 @@ public class AAA_PRUEBAS_MIGUEL {
     
     public static void main(String[] args) {
                 
+        
+        GestorVentanas.iniciarPrograma();
+        
         LocalDate ahora = LocalDate.now();
         long numero = 1234567890123456L;
         
@@ -19,7 +22,7 @@ public class AAA_PRUEBAS_MIGUEL {
         //Anfitrion a1 = new Anfitrion(ahora, "78945612G", "Marcos", "hola", "fdsafdsa", 789654123);
         
         
-        BaseDatos.particulares.add(p1);
+        //BaseDatos.particulares.add(p1);
         //System.out.println(BaseDatos.particulares.get(0).getCorreo());
         //System.out.println(BaseDatos.particulares.get(0).getClave());
         
@@ -29,15 +32,15 @@ public class AAA_PRUEBAS_MIGUEL {
         //Servicios servicio = new Servicios(Arrayservicios);
         //Inmueble peruTitan = new Inmueble("Perú Titán", d1, datos1, true, 10, servicio, 33, "Fotonelada", "Qué buen sitio, por la chucha");
         
-        Direccion d2 = new Direccion("Calle madehuevo", 33, 33, "Ciudad Delfino");
-        DatosInmueble datos2 = new DatosInmueble(33, 33, 33, 33);
-        ArrayList Arrayservicios2 = new ArrayList<>();
-        Servicios servicio2 = new Servicios(Arrayservicios2);
+        //Direccion d2 = new Direccion("Calle madehuevo", 33, 33, "Ciudad Delfino");
+        //DatosInmueble datos2 = new DatosInmueble(33, 33, 33, 33);
+        //ArrayList Arrayservicios2 = new ArrayList<>();
+        //Servicios servicio2 = new Servicios(Arrayservicios2);
         //Inmueble peruTitan2 = new Inmueble("Perú Titán 2", d2, datos2, true, 20, servicio2, 33, "Fotonelada", "Qué buen sitio, por la chucha");
         
         //Inmueble peruTitan3 = new Inmueble("Perú Titán 3", d2, datos2, true, 30, servicio2, 33, "Fotonelada", "Qué buen sitio, por la chucha");
         //Inmueble peruTitan4 = new Inmueble("Perú Titán 4", d2, datos2, true, 40, servicio2, 33, "Fotonelada", "Qué buen sitio, por la chucha");
-        Inmueble peruTitan5 = new Inmueble("Perú Titán 5", d2, datos2, true, 50, servicio2, 33, "Fotonelada", "Qué buen sitio, por la chucha");
+        //Inmueble peruTitan5 = new Inmueble("Perú Titán 5", d2, datos2, true, 50, servicio2, 33, "Fotonelada", "Qué buen sitio, por la chucha");
         //Inmueble peruTitan6 = new Inmueble("Perú Titán 5", d2, datos2, true, 60, servicio2, 33, "Fotonelada", "Qué buen sitio, por la chucha");
         //Inmueble peruTitan7 = new Inmueble("Perú Titán 5", d2, datos2, true, 70, servicio2, 33, "Fotonelada", "Qué buen sitio, por la chucha");
         //Inmueble peruTitan8 = new Inmueble("Perú Titán 5", d2, datos2, true, 80, servicio2, 33, "Fotonelada", "Qué buen sitio, por la chucha");
@@ -46,14 +49,13 @@ public class AAA_PRUEBAS_MIGUEL {
         //BaseDatos.inmuebles.add(peruTitan2);
         //BaseDatos.inmuebles.add(peruTitan3);
         //BaseDatos.inmuebles.add(peruTitan4);
-        BaseDatos.inmuebles.add(peruTitan5);
+        //BaseDatos.inmuebles.add(peruTitan5);
         //BaseDatos.inmuebles.add(peruTitan6);
         //BaseDatos.inmuebles.add(peruTitan7);
         //BaseDatos.inmuebles.add(peruTitan8);
 
         
-        GestorVentanas.iniciarPrograma();
-        
+         
     }
     
 }

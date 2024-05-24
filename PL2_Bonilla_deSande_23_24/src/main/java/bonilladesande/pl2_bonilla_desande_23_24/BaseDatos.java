@@ -21,7 +21,7 @@ public class BaseDatos {
     // GUARDAR Y CARGAR DATOS
     
     public static void guardarDatosInmuebles(ArrayList<Inmueble> listaInmuebles) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("/DataBase_Serializada/inmuebles.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Inmuebles.dat"))) {
             oos.writeObject(listaInmuebles);
             System.out.println("Datos guardados correctamente.");
         } catch (IOException e) {
@@ -31,7 +31,7 @@ public class BaseDatos {
 
     public static void cargarDatosInmuebles() {
         ArrayList<Inmueble> listaInmuebles = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/DataBase_Serializada/inmuebles.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("./src/main/java/DataBase_Serializada/Inmuebles.dat"))) {
             listaInmuebles = (ArrayList<Inmueble>) ois.readObject();
             System.out.println("Datos cargados correctamente.");
         } catch (IOException | ClassNotFoundException e) {
@@ -42,7 +42,7 @@ public class BaseDatos {
     
     
     public static void guardarDatosParticulares(ArrayList<Particular> listaParticulares) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("/DataBase_Serializada/Particulares.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Particulares.dat"))) {
             oos.writeObject(listaParticulares);
             System.out.println("Datos guardados correctamente.");
         } catch (IOException e) {
@@ -52,7 +52,7 @@ public class BaseDatos {
 
     public static void cargarDatosParticulares() {
         ArrayList<Particular> listaParticulares = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/DataBase_Serializada/Particulares.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("./src/main/java/DataBase_Serializada/Particulares.dat"))) {
             listaParticulares = (ArrayList<Particular>) ois.readObject();
             System.out.println("Datos cargados correctamente.");
         } catch (IOException | ClassNotFoundException e) {
@@ -63,7 +63,7 @@ public class BaseDatos {
     
     
     public static void guardarDatosAnfitriones(ArrayList<Anfitrion> listaAnfitriones) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("/DataBase_Serializada/Anfitriones.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Anfitriones.dat"))) {
             oos.writeObject(listaAnfitriones);
             System.out.println("Datos guardados correctamente.");
         } catch (IOException e) {
@@ -73,7 +73,7 @@ public class BaseDatos {
 
     public static void cargarDatosAnfitriones() {
         ArrayList<Anfitrion> listaAnfitriones = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/DataBase_Serializada/Anfitriones.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("./src/main/java/DataBase_Serializada/Anfitriones.dat"))) {
             listaAnfitriones = (ArrayList<Anfitrion>) ois.readObject();
             System.out.println("Datos cargados correctamente.");
         } catch (IOException | ClassNotFoundException e) {
@@ -84,7 +84,7 @@ public class BaseDatos {
     
     
     public static void guardarDatosReservas(ArrayList<Reserva> listaReservas) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("/DataBase_Serializada/Reservas.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Reservas.dat"))) {
             oos.writeObject(listaReservas);
             System.out.println("Datos guardados correctamente.");
         } catch (IOException e) {
@@ -94,7 +94,7 @@ public class BaseDatos {
 
     public static void cargarDatosReservas() {
         ArrayList<Reserva> listaReservas = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("/DataBase_Serializada/Reservas.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("./src/main/java/DataBase_Serializada/Reservas.dat"))) {
             listaReservas = (ArrayList<Reserva>) ois.readObject();
             System.out.println("Datos cargados correctamente.");
         } catch (IOException | ClassNotFoundException e) {
