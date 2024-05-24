@@ -1,9 +1,18 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
-public class ListaAlojamientos extends javax.swing.JPanel {
+import bonilladesande.pl2_bonilla_desande_23_24.*;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.util.ArrayList;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.border.EmptyBorder;
 
-    public ListaAlojamientos() {
+public final class ListaAlojamientos extends javax.swing.JPanel {
+
+    public ListaAlojamientos(ArrayList<Inmueble> lista) {
         initComponents();
+        myInitComponents(lista);
     }
 
     /**
@@ -23,11 +32,45 @@ public class ListaAlojamientos extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 870, Short.MAX_VALUE)
+            .addGap(0, 714, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void myInitComponents(ArrayList<Inmueble> lista) {
 
+        //this.setSize(this.getWidth(), (125 * lista.size()));
+
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        
+        //setLayout(new GridBagLayout()); // Usar GridBagLayout para controlar el tamaño máximo
+        //GridBagConstraints gbc = new GridBagConstraints();
+        //gbc.gridx = 0;
+        //gbc.gridy = 0;
+        //gbc.fill = GridBagConstraints.HORIZONTAL;
+        
+        setBorder(new EmptyBorder(10, 10, 10, 10));
+        
+        
+        for (int i = 0; i < lista.size(); i++) {
+            Inmueble inmueble = lista.get(i);
+            AlojamientoBoton alojamientoBoton = new AlojamientoBoton(inmueble);
+            //alojamientoBoton.setBounds(3, (123*i) +3, 480, 120);
+            //this.add(alojamientoBoton);
+            
+            //add(Box.createVerticalStrut(5)); // Espacio vertical de 5 píxeles
+            //add(alojamientoBoton);
+            
+            //gbc.insets = new Insets(5, 0, 5, 0); // Espacio vertical de 5 píxeles
+            //add(alojamientoBoton, gbc); // Agregar el botón al panel
+            //gbc.gridy++;
+            
+            alojamientoBoton.setAlignmentX(Component.LEFT_ALIGNMENT); // Alineación izquierda
+            alojamientoBoton.setMaximumSize(new Dimension(Integer.MAX_VALUE, alojamientoBoton.getPreferredSize().height)); // Ancho máximo
+            add(alojamientoBoton); // Agregar componente al panel
+            add(Box.createVerticalStrut(5)); 
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
