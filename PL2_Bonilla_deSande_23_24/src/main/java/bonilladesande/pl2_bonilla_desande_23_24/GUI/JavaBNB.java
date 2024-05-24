@@ -1,9 +1,15 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 public class JavaBNB extends javax.swing.JFrame {
 
     public JavaBNB() {
         initComponents();    
+        
+        
     }
 
     /**
@@ -123,6 +129,8 @@ public class JavaBNB extends javax.swing.JFrame {
             }
         });    
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
