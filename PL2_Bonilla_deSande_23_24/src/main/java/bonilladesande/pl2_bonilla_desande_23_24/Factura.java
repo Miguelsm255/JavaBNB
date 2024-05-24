@@ -1,8 +1,9 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Factura {
+public class Factura implements Serializable{
     
     // ATRIBUTOS
     

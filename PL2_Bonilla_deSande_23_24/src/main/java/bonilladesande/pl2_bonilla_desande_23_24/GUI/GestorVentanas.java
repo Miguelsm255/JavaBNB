@@ -7,6 +7,11 @@ public class GestorVentanas {
     private static ObjetoGestorVentanas gestorVentanas = new ObjetoGestorVentanas();
     
     public static void iniciarPrograma(){
+        BaseDatos.cargarDatosAnfitriones();
+        BaseDatos.cargarDatosInmuebles();
+        BaseDatos.cargarDatosParticulares();
+        BaseDatos.cargarDatosReservas();
+        
         gestorVentanas.iniciarPrograma();
     }
         
