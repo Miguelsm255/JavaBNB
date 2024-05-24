@@ -1,8 +1,9 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Anfitrion extends Cliente{
+public class Anfitrion extends Cliente implements Serializable{
     
     // ATRIBUTOS
     

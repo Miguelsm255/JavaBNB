@@ -1,8 +1,8 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Inmueble {
+public class Inmueble implements Serializable{
 
     
 
