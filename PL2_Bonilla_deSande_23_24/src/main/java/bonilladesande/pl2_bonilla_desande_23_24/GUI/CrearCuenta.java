@@ -327,25 +327,33 @@ public class CrearCuenta extends javax.swing.JFrame {
             char[] claveChar = claveFieldCrearCuenta.getPassword();
             String clave = new String(claveChar);
             if (dni.isEmpty() || nombre.isEmpty() || email.isEmpty() || clave.isEmpty()) {
-                throw new CamposVaciosCuenta("Todos los campos deben estar llenos.");
+                throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
             int telefono = Integer.parseInt(telefonoFieldCrearCuenta.getText());
-            int digitos = String.valueOf(telefono).length();
-
-            if (digitos != 9) {
-                throw new TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
+            int digitostelef = String.valueOf(telefono).length();
+            if (digitostelef != 9) {
+                throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
             }
-
             LocalDate fechaRegistro = LocalDate.now();
 
             String fechaCaducidadIntroducida = caducidadTarjetaCrearCuenta.getText();
             String[] fechaCaducidadSplit = fechaCaducidadIntroducida.split("/");
             LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt(fechaCaducidadSplit[0]), 1);
 
-            TarjetaCredito tarjeta = new TarjetaCredito(nombre, Long.parseLong(noTarjetaFieldCrearCuenta.getText()), caducidad, Integer.parseInt(cvvTarjetaFieldCrearCuenta.getText()));
+           int comparaFechas = caducidad.compareTo(fechaRegistro);
+            if (comparaFechas < 0){
+                    throw new BibliotecaExcepciones.TarjetaCaducada("La tarjeta introducida está fuera de fecha.");}
+            int cvv = Integer.parseInt(cvvTarjetaFieldCrearCuenta.getText()); 
+            int digitoscvv = String.valueOf(cvv).length();
+            if (digitoscvv !=3){
+                throw new BibliotecaExcepciones.cvvEscacharrado("El CVV debe de contener exactamente 3 dígitos");
+            }
+     
+                TarjetaCredito tarjeta = new TarjetaCredito(nombre, Long.parseLong(noTarjetaFieldCrearCuenta.getText()), caducidad, cvv);
+            
+            
             boolean vip = false;
-            
-            
+      
 
             UserLoged user = bonilladesande.pl2_bonilla_desande_23_24.CrearCuenta.crearCuenta(anfitrion, dni, nombre, email, clave, telefono, fechaRegistro, tarjeta, vip);
 
@@ -353,33 +361,28 @@ public class CrearCuenta extends javax.swing.JFrame {
             if (user.getTipo() == -1) {
                 // MOSTRAR LABEL DE "FALTAN DATOS / DATOS INCORRECTOS / DATOS INVÁLIDOS"
                 user = null;
+                CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
             } // SI LOS DATOS SON CORRECTOS:
             else {
                 // ABRIR PÁGINA PRINCIPAL
                 GestorVentanas.cambioVentana("CrearCuenta", "Login");
             }
-        } catch (TelefonoEscacharrado e) {
+        } catch (BibliotecaExcepciones.cvvEscacharrado e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-            } catch (CamposVaciosCuenta e) {
+        }
+        catch (BibliotecaExcepciones.TarjetaCaducada e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+        } catch (BibliotecaExcepciones.TelefonoEscacharrado e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+        } catch (BibliotecaExcepciones.CamposVacios e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
 
         }
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
-
-    public class TelefonoEscacharrado extends Exception {
-
-        public TelefonoEscacharrado(String message) {
-            super(message);
-        }
-    }
-     public class CamposVaciosCuenta extends Exception {
-
-        public CamposVaciosCuenta(String message) {
-            super(message);
-        }
-    }
 
     /**
      * @param args the command line arguments

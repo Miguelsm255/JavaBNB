@@ -8,6 +8,7 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
  *
  * @author marco
  */
+import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
 import bonilladesande.pl2_bonilla_desande_23_24.FiltraImagenes;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -232,16 +233,16 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             String serviciosalojamiento = ServiciosAlojamiento.getText();
 
             if (alojamiento.isEmpty() || anfitrion.isEmpty() || descripcion.isEmpty() || serviciosalojamiento.isEmpty()) {
-                throw new EmptyFieldException("Todos los campos deben estar llenos.");
+                throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
             if (!Casa.isSelected() && !Apartamento.isSelected()) {
-                throw new NoSelectedButtonException("Debes elegir si es una casa o un apartamento.");
+                throw new BibliotecaExcepciones.BotonesSinSeleccionar("Debes elegir si es una casa o un apartamento.");
             }
             JOptionPane.showMessageDialog(this, "Alojamiento subido con éxito.");
-        } catch (EmptyFieldException e) {
+        } catch (BibliotecaExcepciones.CamposVacios e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (NoSelectedButtonException e) {
+        } catch (BibliotecaExcepciones.BotonesSinSeleccionar e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         } catch (IOException e) {
@@ -289,19 +290,7 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_ApartamentoActionPerformed
 
-    public class EmptyFieldException extends Exception {
-
-        public EmptyFieldException(String message) {
-            super(message);
-        }
-    }
-
-    public class NoSelectedButtonException extends Exception {
-
-        public NoSelectedButtonException(String message) {
-            super(message);
-        }
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AlojamientoLiada;
