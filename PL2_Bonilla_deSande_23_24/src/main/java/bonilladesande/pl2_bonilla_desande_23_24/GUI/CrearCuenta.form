@@ -109,7 +109,7 @@
                                       <Component id="cvvTarjetaLabelCrearCuenta" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="caducidadTarjetaCrearCuenta1" min="-2" pref="85" max="-2" attributes="0"/>
+                                      <Component id="caducidadTarjetaCrearCuenta" min="-2" pref="85" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Component id="cvvTarjetaFieldCrearCuenta" min="-2" pref="57" max="-2" attributes="0"/>
                                   </Group>
@@ -169,7 +169,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="noTarjetaFieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cvvTarjetaFieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="caducidadTarjetaCrearCuenta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="caducidadTarjetaCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="27" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -274,9 +274,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="claveFieldCrearCuentaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="caducidadTarjetaCrearCuenta1">
+    <Component class="javax.swing.JTextField" name="caducidadTarjetaCrearCuenta">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="caducidadTarjetaCrearCuenta1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="caducidadTarjetaCrearCuentaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="noTarjetaLabelCrearCuenta">

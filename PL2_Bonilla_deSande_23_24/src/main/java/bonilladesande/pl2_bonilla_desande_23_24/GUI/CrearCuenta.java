@@ -34,7 +34,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         cvvTarjetaFieldCrearCuenta = new javax.swing.JTextField();
         confirmaClaveLabelCrearCuenta = new javax.swing.JLabel();
         claveFieldCrearCuenta = new javax.swing.JPasswordField();
-        caducidadTarjetaCrearCuenta1 = new javax.swing.JTextField();
+        caducidadTarjetaCrearCuenta = new javax.swing.JTextField();
         noTarjetaLabelCrearCuenta = new javax.swing.JLabel();
         caducidadTarjetaLabelCrearCuenta = new javax.swing.JLabel();
         cvvTarjetaLabelCrearCuenta = new javax.swing.JLabel();
@@ -107,9 +107,9 @@ public class CrearCuenta extends javax.swing.JFrame {
             }
         });
 
-        caducidadTarjetaCrearCuenta1.addActionListener(new java.awt.event.ActionListener() {
+        caducidadTarjetaCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                caducidadTarjetaCrearCuenta1ActionPerformed(evt);
+                caducidadTarjetaCrearCuentaActionPerformed(evt);
             }
         });
 
@@ -215,7 +215,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                                         .addGap(39, 39, 39)
                                         .addComponent(cvvTarjetaLabelCrearCuenta))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(caducidadTarjetaCrearCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(caducidadTarjetaCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cvvTarjetaFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(23, 23, 23))))
@@ -260,7 +260,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(noTarjetaFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cvvTarjetaFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(caducidadTarjetaCrearCuenta1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(caducidadTarjetaCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(anfitrionChekboxCrearCuenta)
@@ -295,9 +295,9 @@ public class CrearCuenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_claveFieldCrearCuentaActionPerformed
 
-    private void caducidadTarjetaCrearCuenta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caducidadTarjetaCrearCuenta1ActionPerformed
+    private void caducidadTarjetaCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caducidadTarjetaCrearCuentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_caducidadTarjetaCrearCuenta1ActionPerformed
+    }//GEN-LAST:event_caducidadTarjetaCrearCuentaActionPerformed
 
     private void telefonoFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
@@ -324,10 +324,10 @@ public class CrearCuenta extends javax.swing.JFrame {
         int telefono = Integer.parseInt(telefonoFieldCrearCuenta.getText());
         LocalDate fechaRegistro = LocalDate.now();
         
-        int dia = 5;
-        int mes = 5;
-        int ano = 1971;
-        LocalDate caducidad = LocalDate.of(ano, mes, dia);
+        String fechaCaducidadIntroducida = caducidadTarjetaCrearCuenta.getText();
+        String[] fechaCaducidadSplit = fechaCaducidadIntroducida.split("/");
+        LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt(fechaCaducidadSplit[0]), 1);
+        
         TarjetaCredito tarjeta = new TarjetaCredito(nombre, Long.parseLong(noTarjetaFieldCrearCuenta.getText()), caducidad, Integer.parseInt(cvvTarjetaFieldCrearCuenta.getText()));
         boolean vip = false;
         
@@ -382,7 +382,7 @@ public class CrearCuenta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox anfitrionChekboxCrearCuenta;
-    private javax.swing.JTextField caducidadTarjetaCrearCuenta1;
+    private javax.swing.JTextField caducidadTarjetaCrearCuenta;
     private javax.swing.JLabel caducidadTarjetaLabelCrearCuenta;
     private javax.swing.JPasswordField claveFieldCrearCuenta;
     private javax.swing.JLabel claveLabelCrearCuenta;
