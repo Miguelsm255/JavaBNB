@@ -1,6 +1,8 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
-public class Direccion {
+import java.io.Serializable;
+
+public class Direccion implements Serializable{
 
     // ATRIBUTOS
     

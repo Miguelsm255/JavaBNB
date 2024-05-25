@@ -1,6 +1,8 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
-class DatosInmueble {
+import java.io.Serializable;
+
+class DatosInmueble implements Serializable {
 
     // ATRIBUTOS
     

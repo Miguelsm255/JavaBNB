@@ -1,8 +1,9 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-class Servicios {
+class Servicios implements Serializable{
 
  
 
