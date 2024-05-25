@@ -6,6 +6,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$4.class
 bonilladesande\pl2_bonilla_desande_23_24\AAA_PRUEBAS_MIGUEL.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$3.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto$3.class
 bonilladesande\pl2_bonilla_desande_23_24\Login.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AlojamientoBoton$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$2.class
@@ -15,6 +16,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\ListaAlojamientos.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$3.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$2.class
@@ -25,6 +27,7 @@ bonilladesande\pl2_bonilla_desande_23_24\Cliente.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$1.class
 bonilladesande\pl2_bonilla_desande_23_24\Administrador.class
 bonilladesande\pl2_bonilla_desande_23_24\AAA_PRUEBAS_MARCOS.class
+bonilladesande\pl2_bonilla_desande_23_24\FiltraImagenes.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$5.class
@@ -62,6 +65,7 @@ bonilladesande\pl2_bonilla_desande_23_24\Particular.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$5.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto$4.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$4.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$4.class
