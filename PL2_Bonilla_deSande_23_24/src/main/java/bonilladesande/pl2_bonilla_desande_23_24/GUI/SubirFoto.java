@@ -4,11 +4,8 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.FiltraImagenes;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -32,6 +29,7 @@ public class SubirFoto extends javax.swing.JFrame {
      */
     public SubirFoto() {
         initComponents();
+        myInitComponents();
     }
 
     /**
@@ -143,15 +141,27 @@ public class SubirFoto extends javax.swing.JFrame {
             File fout = new File("./src/main/java/imagenes/" + nombreImagen);
             ImageIO.write(bimage, extension, fout);
             JOptionPane.showMessageDialog(this, "Imagen guardada");
+            
+            if (BaseDatos.user.getTipo() == 1){
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setFoto("./src/main/java/imagenes/" + nombreImagen);
+            }
+            else{
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setFoto("./src/main/java/imagenes/" + nombreImagen);
+            }
+            GestorVentanas.cambioVentana("SubirFoto", "AjustesUsuario");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error al guardar imagen");
         }
     }//GEN-LAST:event_GuardaCambiosActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        dispose();
+        GestorVentanas.cambioVentana("SubirFoto", "AjustesUsuario");
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    
+    private void myInitComponents(){
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+    }
     /**
      * @param args the command line arguments
      */

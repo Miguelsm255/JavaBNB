@@ -12,11 +12,11 @@ public class AAA_PRUEBAS_MIGUEL {
         
         GestorVentanas.iniciarPrograma();
         
-        LocalDate ahora = LocalDate.now();
-        long numero = 1234567890123456L;
+        //LocalDate ahora = LocalDate.now();
+        //long numero = 1234567890123456L;
         
-        TarjetaCredito tarjeta = new TarjetaCredito("Miguel", numero, ahora, 123);
-        Particular p1 = new Particular(false, tarjeta, "12345678w","Miguel","a","a",669928305);
+        //TarjetaCredito tarjeta = new TarjetaCredito("Miguel", numero, ahora, 123);
+        //Particular p1 = new Particular(false, tarjeta, "12345678w","Miguel","a","a",669928305);
     
         
         //Anfitrion a1 = new Anfitrion(ahora, "78945612G", "Marcos", "hola", "fdsafdsa", 789654123);
