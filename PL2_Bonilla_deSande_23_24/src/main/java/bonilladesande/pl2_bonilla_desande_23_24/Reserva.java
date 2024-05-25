@@ -1,9 +1,10 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Reserva {
+public class Reserva implements Serializable{
     
     // ATRIBUTOS
     

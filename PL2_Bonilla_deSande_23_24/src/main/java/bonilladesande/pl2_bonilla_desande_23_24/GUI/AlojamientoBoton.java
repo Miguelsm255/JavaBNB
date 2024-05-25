@@ -1,9 +1,12 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
+
 public class AlojamientoBoton extends javax.swing.JPanel {
 
-    public AlojamientoBoton() {
+    public AlojamientoBoton(Inmueble inmueble) {
         initComponents();
+        myInitComponents(inmueble);
     }
 
     /**
@@ -15,29 +18,33 @@ public class AlojamientoBoton extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        precioAlojamientoBoton = new javax.swing.JLabel();
+        nombreInmuebleAlojamientoBoton = new javax.swing.JLabel();
+        valoracionAlojamientoBoton = new javax.swing.JLabel();
+        fotoBotonAlojamientoBoton = new javax.swing.JButton();
 
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 formMouseClicked(evt);
             }
         });
 
-        jLabel2.setText("Precio");
+        precioAlojamientoBoton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        precioAlojamientoBoton.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        precioAlojamientoBoton.setText("Precio");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setText("Nombre del alojamiento");
+        nombreInmuebleAlojamientoBoton.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
+        nombreInmuebleAlojamientoBoton.setText("Nombre del alojamiento");
 
-        jLabel4.setText("Valoración");
+        valoracionAlojamientoBoton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        valoracionAlojamientoBoton.setText("Valoración");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("FOTO");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        fotoBotonAlojamientoBoton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        fotoBotonAlojamientoBoton.setText("FOTO");
+        fotoBotonAlojamientoBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                fotoBotonAlojamientoBotonActionPerformed(evt);
             }
         });
 
@@ -47,52 +54,63 @@ public class AlojamientoBoton extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fotoBotonAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(valoracionAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(precioAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(nombreInmuebleAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 9, Short.MAX_VALUE)))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)))
-                        .addGap(0, 17, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(fotoBotonAlojamientoBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(nombreInmuebleAlojamientoBoton, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(precioAlojamientoBoton)
+                            .addComponent(valoracionAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+
+
+
+    public void myInitComponents(Inmueble inmueble) {
+        precioAlojamientoBoton.setText(String.valueOf(inmueble.getPrecioNoche()) + "€/noche");
+        nombreInmuebleAlojamientoBoton.setText(inmueble.getTitulo());
+        valoracionAlojamientoBoton.setText(String.valueOf(inmueble.getCalificacion()));
+    }
+
+
+
+
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        //CERRAR PÁGINA PRINCIPAL DEL FRAME
-        //ABRIR PÁGINA DEL ALOJAMIENTO EN EL FRAME
+        GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaAlojamiento");
         
     }//GEN-LAST:event_formMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void fotoBotonAlojamientoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoBotonAlojamientoBotonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_fotoBotonAlojamientoBotonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton fotoBotonAlojamientoBoton;
+    private javax.swing.JLabel nombreInmuebleAlojamientoBoton;
+    private javax.swing.JLabel precioAlojamientoBoton;
+    private javax.swing.JLabel valoracionAlojamientoBoton;
     // End of variables declaration//GEN-END:variables
 }
