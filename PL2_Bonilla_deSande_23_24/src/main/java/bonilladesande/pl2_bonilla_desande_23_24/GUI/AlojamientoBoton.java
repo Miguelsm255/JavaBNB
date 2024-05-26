@@ -1,10 +1,15 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
 
 public class AlojamientoBoton extends javax.swing.JPanel {
 
+    Inmueble inmueble;
+    
     public AlojamientoBoton(Inmueble inmueble) {
+        
+        this.inmueble = inmueble;
         initComponents();
         myInitComponents(inmueble);
     }
@@ -98,10 +103,11 @@ public class AlojamientoBoton extends javax.swing.JPanel {
 
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        BaseDatos.inmuebleSeleccionado = inmueble;
         GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaAlojamiento");
         
     }//GEN-LAST:event_formMouseClicked
-
+   
     private void fotoBotonAlojamientoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoBotonAlojamientoBotonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fotoBotonAlojamientoBotonActionPerformed

@@ -110,13 +110,28 @@ public class ObjetoGestorVentanas {
             }
             
             case "PaginaAlojamiento" -> {
-                paginaPaginaAlojamiento = new PaginaAlojamiento();
+                paginaPaginaAlojamiento = new PaginaAlojamiento(BaseDatos.inmuebleSeleccionado);
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaAlojamiento);
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
                 ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
                 
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
+                
+                paginaPaginaAlojamiento.NombrelojamientoLabel.setText(BaseDatos.inmuebleSeleccionado.getTitulo());
+                paginaPaginaAlojamiento.nombreAnfitrionLabel.setText(BaseDatos.inmuebleSeleccionado.getAnfitrion().getNombre());
+                paginaPaginaAlojamiento.precioLabelPaginaAlojamiento.setText(BaseDatos.inmuebleSeleccionado.getPrecioNoche() +  "€/noche");
+                paginaPaginaAlojamiento.calificacionLabelPaginaAlojamiento.setText(String.valueOf(BaseDatos.inmuebleSeleccionado.getCalificacion()));
+                paginaPaginaAlojamiento.fieldServiciosPagAlojamientos.setText(BaseDatos.inmuebleSeleccionado.getServicios());
+                
+                if(BaseDatos.inmuebleSeleccionado.esCasa()){
+                    paginaPaginaAlojamiento.casa_apartamentoLabel.setText("Casa");
+                }
+                else{
+                    paginaPaginaAlojamiento.casa_apartamentoLabel.setText("Apartamento");
+                }
+                
+                
             }
             
             case "SubirFoto" -> {
@@ -153,7 +168,10 @@ public class ObjetoGestorVentanas {
             case "SubirFoto" -> {
                 ventanaSubirFoto.dispose();
                 
-                    
+            }
+            
+            case "PaginaAlojamiento" -> {
+                BaseDatos.inmuebleSeleccionado = null;
             }
         }
         
