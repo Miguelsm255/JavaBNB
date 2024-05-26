@@ -388,6 +388,7 @@ public class CrearCuenta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage());
             CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
 
+            
         }
 
     }//GEN-LAST:event_crearCuentaButtonActionPerformed

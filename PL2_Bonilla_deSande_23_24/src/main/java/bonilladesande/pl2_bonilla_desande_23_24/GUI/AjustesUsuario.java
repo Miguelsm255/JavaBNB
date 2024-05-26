@@ -1,5 +1,6 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
@@ -15,9 +16,9 @@ public class AjustesUsuario extends javax.swing.JPanel {
     public AjustesUsuario() {
         initComponents();
         
-        String userDir = System.getProperty("user.dir");
-        String ruta = userDir + File.separator + "resources" + File.separator + "Michi.png";
-        perfil.setIcon(setIcono(ruta, perfil));
+        //String userDir = System.getProperty("user.dir");
+        //String ruta = userDir + File.separator + "resources" + File.separator + "Michi.png";
+        //perfil.setIcon(setIcono(ruta, perfil));
     }
 
     /**
@@ -42,7 +43,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        perfil = new javax.swing.JButton();
+        fotoUsuarioBoton = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         verClave = new javax.swing.JToggleButton();
 
@@ -91,9 +92,9 @@ public class AjustesUsuario extends javax.swing.JPanel {
             }
         });
 
-        perfil.addActionListener(new java.awt.event.ActionListener() {
+        fotoUsuarioBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perfilActionPerformed(evt);
+                fotoUsuarioBotonActionPerformed(evt);
             }
         });
 
@@ -119,7 +120,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
                 .addGap(101, 101, 101)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fotoUsuarioBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -163,7 +164,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fotoUsuarioBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,37 +205,21 @@ public class AjustesUsuario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilActionPerformed
+    private void fotoUsuarioBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoUsuarioBotonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_perfilActionPerformed
+        GestorVentanas.cambioVentana("", "SubirFoto");
+    }//GEN-LAST:event_fotoUsuarioBotonActionPerformed
 
     private void verClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verClaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_verClaveActionPerformed
     
-    public Icon setIcono (String url, JButton boton){
-        //ImageIcon icon = new ImageIcon(getClass().getResource(url));
-        ImageIcon icon = new ImageIcon(System.getProperty("user.dir") + url);
-        if (icon == null) {
-            System.out.println("Error de Localización: No se pudo encontrar la imagen en el classpath \n");
-            return null;
-        }
-        perfil.setPreferredSize(new Dimension(300, 300));
-        int ancho = boton.getWidth();
-        int alto = boton.getHeight();
-        if (ancho == 0 || alto == 0){
-            System.out.print("Error de Tamaño: No se puede colocar una foto de perfil con ancho o largo 0 \n");
-            return null;
-        }
-        
-        ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(ancho, alto, Image.SCALE_DEFAULT));
-        return icono;
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Settings;
     public javax.swing.JLabel claveLabelAjustesUsuario;
     public javax.swing.JLabel correoLabelAjustesUsuario;
+    public javax.swing.JButton fotoUsuarioBoton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -244,7 +229,6 @@ public class AjustesUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel nombreLabelAjustesUsuario;
-    private javax.swing.JButton perfil;
     public javax.swing.JLabel saludoLabelAjustesUsuario;
     public javax.swing.JLabel telefonoLabelAjustesUsuario;
     private javax.swing.JToggleButton verClave;
