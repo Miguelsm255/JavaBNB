@@ -61,7 +61,7 @@ public class ObjetoGestorVentanas {
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaPrincipal);
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
-                ventanaJavaBNB.fotoUsuarioJavaBNBboton.setVisible(true);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
                 
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
                 
@@ -78,14 +78,14 @@ public class ObjetoGestorVentanas {
                 ImageIcon imagen = new ImageIcon(ruta);
                 //Se redimensiona
                 ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(54, 54, 1));
-                ventanaJavaBNB.fotoUsuarioJavaBNBboton.setIcon(imgRedimensionada);
+                ventanaJavaBNB.fotoLabelJavaBNB.setIcon(imgRedimensionada);
             }
             
             case "AjustesUsuario" -> {
                 paginaAjustesUsuario = new AjustesUsuario();
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaAjustesUsuario);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(false);
-                ventanaJavaBNB.fotoUsuarioJavaBNBboton.setVisible(false);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(false);
                 ventanaJavaBNB.setVisible(true);
                 
                 paginaAjustesUsuario.saludoLabelAjustesUsuario.setText("Hola, " + BaseDatos.user.getNombre() + "!");
@@ -114,7 +114,7 @@ public class ObjetoGestorVentanas {
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaAlojamiento);
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
-                ventanaJavaBNB.fotoUsuarioJavaBNBboton.setVisible(true);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
                 
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
             }

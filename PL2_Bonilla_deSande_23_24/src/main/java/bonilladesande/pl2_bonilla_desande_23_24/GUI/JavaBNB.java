@@ -34,7 +34,7 @@ public class JavaBNB extends javax.swing.JFrame {
         tituloLabelPaginaPrincipal = new javax.swing.JLabel();
         frameJavaBNB = new javax.swing.JScrollPane();
         usuarioJavaBNBboton = new javax.swing.JButton();
-        fotoUsuarioJavaBNBboton = new javax.swing.JButton();
+        fotoLabelJavaBNB = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,12 +58,7 @@ public class JavaBNB extends javax.swing.JFrame {
             }
         });
 
-        fotoUsuarioJavaBNBboton.setText("FOTO");
-        fotoUsuarioJavaBNBboton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fotoUsuarioJavaBNBbotonActionPerformed(evt);
-            }
-        });
+        fotoLabelJavaBNB.setText("FOTO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,9 +69,9 @@ public class JavaBNB extends javax.swing.JFrame {
                 .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(usuarioJavaBNBboton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(fotoUsuarioJavaBNBboton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fotoLabelJavaBNB, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(frameJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
@@ -86,11 +81,10 @@ public class JavaBNB extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(fotoUsuarioJavaBNBboton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(usuarioJavaBNBboton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(usuarioJavaBNBboton, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                    .addComponent(fotoLabelJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(frameJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
                 .addContainerGap())
@@ -103,10 +97,6 @@ public class JavaBNB extends javax.swing.JFrame {
         
         GestorVentanas.cambioVentana("JavaBNB", "AjustesUsuario");
     }//GEN-LAST:event_usuarioJavaBNBbotonActionPerformed
-
-    private void fotoUsuarioJavaBNBbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoUsuarioJavaBNBbotonActionPerformed
-        GestorVentanas.cambioVentana("JavaBNB", "AjustesUsuario");
-    }//GEN-LAST:event_fotoUsuarioJavaBNBbotonActionPerformed
 
     private void tituloLabelPaginaPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tituloLabelPaginaPrincipalMouseClicked
         // TODO add your handling code here:
@@ -153,7 +143,7 @@ public class JavaBNB extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    public javax.swing.JButton fotoUsuarioJavaBNBboton;
+    public javax.swing.JLabel fotoLabelJavaBNB;
     public javax.swing.JScrollPane frameJavaBNB;
     private javax.swing.JLabel tituloLabelPaginaPrincipal;
     public javax.swing.JButton usuarioJavaBNBboton;
