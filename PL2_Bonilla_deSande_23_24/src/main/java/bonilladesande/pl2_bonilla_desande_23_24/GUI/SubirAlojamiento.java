@@ -8,13 +8,13 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
  *
  * @author marco
  */
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
+import bonilladesande.pl2_bonilla_desande_23_24.Direccion;
 import bonilladesande.pl2_bonilla_desande_23_24.FiltraImagenes;
+import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
+import bonilladesande.pl2_bonilla_desande_23_24.DatosInmueble;
 import bonilladesande.pl2_bonilla_desande_23_24.TextPrompt;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,6 @@ public class SubirAlojamiento extends javax.swing.JPanel {
     public SubirAlojamiento() {
         initComponents();
         TextPrompt placenombreinmueble = new TextPrompt ("Introduce el nombre del inmueble", NombreAlojamiento);
-        TextPrompt placenombreanfirtrion = new TextPrompt ("Introduce el nombre del anfitrion", AnfitrionAlojamiento);
         TextPrompt placedescripcion = new TextPrompt("Introduce una descripción para el alojamieneto", DescripcionAlojamiento);
         TextPrompt placeservicios = new TextPrompt("Introduce una descripción para el alojamieneto", ServiciosAlojamiento);
     }
@@ -49,8 +48,8 @@ public class SubirAlojamiento extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        casa_apartamento = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         Apartamento = new javax.swing.JRadioButton();
         Casa = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
@@ -64,14 +63,31 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         FotoAloja = new javax.swing.JLabel();
         SubirFotoAlojamiento = new javax.swing.JButton();
         NombreAlojamiento = new javax.swing.JTextField();
-        AnfitrionAlojamiento = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        calleField = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        numeroField = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        cpField = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        ciudadField = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        calle = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        baniosField = new javax.swing.JTextField();
+        huespedesField = new javax.swing.JTextField();
+        camasField = new javax.swing.JTextField();
+        habitacionesField = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        precioNocheField = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Título del Alojamiento:");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("Nombre del Anfitrión:");
-
+        casa_apartamento.add(Apartamento);
         Apartamento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Apartamento.setText("Apartamento");
         Apartamento.addActionListener(new java.awt.event.ActionListener() {
@@ -80,6 +96,7 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             }
         });
 
+        casa_apartamento.add(Casa);
         Casa.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Casa.setText("Casa");
         Casa.addActionListener(new java.awt.event.ActionListener() {
@@ -107,10 +124,11 @@ public class SubirAlojamiento extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Descripción");
+        jLabel6.setToolTipText("");
 
         ServiciosAlojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ServiciosAlojamientoActionPerformed(evt);
+                //ServiciosAlojamientoActionPerformed(evt);
             }
         });
 
@@ -136,9 +154,101 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             }
         });
 
-        AnfitrionAlojamiento.addActionListener(new java.awt.event.ActionListener() {
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setText("Dirección");
+        jLabel7.setToolTipText("");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setText("Baños:");
+        jLabel8.setToolTipText("");
+
+        calleField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnfitrionAlojamientoActionPerformed(evt);
+                calleFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setText("Número:");
+        jLabel9.setToolTipText("");
+
+        numeroField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numeroFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel10.setText("Código postal:");
+        jLabel10.setToolTipText("");
+
+        cpField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel11.setText("Ciudad:");
+        jLabel11.setToolTipText("");
+
+        ciudadField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ciudadFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setText("Datos del inmueble");
+        jLabel12.setToolTipText("");
+
+        calle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        calle.setText("Calle:");
+        calle.setToolTipText("");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel14.setText("Huéspedes:");
+        jLabel14.setToolTipText("");
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel15.setText("Camas:");
+        jLabel15.setToolTipText("");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel16.setText("Habitaciones:");
+        jLabel16.setToolTipText("");
+
+        baniosField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                baniosFieldActionPerformed(evt);
+            }
+        });
+
+        huespedesField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                huespedesFieldActionPerformed(evt);
+            }
+        });
+
+        camasField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                camasFieldActionPerformed(evt);
+            }
+        });
+
+        habitacionesField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                habitacionesFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel17.setText("Precio Noche:");
+        jLabel17.setToolTipText("");
+
+        precioNocheField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precioNocheFieldActionPerformed(evt);
             }
         });
 
@@ -146,90 +256,181 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(AlojamientoLiada, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(jLabel6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(NombreAlojamiento, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                                    .addComponent(AnfitrionAlojamiento)))
-                            .addComponent(AlojamientoLiada, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(87, 87, 87)
-                                .addComponent(SubirAlojamiento)
-                                .addGap(18, 18, 18)
-                                .addComponent(CancelarSubida))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(Casa)
-                                .addGap(18, 18, 18)
-                                .addComponent(Apartamento))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGap(115, 115, 115)
+                                .addComponent(jLabel4))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
-                                .addComponent(FotoAloja, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(SubirFotoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
+                                .addGap(59, 59, 59)
+                                .addComponent(ServiciosAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ServiciosAlojamiento)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(DescripcionAlojamiento))))
-                .addContainerGap())
+                                    .addComponent(calleField, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11)
+                                    .addComponent(ciudadField, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel10))
+                                        .addGap(24, 24, 24)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(numeroField)
+                                            .addComponent(cpField, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(69, 69, 69)
+                                        .addComponent(jLabel7)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(79, 79, 79)
+                                        .addComponent(jLabel12))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(SubirAlojamiento)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(CancelarSubida))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel14)
+                                                .addGap(36, 36, 36)
+                                                .addComponent(huespedesField))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel8)
+                                                .addGap(76, 76, 76)
+                                                .addComponent(baniosField))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel15)
+                                                    .addComponent(jLabel16))
+                                                .addGap(24, 24, 24)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(camasField)
+                                                    .addComponent(habitacionesField)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel17)
+                                                .addGap(22, 22, 22)
+                                                .addComponent(precioNocheField)))
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(calle)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(NombreAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(DescripcionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addComponent(SubirFotoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(38, 38, 38)
+                                        .addComponent(jLabel3)))
+                                .addGap(18, 18, 18)
+                                .addComponent(FotoAloja, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Casa)
+                                .addGap(18, 18, 18)
+                                .addComponent(Apartamento)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NombreAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AnfitrionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Casa)
-                        .addComponent(Apartamento)))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NombreAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(DescripcionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
+                        .addGap(31, 31, 31)
+                        .addComponent(calle)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ServiciosAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SubirAlojamiento)
-                            .addComponent(CancelarSubida)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel8)
+                                    .addComponent(baniosField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(19, 19, 19)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(huespedesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel15)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel16))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(camasField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(habitacionesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel17)
+                                    .addComponent(precioNocheField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(SubirAlojamiento)
+                                    .addComponent(CancelarSubida)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(calleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(numeroField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cpField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ciudadField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(Casa)
+                                            .addComponent(Apartamento)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(36, 36, 36)
+                                        .addComponent(SubirFotoAlojamiento)))
+                                .addGap(53, 53, 53))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(FotoAloja, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SubirFotoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AlojamientoLiada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ServiciosAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DescripcionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FotoAloja, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)))
+                .addGap(0, 0, 0)
+                .addComponent(AlojamientoLiada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -240,20 +441,38 @@ public class SubirAlojamiento extends javax.swing.JPanel {
 
     private void SubirAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirAlojamientoActionPerformed
         try {
+            String ruta = "./src/main/java/imagenes/" + nombreImagen;
             bimage = ImageIO.read(file);
-            File fout = new File("./src/main/java/imagenes/" + nombreImagen);
+            File fout = new File(ruta);
             ImageIO.write(bimage, extension, fout);
+            
             String alojamiento = NombreAlojamiento.getText();
-            String anfitrion = AnfitrionAlojamiento.getText();
             String descripcion = DescripcionAlojamiento.getText();
             String serviciosalojamiento = ServiciosAlojamiento.getText();
+            String calle = calleField.getText();
+            int numero = Integer.parseInt(numeroField.getText());
+            int cp = Integer.parseInt(cpField.getText());
+            String ciudad = ciudadField.getText();
+            int banios = Integer.parseInt(baniosField.getText());
+            int camas = Integer.parseInt(camasField.getText());
+            int habitaciones = Integer.parseInt(habitacionesField.getText());
+            int huespedes = Integer.parseInt(huespedesField.getText());
+            
 
-            if (alojamiento.isEmpty() || anfitrion.isEmpty() || descripcion.isEmpty() || serviciosalojamiento.isEmpty()) {
+            if (alojamiento.isEmpty() || descripcion.isEmpty() || serviciosalojamiento.isEmpty()) {
                 throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
             if (!Casa.isSelected() && !Apartamento.isSelected()) {
                 throw new BibliotecaExcepciones.BotonesSinSeleccionar("Debes elegir si es una casa o un apartamento.");
             }
+            
+            DatosInmueble datos = new DatosInmueble(huespedes, habitaciones, camas, banios);
+            Direccion direccion = new Direccion(calle, numero, cp, ciudad);
+            Inmueble inmueble = new Inmueble(alojamiento, direccion, datos, Casa.isEnabled(), Integer.parseInt(precioNocheField.getText()), serviciosalojamiento, ruta, descripcion, BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()));
+            BaseDatos.inmuebles.add(inmueble);
+            
+            GestorVentanas.cambioVentana("SubirAlojamiento", "PaginaPrincipal");
+            
             JOptionPane.showMessageDialog(this, "Alojamiento subido con éxito.");
         } catch (BibliotecaExcepciones.CamposVacios e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
@@ -292,11 +511,8 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(FotoAloja.getWidth(), FotoAloja.getHeight(), 1));
         FotoAloja.setIcon(imgRedimensionada);
+        
     }//GEN-LAST:event_SubirFotoAlojamientoActionPerformed
-
-    private void AnfitrionAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnfitrionAlojamientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AnfitrionAlojamientoActionPerformed
 
     private void CasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaActionPerformed
 
@@ -306,32 +522,79 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_ApartamentoActionPerformed
 
-    private void NombreAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreAlojamientoActionPerformed
+    private void calleFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calleFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NombreAlojamientoActionPerformed
+    }//GEN-LAST:event_calleFieldActionPerformed
 
-    private void ServiciosAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiciosAlojamientoActionPerformed
+    private void ciudadFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ServiciosAlojamientoActionPerformed
+    }//GEN-LAST:event_ciudadFieldActionPerformed
+
+    private void numeroFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numeroFieldActionPerformed
+
+    private void cpFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cpFieldActionPerformed
+
+    private void baniosFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baniosFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_baniosFieldActionPerformed
+
+    private void huespedesFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_huespedesFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_huespedesFieldActionPerformed
+
+    private void camasFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_camasFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_camasFieldActionPerformed
+
+    private void habitacionesFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_habitacionesFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_habitacionesFieldActionPerformed
+
+    private void precioNocheFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioNocheFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precioNocheFieldActionPerformed
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AlojamientoLiada;
-    private javax.swing.JTextField AnfitrionAlojamiento;
     private javax.swing.JRadioButton Apartamento;
     private javax.swing.JButton CancelarSubida;
-    private javax.swing.JRadioButton Casa;
+    public javax.swing.JRadioButton Casa;
     private javax.swing.JTextField DescripcionAlojamiento;
     private javax.swing.JLabel FotoAloja;
     private javax.swing.JTextField NombreAlojamiento;
     private javax.swing.JTextField ServiciosAlojamiento;
     private javax.swing.JButton SubirAlojamiento;
     private javax.swing.JButton SubirFotoAlojamiento;
+    public javax.swing.JTextField baniosField;
+    private javax.swing.JLabel calle;
+    public javax.swing.JTextField calleField;
+    public javax.swing.JTextField camasField;
+    private javax.swing.ButtonGroup casa_apartamento;
+    public javax.swing.JTextField ciudadField;
+    public javax.swing.JTextField cpField;
+    public javax.swing.JTextField habitacionesField;
+    public javax.swing.JTextField huespedesField;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    public javax.swing.JTextField numeroField;
+    public javax.swing.JTextField precioNocheField;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,6 +16,7 @@ public class BaseDatos {
     public static ArrayList<Reserva> reservas;
     
     public static UserLoged user;
+    public static Inmueble inmuebleSeleccionado;
 
     
     // GUARDAR Y CARGAR DATOS
