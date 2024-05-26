@@ -24,6 +24,12 @@ public class BibliotecaExcepciones {
         }
     }
     
+    public static class TarjetaEscacharrada extends Exception {
+
+        public TarjetaEscacharrada(String message) {
+            super(message);
+        }
+    }
     public static class CamposVacios extends Exception {
 
         public CamposVacios(String message) {
@@ -44,6 +50,8 @@ public class BibliotecaExcepciones {
             super(message);
         }
     }
+    
+
 }
 
 
