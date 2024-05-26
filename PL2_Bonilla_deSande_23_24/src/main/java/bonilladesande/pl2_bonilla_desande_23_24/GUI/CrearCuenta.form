@@ -49,7 +49,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="dniLabelCrearCuenta" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="dniFieldCrearCuenta" min="-2" pref="108" max="-2" attributes="0"/>
+                              <Component id="DNIfieldCrearCuenta" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="emailLabelCrearCuenta" min="-2" pref="61" max="-2" attributes="0"/>
@@ -80,6 +80,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="CuentaLiada" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="tarjetaLabelCrearCuenta" min="-2" max="-2" attributes="0"/>
@@ -92,7 +93,7 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="noTarjetaFieldCrearCuenta" max="32767" attributes="0"/>
+                                      <Component id="TarjetaFieldCrearCuenta" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -135,7 +136,7 @@
                   <Component id="nombreLabelCrearCuenta" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="nombreFieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="dniLabelCrearCuenta" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="dniFieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="DNIfieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -167,16 +168,18 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="noTarjetaFieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TarjetaFieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cvvTarjetaFieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="caducidadTarjetaCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="anfitrionChekboxCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="crearCuentaButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="CuentaLiada" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -220,8 +223,6 @@
         <Property name="text" type="java.lang.String" value="DNI:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="dniFieldCrearCuenta">
-    </Component>
     <Component class="javax.swing.JLabel" name="emailLabelCrearCuenta">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -251,9 +252,9 @@
         <Property name="text" type="java.lang.String" value="Tarjeta de cr&#xe9;dito:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="noTarjetaFieldCrearCuenta">
+    <Component class="javax.swing.JTextField" name="TarjetaFieldCrearCuenta">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="noTarjetaFieldCrearCuentaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TarjetaFieldCrearCuentaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="cvvTarjetaFieldCrearCuenta">
@@ -330,6 +331,13 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmaClaveFieldCrearCuentaActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="CuentaLiada">
+    </Component>
+    <Component class="javax.swing.JTextField" name="DNIfieldCrearCuenta">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField2"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
