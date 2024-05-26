@@ -45,14 +45,14 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         volverButtonPaginaAlojamiento = new javax.swing.JButton();
         fotoAlojamientoLabel = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        calificacionLabelPaginaAlojamiento1 = new javax.swing.JLabel();
-        calificacionLabelPaginaAlojamiento2 = new javax.swing.JLabel();
-        calificacionLabelPaginaAlojamiento3 = new javax.swing.JLabel();
+        direccionLabel = new javax.swing.JLabel();
+        ciudadLabel = new javax.swing.JLabel();
+        cpLabel = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        calificacionLabelPaginaAlojamiento4 = new javax.swing.JLabel();
-        calificacionLabelPaginaAlojamiento5 = new javax.swing.JLabel();
-        calificacionLabelPaginaAlojamiento6 = new javax.swing.JLabel();
-        calificacionLabelPaginaAlojamiento7 = new javax.swing.JLabel();
+        baniosLabel = new javax.swing.JLabel();
+        huespedesLabel = new javax.swing.JLabel();
+        camasLabel = new javax.swing.JLabel();
+        habitacionesLabel = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         fieldDescripcionPagAlojamientos = new javax.swing.JTextField();
 
@@ -107,29 +107,29 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel7.setText("Dirección");
 
-        calificacionLabelPaginaAlojamiento1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        calificacionLabelPaginaAlojamiento1.setText("Dirección");
+        direccionLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        direccionLabel.setText("Dirección");
 
-        calificacionLabelPaginaAlojamiento2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        calificacionLabelPaginaAlojamiento2.setText("Ciudad");
+        ciudadLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ciudadLabel.setText("Ciudad");
 
-        calificacionLabelPaginaAlojamiento3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        calificacionLabelPaginaAlojamiento3.setText("cp");
+        cpLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cpLabel.setText("cp");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel8.setText("Datos del inmueble");
 
-        calificacionLabelPaginaAlojamiento4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        calificacionLabelPaginaAlojamiento4.setText("Baños:");
+        baniosLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        baniosLabel.setText("Baños:");
 
-        calificacionLabelPaginaAlojamiento5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        calificacionLabelPaginaAlojamiento5.setText("Huéspedes");
+        huespedesLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        huespedesLabel.setText("Huéspedes");
 
-        calificacionLabelPaginaAlojamiento6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        calificacionLabelPaginaAlojamiento6.setText("Camas:");
+        camasLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        camasLabel.setText("Camas:");
 
-        calificacionLabelPaginaAlojamiento7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        calificacionLabelPaginaAlojamiento7.setText("Habitaciones:");
+        habitacionesLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        habitacionesLabel.setText("Habitaciones:");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel9.setText("Descripción");
@@ -190,10 +190,10 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(calificacionLabelPaginaAlojamiento2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ciudadLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(calificacionLabelPaginaAlojamiento3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(calificacionLabelPaginaAlojamiento1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cpLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(direccionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jLabel8))
@@ -201,12 +201,12 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                         .addComponent(volverButtonPaginaAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(calificacionLabelPaginaAlojamiento4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(calificacionLabelPaginaAlojamiento6, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(baniosLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(camasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(calificacionLabelPaginaAlojamiento7, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(calificacionLabelPaginaAlojamiento5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(habitacionesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(huespedesLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(42, 42, 42))
         );
         layout.setVerticalGroup(
@@ -246,21 +246,21 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(32, 32, 32)
-                                .addComponent(calificacionLabelPaginaAlojamiento1)
+                                .addComponent(direccionLabel)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(calificacionLabelPaginaAlojamiento2)
-                                    .addComponent(calificacionLabelPaginaAlojamiento3))
+                                    .addComponent(ciudadLabel)
+                                    .addComponent(cpLabel))
                                 .addGap(39, 39, 39)
                                 .addComponent(jLabel8)
                                 .addGap(32, 32, 32)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(calificacionLabelPaginaAlojamiento4)
-                                    .addComponent(calificacionLabelPaginaAlojamiento5))
+                                    .addComponent(baniosLabel)
+                                    .addComponent(huespedesLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(calificacionLabelPaginaAlojamiento6)
-                                    .addComponent(calificacionLabelPaginaAlojamiento7))
+                                    .addComponent(camasLabel)
+                                    .addComponent(habitacionesLabel))
                                 .addGap(42, 42, 42)
                                 .addComponent(volverButtonPaginaAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -299,18 +299,18 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel NombrelojamientoLabel;
+    public javax.swing.JLabel baniosLabel;
     public javax.swing.JLabel calificacionLabelPaginaAlojamiento;
-    public javax.swing.JLabel calificacionLabelPaginaAlojamiento1;
-    public javax.swing.JLabel calificacionLabelPaginaAlojamiento2;
-    public javax.swing.JLabel calificacionLabelPaginaAlojamiento3;
-    public javax.swing.JLabel calificacionLabelPaginaAlojamiento4;
-    public javax.swing.JLabel calificacionLabelPaginaAlojamiento5;
-    public javax.swing.JLabel calificacionLabelPaginaAlojamiento6;
-    public javax.swing.JLabel calificacionLabelPaginaAlojamiento7;
+    public javax.swing.JLabel camasLabel;
     public javax.swing.JLabel casa_apartamentoLabel;
+    public javax.swing.JLabel ciudadLabel;
+    public javax.swing.JLabel cpLabel;
+    public javax.swing.JLabel direccionLabel;
     public javax.swing.JTextField fieldDescripcionPagAlojamientos;
     public javax.swing.JTextField fieldServiciosPagAlojamientos;
     public javax.swing.JLabel fotoAlojamientoLabel;
+    public javax.swing.JLabel habitacionesLabel;
+    public javax.swing.JLabel huespedesLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
