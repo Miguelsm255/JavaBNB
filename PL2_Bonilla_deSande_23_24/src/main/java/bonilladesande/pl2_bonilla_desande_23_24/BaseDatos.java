@@ -19,7 +19,6 @@ public class BaseDatos {
 
     
     // GUARDAR Y CARGAR DATOS
-    
     public static void guardarDatosInmuebles(ArrayList<Inmueble> listaInmuebles) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Inmuebles.dat"))) {
             oos.writeObject(listaInmuebles);
@@ -170,5 +169,17 @@ public class BaseDatos {
             }
         }
         return listaFiltrada;
+    }
+    public static void BorrarListaAnfitriones() {
+        anfitriones.clear();  
+    }
+    public static void BorrarListaParticulares() {
+        particulares.clear();  
+    }
+    public static void BorrarListaInmuebles() {
+        inmuebles.clear();  
+    }
+    public static void BorrarListaReservas() {
+        reservas.clear();  
     }
 }
