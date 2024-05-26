@@ -19,7 +19,7 @@ public class Inmueble implements Serializable{
     private String descripcion;
 
     // CONSTRUCTOR
-    public Inmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, double precioNoche, String servicio, String rutaFoto, String descripcion, Anfitrion anfitrion) {
+    public Inmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, double precioNoche, String servicioin, String rutaFoto, String descripcion, Anfitrion anfitrion) {
         this.titulo = titulo;
         this.direccion = direccion;
         this.datos = datos;

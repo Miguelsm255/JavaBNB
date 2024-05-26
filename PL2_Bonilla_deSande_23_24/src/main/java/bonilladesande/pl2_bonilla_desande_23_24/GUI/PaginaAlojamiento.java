@@ -39,7 +39,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         NombrelojamientoLabel = new javax.swing.JLabel();
         nombreAnfitrionLabel = new javax.swing.JLabel();
         precioLabelPaginaAlojamiento = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        fotoAlojamiento = new javax.swing.JButton();
         casa_apartamentoLabel = new javax.swing.JLabel();
         calificacionLabelPaginaAlojamiento = new javax.swing.JLabel();
         volverButtonPaginaAlojamiento = new javax.swing.JButton();
@@ -111,7 +111,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                             .addGap(281, 281, 281)
                             .addComponent(jLabel6))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fotoAlojamiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(fieldServiciosPagAlojamientos, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -121,7 +121,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                             .addComponent(jLabel1)
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(NombrelojamientoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(NombrelojamientoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(nombreAnfitrionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(0, 0, Short.MAX_VALUE))))))
@@ -145,7 +145,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fotoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(textoPrecioLabel)
@@ -183,8 +183,8 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
     public javax.swing.JLabel calificacionLabelPaginaAlojamiento;
     public javax.swing.JLabel casa_apartamentoLabel;
     public javax.swing.JTextField fieldServiciosPagAlojamientos;
+    public javax.swing.JButton fotoAlojamiento;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;

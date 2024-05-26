@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\Miguel\Nube\Escritorio\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Cliente.java
 C:\Users\Miguel\Nube\Escritorio\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Reserva.java
 C:\Users\Miguel\Nube\Escritorio\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaAlojamiento.java
@@ -34,40 +33,3 @@ C:\Users\Miguel\Nube\Escritorio\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\m
 C:\Users\Miguel\Nube\Escritorio\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\UserLoged.java
 C:\Users\Miguel\Nube\Escritorio\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\AAA_PRUEBAS_MIGUEL.java
 C:\Users\Miguel\Nube\Escritorio\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario.java
-=======
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\OperacionesInmuebles.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\CrearCuenta.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Inmueble.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Login.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\TextPrompt.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\BaseDatos.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\GestorVentanas.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Factura.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaPrincipal.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\TarjetaCredito.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\Login.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Direccion.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Usuario.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\AAA_PRUEBAS_MIGUEL.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\ObjetoGestorVentanas.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Particular.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Reserva.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Anfitrion.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\AlojamientoBoton.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\AAA_PRUEBAS_MARCOS.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\BibliotecaExcepciones.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\ListaAlojamientos.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\FiltraImagenes.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Servicios.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Cliente.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\UserLoged.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\Administrador.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\DatosInmueble.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario.java
-C:\Users\marco\Documents\GitHub\PL2_Programacion\PL2_Bonilla_deSande_23_24\src\main\java\bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaAlojamiento.java
->>>>>>> GUI

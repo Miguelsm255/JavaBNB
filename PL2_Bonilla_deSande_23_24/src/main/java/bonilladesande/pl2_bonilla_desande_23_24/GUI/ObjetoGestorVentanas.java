@@ -131,13 +131,26 @@ public class ObjetoGestorVentanas {
                     paginaPaginaAlojamiento.casa_apartamentoLabel.setText("Apartamento");
                 }
                 
-                
+                ImageIcon imagen = new ImageIcon(BaseDatos.inmuebleSeleccionado.getRutaFoto());
+                //Se redimensiona
+                ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(316, 191, 1));
+                paginaPaginaAlojamiento.fotoAlojamiento.setIcon(imgRedimensionada);
             }
             
             case "SubirFoto" -> {
                 ventanaSubirFoto = new SubirFoto();
                 ventanaSubirFoto.setLocationRelativeTo(null);
                 ventanaSubirFoto.setVisible(true);
+            }
+            
+            case "SubirAlojamiento" -> {
+                paginaSubirAlojamiento = new SubirAlojamiento();
+                ventanaJavaBNB.frameJavaBNB.setViewportView(paginaSubirAlojamiento);
+                ventanaJavaBNB.setVisible(true);
+                ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
+                
+                ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
             }
         }
         
