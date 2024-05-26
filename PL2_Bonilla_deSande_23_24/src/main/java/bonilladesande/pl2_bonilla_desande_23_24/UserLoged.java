@@ -18,7 +18,11 @@ public class UserLoged{
     // ATRIBUTOS ESPECÍFICOS DEL ANFITRIÓN (SI NO LO ES, NO SE USAN)
     private LocalDate fechaRegistro;
     private boolean superanfitrion;
+    
+    // ATRIBUTOS ESPECÍFICOS DEL PARTICULAR (SI NO LO ES, NO SE USAN)
+    private boolean vip;
 
+    
     
     // GETTERS Y SETTERS
     
@@ -94,6 +98,13 @@ public class UserLoged{
         this.superanfitrion = superanfitrion;
     }
     
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
+    }
     
     // CONSTRUCTOR
     

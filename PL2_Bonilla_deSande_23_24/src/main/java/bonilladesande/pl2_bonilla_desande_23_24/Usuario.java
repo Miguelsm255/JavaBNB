@@ -12,6 +12,7 @@ public class Usuario implements Serializable{
     private String clave;
     private int telefono;
     private String foto = "./src/main/java/imagenes/default.jpg";
+  
 
     
     // GETTER Y SETTER
