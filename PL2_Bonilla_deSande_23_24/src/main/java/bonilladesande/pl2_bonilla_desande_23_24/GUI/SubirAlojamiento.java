@@ -10,6 +10,7 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
  */
 import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
 import bonilladesande.pl2_bonilla_desande_23_24.FiltraImagenes;
+import bonilladesande.pl2_bonilla_desande_23_24.TextPrompt;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.swing.JFileChooser;
@@ -33,6 +34,10 @@ public class SubirAlojamiento extends javax.swing.JPanel {
      */
     public SubirAlojamiento() {
         initComponents();
+        TextPrompt placenombreinmueble = new TextPrompt ("Introduce el nombre del inmueble", NombreAlojamiento);
+        TextPrompt placenombreanfirtrion = new TextPrompt ("Introduce el nombre del anfitrion", AnfitrionAlojamiento);
+        TextPrompt placedescripcion = new TextPrompt("Introduce una descripción para el alojamieneto", DescripcionAlojamiento);
+        TextPrompt placeservicios = new TextPrompt("Introduce una descripción para el alojamieneto", ServiciosAlojamiento);
     }
 
     /**
@@ -103,6 +108,12 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Descripción");
 
+        ServiciosAlojamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ServiciosAlojamientoActionPerformed(evt);
+            }
+        });
+
         DescripcionAlojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DescripcionAlojamientoActionPerformed(evt);
@@ -116,6 +127,12 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         SubirFotoAlojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubirFotoAlojamientoActionPerformed(evt);
+            }
+        });
+
+        NombreAlojamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreAlojamientoActionPerformed(evt);
             }
         });
 
@@ -142,9 +159,9 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel1))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(NombreAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(AnfitrionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(NombreAlojamiento, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                                    .addComponent(AnfitrionAlojamiento)))
                             .addComponent(AlojamientoLiada, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -153,7 +170,6 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(CancelarSubida))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
                                 .addComponent(Casa)
                                 .addGap(18, 18, 18)
                                 .addComponent(Apartamento))))
@@ -289,6 +305,14 @@ public class SubirAlojamiento extends javax.swing.JPanel {
     private void ApartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApartamentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ApartamentoActionPerformed
+
+    private void NombreAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreAlojamientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreAlojamientoActionPerformed
+
+    private void ServiciosAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiciosAlojamientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ServiciosAlojamientoActionPerformed
 
     
 

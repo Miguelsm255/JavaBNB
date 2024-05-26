@@ -1,3 +1,4 @@
+bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$9.class
 bonilladesande\pl2_bonilla_desande_23_24\Factura.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$8.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$2.class
@@ -42,12 +43,14 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$12.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$6.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\ObjetoGestorVentanas.class
 bonilladesande\pl2_bonilla_desande_23_24\Inmueble.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaPrincipal$1.class
 bonilladesande\pl2_bonilla_desande_23_24\OperacionesInmuebles.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$9.class
 bonilladesande\pl2_bonilla_desande_23_24\BibliotecaExcepciones.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaAlojamiento.class
 bonilladesande\pl2_bonilla_desande_23_24\BibliotecaExcepciones$CamposVacios.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$3.class
+bonilladesande\pl2_bonilla_desande_23_24\BibliotecaExcepciones$CorreoRepetido.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AlojamientoBoton.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$4.class
 bonilladesande\pl2_bonilla_desande_23_24\BibliotecaExcepciones$BotonesSinSeleccionar.class
@@ -84,6 +87,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$4.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$4.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\GestorVentanas.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$5.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$8.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$2.class

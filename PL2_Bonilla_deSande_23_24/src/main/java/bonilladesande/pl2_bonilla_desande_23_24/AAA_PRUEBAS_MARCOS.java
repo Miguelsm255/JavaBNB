@@ -12,10 +12,11 @@ public class AAA_PRUEBAS_MARCOS {
 
     public static void main(String[] args) throws IOException {
         GestorVentanas.iniciarPrograma();
-        //BaseDatos.BorrarListaAnfitriones();
-        //BaseDatos.BorrarListaInmuebles();
-        //BaseDatos.BorrarListaReservas();
-        //BaseDatos.BorrarListaParticulares();
+        /*BaseDatos.BorrarListaAnfitriones();
+        BaseDatos.BorrarListaInmuebles();
+        BaseDatos.BorrarListaReservas();
+        BaseDatos.BorrarListaParticulares();*/
+        
         
         
 

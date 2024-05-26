@@ -31,9 +31,9 @@
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="NombreAlojamiento" min="-2" pref="148" max="-2" attributes="0"/>
-                                  <Component id="AnfitrionAlojamiento" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="NombreAlojamiento" pref="217" max="32767" attributes="0"/>
+                                  <Component id="AnfitrionAlojamiento" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="AlojamientoLiada" alignment="0" min="-2" pref="477" max="-2" attributes="0"/>
@@ -46,7 +46,6 @@
                               <Component id="CancelarSubida" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Component id="Casa" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="Apartamento" min="-2" max="-2" attributes="0"/>
@@ -207,6 +206,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="ServiciosAlojamiento">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ServiciosAlojamientoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="DescripcionAlojamiento">
       <Events>
@@ -234,6 +236,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="NombreAlojamiento">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NombreAlojamientoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="AnfitrionAlojamiento">
       <Events>

@@ -17,6 +17,13 @@ public class BibliotecaExcepciones {
         }
     }
     
+    public static class CorreoRepetido extends Exception {
+
+        public CorreoRepetido(String message) {
+            super(message);
+        }
+    }
+    
     public static class cvvEscacharrado extends Exception {
 
         public cvvEscacharrado(String message) {
