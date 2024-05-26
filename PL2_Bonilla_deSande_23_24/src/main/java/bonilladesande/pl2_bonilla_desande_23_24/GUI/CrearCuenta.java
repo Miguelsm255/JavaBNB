@@ -8,6 +8,7 @@ public class CrearCuenta extends javax.swing.JFrame {
 
     public CrearCuenta() {
         initComponents();
+        TextPrompt nombre = new TextPrompt("Nombre de usuario", nombreFieldCrearCuenta);
     }
 
     /**

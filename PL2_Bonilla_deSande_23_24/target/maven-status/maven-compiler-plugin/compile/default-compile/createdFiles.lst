@@ -12,6 +12,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\AlojamientoBoton$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$2.class
 bonilladesande\pl2_bonilla_desande_23_24\Usuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$10.class
+bonilladesande\pl2_bonilla_desande_23_24\TextPrompt.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$5.class
@@ -21,6 +22,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$3.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento.class
+bonilladesande\pl2_bonilla_desande_23_24\TextPrompt$Show.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AlojamientoBoton$1.class
 bonilladesande\pl2_bonilla_desande_23_24\Cliente.class
