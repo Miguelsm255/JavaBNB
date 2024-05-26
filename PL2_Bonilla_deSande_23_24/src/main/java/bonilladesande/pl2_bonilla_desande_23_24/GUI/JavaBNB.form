@@ -29,12 +29,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-              <Component id="tituloLabelPaginaPrincipal" min="-2" pref="109" max="-2" attributes="0"/>
+              <Component id="tituloLabelPaginaPrincipal" min="-2" pref="125" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="usuarioJavaBNBboton" min="-2" pref="147" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="fotoUsuarioJavaBNBboton" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Component id="fotoLabelJavaBNB" min="-2" pref="54" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
@@ -46,16 +46,14 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="fotoUsuarioJavaBNBboton" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="usuarioJavaBNBboton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="tituloLabelPaginaPrincipal" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="tituloLabelPaginaPrincipal" min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="usuarioJavaBNBboton" pref="54" max="32767" attributes="0"/>
+                  <Component id="fotoLabelJavaBNB" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Component id="frameJavaBNB" pref="485" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="frameJavaBNB" pref="478" max="32767" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -65,11 +63,14 @@
     <Component class="javax.swing.JLabel" name="tituloLabelPaginaPrincipal">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="24" style="0"/>
+          <Font name="Segoe UI" size="28" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="JavaBNB"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tituloLabelPaginaPrincipalMouseClicked"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="frameJavaBNB">
       <Properties>
@@ -96,13 +97,10 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="fotoUsuarioJavaBNBboton">
+    <Component class="javax.swing.JLabel" name="fotoLabelJavaBNB">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jButton1"/>
+        <Property name="text" type="java.lang.String" value="FOTO"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fotoUsuarioJavaBNBbotonActionPerformed"/>
-      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

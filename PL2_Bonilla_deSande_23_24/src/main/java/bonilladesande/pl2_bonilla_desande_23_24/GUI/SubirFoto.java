@@ -4,11 +4,8 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.FiltraImagenes;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -32,6 +29,7 @@ public class SubirFoto extends javax.swing.JFrame {
      */
     public SubirFoto() {
         initComponents();
+        myInitComponents();
     }
 
     /**
@@ -98,13 +96,13 @@ public class SubirFoto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(FotoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(106, 106, 106)
                         .addComponent(BotonSubirFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FotoActual, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GuardaCambios)
                     .addComponent(jButton2)
@@ -143,15 +141,27 @@ public class SubirFoto extends javax.swing.JFrame {
             File fout = new File("./src/main/java/imagenes/" + nombreImagen);
             ImageIO.write(bimage, extension, fout);
             JOptionPane.showMessageDialog(this, "Imagen guardada");
+            
+            if (BaseDatos.user.getTipo() == 1){
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setFoto("./src/main/java/imagenes/" + nombreImagen);
+            }
+            else{
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setFoto("./src/main/java/imagenes/" + nombreImagen);
+            }
+            GestorVentanas.cambioVentana("SubirFoto", "AjustesUsuario");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error al guardar imagen");
         }
     }//GEN-LAST:event_GuardaCambiosActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        dispose();
+        GestorVentanas.cambioVentana("SubirFoto", "AjustesUsuario");
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    
+    private void myInitComponents(){
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+    }
     /**
      * @param args the command line arguments
      */

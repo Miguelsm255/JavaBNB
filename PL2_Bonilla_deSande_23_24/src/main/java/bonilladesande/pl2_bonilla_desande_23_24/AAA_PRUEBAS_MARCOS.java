@@ -1,5 +1,6 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
+import bonilladesande.pl2_bonilla_desande_23_24.GUI.GestorVentanas;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -10,8 +11,16 @@ import java.util.ArrayList;
 public class AAA_PRUEBAS_MARCOS {
 
     public static void main(String[] args) throws IOException {
+        GestorVentanas.iniciarPrograma();
+        /*BaseDatos.BorrarListaAnfitriones();
+        BaseDatos.BorrarListaInmuebles();
+        BaseDatos.BorrarListaReservas();
+        BaseDatos.BorrarListaParticulares();*/
+        
+        
+        
 
-        LocalDate ahora = LocalDate.now();
+        /*LocalDate ahora = LocalDate.now();
         LocalDate inicio = LocalDate.ofYearDay(1933, 33);
         LocalDate fin = LocalDate.ofYearDay(200033, 33);
         Direccion d1 = new Direccion("Calle madehuevo", 33, 33, "Ciudad Delfino");
@@ -39,7 +48,7 @@ public class AAA_PRUEBAS_MARCOS {
         String ruta = "C:/Users/" + NombreUser + "/Desktop/ComoEstánMuchacho.txt";
         FileWriter Prueba = new FileWriter(ruta);
         Prueba.write(precioFinal + "\n" + finFinal + "\n" + inicioFinal + "\n" + particularFinal + "\n" + inmuebleFinal);
-        Prueba.close();
+        Prueba.close(); */
             
         
         

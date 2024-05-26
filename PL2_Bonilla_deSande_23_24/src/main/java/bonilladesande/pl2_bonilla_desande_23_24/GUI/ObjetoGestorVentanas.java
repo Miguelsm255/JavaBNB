@@ -1,6 +1,7 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
+import javax.swing.ImageIcon;
 
 public class ObjetoGestorVentanas {
     
@@ -16,7 +17,7 @@ public class ObjetoGestorVentanas {
     PaginaPrincipal paginaPaginaPrincipal;
     SubirAlojamiento paginaSubirAlojamiento;
     
-    JavaBNB ventanaJavaBNB = new JavaBNB();
+    public JavaBNB ventanaJavaBNB = new JavaBNB();
     
     public void setViewpointView(){
         paginaPaginaPrincipal = new PaginaPrincipal();
@@ -60,16 +61,31 @@ public class ObjetoGestorVentanas {
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaPrincipal);
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
-                ventanaJavaBNB.fotoUsuarioJavaBNBboton.setVisible(true);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
                 
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
+                
+                
+                String ruta;
+        
+                if (BaseDatos.user.getTipo() == 1){
+                    ruta = BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getFoto();
+                }
+                else{
+                    ruta = BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getFoto();
+                }
+        
+                ImageIcon imagen = new ImageIcon(ruta);
+                //Se redimensiona
+                ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(54, 54, 1));
+                ventanaJavaBNB.fotoLabelJavaBNB.setIcon(imgRedimensionada);
             }
             
             case "AjustesUsuario" -> {
                 paginaAjustesUsuario = new AjustesUsuario();
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaAjustesUsuario);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(false);
-                ventanaJavaBNB.fotoUsuarioJavaBNBboton.setVisible(false);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(false);
                 ventanaJavaBNB.setVisible(true);
                 
                 paginaAjustesUsuario.saludoLabelAjustesUsuario.setText("Hola, " + BaseDatos.user.getNombre() + "!");
@@ -77,6 +93,20 @@ public class ObjetoGestorVentanas {
                 paginaAjustesUsuario.claveLabelAjustesUsuario.setText(BaseDatos.user.getClave());
                 paginaAjustesUsuario.correoLabelAjustesUsuario.setText(BaseDatos.user.getCorreo());
                 paginaAjustesUsuario.telefonoLabelAjustesUsuario.setText(String.valueOf(BaseDatos.user.getTelefono()));
+                
+                String ruta;
+        
+                if (BaseDatos.user.getTipo() == 1){
+                    ruta = BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getFoto();
+                }
+                else{
+                    ruta = BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getFoto();
+                }
+        
+                ImageIcon imagen = new ImageIcon(ruta);
+                //Se redimensiona
+                ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(200, 200, 1));
+                paginaAjustesUsuario.fotoUsuarioBoton.setIcon(imgRedimensionada);
             }
             
             case "PaginaAlojamiento" -> {
@@ -84,9 +114,15 @@ public class ObjetoGestorVentanas {
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaAlojamiento);
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
-                ventanaJavaBNB.fotoUsuarioJavaBNBboton.setVisible(true);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
                 
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
+            }
+            
+            case "SubirFoto" -> {
+                ventanaSubirFoto = new SubirFoto();
+                ventanaSubirFoto.setLocationRelativeTo(null);
+                ventanaSubirFoto.setVisible(true);
             }
         }
         
@@ -106,6 +142,17 @@ public class ObjetoGestorVentanas {
             
             case "AjustesUsuario" -> {
                 ventanaJavaBNB.frameJavaBNB.remove(paginaAjustesUsuario);
+                    
+            }
+            
+            case "SubirAlojamiento" -> {
+                ventanaJavaBNB.frameJavaBNB.remove(paginaSubirAlojamiento);
+                    
+            }
+            
+            case "SubirFoto" -> {
+                ventanaSubirFoto.dispose();
+                
                     
             }
         }

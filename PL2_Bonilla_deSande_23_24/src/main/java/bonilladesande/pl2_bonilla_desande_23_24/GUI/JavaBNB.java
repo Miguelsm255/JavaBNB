@@ -34,13 +34,18 @@ public class JavaBNB extends javax.swing.JFrame {
         tituloLabelPaginaPrincipal = new javax.swing.JLabel();
         frameJavaBNB = new javax.swing.JScrollPane();
         usuarioJavaBNBboton = new javax.swing.JButton();
-        fotoUsuarioJavaBNBboton = new javax.swing.JButton();
+        fotoLabelJavaBNB = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tituloLabelPaginaPrincipal.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        tituloLabelPaginaPrincipal.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         tituloLabelPaginaPrincipal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tituloLabelPaginaPrincipal.setText("JavaBNB");
+        tituloLabelPaginaPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tituloLabelPaginaPrincipalMouseClicked(evt);
+            }
+        });
 
         frameJavaBNB.setBorder(null);
         frameJavaBNB.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -53,12 +58,7 @@ public class JavaBNB extends javax.swing.JFrame {
             }
         });
 
-        fotoUsuarioJavaBNBboton.setText("jButton1");
-        fotoUsuarioJavaBNBboton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fotoUsuarioJavaBNBbotonActionPerformed(evt);
-            }
-        });
+        fotoLabelJavaBNB.setText("FOTO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,12 +66,12 @@ public class JavaBNB extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(usuarioJavaBNBboton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fotoUsuarioJavaBNBboton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addComponent(fotoLabelJavaBNB, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(frameJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, 973, Short.MAX_VALUE)
@@ -80,14 +80,13 @@ public class JavaBNB extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(fotoUsuarioJavaBNBboton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(usuarioJavaBNBboton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(frameJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usuarioJavaBNBboton, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                    .addComponent(fotoLabelJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(frameJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -99,9 +98,10 @@ public class JavaBNB extends javax.swing.JFrame {
         GestorVentanas.cambioVentana("JavaBNB", "AjustesUsuario");
     }//GEN-LAST:event_usuarioJavaBNBbotonActionPerformed
 
-    private void fotoUsuarioJavaBNBbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoUsuarioJavaBNBbotonActionPerformed
-        GestorVentanas.cambioVentana("JavaBNB", "AjustesUsuario");
-    }//GEN-LAST:event_fotoUsuarioJavaBNBbotonActionPerformed
+    private void tituloLabelPaginaPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tituloLabelPaginaPrincipalMouseClicked
+        // TODO add your handling code here:
+        GestorVentanas.cambioVentana("", "PaginaPrincipal");
+    }//GEN-LAST:event_tituloLabelPaginaPrincipalMouseClicked
 
     /**
      * @param args the command line arguments
@@ -143,7 +143,7 @@ public class JavaBNB extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    public javax.swing.JButton fotoUsuarioJavaBNBboton;
+    public javax.swing.JLabel fotoLabelJavaBNB;
     public javax.swing.JScrollPane frameJavaBNB;
     private javax.swing.JLabel tituloLabelPaginaPrincipal;
     public javax.swing.JButton usuarioJavaBNBboton;

@@ -11,6 +11,7 @@ public class Usuario implements Serializable{
     private String correo;
     private String clave;
     private int telefono;
+    private String foto = "./src/main/java/imagenes/default.jpg";
 
     
     // GETTER Y SETTER
@@ -52,6 +53,14 @@ public class Usuario implements Serializable{
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
     
     
