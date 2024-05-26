@@ -33,6 +33,10 @@ public class SubirAlojamiento extends javax.swing.JPanel {
      */
     public SubirAlojamiento() {
         initComponents();
+        TextPrompt placenombreinmueble = new TextPrompt ("Introduce el nombre del inmueble", NombreAlojamiento);
+        TextPrompt placenombreanfirtrion = new TextPrompt ("Introduce el nombre del anfitrion", AnfitrionAlojamiento);
+        TextPrompt placedescripcion = new TextPrompt("Introduce una descripción para el alojamieneto", DescripcionAlojamiento);
+        TextPrompt placeservicios = new TextPrompt("Introduce una descripción para el alojamieneto", ServiciosAlojamiento);
     }
 
     /**
@@ -121,6 +125,12 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Descripción");
         jLabel6.setToolTipText("");
+
+        ServiciosAlojamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ServiciosAlojamientoActionPerformed(evt);
+            }
+        });
 
         DescripcionAlojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -17,7 +17,7 @@ public class ObjetoGestorVentanas {
     PaginaPrincipal paginaPaginaPrincipal;
     SubirAlojamiento paginaSubirAlojamiento;
     
-    JavaBNB ventanaJavaBNB = new JavaBNB();
+    public JavaBNB ventanaJavaBNB = new JavaBNB();
     
     public void setViewpointView(){
         paginaPaginaPrincipal = new PaginaPrincipal();

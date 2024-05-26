@@ -4,7 +4,7 @@ import bonilladesande.pl2_bonilla_desande_23_24.*;
 
 public class GestorVentanas {
     
-    private static ObjetoGestorVentanas gestorVentanas = new ObjetoGestorVentanas();
+    public static ObjetoGestorVentanas gestorVentanas = new ObjetoGestorVentanas();
     
     public static void iniciarPrograma(){
         BaseDatos.cargarDatosAnfitriones();

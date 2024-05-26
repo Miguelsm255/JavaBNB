@@ -62,16 +62,16 @@
                                   <Component id="confirmaClaveLabelCrearCuenta" pref="102" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="telefonoFieldCrearCuenta" min="-2" pref="112" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="confirmaClaveFieldCrearCuenta" max="32767" attributes="0"/>
                                           <Component id="claveFieldCrearCuenta" max="32767" attributes="0"/>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="telefonoFieldCrearCuenta" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -178,8 +178,8 @@
                   <Component id="crearCuentaButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="CuentaLiada" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <Component id="CuentaLiada" pref="30" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -332,12 +332,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmaClaveFieldCrearCuentaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="CuentaLiada">
-    </Component>
     <Component class="javax.swing.JTextField" name="DNIfieldCrearCuenta">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField2"/>
-      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="CuentaLiada">
     </Component>
   </SubComponents>
 </Form>
