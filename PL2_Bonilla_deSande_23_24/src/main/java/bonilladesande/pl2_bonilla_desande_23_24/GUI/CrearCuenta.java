@@ -326,7 +326,7 @@ public class CrearCuenta extends javax.swing.JFrame {
         
         String fechaCaducidadIntroducida = caducidadTarjetaCrearCuenta.getText();
         String[] fechaCaducidadSplit = fechaCaducidadIntroducida.split("/");
-        LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt(fechaCaducidadSplit[0]), 1);
+        LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt("20" + fechaCaducidadSplit[0]), 1);
         
         TarjetaCredito tarjeta = new TarjetaCredito(nombre, Long.parseLong(noTarjetaFieldCrearCuenta.getText()), caducidad, Integer.parseInt(cvvTarjetaFieldCrearCuenta.getText()));
         boolean vip = false;
