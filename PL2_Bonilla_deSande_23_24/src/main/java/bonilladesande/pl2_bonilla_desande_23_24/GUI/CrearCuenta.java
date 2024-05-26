@@ -338,6 +338,7 @@ public class CrearCuenta extends javax.swing.JFrame {
 
             String fechaCaducidadIntroducida = caducidadTarjetaCrearCuenta.getText();
             String[] fechaCaducidadSplit = fechaCaducidadIntroducida.split("/");
+            LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt(fechaCaducidadSplit[0]), 1);
 
             int comparaFechas = caducidad.compareTo(fechaRegistro);
             if (comparaFechas < 0) {
@@ -387,7 +388,7 @@ public class CrearCuenta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage());
             CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
 
-            LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt(fechaCaducidadSplit[0]), 1);
+            
         }
 
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
