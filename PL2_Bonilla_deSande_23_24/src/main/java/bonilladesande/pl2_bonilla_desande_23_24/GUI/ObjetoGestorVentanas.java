@@ -134,7 +134,7 @@ public class ObjetoGestorVentanas {
                 ImageIcon imagen = new ImageIcon(BaseDatos.inmuebleSeleccionado.getRutaFoto());
                 //Se redimensiona
                 ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(316, 191, 1));
-                paginaPaginaAlojamiento.fotoAlojamiento.setIcon(imgRedimensionada);
+                paginaPaginaAlojamiento.fotoAlojamientoLabel.setIcon(imgRedimensionada);
             }
             
             case "SubirFoto" -> {

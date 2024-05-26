@@ -27,7 +27,7 @@ public class AlojamientoBoton extends javax.swing.JPanel {
         precioAlojamientoBoton = new javax.swing.JLabel();
         nombreInmuebleAlojamientoBoton = new javax.swing.JLabel();
         valoracionAlojamientoBoton = new javax.swing.JLabel();
-        fotoBotonAlojamientoBoton = new javax.swing.JButton();
+        fotoBotonAlojamientoLabel = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -46,13 +46,7 @@ public class AlojamientoBoton extends javax.swing.JPanel {
         valoracionAlojamientoBoton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         valoracionAlojamientoBoton.setText("Valoración");
 
-        fotoBotonAlojamientoBoton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        fotoBotonAlojamientoBoton.setText("FOTO");
-        fotoBotonAlojamientoBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fotoBotonAlojamientoBotonActionPerformed(evt);
-            }
-        });
+        fotoBotonAlojamientoLabel.setText("FOTO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -60,17 +54,18 @@ public class AlojamientoBoton extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(fotoBotonAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fotoBotonAlojamientoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addComponent(valoracionAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(precioAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(precioAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addComponent(nombreInmuebleAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 9, Short.MAX_VALUE)))
-                .addGap(22, 22, 22))
+                        .addContainerGap(108, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,7 +79,7 @@ public class AlojamientoBoton extends javax.swing.JPanel {
                 .addGap(13, 13, 13))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(fotoBotonAlojamientoBoton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(fotoBotonAlojamientoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -99,8 +94,8 @@ public class AlojamientoBoton extends javax.swing.JPanel {
         
         ImageIcon imagen = new ImageIcon(inmueble.getRutaFoto());
         //Se redimensiona
-        ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(113, 109, 1));
-        fotoBotonAlojamientoBoton.setIcon(imgRedimensionada);
+        ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(166, 109, 1));
+        fotoBotonAlojamientoLabel.setIcon(imgRedimensionada);
     }
 
 
@@ -112,13 +107,9 @@ public class AlojamientoBoton extends javax.swing.JPanel {
         
     }//GEN-LAST:event_formMouseClicked
    
-    private void fotoBotonAlojamientoBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoBotonAlojamientoBotonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fotoBotonAlojamientoBotonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton fotoBotonAlojamientoBoton;
+    public javax.swing.JLabel fotoBotonAlojamientoLabel;
     private javax.swing.JLabel nombreInmuebleAlojamientoBoton;
     private javax.swing.JLabel precioAlojamientoBoton;
     private javax.swing.JLabel valoracionAlojamientoBoton;
