@@ -150,7 +150,7 @@ public class SubirAlojamiento extends javax.swing.JPanel {
 
         NombreAlojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NombreAlojamientoActionPerformed(evt);
+                //NombreAlojamientoActionPerformed(evt);
             }
         });
 
