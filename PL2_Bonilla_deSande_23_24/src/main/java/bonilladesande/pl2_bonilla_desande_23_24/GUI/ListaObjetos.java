@@ -15,6 +15,22 @@ public final class ListaObjetos extends javax.swing.JPanel {
         myInitComponents(tipo);
     }
     
+    public ListaObjetos(String tipo, boolean casa, double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad) {
+        initComponents();
+        myInitComponents(tipo, casa, precioMax, precioMin, calificacionMin, huespedesMin, habitacionesMin, camasMin, banosMin, titulo, ciudad);
+    }
+    
+    public ListaObjetos(String tipo, double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad) {
+        initComponents();
+        myInitComponents(tipo, precioMax, precioMin, calificacionMin, huespedesMin, habitacionesMin, camasMin, banosMin, titulo, ciudad);
+    }
+    
+    public ListaObjetos(String tipo, Anfitrion anfitrion) {
+        initComponents();
+        myInitComponents(tipo, anfitrion);
+    }
+    
+    ArrayList<Inmueble> listaInmuebles = new ArrayList<>();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,23 +53,37 @@ public final class ListaObjetos extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void myInitComponents(String tipo, boolean casa, double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad){
+        listaInmuebles = BaseDatos.filtroAlojamientos(casa, precioMax, precioMin, calificacionMin, huespedesMin, habitacionesMin, camasMin, banosMin, titulo, ciudad);
+        hacerCosas(tipo);
+    }
+    
+    public void myInitComponents(String tipo, double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad){
+        listaInmuebles = BaseDatos.filtroAlojamientos(precioMax, precioMin, calificacionMin, huespedesMin, habitacionesMin, camasMin, banosMin, titulo, ciudad);
+        hacerCosas(tipo);
+    }
+    
     public void myInitComponents(String tipo) {
-
-        //this.setSize(this.getWidth(), (125 * lista.size()));
-
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        listaInmuebles = BaseDatos.inmuebles;
+        hacerCosas(tipo);
+    }
+    
+    public void myInitComponents(String tipo, Anfitrion anfitrion) {
         
-        //setLayout(new GridBagLayout()); // Usar GridBagLayout para controlar el tamaño máximo
-        //GridBagConstraints gbc = new GridBagConstraints();
-        //gbc.gridx = 0;
-        //gbc.gridy = 0;
-        //gbc.fill = GridBagConstraints.HORIZONTAL;
+        for(int i = 0; i < BaseDatos.inmuebles.size(); i++){
+            if(BaseDatos.inmuebles.get(i).getAnfitrion() == BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList())){
+                listaInmuebles.add(BaseDatos.inmuebles.get(i));
+            }
+        }
+        hacerCosas(tipo);
+    }
+    
+    private void hacerCosas(String tipo){
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         
         setBorder(new EmptyBorder(10, 10, 10, 10));
         
         if ("Inmuebles".equals(tipo)){
-            
-            ArrayList<Inmueble> listaInmuebles = BaseDatos.inmuebles;
             
             for (int i = 0; i < listaInmuebles.size(); i++) {
                 Inmueble inmueble = listaInmuebles.get(i);

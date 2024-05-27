@@ -11,17 +11,20 @@ public class ObjetoGestorVentanas {
     SubirFoto ventanaSubirFoto;
     ReservarInmueble ventanaReservarInmueble;
     
+    
     AjustesUsuario paginaAjustesUsuario;
     BotonInmueble paginaAlojamientoBoton;
     ListaObjetos paginaListaAlojamiento;
     PaginaAlojamiento paginaPaginaAlojamiento;
     PaginaPrincipal paginaPaginaPrincipal;
     SubirAlojamiento paginaSubirAlojamiento;
+    VerObjetos paginaVerObjetos;
+    PaginaAdministrador paginaAdministrador;
     
     public JavaBNB ventanaJavaBNB = new JavaBNB();
     
     public void setViewpointView(){
-        paginaPaginaPrincipal = new PaginaPrincipal("Inmuebles");
+        paginaPaginaPrincipal = new PaginaPrincipal();
         ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaPrincipal);
         ventanaJavaBNB.setVisible(true);
     }
@@ -58,7 +61,7 @@ public class ObjetoGestorVentanas {
             }
             
             case "PaginaPrincipal" -> {
-                paginaPaginaPrincipal = new PaginaPrincipal("Inmuebles");
+                paginaPaginaPrincipal = new PaginaPrincipal();
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaPrincipal);
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
@@ -114,8 +117,11 @@ public class ObjetoGestorVentanas {
                 paginaPaginaAlojamiento = new PaginaAlojamiento(BaseDatos.inmuebleSeleccionado);
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaAlojamiento);
                 ventanaJavaBNB.setVisible(true);
-                ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
-                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
+                
+                if(BaseDatos.user.getTipo() != 0){
+                    ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
+                    ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
+                }
                 
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
                 
@@ -167,6 +173,26 @@ public class ObjetoGestorVentanas {
                 ventanaReservarInmueble.setLocationRelativeTo(null);
                 ventanaReservarInmueble.setVisible(true);
             }
+            
+            case "VerObjetos" -> {
+                paginaVerObjetos = new VerObjetos();
+                ventanaJavaBNB.frameJavaBNB.setViewportView(paginaVerObjetos);
+                ventanaJavaBNB.setVisible(true);
+            }
+            
+            case "PaginaAdministrador" -> {
+                paginaAdministrador = new PaginaAdministrador();
+                ventanaJavaBNB.frameJavaBNB.setViewportView(paginaAdministrador);
+                ventanaJavaBNB.setVisible(true);
+                ventanaJavaBNB.usuarioJavaBNBboton.setVisible(false);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(false);
+                ventanaJavaBNB.tituloLabelPaginaPrincipal.setVisible(false);
+                
+                ImageIcon imagen = new ImageIcon("./src/main/java/imagenes/fotoAdmin.jpg");
+                //Se redimensiona
+                ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(382, 243, 1));
+                paginaAdministrador.fotoPerfilAdmin.setIcon(imgRedimensionada);
+            }
         }
         
         switch(origen){
@@ -204,6 +230,10 @@ public class ObjetoGestorVentanas {
             
             case "EditarAjustesUsuario" -> {
                 ventanaEditarAjustesUsuario.dispose();
+            }
+            
+            case "VerObjetos" -> {
+                ventanaJavaBNB.frameJavaBNB.remove(paginaVerObjetos);
             }
         }
         

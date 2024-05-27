@@ -141,6 +141,10 @@ public class Login extends javax.swing.JFrame {
             // MOSTRAR LABEL DE "CORREO O CONTRASEÑA INCORRECTOS"
             user = null;
         }
+        // SI ES ADMINISTRADOR
+        else if(user.getTipo() == 0){
+            GestorVentanas.cambioVentana("Login", "PaginaAdministrador");
+        }
         // SI LA INFORMACIÓN SI ES CORRECTA
         else{
             GestorVentanas.cambioVentana("Login", "PaginaPrincipal");

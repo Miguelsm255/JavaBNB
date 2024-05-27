@@ -17,6 +17,7 @@ public class BaseDatos {
     
     public static UserLoged user;
     public static Inmueble inmuebleSeleccionado;
+    public static String verObjetos;
 
     
     // GUARDAR Y CARGAR DATOS

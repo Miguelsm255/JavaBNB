@@ -7,6 +7,7 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -288,16 +289,49 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         if (BaseDatos.user.getTipo() ==2){
             reservarInmuebleBoton.setVisible(false);
         }
+        else if(BaseDatos.user.getTipo() == 0){
+            reservarInmuebleBoton.setText("Borrar Inmueble");
+        }
         
     }
     
     private void reservarInmuebleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservarInmuebleBotonActionPerformed
         // TODO add your handling code here:
-        GestorVentanas.cambioVentana("", "ReservarInmueble");
+        if(BaseDatos.user.getTipo() == 1){
+            GestorVentanas.cambioVentana("", "ReservarInmueble");
+        }
+        else{
+            int response = JOptionPane.showConfirmDialog(
+                this, 
+                "¿Desea eliminar el inmueble?", 
+                "Confirmar",
+                JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE);
+
+                //SI EL USUARIO RESPONDE QUE QUIERE SER ELIMINADO, SE RETIRARÁ SU INFORMACIÓN DE LA BASE DE DATOS.
+                if (response == JOptionPane.YES_OPTION) {
+                    BaseDatos.inmuebles.remove(BaseDatos.inmuebleSeleccionado);
+                    if(BaseDatos.user.getTipo() == 0){
+                        GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaAdministrador");
+                    }
+                    else{
+                        GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
+                    }
+                }  
+                else if (response == JOptionPane.NO_OPTION) {
+                    
+                
+            } 
+        }
     }//GEN-LAST:event_reservarInmuebleBotonActionPerformed
 
     private void volverButtonPaginaAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButtonPaginaAlojamientoActionPerformed
-        GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
+        if(BaseDatos.user.getTipo() == 0){
+            GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaAdministrador");
+        }
+        else{
+            GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
+        }
     }//GEN-LAST:event_volverButtonPaginaAlojamientoActionPerformed
 
     private void fieldDescripcionPagAlojamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldDescripcionPagAlojamientosActionPerformed

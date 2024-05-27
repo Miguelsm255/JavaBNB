@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class PaginaPrincipal extends javax.swing.JPanel {
 
-    public PaginaPrincipal(String tipo) {
+    public PaginaPrincipal() {
         initComponents();
-        myInitComponents(tipo);
+        myInitComponents();
     }
 
 
@@ -58,8 +58,9 @@ public class PaginaPrincipal extends javax.swing.JPanel {
        GestorVentanas.cambioVentana("PaginaPrincipal", "SubirAlojamiento");
     }//GEN-LAST:event_InmuebleSubidaActionPerformed
 
-    public void myInitComponents(String tipo) {
-        pintarLista(tipo);
+    public void myInitComponents() {
+        
+        pintarLista("Inmuebles");
         
         //pintarLista(BaseDatos.filtroAlojamientos(30, 20, 0, 0, 0, 0, 0, "", ""));
         

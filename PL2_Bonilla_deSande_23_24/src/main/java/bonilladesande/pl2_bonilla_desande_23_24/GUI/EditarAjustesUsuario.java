@@ -4,12 +4,11 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.Anfitrion;
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
 import bonilladesande.pl2_bonilla_desande_23_24.TextPrompt;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 /**
@@ -223,10 +222,18 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
             }
             else{
-                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setNombre(nuevoUsername);
-                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setCorreo(nuevoEmail);
-                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setTelefono(nuevoTelefono);
-                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
+                
+                Anfitrion anfitrion = new Anfitrion(BaseDatos.user.getFechaRegistro(), BaseDatos.user.getDni(), nuevoUsername, nuevoEmail, nuevaClaveString, nuevoTelefono);
+                anfitrion.setFoto(BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getFoto());
+                
+                for(int i = 0; i < BaseDatos.inmuebles.size(); i++){
+                    if(BaseDatos.inmuebles.get(i).getAnfitrion() == BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList())){
+                        BaseDatos.inmuebles.get(i).setAnfitrion(anfitrion);
+                    }
+                }
+                
+                BaseDatos.anfitriones.set(BaseDatos.user.getPosicionArrayList(), anfitrion);
+               
             }
             //SE CAMBIA A LA VENTANA ANTETIOR.
             GestorVentanas.cambioVentana("EditarAjustesUsuario", "AjustesUsuario");

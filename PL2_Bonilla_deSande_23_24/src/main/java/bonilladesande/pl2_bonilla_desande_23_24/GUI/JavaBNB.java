@@ -145,7 +145,7 @@ public class JavaBNB extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JLabel fotoLabelJavaBNB;
     public javax.swing.JScrollPane frameJavaBNB;
-    private javax.swing.JLabel tituloLabelPaginaPrincipal;
+    public javax.swing.JLabel tituloLabelPaginaPrincipal;
     public javax.swing.JButton usuarioJavaBNBboton;
     // End of variables declaration//GEN-END:variables
 }

@@ -245,6 +245,8 @@ public class AjustesUsuario extends javax.swing.JPanel {
     ENCUENTRAN LOS INMUEBLES PUBLICADOS POR EL USUARIO.*/
     private void verInmueblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInmueblesActionPerformed
         // TODO add your handling code here:
+        BaseDatos.verObjetos = "Inmuebles";
+        GestorVentanas.cambioVentana("AjustesUsuario", "VerObjetos");
     }//GEN-LAST:event_verInmueblesActionPerformed
     
     
