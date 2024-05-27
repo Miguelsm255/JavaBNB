@@ -12,8 +12,8 @@ public class ObjetoGestorVentanas {
     ReservarInmueble ventanaReservarInmueble;
     
     AjustesUsuario paginaAjustesUsuario;
-    AlojamientoBoton paginaAlojamientoBoton;
-    ListaAlojamientos paginaListaAlojamiento;
+    BotonInmueble paginaAlojamientoBoton;
+    ListaObjetos paginaListaAlojamiento;
     PaginaAlojamiento paginaPaginaAlojamiento;
     PaginaPrincipal paginaPaginaPrincipal;
     SubirAlojamiento paginaSubirAlojamiento;
@@ -21,7 +21,7 @@ public class ObjetoGestorVentanas {
     public JavaBNB ventanaJavaBNB = new JavaBNB();
     
     public void setViewpointView(){
-        paginaPaginaPrincipal = new PaginaPrincipal();
+        paginaPaginaPrincipal = new PaginaPrincipal("Inmuebles");
         ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaPrincipal);
         ventanaJavaBNB.setVisible(true);
     }
@@ -58,7 +58,7 @@ public class ObjetoGestorVentanas {
             }
             
             case "PaginaPrincipal" -> {
-                paginaPaginaPrincipal = new PaginaPrincipal();
+                paginaPaginaPrincipal = new PaginaPrincipal("Inmuebles");
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaPrincipal);
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);

@@ -4,11 +4,13 @@ import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
 import javax.swing.ImageIcon;
 
-public class AlojamientoBoton extends javax.swing.JPanel {
+public class BotonInmueble extends javax.swing.JPanel {
 
     /*CONSTRUCTOR BÁSICO QUE NECESITA DEL PARÁMETRO INMUEBLE PARA MOSTRAR EN LA MINIATURA.*/
     Inmueble inmueble;
-    public AlojamientoBoton(Inmueble inmueble) {
+    
+    public BotonInmueble(Inmueble inmueble) {
+        
         this.inmueble = inmueble;
         initComponents();
         myInitComponents(inmueble);
