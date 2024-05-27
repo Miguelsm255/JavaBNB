@@ -53,12 +53,11 @@ public class BotonAnfitriones extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(valoracionAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 324, Short.MAX_VALUE))
+                        .addComponent(valoracionAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(nombreInmuebleAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(108, Short.MAX_VALUE))))
+                        .addComponent(nombreInmuebleAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 108, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +92,9 @@ public class BotonAnfitriones extends javax.swing.JPanel {
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         
-        //GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaAlojamiento");
+        GestorVentanas.gestorVentanas.paginaVerAnfitrion = new VerAnfitrion(anfitrion);
+        GestorVentanas.gestorVentanas.ventanaJavaBNB.frameJavaBNB.setViewportView(GestorVentanas.gestorVentanas.paginaVerAnfitrion);
+        GestorVentanas.gestorVentanas.ventanaJavaBNB.setVisible(true);
         
     }//GEN-LAST:event_formMouseClicked
    

@@ -62,11 +62,11 @@ public class BotonReservas extends javax.swing.JPanel {
                         .addComponent(nombreInmuebleAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(fechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(49, 49, 49)
-                                .addComponent(fechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(fechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(fechaSalida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(nombreParticular, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -92,8 +92,8 @@ public class BotonReservas extends javax.swing.JPanel {
 
 
     public void myInitComponents(Reserva reserva) {
-        nombreInmuebleAlojamientoBoton.setText(reserva.getInmueble().getTitulo());
-        nombreParticular.setText(reserva.getParticular().getNombre());
+        nombreInmuebleAlojamientoBoton.setText("Inmueble: " + reserva.getInmueble().getTitulo());
+        nombreParticular.setText("Particular: " + reserva.getParticular().getNombre());
         fechaEntrada.setText("Fecha de entrada: " + String.valueOf(reserva.getFechaInicio()));
         fechaSalida.setText("Fecha de salida: " + String.valueOf(reserva.getFechaFin()));
         
@@ -110,7 +110,9 @@ public class BotonReservas extends javax.swing.JPanel {
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         
-        //GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaAlojamiento");
+        GestorVentanas.gestorVentanas.paginaVerReserva = new VerReserva(reserva);
+        GestorVentanas.gestorVentanas.ventanaJavaBNB.frameJavaBNB.setViewportView(GestorVentanas.gestorVentanas.paginaVerReserva);
+        GestorVentanas.gestorVentanas.ventanaJavaBNB.setVisible(true);
         
     }//GEN-LAST:event_formMouseClicked
    

@@ -30,7 +30,13 @@ public final class ListaObjetos extends javax.swing.JPanel {
         myInitComponents(tipo, anfitrion);
     }
     
+    public ListaObjetos(String tipo, Particular particular) {
+        initComponents();
+        myInitComponents(tipo, particular);
+    }
+    
     ArrayList<Inmueble> listaInmuebles = new ArrayList<>();
+    ArrayList<Reserva> listaReservas = new ArrayList<>();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,8 +77,24 @@ public final class ListaObjetos extends javax.swing.JPanel {
     public void myInitComponents(String tipo, Anfitrion anfitrion) {
         
         for(int i = 0; i < BaseDatos.inmuebles.size(); i++){
-            if(BaseDatos.inmuebles.get(i).getAnfitrion() == BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList())){
+            if(BaseDatos.inmuebles.get(i).getAnfitrion().getCorreo().equals(BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getCorreo())){
                 listaInmuebles.add(BaseDatos.inmuebles.get(i));
+            }
+        }
+        
+        for(int i = 0; i < BaseDatos.reservas.size(); i++){
+            if(BaseDatos.reservas.get(i).getInmueble().getAnfitrion().getCorreo().equals(BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getCorreo())){
+                listaReservas.add(BaseDatos.reservas.get(i));
+            }
+        }
+        hacerCosas(tipo);
+    }
+    
+    public void myInitComponents(String tipo, Particular particular) {
+        
+        for(int i = 0; i < BaseDatos.reservas.size(); i++){
+            if(BaseDatos.reservas.get(i).getParticular().getCorreo().equals(BaseDatos.user.getCorreo())){
+                listaReservas.add(BaseDatos.reservas.get(i));
             }
         }
         hacerCosas(tipo);
@@ -98,8 +120,10 @@ public final class ListaObjetos extends javax.swing.JPanel {
         
         if ("Reservas".equals(tipo)){
             
-            ArrayList<Reserva> listaReservas = BaseDatos.reservas;
-            
+            if(BaseDatos.user.getTipo() == 0){
+                listaReservas = BaseDatos.reservas;
+            }
+
             for (int i = 0; i < listaReservas.size(); i++) {
                 Reserva reserva = listaReservas.get(i);
                 BotonReservas alojamientoBoton = new BotonReservas(reserva);

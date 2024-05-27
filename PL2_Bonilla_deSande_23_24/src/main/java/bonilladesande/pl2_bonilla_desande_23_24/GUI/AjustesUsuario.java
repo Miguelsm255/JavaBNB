@@ -222,7 +222,8 @@ public class AjustesUsuario extends javax.swing.JPanel {
     QUE PUEDEN REALIZAR RESERVAS EN LA APLICACIÓN. AL PULSARLO TE PERMITE VISUALIZAR OTRA VENTANA DONDE SE 
     ENCUENTRAN LAS RESERVAS REALIZADAS POR EL USUARIO.*/
     private void verReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verReservasActionPerformed
-        // TODO add your handling code here:
+        BaseDatos.verObjetos = "Reservas";
+        GestorVentanas.cambioVentana("AjustesUsuario", "VerObjetos");
     }//GEN-LAST:event_verReservasActionPerformed
     
     /*SI EL USUARIO TOCA SU FOTO DE PERFIL, SE ENTIENDE QUE QUIERE REALIZAR ALGUNA

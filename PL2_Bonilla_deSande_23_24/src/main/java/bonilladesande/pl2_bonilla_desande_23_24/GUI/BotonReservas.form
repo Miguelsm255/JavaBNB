@@ -36,11 +36,11 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="fechaEntrada" min="-2" pref="145" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="fechaSalida" min="-2" pref="145" max="-2" attributes="0"/>
+                              <Component id="fechaEntrada" min="-2" pref="182" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="fechaSalida" max="32767" attributes="0"/>
                           </Group>
                           <Component id="nombreParticular" min="-2" pref="385" max="-2" attributes="0"/>
                       </Group>

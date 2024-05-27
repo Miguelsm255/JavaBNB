@@ -78,7 +78,9 @@ public class BotonParticulares extends javax.swing.JPanel {
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
 
-        //GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaAlojamiento");
+        GestorVentanas.gestorVentanas.paginaVerParticular = new VerParticular(particular);
+        GestorVentanas.gestorVentanas.ventanaJavaBNB.frameJavaBNB.setViewportView(GestorVentanas.gestorVentanas.paginaVerParticular);
+        GestorVentanas.gestorVentanas.ventanaJavaBNB.setVisible(true);
         
     }//GEN-LAST:event_formMouseClicked
    

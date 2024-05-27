@@ -6,6 +6,7 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import bonilladesande.pl2_bonilla_desande_23_24.Anfitrion;
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
+import bonilladesande.pl2_bonilla_desande_23_24.Particular;
 
 /**
  *
@@ -25,6 +26,9 @@ public class VerObjetos extends javax.swing.JPanel {
         }
         else if(BaseDatos.user.getTipo() == 2){
             pintarLista(BaseDatos.verObjetos, BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()));
+        }
+        else if(BaseDatos.user.getTipo() == 1){
+            pintarLista(BaseDatos.verObjetos, BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()));
         }
     }
 
@@ -93,6 +97,13 @@ public class VerObjetos extends javax.swing.JPanel {
     
     public void pintarLista(String tipo, Anfitrion anfitrion){
         ListaObjetos listaObjetos = new ListaObjetos(tipo, BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()));
+        this.jScrollPane1.setViewportView(listaObjetos);
+        jScrollPane1.revalidate();
+        jScrollPane1.repaint();
+    }
+    
+    public void pintarLista(String tipo, Particular particular){
+        ListaObjetos listaObjetos = new ListaObjetos(tipo, BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()));
         this.jScrollPane1.setViewportView(listaObjetos);
         jScrollPane1.revalidate();
         jScrollPane1.repaint();

@@ -27,10 +27,12 @@ public class ReservarInmueble extends javax.swing.JFrame {
      */
     public ReservarInmueble() {
         initComponents();
-        PreciodelaReserva.setVisible(false);
-        PrecioFinalReserva.setVisible(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         LabelParticular.setText(BaseDatos.user.getNombre());
         InmuebleCompra.setText(BaseDatos.inmuebleSeleccionado.getTitulo());
+        
+        precioReserva.setText("");
+        precioTotalReserva.setText("");
     }
 
     /**
@@ -51,13 +53,13 @@ public class ReservarInmueble extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         InmuebleCompra = new javax.swing.JLabel();
         LabelParticular = new javax.swing.JLabel();
-        PreciodelaReserva = new javax.swing.JLabel();
-        PrecioFinalReserva = new javax.swing.JLabel();
         Salir = new javax.swing.JButton();
         SeConfirmanLasFechas = new javax.swing.JButton();
         fechaInicioString = new javax.swing.JTextField();
         ReservaButton = new javax.swing.JButton();
         fechaFinString = new javax.swing.JTextField();
+        precioReserva = new javax.swing.JLabel();
+        precioTotalReserva = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,8 +75,6 @@ public class ReservarInmueble extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Precio total de la reserva:");
-
-        PrecioFinalReserva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         Salir.setText("Cancelar");
         Salir.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +97,11 @@ public class ReservarInmueble extends javax.swing.JFrame {
             }
         });
 
+        precioReserva.setText("precio");
+
+        precioTotalReserva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        precioTotalReserva.setText("jLabel8");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,15 +114,15 @@ public class ReservarInmueble extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PrecioFinalReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(40, 40, 40)
+                                .addComponent(precioTotalReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PreciodelaReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(precioReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(SeConfirmanLasFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -169,13 +174,13 @@ public class ReservarInmueble extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addComponent(SeConfirmanLasFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PreciodelaReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(precioReserva))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PrecioFinalReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(precioTotalReserva))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ReservaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -212,21 +217,23 @@ public class ReservarInmueble extends javax.swing.JFrame {
         // Calcular la cantidad de días
         long dias = ChronoUnit.DAYS.between(inicio, fin);
         double precionoche = BaseDatos.inmuebleSeleccionado.getPrecioNoche();
+        double precio = precionoche * dias;
         double preciofinal;
         
         // Calcular el precio final dependiendo del tipo de usuario
         if (BaseDatos.user.isVip()) {
-            preciofinal = precionoche * dias * 0.9;
+            preciofinal = precio * 0.9;
         } else {
-            preciofinal = precionoche * dias;
+            preciofinal = precio;
         }
         
         // Mostrar el precio final en el campo correspondiente
-        PrecioFinalReserva.setText(String.valueOf(preciofinal));
-        
+        precioReserva.setText(String.valueOf(precio) + "€");
+        precioTotalReserva.setText(String.valueOf(preciofinal) + "€");
+
         } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaInicioMenorFin e) {
         JOptionPane.showMessageDialog(this, e.getMessage());
-    }
+        }
     }//GEN-LAST:event_SeConfirmanLasFechasActionPerformed
 
     private void ReservaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservaButtonActionPerformed
@@ -245,12 +252,12 @@ public class ReservarInmueble extends javax.swing.JFrame {
     if (BaseDatos.user.isVip()) {
         preciofinal *= 0.9; // Aplicar descuento del 10% para clientes VIP
     }
-    
     // Añadir reserva y tratar de imprimir factura
     try {
         Reserva.anadirReserva(particularcompra, BaseDatos.inmuebleSeleccionado, inicio, fin, preciofinal);
         Factura.imprimirFactura(particularcompra, BaseDatos.inmuebleSeleccionado, inicio, fin, preciofinal);
         JOptionPane.showMessageDialog(this, "Reserva completada correctamente.");
+        GestorVentanas.cambioVentana("ReservarInmueble", "PaginaPrincipal");
     } catch (IOException ex) {
         JOptionPane.showMessageDialog(this, "Error durante la impresión de la factura.");
     }
@@ -296,8 +303,6 @@ public class ReservarInmueble extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel InmuebleCompra;
     private javax.swing.JLabel LabelParticular;
-    private javax.swing.JLabel PrecioFinalReserva;
-    private javax.swing.JLabel PreciodelaReserva;
     private javax.swing.JButton ReservaButton;
     private javax.swing.JButton Salir;
     private javax.swing.JButton SeConfirmanLasFechas;
@@ -310,5 +315,7 @@ public class ReservarInmueble extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel precioReserva;
+    private javax.swing.JLabel precioTotalReserva;
     // End of variables declaration//GEN-END:variables
 }

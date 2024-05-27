@@ -56,13 +56,11 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         SubirAlojamiento = new javax.swing.JButton();
         CancelarSubida = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        ServiciosAlojamiento = new javax.swing.JTextField();
         DescripcionAlojamiento = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         AlojamientoLiada = new javax.swing.JLabel();
         FotoAloja = new javax.swing.JLabel();
         SubirFotoAlojamiento = new javax.swing.JButton();
-        NombreAlojamiento = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         calleField = new javax.swing.JTextField();
@@ -83,6 +81,8 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         habitacionesField = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         precioNocheField = new javax.swing.JTextField();
+        ServiciosAlojamiento = new javax.swing.JTextField();
+        NombreAlojamiento = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Título del Alojamiento:");
@@ -126,12 +126,6 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         jLabel6.setText("Descripción");
         jLabel6.setToolTipText("");
 
-        ServiciosAlojamiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                //ServiciosAlojamientoActionPerformed(evt);
-            }
-        });
-
         DescripcionAlojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DescripcionAlojamientoActionPerformed(evt);
@@ -145,12 +139,6 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         SubirFotoAlojamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubirFotoAlojamientoActionPerformed(evt);
-            }
-        });
-
-        NombreAlojamiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                //NombreAlojamientoActionPerformed(evt);
             }
         });
 
@@ -252,6 +240,18 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             }
         });
 
+        ServiciosAlojamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ServiciosAlojamientoActionPerformed(evt);
+            }
+        });
+
+        NombreAlojamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreAlojamientoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -265,14 +265,9 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(jLabel6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(115, 115, 115)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(ServiciosAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel4)
+                        .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,24 +323,28 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(NombreAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(DescripcionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(DescripcionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(19, 19, 19)
                                         .addComponent(SubirFotoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(38, 38, 38)
                                         .addComponent(jLabel3)))
-                                .addGap(18, 18, 18)
-                                .addComponent(FotoAloja, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(25, 25, 25)
+                                        .addComponent(ServiciosAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(FotoAloja, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(Casa)
                                 .addGap(18, 18, 18)
                                 .addComponent(Apartamento)))
-                        .addContainerGap())))
+                        .addContainerGap(19, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,6 +355,18 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                     .addComponent(NombreAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4))
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ServiciosAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DescripcionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(FotoAloja, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(calle)
@@ -413,23 +424,8 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(36, 36, 36)
                                         .addComponent(SubirFotoAlojamiento)))
-                                .addGap(53, 53, 53))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel12)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel4))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ServiciosAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(DescripcionAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(FotoAloja, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)))
-                .addGap(0, 0, 0)
+                                .addGap(53, 53, 53)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                 .addComponent(AlojamientoLiada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -556,6 +552,14 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_precioNocheFieldActionPerformed
 
+    private void ServiciosAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiciosAlojamientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ServiciosAlojamientoActionPerformed
+
+    private void NombreAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreAlojamientoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreAlojamientoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AlojamientoLiada;
@@ -563,7 +567,7 @@ public class SubirAlojamiento extends javax.swing.JPanel {
     private javax.swing.JButton CancelarSubida;
     public javax.swing.JRadioButton Casa;
     private javax.swing.JTextField DescripcionAlojamiento;
-    private javax.swing.JLabel FotoAloja;
+    public javax.swing.JLabel FotoAloja;
     private javax.swing.JTextField NombreAlojamiento;
     private javax.swing.JTextField ServiciosAlojamiento;
     private javax.swing.JButton SubirAlojamiento;

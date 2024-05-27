@@ -10,6 +10,7 @@ public class ObjetoGestorVentanas {
     EditarAjustesUsuario ventanaEditarAjustesUsuario;
     SubirFoto ventanaSubirFoto;
     ReservarInmueble ventanaReservarInmueble;
+    EditarDatosInmueble ventanaEditarInmueble;
     
     
     AjustesUsuario paginaAjustesUsuario;
@@ -20,6 +21,9 @@ public class ObjetoGestorVentanas {
     SubirAlojamiento paginaSubirAlojamiento;
     VerObjetos paginaVerObjetos;
     PaginaAdministrador paginaAdministrador;
+    VerReserva paginaVerReserva;
+    VerParticular paginaVerParticular;
+    VerAnfitrion paginaVerAnfitrion;
     
     public JavaBNB ventanaJavaBNB = new JavaBNB();
     
@@ -193,6 +197,18 @@ public class ObjetoGestorVentanas {
                 ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(382, 243, 1));
                 paginaAdministrador.fotoPerfilAdmin.setIcon(imgRedimensionada);
             }
+            
+            case "EditarDatosInmueble" -> {
+                ventanaEditarInmueble = new EditarDatosInmueble();
+                ventanaEditarInmueble.setLocationRelativeTo(null);
+                ventanaEditarInmueble.setVisible(true);
+                
+                ImageIcon imagen = new ImageIcon(BaseDatos.inmuebleSeleccionado.getRutaFoto());
+                //Se redimensiona
+                ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(207, 132, 1));
+                ventanaEditarInmueble.FotoAloja.setIcon(imgRedimensionada);
+            }
+            
         }
         
         switch(origen){
@@ -234,6 +250,14 @@ public class ObjetoGestorVentanas {
             
             case "VerObjetos" -> {
                 ventanaJavaBNB.frameJavaBNB.remove(paginaVerObjetos);
+            }
+            
+            case "EditarDatosInmueble" -> {
+                ventanaEditarInmueble.dispose();
+            }
+            
+            case "ReservarInmueble" -> {
+                ventanaReservarInmueble.dispose();
             }
         }
         

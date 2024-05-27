@@ -7,6 +7,7 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 import bonilladesande.pl2_bonilla_desande_23_24.Anfitrion;
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
+import bonilladesande.pl2_bonilla_desande_23_24.Particular;
 import bonilladesande.pl2_bonilla_desande_23_24.TextPrompt;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -199,6 +200,7 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
             String nuevoUsername = nuevoUser.getText();
             String nuevoEmail = nuevoCorreo.getText();
             char[] nuevaClave = nuevaContra.getPassword();
+            String nuevaClaveString = new String(nuevaClave);
             int nuevoTelefono = Integer.parseInt(nuevoTelef.getText());
             int digitostelefononuevo = String.valueOf(nuevoTelefono).length();
             //SI EL TELÉFONO NO TIENE NUEVE CIFRAS, LANZA UN ERROR.
@@ -208,18 +210,20 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         else{
             
             //SE GUARDA LA INFORMACIÓN EN EL USUARIO TEMPORAL.
-            BaseDatos.user.setNombre(nuevoUsername);
-            BaseDatos.user.setCorreo(nuevoEmail);
-            BaseDatos.user.setTelefono(nuevoTelefono);
-            String nuevaClaveString = new String(nuevaClave);
-            BaseDatos.user.setClave(nuevaClaveString);
+            
             
             //SE GUARDA LA INFORMACIÓN EN LA BASE DE DATOS.
             if(BaseDatos.user.getTipo() == 1){
-                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setNombre(nuevoUsername);
-                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setCorreo(nuevoEmail);
-                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setTelefono(nuevoTelefono);
-                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
+                
+                Particular particular = new Particular(BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).isVip(), BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getTarjeta(), BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getDni(), nuevoUsername, nuevoEmail, nuevaClaveString, nuevoTelefono);
+                for(int i = 0; i < BaseDatos.reservas.size(); i++){
+                    if(BaseDatos.reservas.get(i).getParticular().getCorreo().equals(BaseDatos.user.getCorreo())){
+                        BaseDatos.reservas.get(i).setParticular(particular);
+                    }
+                }
+                
+                BaseDatos.particulares.set(BaseDatos.user.getPosicionArrayList(), particular);
+                
             }
             else{
                 
@@ -227,14 +231,27 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 anfitrion.setFoto(BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getFoto());
                 
                 for(int i = 0; i < BaseDatos.inmuebles.size(); i++){
-                    if(BaseDatos.inmuebles.get(i).getAnfitrion() == BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList())){
+                    if(BaseDatos.inmuebles.get(i).getAnfitrion().getCorreo().equals(BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getCorreo())){
                         BaseDatos.inmuebles.get(i).setAnfitrion(anfitrion);
+                    }
+                }
+                
+                for(int i = 0; i < BaseDatos.reservas.size(); i++){
+                    if(BaseDatos.reservas.get(i).getInmueble().getAnfitrion().getCorreo().equals(BaseDatos.user.getCorreo())){
+                        BaseDatos.reservas.get(i).getInmueble().setAnfitrion(anfitrion);
                     }
                 }
                 
                 BaseDatos.anfitriones.set(BaseDatos.user.getPosicionArrayList(), anfitrion);
                
             }
+            
+            BaseDatos.user.setNombre(nuevoUsername);
+            BaseDatos.user.setCorreo(nuevoEmail);
+            BaseDatos.user.setTelefono(nuevoTelefono);
+            BaseDatos.user.setClave(nuevaClaveString);
+            
+            
             //SE CAMBIA A LA VENTANA ANTETIOR.
             GestorVentanas.cambioVentana("EditarAjustesUsuario", "AjustesUsuario");
         }
