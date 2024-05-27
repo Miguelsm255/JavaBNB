@@ -1,14 +1,13 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
-import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
-import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
+import bonilladesande.pl2_bonilla_desande_23_24.*;
 import java.util.ArrayList;
 
 public class PaginaPrincipal extends javax.swing.JPanel {
 
-    public PaginaPrincipal() {
+    public PaginaPrincipal(String tipo) {
         initComponents();
-        myInitComponents();
+        myInitComponents(tipo);
     }
 
 
@@ -59,8 +58,9 @@ public class PaginaPrincipal extends javax.swing.JPanel {
        GestorVentanas.cambioVentana("PaginaPrincipal", "SubirAlojamiento");
     }//GEN-LAST:event_InmuebleSubidaActionPerformed
 
-    public void myInitComponents() {
-        pintarLista(BaseDatos.inmuebles);
+    public void myInitComponents(String tipo) {
+        pintarLista(tipo);
+        
         //pintarLista(BaseDatos.filtroAlojamientos(30, 20, 0, 0, 0, 0, 0, "", ""));
         
         InmuebleSubida.setVisible(false);
@@ -69,9 +69,9 @@ public class PaginaPrincipal extends javax.swing.JPanel {
         }
     }
     
-    public void pintarLista(ArrayList<Inmueble> lista){
-        ListaAlojamientos listaAlojamientos = new ListaAlojamientos(lista);
-        this.jScrollPane1.setViewportView(listaAlojamientos);
+    public void pintarLista(String tipo){
+        ListaObjetos listaObjetos = new ListaObjetos(tipo);
+        this.jScrollPane1.setViewportView(listaObjetos);
         jScrollPane1.revalidate();
         jScrollPane1.repaint();
     }
