@@ -10,12 +10,11 @@ import javax.swing.JButton;
 
 public class AjustesUsuario extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AjustesUsuario
-     */
+    /*SI EL USUARIO NO ES UN ANFITRIÓN, NO PUEDE VER SUS INMUEBLES (YA QUE NO PUEDE SUBIRLOS), POR LO QUE
+    SE OCULTA EL BOTÓN DE VER INMUEBLES.*/
+    
     public AjustesUsuario() {
         initComponents();
-        
         if (BaseDatos.user.getTipo()== 1 || BaseDatos.user.getTipo()== 0){
             verInmuebles.setVisible(false);
         }
@@ -46,7 +45,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         Settings = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        BotonVolver = new javax.swing.JButton();
         fotoUsuarioBoton = new javax.swing.JButton();
         verReservas = new javax.swing.JButton();
         verClave = new javax.swing.JToggleButton();
@@ -90,10 +89,10 @@ public class AjustesUsuario extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setText("Volver");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotonVolver.setText("Volver");
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotonVolverActionPerformed(evt);
             }
         });
 
@@ -158,7 +157,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(Settings, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(120, 120, 120)
-                                .addComponent(jButton1))
+                                .addComponent(BotonVolver))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(saludoLabelAjustesUsuario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -200,46 +199,61 @@ public class AjustesUsuario extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Settings, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(BotonVolver))
                 .addGap(20, 20, 20)
                 .addComponent(jLabel8)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /*SI EL USUARIO TOCA EL BOTÓN DE "¿NECESITA HACER ALGÚN CAMBIO?", SE ENTIENDE QUE QUIERE REALIZAR ALGUNA
+    MODIFICACIÓN EN SU USUARIO, Y POR LO TANTO SE LE LLEVA A LA VENTANA PARA EDITAR AJUSTES DE USUARIO.*/
     private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsActionPerformed
-        GestorVentanas.cambioVentana("AjustesUsuario", "EditarAjustesUsuario");
-        
+        GestorVentanas.cambioVentana("AjustesUsuario", "EditarAjustesUsuario");      
     }//GEN-LAST:event_SettingsActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    
+    /*SI EL USUARIO TOCA EL BOTÓN DE "CANCELAR", SE ENTIENDE QUE QUIERE CERRAR LA PESTAÑA,
+    Y POR LO TANTO SE LE DEVUELVE A LA PÁGINA PRINCIPAL.*/
+    private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
         GestorVentanas.cambioVentana("AjustesUsuario", "PaginaPrincipal");
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }//GEN-LAST:event_BotonVolverActionPerformed
+   
+    /*ESTE BOTÓN SOLO PUEDE SER PULSADO POR PARTICUALRES, YA QUE, SEGÚN EL ENUNCIADO, SON AQUELLOS USUARIOS
+    QUE PUEDEN REALIZAR RESERVAS EN LA APLICACIÓN. AL PULSARLO TE PERMITE VISUALIZAR OTRA VENTANA DONDE SE 
+    ENCUENTRAN LAS RESERVAS REALIZADAS POR EL USUARIO.*/
     private void verReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verReservasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_verReservasActionPerformed
-
+    
+    /*SI EL USUARIO TOCA SU FOTO DE PERFIL, SE ENTIENDE QUE QUIERE REALIZAR ALGUNA
+    MODIFICACIÓN, Y POR LO TANTO SE LE LLEVA A LA VENTANA PARA SUBIR FOTOS DE PERFIL.*/
     private void fotoUsuarioBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoUsuarioBotonActionPerformed
         // TODO add your handling code here:
         GestorVentanas.cambioVentana("", "SubirFoto");
     }//GEN-LAST:event_fotoUsuarioBotonActionPerformed
 
+    /*ESTE BOTÓN PERMITE AL USUARIO HACER VISIBLE SU CLAVE EN EL MENÚ. AL SER ESTA APLICACIÓN
+    ALGO MAYORMENTE DIDÁCTICO, NO HEMOS PUESTO MEDIDAS DE SEGURIDAD EXCESIVAMENTE COMPLEJAS,
+    PERO QUEREMOS ASEGURARNOS DE QUE AL MENOS HAYA UNA ÍNFIMA FORMA DE CUIDAR LA
+    PRIVACIDAD DE NUESTROS USUARIOS.*/
     private void verClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verClaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_verClaveActionPerformed
-
+    
+    /*ESTE BOTÓN SOLO PUEDE SER PULSADO POR ANFITRIONES, YA QUE, SEGÚN EL ENUNCIADO, SON AQUELLOS USUARIOS
+    QUE PUEDEN REALIZAR SUBIDAS DE INMUEBLES. AL PULSARLO TE PERMITE VISUALIZAR OTRA VENTANA DONDE SE 
+    ENCUENTRAN LOS INMUEBLES PUBLICADOS POR EL USUARIO.*/
     private void verInmueblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInmueblesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_verInmueblesActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonVolver;
     private javax.swing.JButton Settings;
     public javax.swing.JLabel claveLabelAjustesUsuario;
     public javax.swing.JLabel correoLabelAjustesUsuario;
     public javax.swing.JButton fotoUsuarioBoton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

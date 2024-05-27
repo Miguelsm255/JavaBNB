@@ -21,6 +21,12 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
     /**
      * Creates new form EditarAjustesUsuario
      */
+    /*AL IGUAL QUE EN EL APARTADO DE CREAR CUENTA, AQUÍ TAMBIÉN UTILIZAREMOS UN CÓDIGO EXTERNO PARA USAR PLACEHOLDERS,
+    PERO EN ESTE CASO, EN VEZ DE MOSTRAR UN FORMATO, MOSTRARÁN LA INFORMACIÓN QUE TIENE EL USUARIO POR DEFECTO, ES DECIR, 
+    AQUELLA QUE INTRODUJO EN EL MOMENTO DE CREAR SU CUENTA Y AQUELLA QUE HIPOTÉTICAMENTE ESTÁ INTENTANDO CAMBIAR. ADEMÁS
+    HAY DOS FUNCIONES MÁS QUE PONEN DE COLOR ROJO DOS COSAS: OTRO LABEL OCULTO SIMILAR AL DEL APARTADO "CREAR CUENTA"
+    QUE TAMBIÉN ADVERTIRÁ SI EL USUARIO COMETE UN ERROR, Y EL BOTÓN DE ELIMINAR USUARIO, QUE BORRARÁ LA CUENTA DEL USUARIO 
+    DE LA BASE DE DATOS.*/
     public EditarAjustesUsuario() {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -178,31 +184,38 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA SU NUEVO NOMBRE DE USUARIO.
     private void nuevoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nuevoUserActionPerformed
-
+    /*ESPACIO PARA GUARDAR TODOS LOS CAMBIOS. TAMBIÉN TIRARÁ ERRORES SI ES OPORTUNO, Y LUEGO REEMPLAZARÁ LOS ESPACIOS
+    MODIFICADOS POR EL USUARIO EN LA BASE DE DATOS. EN CASO DE NO ACTUALIZAR UNO DE LOS TEXTFIELDS, LO CUAL SÍ ES POSIBLE
+    EN ESTA PESTAÑA, LA INFORMACIÓN SE MANTENDRÁ SIN ACTUALIZAR. ESTE ES UN MÉTODO DE SIMPLIFICAR LA INTERFAZ YA QUE 
+    DE ESTA MANERA NO ES NECESARIO QUE EL USUARIO TENGA QUE ABRIR VARIAS VENTANAS DISTINTAS PARA CAMBIAR SUS ATRIBUTOS,
+    PUEDE HACERLO TODO DE MANERA CÓMODA E INTUITIVA (GRACIAS AL APOYO DE LOS PLACEHOLDERS) DESDE UNA MISMA VENTANA.*/
     private void GuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarCambiosActionPerformed
+       //SE INTENTA RECOGER TODA LA INFORMACIÓN DE LOS TEXTFIELDS PARA ACTUALIZAR LA BASE DE DATOS.
         try{
-            
+           
             String nuevoUsername = nuevoUser.getText();
             String nuevoEmail = nuevoCorreo.getText();
             char[] nuevaClave = nuevaContra.getPassword();
             int nuevoTelefono = Integer.parseInt(nuevoTelef.getText());
             int digitostelefononuevo = String.valueOf(nuevoTelefono).length();
+            //SI EL TELÉFONO NO TIENE NUEVE CIFRAS, LANZA UN ERROR.
             if (digitostelefononuevo != 9) {
             throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
         }
         else{
             
-            // guardar en el user temporal
+            //SE GUARDA LA INFORMACIÓN EN EL USUARIO TEMPORAL.
             BaseDatos.user.setNombre(nuevoUsername);
             BaseDatos.user.setCorreo(nuevoEmail);
             BaseDatos.user.setTelefono(nuevoTelefono);
             String nuevaClaveString = new String(nuevaClave);
             BaseDatos.user.setClave(nuevaClaveString);
             
-            // guardar en base de datos
+            //SE GUARDA LA INFORMACIÓN EN LA BASE DE DATOS.
             if(BaseDatos.user.getTipo() == 1){
                 BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setNombre(nuevoUsername);
                 BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setCorreo(nuevoEmail);
@@ -215,28 +228,28 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setTelefono(nuevoTelefono);
                 BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
             }
-            
+            //SE CAMBIA A LA VENTANA ANTETIOR.
             GestorVentanas.cambioVentana("EditarAjustesUsuario", "AjustesUsuario");
         }
-    }
+    }   //RECIBE LAS EXCEPCIONES.
         catch (BibliotecaExcepciones.TelefonoEscacharrado e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         }
     }//GEN-LAST:event_GuardarCambiosActionPerformed
-
+    //SI SE PRESIONA EL BOTÓN DE CANCELAR, SE ENTIENDE QUE EL USUARIO NO QUIERE REALIZAR CAMBIOS Y SE CIERRA LA VENTANA.
     private void CancelarAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAjustesActionPerformed
         dispose();
     }//GEN-LAST:event_CancelarAjustesActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA SU NUEVO TELÉFONO
     private void nuevoTelefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoTelefActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nuevoTelefActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA SU NUEVO CORREO
     private void nuevoCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nuevoCorreoActionPerformed
-
+    //BOTÓN PARA ELIMINAR EL USUARIO ACTUAL, SE ABRIRÁ UN JPANEL CON LAS OPCIONES NECESARIAS PARA LLEVAR A CABO ESTE PROCESO.
     private void EliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarUsuarioActionPerformed
        
                 int response = JOptionPane.showConfirmDialog(
@@ -246,13 +259,14 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                         JOptionPane.YES_NO_OPTION, 
                         JOptionPane.QUESTION_MESSAGE);
 
-                // Procesar la respuesta del usuario
+                //SI EL USUARIO RESPONDE QUE QUIERE SER ELIMINADO, SE RETIRARÁ SU INFORMACIÓN DE LA BASE DE DATOS.
                 if (response == JOptionPane.YES_OPTION) {
+                    //SI ES UN PARTIICULAR, SE OPERARÁ DE LA SIGUIENTE MANERA.
                     if(BaseDatos.user.getTipo() == 1){
                         BaseDatos.particulares.remove(BaseDatos.user.getPosicionArrayList());
-                        
-                        
+                            
                     }
+                    
                     else {
                             BaseDatos.anfitriones.remove(BaseDatos.user.getPosicionArrayList());
                             
