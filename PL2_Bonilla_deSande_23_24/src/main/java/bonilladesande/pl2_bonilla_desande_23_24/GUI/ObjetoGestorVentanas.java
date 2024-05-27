@@ -9,6 +9,7 @@ public class ObjetoGestorVentanas {
     CrearCuenta ventanaCrearCuenta;
     EditarAjustesUsuario ventanaEditarAjustesUsuario;
     SubirFoto ventanaSubirFoto;
+    ReservarInmueble ventanaReservarInmueble;
     
     AjustesUsuario paginaAjustesUsuario;
     AlojamientoBoton paginaAlojamientoBoton;
@@ -159,6 +160,12 @@ public class ObjetoGestorVentanas {
                 ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
                 
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
+            }
+            
+            case "ReservarInmueble" -> {
+                ventanaReservarInmueble = new ReservarInmueble();
+                ventanaReservarInmueble.setLocationRelativeTo(null);
+                ventanaReservarInmueble.setVisible(true);
             }
         }
         

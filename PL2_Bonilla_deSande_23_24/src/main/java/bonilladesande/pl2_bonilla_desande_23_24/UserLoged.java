@@ -108,6 +108,14 @@ public class UserLoged{
     public void setVip(boolean vip) {
         this.vip = vip;
     }
+
+    public TarjetaCredito getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(TarjetaCredito tarjeta) {
+        this.tarjeta = tarjeta;
+    }
     
     public TarjetaCredito getTarjeta() {
         return tarjeta;
