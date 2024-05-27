@@ -77,5 +77,18 @@ public class BibliotecaExcepciones {
             super(message);
         }
     }
+    
+    //EXCEPCIÓN CREADA PARA ASEGURAR QUE LOS EMAILS SEAN UNA CADENA DE TEXTO + "@gmail.com".
+    public static class EmailSinEmail extends Exception {
+
+        public EmailSinEmail(String el_email_introducido_no_es_válido) {
+        }
+    }
+    //EXCEPCIÓN CREADA PARA CUANDO EL CÓDIGO POSTAL NO TENGA 5 DÍGITOS JUSTOS.
+    public static class PostalEscacharrado extends Exception {
+
+        public PostalEscacharrado(String el_código_postal_debe_de_contener_exactam) {
+        }
+    }
 
 }

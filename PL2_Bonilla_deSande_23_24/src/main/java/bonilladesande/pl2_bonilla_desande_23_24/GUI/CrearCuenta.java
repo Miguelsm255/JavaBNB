@@ -348,6 +348,9 @@ public class CrearCuenta extends javax.swing.JFrame {
             if (digitostelef != 9) {
                 throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
             }
+            if (!email.contains("@gmail.com")){
+            throw new BibliotecaExcepciones.EmailSinEmail("El email introducido no es válido.");
+        }
             LocalDate fechaRegistro = LocalDate.now();
             String fechaCaducidadIntroducida = caducidadTarjetaCrearCuenta.getText();
             String[] fechaCaducidadSplit = fechaCaducidadIntroducida.split("/");
@@ -394,7 +397,6 @@ public class CrearCuenta extends javax.swing.JFrame {
         }catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
                 CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-
             } 
         catch (ArrayIndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(this, "El campo de las fechas es erróneo.");
@@ -404,6 +406,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                 | BibliotecaExcepciones.cvvEscacharrado
                 | BibliotecaExcepciones.TarjetaCaducada
                 | BibliotecaExcepciones.TelefonoEscacharrado
+                | BibliotecaExcepciones.EmailSinEmail
                 | BibliotecaExcepciones.CamposVacios e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");

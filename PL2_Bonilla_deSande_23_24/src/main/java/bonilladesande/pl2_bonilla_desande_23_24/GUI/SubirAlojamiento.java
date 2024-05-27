@@ -477,6 +477,11 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             if (alojamiento.isEmpty() || descripcion.isEmpty() || serviciosalojamiento.isEmpty()) {
                 throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
+            int digitospostal = String.valueOf(cp).length();
+            //SI EL CÓDIGO POSTAL NO TIENE CINCO DÍGITOS, TIRA UN ERROR.
+            if (digitospostal != 5){
+                 throw new BibliotecaExcepciones.PostalEscacharrado("El código postal debe de contener exactamente 5 dígitos");
+            }
             //SI NI APARTAMENTO NI CASA ESTÁ SELECCIONADO, TIRA OTRO ERROR.
             if (!Casa.isSelected() && !Apartamento.isSelected()) {
                 throw new BibliotecaExcepciones.BotonesSinSeleccionar("Debes elegir si es una casa o un apartamento.");
@@ -497,7 +502,8 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                 AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
             }  
         catch (BibliotecaExcepciones.CamposVacios
-                | BibliotecaExcepciones.BotonesSinSeleccionar e) {
+                | BibliotecaExcepciones.BotonesSinSeleccionar 
+                | BibliotecaExcepciones.PostalEscacharrado e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         } catch (IOException e) {

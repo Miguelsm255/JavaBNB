@@ -206,7 +206,9 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
             if (digitostelefononuevo != 9) {
                 throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
             } else {
-
+                if (!nuevoEmail.contains("@gmail.com")) {
+                    throw new BibliotecaExcepciones.EmailSinEmail("El email introducido no es válido.");
+                }
                 //SE GUARDA LA INFORMACIÓN EN EL USUARIO TEMPORAL.
                 BaseDatos.user.setNombre(nuevoUsername);
                 BaseDatos.user.setCorreo(nuevoEmail);
@@ -231,10 +233,10 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
             }
         } //RECIBE LAS EXCEPCIONES.
         catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
-                edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-            } 
-        catch (BibliotecaExcepciones.TelefonoEscacharrado e) {
+            JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
+            edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+        } catch (BibliotecaExcepciones.EmailSinEmail
+                | BibliotecaExcepciones.TelefonoEscacharrado e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         }
