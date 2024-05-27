@@ -23,6 +23,7 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
      */
     public EditarAjustesUsuario() {
         initComponents();
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         TextPrompt placenuevouser = new TextPrompt(BaseDatos.user.getNombre(),nuevoUser);
         TextPrompt placenuevoemail = new TextPrompt(BaseDatos.user.getCorreo(), nuevoCorreo);
         TextPrompt placenuevacontraseña = new TextPrompt(BaseDatos.user.getClave(), nuevaContra);
@@ -183,15 +184,15 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
 
     private void GuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarCambiosActionPerformed
         try{
+            
             String nuevoUsername = nuevoUser.getText();
-        
-        String nuevoEmail = nuevoCorreo.getText();
-        char[] nuevaClave = nuevaContra.getPassword();
-        int nuevoTelefono = Integer.parseInt(nuevoTelef.getText());
-        int digitostelefononuevo = String.valueOf(nuevoTelefono).length();
-        if (digitostelefononuevo != 9) {
-                throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
-            }
+            String nuevoEmail = nuevoCorreo.getText();
+            char[] nuevaClave = nuevaContra.getPassword();
+            int nuevoTelefono = Integer.parseInt(nuevoTelef.getText());
+            int digitostelefononuevo = String.valueOf(nuevoTelefono).length();
+            if (digitostelefononuevo != 9) {
+            throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
+        }
         else{
             
             // guardar en el user temporal
@@ -214,13 +215,10 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setTelefono(nuevoTelefono);
                 BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
             }
-
-        
-        
-        
-        dispose();
+            
+            GestorVentanas.cambioVentana("EditarAjustesUsuario", "AjustesUsuario");
         }
-        }
+    }
         catch (BibliotecaExcepciones.TelefonoEscacharrado e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");

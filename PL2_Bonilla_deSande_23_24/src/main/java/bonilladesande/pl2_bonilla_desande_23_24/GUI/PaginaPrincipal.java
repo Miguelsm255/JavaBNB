@@ -9,10 +9,6 @@ public class PaginaPrincipal extends javax.swing.JPanel {
     public PaginaPrincipal() {
         initComponents();
         myInitComponents();
-        InmuebleSubida.setVisible(false);
-        if (BaseDatos.user.getTipo() ==2){
-            InmuebleSubida.setVisible(true);
-        }
     }
 
 
@@ -66,6 +62,11 @@ public class PaginaPrincipal extends javax.swing.JPanel {
     public void myInitComponents() {
         pintarLista(BaseDatos.inmuebles);
         //pintarLista(BaseDatos.filtroAlojamientos(30, 20, 0, 0, 0, 0, 0, "", ""));
+        
+        InmuebleSubida.setVisible(false);
+        if (BaseDatos.user.getTipo() ==2){
+            InmuebleSubida.setVisible(true);
+        }
     }
     
     public void pintarLista(ArrayList<Inmueble> lista){
