@@ -30,7 +30,7 @@ public class AAA_PRUEBAS_MIGUEL {
         //DatosInmueble datos1 = new DatosInmueble(33, 33, 33, 33);
         //ArrayList Arrayservicios = new ArrayList<>();
         //Servicios servicio = new Servicios(Arrayservicios);
-        //Inmueble peruTitan = new Inmueble("Perú Titán", d1, datos1, true, 10, servicio, 33, "Fotonelada", "Qué buen sitio, por la chucha");
+        //Inmueble peruTitan = new Inmueble("Perú Titán", d1, datos1, true, 10, servicio, 33, "Fotonelada", "Qué buen sitio, por la chucha", a1);
         
         //Direccion d2 = new Direccion("Calle madehuevo", 33, 33, "Ciudad Delfino");
         //DatosInmueble datos2 = new DatosInmueble(33, 33, 33, 33);

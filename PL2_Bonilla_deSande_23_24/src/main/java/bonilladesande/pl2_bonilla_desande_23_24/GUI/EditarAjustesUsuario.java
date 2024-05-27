@@ -4,6 +4,14 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
+import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
+import bonilladesande.pl2_bonilla_desande_23_24.TextPrompt;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author marco
@@ -15,6 +23,12 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
      */
     public EditarAjustesUsuario() {
         initComponents();
+        TextPrompt placenuevouser = new TextPrompt(BaseDatos.user.getNombre(),nuevoUser);
+        TextPrompt placenuevoemail = new TextPrompt(BaseDatos.user.getCorreo(), nuevoCorreo);
+        TextPrompt placenuevacontraseña = new TextPrompt(BaseDatos.user.getClave(), nuevaContra);
+        TextPrompt placenuevotelefono = new TextPrompt (String.valueOf(BaseDatos.user.getTelefono()), nuevoTelef);
+        edicionliada.setForeground(Color.RED);
+        EliminarUsuario.setForeground(Color.RED);
     }
 
     /**
@@ -37,8 +51,10 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         GuardarCambios = new javax.swing.JButton();
         CancelarAjustes = new javax.swing.JButton();
         nuevaContra = new javax.swing.JPasswordField();
+        edicionliada = new javax.swing.JLabel();
+        EliminarUsuario = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("¡Esta es la pestaña para realizar Ajustes de Usuario!");
@@ -87,15 +103,23 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
             }
         });
 
+        EliminarUsuario.setText("ELIMINAR USUARIO");
+        EliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarUsuarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(EliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(GuardarCambios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(CancelarAjustes)
@@ -103,19 +127,21 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(nuevoCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
-                                    .addComponent(nuevoUser, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nuevoTelef, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nuevaContra, javax.swing.GroupLayout.Alignment.LEADING))))
-                        .addGap(38, 38, 38))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(edicionliada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(nuevoCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                                        .addComponent(nuevoUser, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(nuevaContra, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(nuevoTelef, javax.swing.GroupLayout.Alignment.LEADING)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,32 +164,67 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nuevoTelef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
+                .addComponent(edicionliada, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GuardarCambios)
-                    .addComponent(CancelarAjustes))
+                    .addComponent(CancelarAjustes)
+                    .addComponent(EliminarUsuario))
                 .addGap(14, 14, 14))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void nuevoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nuevoUserActionPerformed
 
     private void GuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarCambiosActionPerformed
-        String nuevoUsername = nuevoUser.getText();
+        try{
+            String nuevoUsername = nuevoUser.getText();
+        
         String nuevoEmail = nuevoCorreo.getText();
         char[] nuevaClave = nuevaContra.getPassword();
         int nuevoTelefono = Integer.parseInt(nuevoTelef.getText());
+        int digitostelefononuevo = String.valueOf(nuevoTelefono).length();
+        if (digitostelefononuevo != 9) {
+                throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
+            }
+        else{
+            
+            // guardar en el user temporal
+            BaseDatos.user.setNombre(nuevoUsername);
+            BaseDatos.user.setCorreo(nuevoEmail);
+            BaseDatos.user.setTelefono(nuevoTelefono);
+            String nuevaClaveString = new String(nuevaClave);
+            BaseDatos.user.setClave(nuevaClaveString);
+            
+            // guardar en base de datos
+            if(BaseDatos.user.getTipo() == 1){
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setNombre(nuevoUsername);
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setCorreo(nuevoEmail);
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setTelefono(nuevoTelefono);
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
+            }
+            else{
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setNombre(nuevoUsername);
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setCorreo(nuevoEmail);
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setTelefono(nuevoTelefono);
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
+            }
+
         
-        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setNombre(nuevoUsername);
-        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setCorreo(nuevoEmail);
-        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setTelefono(nuevoTelefono);
-        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setClave(nuevaClave.toString());
+        
         
         dispose();
+        }
+        }
+        catch (BibliotecaExcepciones.TelefonoEscacharrado e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+            edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+        }
     }//GEN-LAST:event_GuardarCambiosActionPerformed
 
     private void CancelarAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAjustesActionPerformed
@@ -177,6 +238,37 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
     private void nuevoCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nuevoCorreoActionPerformed
+
+    private void EliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarUsuarioActionPerformed
+       
+                int response = JOptionPane.showConfirmDialog(
+                        this, 
+                        "¿Desea eliminar el usuario?", 
+                        "Confirmar",
+                        JOptionPane.YES_NO_OPTION, 
+                        JOptionPane.QUESTION_MESSAGE);
+
+                // Procesar la respuesta del usuario
+                if (response == JOptionPane.YES_OPTION) {
+                    if(BaseDatos.user.getTipo() == 1){
+                        BaseDatos.particulares.remove(BaseDatos.user.getPosicionArrayList());
+                        
+                        
+                    }
+                    else {
+                            BaseDatos.anfitriones.remove(BaseDatos.user.getPosicionArrayList());
+                            
+                    }   
+                    
+                    GestorVentanas.cambioVentana("EditarAjustesUsuario", "Login");
+                    GestorVentanas.gestorVentanas.ventanaJavaBNB.dispose();
+                    dispose();
+                    
+                } else if (response == JOptionPane.NO_OPTION) {
+                    dispose();
+                    
+                } 
+    }//GEN-LAST:event_EliminarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,7 +307,9 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelarAjustes;
+    private javax.swing.JButton EliminarUsuario;
     private javax.swing.JButton GuardarCambios;
+    private javax.swing.JLabel edicionliada;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

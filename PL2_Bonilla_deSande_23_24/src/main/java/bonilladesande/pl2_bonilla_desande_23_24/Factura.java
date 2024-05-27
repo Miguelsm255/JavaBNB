@@ -1,5 +1,7 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -15,8 +17,11 @@ public class Factura implements Serializable{
 
     // MÉTODOS
     
-    public void imprimirFactura(Particular particular, Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin, double precio){
-        // GENERAR EL ARCHIVO, AÚN HAY QUE MIRAR CÓMO.
+    public void imprimirFactura(Particular particular, Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin, double precio) throws IOException{
+        String NombreUser = System.getProperty("user.name");
+        String ruta = "C:/Users/" + NombreUser + "/Desktop/ComoEstánMuchacho.txt";
+        FileWriter Prueba = new FileWriter(ruta);
+        
     }
     // GETTERS 
     

@@ -25,7 +25,7 @@ public class CrearCuenta {
         // SI NO SON IGUALES SÍ QUE EXISTE LA CUENTA
         else{
             // DEVOLVER UN USERLOGED VACÍO
-            UserLoged noUser = new UserLoged(-1, -1);
+            UserLoged noUser = new UserLoged(-1, 0);
             return noUser;
         }
         

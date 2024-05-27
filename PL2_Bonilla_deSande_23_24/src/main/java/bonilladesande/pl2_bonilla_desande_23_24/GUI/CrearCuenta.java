@@ -1,6 +1,7 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import bonilladesande.pl2_bonilla_desande_23_24.*;
+import java.awt.Color;
 import java.time.LocalDate;
 import java.time.Month;
 import javax.swing.JOptionPane;
@@ -9,7 +10,17 @@ public class CrearCuenta extends javax.swing.JFrame {
 
     public CrearCuenta() {
         initComponents();
-        TextPrompt nombre = new TextPrompt("Nombre de usuario", nombreFieldCrearCuenta);
+        TextPrompt placenombre = new TextPrompt("Nombre de usuario", nombreFieldCrearCuenta);
+        TextPrompt placeDNI = new TextPrompt("Introduzca DNI", DNIfieldCrearCuenta);
+        TextPrompt placeemail = new TextPrompt("XXXXX@gmail.com", emailFieldCrearCuenta);
+        TextPrompt placeclave = new TextPrompt("Contraseña", claveFieldCrearCuenta);
+        TextPrompt placeconfirclave = new TextPrompt("Confirmar Contraseña", confirmaClaveFieldCrearCuenta);
+        TextPrompt placetelefono = new TextPrompt("XXXXXXXXX (9 dígitos)", telefonoFieldCrearCuenta);
+        TextPrompt placetarjeta = new TextPrompt("XXXXXXXXXXXXXXXX (16 dígitos)", TarjetaFieldCrearCuenta);
+        TextPrompt placecaducidad = new TextPrompt("mm/yyyy", caducidadTarjetaCrearCuenta);
+        TextPrompt placecvv = new TextPrompt("XXX", cvvTarjetaFieldCrearCuenta);
+        CuentaLiada.setForeground(Color.RED);
+
     }
 
     /**
@@ -44,8 +55,8 @@ public class CrearCuenta extends javax.swing.JFrame {
         anfitrionChekboxCrearCuenta = new javax.swing.JCheckBox();
         crearCuentaButton = new javax.swing.JButton();
         confirmaClaveFieldCrearCuenta = new javax.swing.JPasswordField();
-        CuentaLiada = new javax.swing.JTextField();
         DNIfieldCrearCuenta = new javax.swing.JTextField();
+        CuentaLiada = new javax.swing.JLabel();
 
         emailField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,8 +163,6 @@ public class CrearCuenta extends javax.swing.JFrame {
             }
         });
 
-        DNIfieldCrearCuenta.setText("jTextField2");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -187,17 +196,17 @@ public class CrearCuenta extends javax.swing.JFrame {
                                     .addComponent(confirmaClaveLabelCrearCuenta, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(telefonoFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addGap(12, 12, 12)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(confirmaClaveFieldCrearCuenta)
-                                            .addComponent(claveFieldCrearCuenta))))))
+                                            .addComponent(claveFieldCrearCuenta)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(telefonoFieldCrearCuenta)))))
                         .addContainerGap(18, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(CuentaLiada, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CuentaLiada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tarjetaLabelCrearCuenta)
@@ -272,8 +281,8 @@ public class CrearCuenta extends javax.swing.JFrame {
                     .addComponent(anfitrionChekboxCrearCuenta)
                     .addComponent(crearCuentaButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CuentaLiada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(CuentaLiada, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -330,6 +339,8 @@ public class CrearCuenta extends javax.swing.JFrame {
             if (dni.isEmpty() || nombre.isEmpty() || email.isEmpty() || clave.isEmpty()) {
                 throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
+            
+            
             int telefono = Integer.parseInt(telefonoFieldCrearCuenta.getText());
             int digitostelef = String.valueOf(telefono).length();
             if (digitostelef != 9) {
@@ -350,8 +361,8 @@ public class CrearCuenta extends javax.swing.JFrame {
             if (digitoscvv != 3) {
                 throw new BibliotecaExcepciones.cvvEscacharrado("El CVV debe de contener exactamente 3 dígitos");
             }
-            int numTarjeta = Integer.parseInt(TarjetaFieldCrearCuenta.getText());
-            int digitosTarjeta = String.valueOf(numTarjeta).length();
+            long numTarjeta = Long.parseLong(TarjetaFieldCrearCuenta.getText());
+            long digitosTarjeta = String.valueOf(numTarjeta).length();
             if (digitosTarjeta != 16) {
                 throw new BibliotecaExcepciones.TarjetaEscacharrada("La tarjeta debe contener exactamente 16 dígitos.");
             }
@@ -361,36 +372,30 @@ public class CrearCuenta extends javax.swing.JFrame {
             boolean vip = false;
 
             UserLoged user = bonilladesande.pl2_bonilla_desande_23_24.CrearCuenta.crearCuenta(anfitrion, dni, nombre, email, clave, telefono, fechaRegistro, tarjeta, vip);
-
+            if (user.getTipo() == -1 && user.getPosicionArrayList() == 0){
+                throw new BibliotecaExcepciones.CorreoRepetido("Ya existe un usuario con este correo");
+            }
             // SI LA INFORMACIÓN NO ES CORRECTA
+            // MOSTRAR LABEL DE "FALTAN DATOS / DATOS INCORRECTOS / DATOS INVÁLIDOS"
             if (user.getTipo() == -1) {
-                // MOSTRAR LABEL DE "FALTAN DATOS / DATOS INCORRECTOS / DATOS INVÁLIDOS"
                 user = null;
                 CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+
             } // SI LOS DATOS SON CORRECTOS:
+            // ABRIR PÁGINA PRINCIPAL
             else {
-                // ABRIR PÁGINA PRINCIPAL
                 GestorVentanas.cambioVentana("CrearCuenta", "Login");
             }
-        } catch (BibliotecaExcepciones.TarjetaEscacharrada e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+        } catch (BibliotecaExcepciones.CorreoRepetido | 
+       BibliotecaExcepciones.TarjetaEscacharrada | 
+       BibliotecaExcepciones.cvvEscacharrado | 
+       BibliotecaExcepciones.TarjetaCaducada | 
+       BibliotecaExcepciones.TelefonoEscacharrado | 
+       BibliotecaExcepciones.CamposVacios e) {
+    JOptionPane.showMessageDialog(this, e.getMessage());
+    CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+}
 
-        } catch (BibliotecaExcepciones.cvvEscacharrado e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.TarjetaCaducada e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.TelefonoEscacharrado e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.CamposVacios e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-
-            
-        }
 
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
 
@@ -427,10 +432,11 @@ public class CrearCuenta extends javax.swing.JFrame {
                 new CrearCuenta().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField CuentaLiada;
+    private javax.swing.JLabel CuentaLiada;
     private javax.swing.JTextField DNIfieldCrearCuenta;
     private javax.swing.JTextField TarjetaFieldCrearCuenta;
     private javax.swing.JCheckBox anfitrionChekboxCrearCuenta;
