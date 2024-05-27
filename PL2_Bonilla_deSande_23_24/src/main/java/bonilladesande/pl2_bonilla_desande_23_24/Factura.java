@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.logging.Formatter;
 
 public class Factura implements Serializable{
     
@@ -20,7 +21,12 @@ public class Factura implements Serializable{
     public static void imprimirFactura(Particular particular, Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin, double precio) throws IOException{
         String NombreUser = System.getProperty("user.name");
         String ruta = "C:/Users/" + NombreUser + "/Desktop/¡Gracias por contar con JavaBNB!.txt";
-        FileWriter Prueba = new FileWriter(ruta);
+        FileWriter factura = new FileWriter(ruta);
+        factura.write("Nombre del comprador: " + particular);
+        factura.write("Nombre del inmueble: " + inmueble);
+        factura.write("Fecha de Inicio de la reserva: " + fechaInicio);
+        factura.write("Fecha de Fin de la reserva: " + fechaFin);
+        factura.write("Precio final de la factura: " + precio);
         
     }
     // GETTERS 

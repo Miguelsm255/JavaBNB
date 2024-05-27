@@ -117,14 +117,6 @@ public class UserLoged{
         this.tarjeta = tarjeta;
     }
     
-    public TarjetaCredito getTarjeta() {
-        return tarjeta;
-    }
-
-    public void setTarjeta(TarjetaCredito tarjeta) {
-        this.tarjeta = tarjeta;
-    }
-    
     // CONSTRUCTOR
     
     public UserLoged(int tipo, int posicionArrayList) {
