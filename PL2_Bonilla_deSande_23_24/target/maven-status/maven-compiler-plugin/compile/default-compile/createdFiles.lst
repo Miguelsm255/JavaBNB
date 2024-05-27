@@ -1,3 +1,4 @@
+bonilladesande\pl2_bonilla_desande_23_24\GUI\VentanaAdministrador$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaAlojamiento$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$3.class
@@ -6,10 +7,9 @@ bonilladesande\pl2_bonilla_desande_23_24\Login.class
 bonilladesande\pl2_bonilla_desande_23_24\Usuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$10.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario.class
-bonilladesande\pl2_bonilla_desande_23_24\GUI\ListaAlojamientos.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\VentanaAdministrador.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$3.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$5.class
-bonilladesande\pl2_bonilla_desande_23_24\GUI\AlojamientoBoton$1.class
 bonilladesande\pl2_bonilla_desande_23_24\Cliente.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$15.class
@@ -54,11 +54,11 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$2.class
 bonilladesande\pl2_bonilla_desande_23_24\FiltraImagenes.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\ObjetoGestorVentanas.class
 bonilladesande\pl2_bonilla_desande_23_24\Inmueble.class
-bonilladesande\pl2_bonilla_desande_23_24\GUI\AlojamientoBoton.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$4.class
 bonilladesande\pl2_bonilla_desande_23_24\DatosInmueble.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$13.class
 bonilladesande\pl2_bonilla_desande_23_24\Direccion.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$6.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaPrincipal.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$7.class
@@ -66,6 +66,7 @@ bonilladesande\pl2_bonilla_desande_23_24\UserLoged.class
 bonilladesande\pl2_bonilla_desande_23_24\TarjetaCredito.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$14.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$5.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\verObjetos.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto$4.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$4.class
