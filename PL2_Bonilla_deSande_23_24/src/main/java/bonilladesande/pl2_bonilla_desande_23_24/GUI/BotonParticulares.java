@@ -6,8 +6,8 @@ import javax.swing.ImageIcon;
 
 public class BotonParticulares extends javax.swing.JPanel {
 
-    Particular particular;
-    
+    /*CONSTRUCTOR BÁSICO QUE NECESITA DEL PARÁMETRO "PARTICULAR" PARA MOSTRAR EN LA MINIATURA.*/
+    Particular particular;  
     public BotonParticulares(Particular particular) {
         
         this.particular = particular;
@@ -62,8 +62,9 @@ public class BotonParticulares extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
 
-
-
+    /*EN TÉRMINOS DE INTERFAZ GRÁFICA, ESTE CÓDIGO ES EL QUE SE OCUPA DE PONER LAS MINIATURAS DE LOS PARTICULARES,
+    LOS CUALES PODRÁ VER EL ADMINISTRADOR. SE OCUPA DE COGER EL NOMBRE DE UN PARTICULAR YA INSERTADO Y SU FOTO DE
+    PERFIL, DE ESTA MANERA PODRÁ OFRECER UNA VISTA PREVIA AL ADMINISTRADOR DEL USUARIO EN CUESTIÓN.*/
     public void myInitComponents(Particular particular) {
         nombreInmuebleAlojamientoBoton.setText(particular.getNombre());
         
@@ -75,7 +76,8 @@ public class BotonParticulares extends javax.swing.JPanel {
 
 
 
-
+    /*AL PULSAR SOBRE UNO DE LOS PARTICULARES, SE CAMBIA LA PÁGINA A UNA VENTANA MÁS AMPLIA DONDE SE PUEDEN VER
+    EN DETALLE LOS DATOS DEL PARTICULAR.*/
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
 
         //GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaAlojamiento");

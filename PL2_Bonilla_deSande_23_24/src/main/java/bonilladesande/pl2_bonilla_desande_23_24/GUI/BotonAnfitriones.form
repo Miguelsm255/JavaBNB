@@ -33,14 +33,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="valoracionAlojamientoBoton" min="-2" pref="80" max="-2" attributes="0"/>
-                      <EmptySpace min="22" pref="324" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="nombreInmuebleAlojamientoBoton" min="-2" pref="300" max="-2" attributes="0"/>
-                      <EmptySpace pref="108" max="32767" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="22" pref="108" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
