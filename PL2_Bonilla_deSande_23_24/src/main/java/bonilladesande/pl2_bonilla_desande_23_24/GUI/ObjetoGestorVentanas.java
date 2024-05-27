@@ -110,19 +110,55 @@ public class ObjetoGestorVentanas {
             }
             
             case "PaginaAlojamiento" -> {
-                paginaPaginaAlojamiento = new PaginaAlojamiento();
+                paginaPaginaAlojamiento = new PaginaAlojamiento(BaseDatos.inmuebleSeleccionado);
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaAlojamiento);
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
                 ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
                 
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
+                
+                paginaPaginaAlojamiento.NombrelojamientoLabel.setText(BaseDatos.inmuebleSeleccionado.getTitulo());
+                paginaPaginaAlojamiento.nombreAnfitrionLabel.setText(BaseDatos.inmuebleSeleccionado.getAnfitrion().getNombre());
+                paginaPaginaAlojamiento.precioLabelPaginaAlojamiento.setText(BaseDatos.inmuebleSeleccionado.getPrecioNoche() +  "€/noche");
+                paginaPaginaAlojamiento.calificacionLabelPaginaAlojamiento.setText(String.valueOf(BaseDatos.inmuebleSeleccionado.getCalificacion()));
+                paginaPaginaAlojamiento.fieldServiciosPagAlojamientos.setText(BaseDatos.inmuebleSeleccionado.getServicios());
+                paginaPaginaAlojamiento.fieldDescripcionPagAlojamientos.setText(BaseDatos.inmuebleSeleccionado.getDescripcion());
+                paginaPaginaAlojamiento.direccionLabel.setText(BaseDatos.inmuebleSeleccionado.getDireccion().getCalle() + " Nº" + String.valueOf(BaseDatos.inmuebleSeleccionado.getDireccion().getNumero()));
+                paginaPaginaAlojamiento.ciudadLabel.setText(BaseDatos.inmuebleSeleccionado.getDireccion().getCiudad());
+                paginaPaginaAlojamiento.cpLabel.setText(String.valueOf(BaseDatos.inmuebleSeleccionado.getDireccion().getCodigoPostal()));
+                paginaPaginaAlojamiento.camasLabel.setText("Camas: " + String.valueOf(BaseDatos.inmuebleSeleccionado.getDatos().getCamas()));
+                paginaPaginaAlojamiento.huespedesLabel.setText("Huéspedes: " + String.valueOf(BaseDatos.inmuebleSeleccionado.getDatos().getHuespedes()));
+                paginaPaginaAlojamiento.habitacionesLabel.setText("Habitaciones: " + String.valueOf(BaseDatos.inmuebleSeleccionado.getDatos().getHabitaciones()));
+                paginaPaginaAlojamiento.baniosLabel.setText("Baños: " + String.valueOf(BaseDatos.inmuebleSeleccionado.getDatos().getBaños()));
+                
+                if(BaseDatos.inmuebleSeleccionado.esCasa()){
+                    paginaPaginaAlojamiento.casa_apartamentoLabel.setText("Casa");
+                }
+                else{
+                    paginaPaginaAlojamiento.casa_apartamentoLabel.setText("Apartamento");
+                }
+                
+                ImageIcon imagen = new ImageIcon(BaseDatos.inmuebleSeleccionado.getRutaFoto());
+                //Se redimensiona
+                ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(316, 191, 1));
+                paginaPaginaAlojamiento.fotoAlojamientoLabel.setIcon(imgRedimensionada);
             }
             
             case "SubirFoto" -> {
                 ventanaSubirFoto = new SubirFoto();
                 ventanaSubirFoto.setLocationRelativeTo(null);
                 ventanaSubirFoto.setVisible(true);
+            }
+            
+            case "SubirAlojamiento" -> {
+                paginaSubirAlojamiento = new SubirAlojamiento();
+                ventanaJavaBNB.frameJavaBNB.setViewportView(paginaSubirAlojamiento);
+                ventanaJavaBNB.setVisible(true);
+                ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
+                
+                ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
             }
         }
         
@@ -153,7 +189,10 @@ public class ObjetoGestorVentanas {
             case "SubirFoto" -> {
                 ventanaSubirFoto.dispose();
                 
-                    
+            }
+            
+            case "PaginaAlojamiento" -> {
+                BaseDatos.inmuebleSeleccionado = null;
             }
         }
         

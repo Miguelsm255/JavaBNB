@@ -13,16 +13,12 @@ import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
 
 public class OperacionesInmuebles {
     
-    public static void subirInmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, double precioNoche, Servicios servicios, int calificacion, String rutaFoto, String descripcion){
-     if (casa = true){
-         Inmueble inmueble = new Inmueble(titulo, direccion, datos, true, precioNoche, servicios, calificacion, rutaFoto, descripcion);
-         BaseDatos.inmuebles.add(inmueble);
-     }    
-     else{
-         Inmueble inmueble = new Inmueble(titulo, direccion, datos, true, precioNoche, servicios, calificacion, rutaFoto, descripcion);
-         BaseDatos.inmuebles.add(inmueble);
+    public static void subirInmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, double precioNoche, String servicios, int calificacion, String rutaFoto, String descripcion){
+        Anfitrion anfitrion = BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList());
      
-     }
+        Inmueble inmueble = new Inmueble(titulo, direccion, datos, casa, precioNoche, servicios, rutaFoto, descripcion, anfitrion);
+        BaseDatos.inmuebles.add(inmueble);
+     
     }
     
 }

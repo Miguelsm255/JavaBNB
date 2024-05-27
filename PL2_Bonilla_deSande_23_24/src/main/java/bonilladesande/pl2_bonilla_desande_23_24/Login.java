@@ -34,6 +34,8 @@ public class Login {
             user.setTelefono(particular.getTelefono());
             user.setCorreo(particular.getCorreo());
             user.setClave(particular.getClave());
+            user.setVip(false);
+            user.setTarjeta(particular.getTarjeta());
         }
         
         // SI ES UN ANFITRIÓN

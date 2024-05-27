@@ -386,26 +386,16 @@ public class CrearCuenta extends javax.swing.JFrame {
             else {
                 GestorVentanas.cambioVentana("CrearCuenta", "Login");
             }
-        } catch (BibliotecaExcepciones.CorreoRepetido e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.TarjetaEscacharrada e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.cvvEscacharrado e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.TarjetaCaducada e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.TelefonoEscacharrado e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.CamposVacios e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+        } catch (BibliotecaExcepciones.CorreoRepetido | 
+       BibliotecaExcepciones.TarjetaEscacharrada | 
+       BibliotecaExcepciones.cvvEscacharrado | 
+       BibliotecaExcepciones.TarjetaCaducada | 
+       BibliotecaExcepciones.TelefonoEscacharrado | 
+       BibliotecaExcepciones.CamposVacios e) {
+    JOptionPane.showMessageDialog(this, e.getMessage());
+    CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+}
 
-        }
 
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
 

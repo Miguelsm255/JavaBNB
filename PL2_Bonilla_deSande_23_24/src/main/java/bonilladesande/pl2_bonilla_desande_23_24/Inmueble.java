@@ -8,17 +8,18 @@ public class Inmueble implements Serializable{
 
     // ATRIBUTOS
     private String titulo;
+    private Anfitrion anfitrion;
     private Direccion direccion;
     private DatosInmueble datos;
     private boolean casa;
     private double precioNoche;
-    private Servicios servicios;
-    private int calificacion;
+    private String servicios;
+    private double calificacion;
     private String rutaFoto;
     private String descripcion;
 
     // CONSTRUCTOR
-    public Inmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, double precioNoche, Servicios servicios, int calificacion, String rutaFoto, String descripcion) {
+    public Inmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, double precioNoche, String servicioin, String rutaFoto, String descripcion, Anfitrion anfitrion) {
         this.titulo = titulo;
         this.direccion = direccion;
         this.datos = datos;
@@ -28,6 +29,7 @@ public class Inmueble implements Serializable{
         this.calificacion = calificacion;
         this.rutaFoto = rutaFoto;
         this.descripcion = descripcion;
+        this.anfitrion = anfitrion;
     }
 
     // GETTERS Y SETTERS
@@ -63,15 +65,15 @@ public class Inmueble implements Serializable{
         this.precioNoche = precioNoche;
     }
 
-    public Servicios getServicios() {
+    public String getServicios() {
         return servicios;
     }
 
-    public void setServicios(Servicios servicios) {
+    public void setServicios(String servicios) {
         this.servicios = servicios;
     }
 
-    public int getCalificacion() {
+    public double getCalificacion() {
         return calificacion;
     }
 
@@ -108,10 +110,17 @@ public class Inmueble implements Serializable{
         casa = true;
     }
 
-    //TO STRING
+    public Anfitrion getAnfitrion() {
+        return anfitrion;
+    }
+
+    public void setAnfitrion(Anfitrion anfitrion) {
+        this.anfitrion = anfitrion;
+    }
+
     @Override
     public String toString() {
-        return "Inmueble{" + "titulo=" + titulo + ", direccion=" + direccion + ", datos=" + datos + ", casa=" + casa + ", precioNoche=" + precioNoche + ", servicios=" + servicios + ", calificacion=" + calificacion + ", rutaFoto=" + rutaFoto + ", descripcion=" + descripcion + '}';
+        return "Inmueble{" + "titulo=" + titulo + ", anfitrion=" + anfitrion + ", direccion=" + direccion + ", datos=" + datos + ", casa=" + casa + ", precioNoche=" + precioNoche + ", servicios=" + servicios + ", calificacion=" + calificacion + ", rutaFoto=" + rutaFoto + ", descripcion=" + descripcion + '}';
     }
 
 }
