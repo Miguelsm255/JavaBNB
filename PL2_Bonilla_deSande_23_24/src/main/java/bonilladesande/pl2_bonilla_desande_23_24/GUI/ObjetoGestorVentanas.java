@@ -99,6 +99,7 @@ public class ObjetoGestorVentanas {
             }
             
             case "AjustesUsuario" -> {
+                
                 paginaAjustesUsuario = new AjustesUsuario();
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaAjustesUsuario);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(false);

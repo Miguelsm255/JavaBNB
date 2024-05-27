@@ -64,6 +64,7 @@ public class PaginaPrincipal extends javax.swing.JPanel {
         
         //pintarLista(BaseDatos.filtroAlojamientos(30, 20, 0, 0, 0, 0, 0, "", ""));
         
+        //SOLO LOS ANFITRIONES PUEDEN SUBIR INMUEBLES, POR LO TANTO EL BOTÓN ESTARÁ OCULTO PARA EL RESTO.
         InmuebleSubida.setVisible(false);
         if (BaseDatos.user.getTipo() ==2){
             InmuebleSubida.setVisible(true);

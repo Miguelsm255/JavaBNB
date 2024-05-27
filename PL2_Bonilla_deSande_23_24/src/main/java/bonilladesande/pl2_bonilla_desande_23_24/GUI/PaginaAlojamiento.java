@@ -14,9 +14,7 @@ import javax.swing.ImageIcon;
  */
 public class PaginaAlojamiento extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PaginaAlojamiento
-     */
+    //NECESITA UN OBJETO INMUEBLE PARA INTRODUCIR TODAS SUS CARACTERÍSTICAS
     public PaginaAlojamiento(Inmueble inmueble) {
         initComponents();
         myInitComponents(inmueble);
@@ -277,29 +275,29 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void myInitComponents(Inmueble inmueble){
-        
+    //OBTIENE LA RUTA DE LA FOTO DEL INMUEBLE Y LA COLOCA.
+    private void myInitComponents(Inmueble inmueble) {
         ImageIcon imagen = new ImageIcon(inmueble.getRutaFoto());
-        //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(300, 191, 1));
         fotoAlojamientoLabel.setIcon(imgRedimensionada);
-        
+        /*SOLO ESTÁ PERMITIDO RESERVAR INMUEBLES SI ERES UN PARTICULAR, POR LO TANTO
+    EL BOTÓN PARA RESERVAR INMUEBLES SOLO ESTARÁ DISPONIBLE SI ERES UN PARTICULAR.*/
         reservarInmuebleBoton.setVisible(true);
-        if (BaseDatos.user.getTipo() ==2){
+        if (BaseDatos.user.getTipo() == 2) {
             reservarInmuebleBoton.setVisible(false);
         }
-        
+
     }
-    
+    //SI SE PRESIONA EL BOTÓN "RESERVAR", CAMBIA LA VENTANA HACIA LA DE RESERVAR INMUEBLES.
     private void reservarInmuebleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservarInmuebleBotonActionPerformed
         // TODO add your handling code here:
         GestorVentanas.cambioVentana("", "ReservarInmueble");
     }//GEN-LAST:event_reservarInmuebleBotonActionPerformed
-
+    //SI SE PRESIONA EL BOTÓN "VOLVER", CAMBIA LA VENTANA HACIA LA PÁGINA PRINCIPAL.
     private void volverButtonPaginaAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButtonPaginaAlojamientoActionPerformed
         GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
     }//GEN-LAST:event_volverButtonPaginaAlojamientoActionPerformed
-
+    //??????????????
     private void fieldDescripcionPagAlojamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldDescripcionPagAlojamientosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldDescripcionPagAlojamientosActionPerformed

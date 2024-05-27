@@ -4,75 +4,73 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24;
 
-/**
- *
- * @author marco
- */
-public class BibliotecaExcepciones {
 
+public class BibliotecaExcepciones {
+    
+    //EXCEPCIÓN CREADA PARA CUANDO EL TELÉFONO NO TUVIERA 9 DÍGITOS.
     public static class TelefonoEscacharrado extends Exception {
 
         public TelefonoEscacharrado(String message) {
             super(message);
         }
     }
-
+    //EXCEPCIÓN CREADA PARA CUANDO ALGUIEN INTENTARA UTILIZAR UN CORREO YA EXISTENTE
     public static class CorreoRepetido extends Exception {
 
         public CorreoRepetido(String message) {
             super(message);
         }
     }
-
+    //EXCEPCIÓN CREADA PARA LOS CASOS EN LOS QUE EXISTE UNA "FECHA IMPOSIBLE" POR SER MENOR QUE LA ACTUAL.
     public static class FechaMenor extends Exception {
 
         public FechaMenor(String message) {
             super(message);
         }
     }
-    
-    public static class FechaInicioMenorFin extends Exception {
+    //EXCEPCIÓN CREADA PARA LOS CASOS EN LOS QUE LA FECHA DE FIN DE RESERVA ES MENOR QUE LA DE INICIO.
+    public static class FechaFinMenorInicio extends Exception {
 
-        public FechaInicioMenorFin(String message) {
+        public FechaFinMenorInicio(String message) {
             super(message);
         }
     }
-    
+    //EXCEPCIÓN CREADA PARA LOS CASOS EN LOS QUE SE INTENTA RESERVAR UN INMUEBLE QUE YA ESTÁ RESERVADO DURANTE UNA FECHA CONCRETA.
     public static class InmuebleYaReservado extends Exception {
 
         public InmuebleYaReservado(String message) {
             super(message);
         }
     }
-
+    //EXCEPCIÓN CREADA PARA CUANDO EL CVV NO TENGA TRES DÍGITOS JUSTOS.
     public static class cvvEscacharrado extends Exception {
 
         public cvvEscacharrado(String message) {
             super(message);
         }
     }
-
+    //EXCEPCIÓN CREADA PARA CUANDO LA TARJETA NO TENGA 16 DÍGITOS JUSTOS.
     public static class TarjetaEscacharrada extends Exception {
 
         public TarjetaEscacharrada(String message) {
             super(message);
         }
     }
-
+    //EXCEPCIÓN CREADA PARA CUANDO LOS TEXTFIELDS SE DEJEN VACÍOS.
     public static class CamposVacios extends Exception {
 
         public CamposVacios(String message) {
             super(message);
         }
     }
-
+    //EXCEPCIÓN CREADA PARA LOS DOS BOTONES (CASA Y APARTAMENTO) ESTÉN SIN SELECCIONAR. 
     public static class BotonesSinSeleccionar extends Exception {
 
         public BotonesSinSeleccionar(String message) {
             super(message);
         }
     }
-
+    //EXCEPCIÓN CREADA PARA REGULAR QUE LA TARJETA DE CRÉDITO NO TENGA UNA FECHA DE CADUCIDAD MENOR A LA ACTUAL.
     public static class TarjetaCaducada extends Exception {
 
         public TarjetaCaducada(String message) {

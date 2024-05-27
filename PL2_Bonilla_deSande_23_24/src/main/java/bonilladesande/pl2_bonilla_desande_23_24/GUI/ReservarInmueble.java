@@ -25,6 +25,9 @@ public class ReservarInmueble extends javax.swing.JFrame {
     /**
      * Creates new form ReservarInmueble
      */
+    /*EL PRICIO FINAL SE INICIA COMO ALGO OCULTO, YA QUE NO SE PUEDE SABER HASTA
+    QUE NO SE ESTABLEZCAN EL NÚMERO DE DÍAS QUE DURARÁ LA RESERVA. ADEMÁS DE ESO, NECESITAMOS
+    LOS NOMBRES DEL PARTICULAR QUE COMPRA EL INMUEBLE Y EL DEL PROPIO INMUEBLE.*/
     public ReservarInmueble() {
         initComponents();
         PreciodelaReserva.setVisible(false);
@@ -185,53 +188,61 @@ public class ReservarInmueble extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //SI SE PRESIONA EL BOTÓN SALIR, SE SALE DE LA APLICACIÓN.
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         dispose();
     }//GEN-LAST:event_SalirActionPerformed
-
+    //ESTE MÉTODO SIRVE PARA ASEGURARSE DE QUE LAS FECHAS INTRODUCIDAS SON CORRECTAS.
     private void SeConfirmanLasFechasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeConfirmanLasFechasActionPerformed
         try {
         String fechaInicioIntroducida = fechaInicioString.getText();
         String fechaFinIntroducida = fechaFinString.getText();
+        //SE UTILIZA SPLIT PARA SEPARAR LAS FECHAS POR EL SLASH.
         String[] fechaInicioSplit = fechaInicioIntroducida.split("/");
         String[] fechaFinSplit = fechaFinIntroducida.split("/");
         
         LocalDate ahora = LocalDate.now();
+        //SE HACEN VARIABLES DE FECHAS CON LOS DATOS OBTENIDOS MEDIANTE EL SPLIT.
         LocalDate inicio = LocalDate.of(Integer.parseInt(fechaInicioSplit[2]), Integer.parseInt(fechaInicioSplit[1]), Integer.parseInt(fechaInicioSplit[0]));
         LocalDate fin = LocalDate.of(Integer.parseInt(fechaFinSplit[2]), Integer.parseInt(fechaFinSplit[1]), Integer.parseInt(fechaFinSplit[0]));
         
-        // Comprobar si las fechas son válidas
+        //COMPRUEBA SI LAS FECHAS SON VÁLIDAS.
         if (inicio.isBefore(ahora) || fin.isBefore(ahora)) {
             throw new BibliotecaExcepciones.FechaMenor("Las fechas no pueden ser menores que la fecha actual.");
         }
         if (fin.isBefore(inicio)) {
-            throw new BibliotecaExcepciones.FechaInicioMenorFin("La fecha de fin de reserva no puede ser menor que la de inicio.");
+            throw new BibliotecaExcepciones.FechaFinMenorInicio("La fecha de fin de reserva no puede ser menor que la de inicio.");
         }
         
-        // Calcular la cantidad de días
+        //CALCULA LA CANTIDAD DE DÍAS.
         long dias = ChronoUnit.DAYS.between(inicio, fin);
         double precionoche = BaseDatos.inmuebleSeleccionado.getPrecioNoche();
         double preciofinal;
         
-        // Calcular el precio final dependiendo del tipo de usuario
+        //CALCULA EL PRECIO FINAL, AÑADIENDO, EN CASO DE SER VIP, UN 10% DE DESCUENTO.
         if (BaseDatos.user.isVip()) {
             preciofinal = precionoche * dias * 0.9;
         } else {
             preciofinal = precionoche * dias;
         }
         
-        // Mostrar el precio final en el campo correspondiente
+        //MUESTRA EL PRECIO FINAL EN EL CAMPO CIRRESPONDIENTE.
         PrecioFinalReserva.setText(String.valueOf(preciofinal));
         
-        } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaInicioMenorFin e) {
+        } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaFinMenorInicio e) {
         JOptionPane.showMessageDialog(this, e.getMessage());
     }
     }//GEN-LAST:event_SeConfirmanLasFechasActionPerformed
 
+    //UNA VEZ SE PRESIONA EL BOTÓN DE RESERVAR, SE LLEVAN A CABO UNA SERIE DE PROCESOS.
     private void ReservaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservaButtonActionPerformed
                                        
     //Particular particularcompra = new Particular(BaseDatos.user.isVip(), BaseDatos.user.getTarjeta(), BaseDatos.user.getDni(), BaseDatos.user.getNombre(), BaseDatos.user.getCorreo(), BaseDatos.user.getClave(), BaseDatos.user.getTelefono());
+    
+    
+    
+    /*CREA UN OBJETO PARTICULAR (EL ÚNICO TIPO DE USUARIO QUE PUEDE COMPRAR UN INMUEBLE), Y TAMBIÉN CREA FECHAS DE 
+    MANERA SIMILAR AL CÓMO LO HACÍA EN EL APARTADO ANTERIOR.*/ 
     Particular particularcompra = BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList());
     String fechaInicioIntroducida = fechaInicioString.getText();
     String fechaFinIntroducida = fechaFinString.getText();
@@ -240,13 +251,15 @@ public class ReservarInmueble extends javax.swing.JFrame {
     LocalDate inicio = LocalDate.of(Integer.parseInt(fechaInicioSplit[2]), Integer.parseInt(fechaInicioSplit[1]), Integer.parseInt(fechaInicioSplit[0]));
     LocalDate fin = LocalDate.of(Integer.parseInt(fechaFinSplit[2]), Integer.parseInt(fechaFinSplit[1]), Integer.parseInt(fechaFinSplit[0]));
     long dias = ChronoUnit.DAYS.between(inicio, fin);
+    
+    //CONOCIENDO EL PRECIO POR NOCHE DEL OBJETO SELECCIONADO, SE PUEDE CALCULAR EL PRECIO FINAL Y TRAS ESTO APLICARLE EL DESCUENTO.
     double precionoche = BaseDatos.inmuebleSeleccionado.getPrecioNoche();
     double preciofinal = precionoche * dias;
     if (BaseDatos.user.isVip()) {
-        preciofinal *= 0.9; // Aplicar descuento del 10% para clientes VIP
+        preciofinal *= 0.9;
     }
     
-    // Añadir reserva y tratar de imprimir factura
+    //SE LE AÑADE LA RESERVA Y SE INTENTA IMPRIMIR LA FACTURA CON LA FUNCIÓN "imprimirFactura", la cual se encuentra en "Factura".
     try {
         Reserva.anadirReserva(particularcompra, BaseDatos.inmuebleSeleccionado, inicio, fin, preciofinal);
         Factura.imprimirFactura(particularcompra, BaseDatos.inmuebleSeleccionado, inicio, fin, preciofinal);

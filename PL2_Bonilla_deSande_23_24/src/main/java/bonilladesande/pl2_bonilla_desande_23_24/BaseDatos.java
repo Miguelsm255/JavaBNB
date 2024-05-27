@@ -120,6 +120,8 @@ public class BaseDatos {
         return listaFiltrada;
     }
     
+    //FILTRAR ALOJAMIENTOS COMPARANDO SUS PRECIOS, CALIFICACIONES, HUÉSPEDES, CAMAS, BAÑOS, Y/O DIRECCIONES.
+    
     public static ArrayList<Inmueble> filtroAlojamientos(double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad ){
         
         ArrayList<Inmueble> listaFiltrada = new ArrayList<>();
@@ -171,6 +173,10 @@ public class BaseDatos {
         }
         return listaFiltrada;
     }
+    
+    /*ESTE APARTADO FUE HECHO PRINCIPALMENTE PARA REALIZAR LAS PRUEBAS NECESARIAS, PERO SU PRINCIPAL FUNCIÓN ES 
+    VACIAR LOS ARRAYLIST PARA ASEGURARNOS DE QUE SE SUBEN LOS DATOS..*/
+   
     public static void BorrarListaAnfitriones() {
         anfitriones.clear();  
     }
