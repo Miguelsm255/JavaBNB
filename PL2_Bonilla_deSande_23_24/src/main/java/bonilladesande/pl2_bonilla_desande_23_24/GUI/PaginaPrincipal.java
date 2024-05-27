@@ -53,7 +53,8 @@ public class PaginaPrincipal extends javax.swing.JPanel {
                 .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //SI SE SELECCIONA EL BOTÓN "SUBIR UN INMUEBLE", SE CAMBIA DE LA PÁGINA PRINCIPAL A LA DE SUBIR UN ALOJAMIENTO
+    
     private void InmuebleSubidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InmuebleSubidaActionPerformed
        GestorVentanas.cambioVentana("PaginaPrincipal", "SubirAlojamiento");
     }//GEN-LAST:event_InmuebleSubidaActionPerformed

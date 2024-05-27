@@ -23,6 +23,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
+/*PARA SUBIR UN ALOJAMIENTO, NECESITAMOS UNA RUTA DE IMAGEN, Y PARA ELLOS UTILIZAMOS VARIOS IMPORTS, COMO
+EL IMPORT FILE O EL IMPORT BUFFERED IMAGE*/
 public class SubirAlojamiento extends javax.swing.JPanel {
 
     private String nombreImagen, rutaImagen, extension = "jpg";
@@ -32,6 +34,8 @@ public class SubirAlojamiento extends javax.swing.JPanel {
     /**
      * Creates new form SubirAlojamiento
      */
+    
+    //CREAMOS PLACEHOLDERS PARA HACER EL PROCESO MÁS INTUITIVO.
     public SubirAlojamiento() {
         initComponents();
         TextPrompt placenombreinmueble = new TextPrompt("Introduce el nombre del inmueble", NombreAlojamiento);
@@ -434,11 +438,14 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //EN ESTE ESPACIO, EL ANFITRIÓN PUEDE ESCRIBIR UNA DESCRIPCIÓN SOBRE EL APARTAMENTO QUE VA A SUBIR.
     private void DescripcionAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescripcionAlojamientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DescripcionAlojamientoActionPerformed
-
+    /*AL PRESIONAR EL BOTÓN DE SUBIR ALOJAMIENTO, OCURREN UNA SERIE DE COSAS: EN PRIMER LUGAR, SE CONSIGUE LA
+    FOTO DE PERFIL SUBIDA DEL APARTAMENTO. LUEGO SE OBTIENE EL NOMBRE DEL ALOJAMIENTO, SU DESCRIPCIÓN, SUS SERVICIOS,
+    SU CALLE (Y SU NÚMERO DE CALLE), SU CÓDIGO POSTAL, SU CIUDAD, SU NÚMERO DE BAÑOS, SU NÚMERO DE CAMAS, SU NÚMERO DE
+    HABITACIONES Y SU NÚMERO DE HUÉSPEDES.*/
     private void SubirAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirAlojamientoActionPerformed
         try {
             String ruta = "./src/main/java/imagenes/" + nombreImagen;
@@ -457,21 +464,24 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             int camas = Integer.parseInt(camasField.getText());
             int habitaciones = Integer.parseInt(habitacionesField.getText());
             int huespedes = Integer.parseInt(huespedesField.getText());
-
+            //SI ALGUNO DE LOS CAMPOS ESTÁ VACÍO, TIRA UN ERROR.
             if (alojamiento.isEmpty() || descripcion.isEmpty() || serviciosalojamiento.isEmpty()) {
                 throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
+            //SI NI APARTAMENTO NI CASA ESTÁ SELECCIONADO, TIRA OTRO ERROR.
             if (!Casa.isSelected() && !Apartamento.isSelected()) {
                 throw new BibliotecaExcepciones.BotonesSinSeleccionar("Debes elegir si es una casa o un apartamento.");
             }
-
+            //CREA UN NUEVO INMUEBLE CON LOS DATOS OBTENIDOS Y LO SUBE AL ARRAY DE LA BASE DE DATOS.
             DatosInmueble datos = new DatosInmueble(huespedes, habitaciones, camas, banios);
             Direccion direccion = new Direccion(calle, numero, cp, ciudad);
             Inmueble inmueble = new Inmueble(alojamiento, direccion, datos, Casa.isEnabled(), Integer.parseInt(precioNocheField.getText()), serviciosalojamiento, ruta, descripcion, BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()));
             BaseDatos.inmuebles.add(inmueble);
-
+            
+            //UNA VEZ SUBIDO, CAMBIA LA VENTANA A LA PÁGINA PRINCIPAL.
             GestorVentanas.cambioVentana("SubirAlojamiento", "PaginaPrincipal");
 
+            //TE IMPRIME UN MENSAJE PARA COMUNICARTE QUE EL APARTAMENTO SE HA PUBLICADO EXITOSAMENTE.
             JOptionPane.showMessageDialog(this, "Alojamiento subido con éxito.");
         } catch (BibliotecaExcepciones.CamposVacios
                 | BibliotecaExcepciones.BotonesSinSeleccionar e) {

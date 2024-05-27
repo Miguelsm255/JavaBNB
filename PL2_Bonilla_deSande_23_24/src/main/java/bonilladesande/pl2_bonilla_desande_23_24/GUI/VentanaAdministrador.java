@@ -18,9 +18,10 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     /**
      * Creates new form VentanaAdministrador
      */
+    //AL EMPEZAR, TE COLOCA LA FOTO DE PERFIL POR DEFAULT QUE HEMOS ELEGIDO PARA EL ADMINISTRADOR.
     public VentanaAdministrador() {
         initComponents();
-        ImageIcon imagen = new ImageIcon("./src/main/java/imagenes/foto admin.jpg");
+        ImageIcon imagen = new ImageIcon("./src/main/java/imagenes/fotoAdmin.jpg");
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(263, 283, 1));
         FotoPerfilAdmin.setIcon(imgRedimensionada);
     }
