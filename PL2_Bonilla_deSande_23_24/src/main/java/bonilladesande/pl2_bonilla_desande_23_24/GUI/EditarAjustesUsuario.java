@@ -193,10 +193,29 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
             }
         else{
-        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setNombre(nuevoUsername);
-        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setCorreo(nuevoEmail);
-        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setTelefono(nuevoTelefono);
-        bonilladesande.pl2_bonilla_desande_23_24.BaseDatos.user.setClave(nuevaClave.toString());
+            
+            // guardar en el user temporal
+            BaseDatos.user.setNombre(nuevoUsername);
+            BaseDatos.user.setCorreo(nuevoEmail);
+            BaseDatos.user.setTelefono(nuevoTelefono);
+            String nuevaClaveString = new String(nuevaClave);
+            BaseDatos.user.setClave(nuevaClaveString);
+            
+            // guardar en base de datos
+            if(BaseDatos.user.getTipo() == 1){
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setNombre(nuevoUsername);
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setCorreo(nuevoEmail);
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setTelefono(nuevoTelefono);
+                BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
+            }
+            else{
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setNombre(nuevoUsername);
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setCorreo(nuevoEmail);
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setTelefono(nuevoTelefono);
+                BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).setClave(nuevaClaveString);
+            }
+
+        
         
         
         dispose();
