@@ -17,9 +17,9 @@ public class Factura implements Serializable{
 
     // MÉTODOS
     
-    public void imprimirFactura(Particular particular, Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin, double precio) throws IOException{
+    public static void imprimirFactura(Particular particular, Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin, double precio) throws IOException{
         String NombreUser = System.getProperty("user.name");
-        String ruta = "C:/Users/" + NombreUser + "/Desktop/ComoEstánMuchacho.txt";
+        String ruta = "C:/Users/" + NombreUser + "/Desktop/¡Gracias por contar con JavaBNB!.txt";
         FileWriter Prueba = new FileWriter(ruta);
         
     }

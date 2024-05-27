@@ -34,7 +34,7 @@ public class SubirAlojamiento extends javax.swing.JPanel {
      */
     public SubirAlojamiento() {
         initComponents();
-        TextPrompt placenombreinmueble = new TextPrompt ("Introduce el nombre del inmueble", NombreAlojamiento);
+        TextPrompt placenombreinmueble = new TextPrompt("Introduce el nombre del inmueble", NombreAlojamiento);
         TextPrompt placedescripcion = new TextPrompt("Introduce una descripción para el alojamieneto", DescripcionAlojamiento);
         TextPrompt placeservicios = new TextPrompt("Introduce una descripción para el alojamieneto", ServiciosAlojamiento);
     }
@@ -445,7 +445,7 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             bimage = ImageIO.read(file);
             File fout = new File(ruta);
             ImageIO.write(bimage, extension, fout);
-            
+
             String alojamiento = NombreAlojamiento.getText();
             String descripcion = DescripcionAlojamiento.getText();
             String serviciosalojamiento = ServiciosAlojamiento.getText();
@@ -457,7 +457,6 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             int camas = Integer.parseInt(camasField.getText());
             int habitaciones = Integer.parseInt(habitacionesField.getText());
             int huespedes = Integer.parseInt(huespedesField.getText());
-            
 
             if (alojamiento.isEmpty() || descripcion.isEmpty() || serviciosalojamiento.isEmpty()) {
                 throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
@@ -465,25 +464,24 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             if (!Casa.isSelected() && !Apartamento.isSelected()) {
                 throw new BibliotecaExcepciones.BotonesSinSeleccionar("Debes elegir si es una casa o un apartamento.");
             }
-            
+
             DatosInmueble datos = new DatosInmueble(huespedes, habitaciones, camas, banios);
             Direccion direccion = new Direccion(calle, numero, cp, ciudad);
             Inmueble inmueble = new Inmueble(alojamiento, direccion, datos, Casa.isEnabled(), Integer.parseInt(precioNocheField.getText()), serviciosalojamiento, ruta, descripcion, BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()));
             BaseDatos.inmuebles.add(inmueble);
-            
+
             GestorVentanas.cambioVentana("SubirAlojamiento", "PaginaPrincipal");
-            
+
             JOptionPane.showMessageDialog(this, "Alojamiento subido con éxito.");
-        } catch (BibliotecaExcepciones.CamposVacios e) {
-            JOptionPane.showMessageDialog(this, e.getMessage());
-            AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-        } catch (BibliotecaExcepciones.BotonesSinSeleccionar e) {
+        } catch (BibliotecaExcepciones.CamposVacios
+                | BibliotecaExcepciones.BotonesSinSeleccionar e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error al subir el alojamiento.");
-            AlojamientoLiada.setText("Porfavor, revise todos los campos e inténtelo de nuevo.");
+            AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         }
+
 
     }//GEN-LAST:event_SubirAlojamientoActionPerformed
 
@@ -511,7 +509,7 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(FotoAloja.getWidth(), FotoAloja.getHeight(), 1));
         FotoAloja.setIcon(imgRedimensionada);
-        
+
     }//GEN-LAST:event_SubirFotoAlojamientoActionPerformed
 
     private void CasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaActionPerformed
@@ -558,7 +556,6 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_precioNocheFieldActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AlojamientoLiada;
