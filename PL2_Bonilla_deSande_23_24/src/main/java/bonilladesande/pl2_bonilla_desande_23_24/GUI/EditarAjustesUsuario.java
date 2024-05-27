@@ -264,9 +264,9 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                     //SI ES UN PARTIICULAR, SE OPERARÁ DE LA SIGUIENTE MANERA.
                     if(BaseDatos.user.getTipo() == 1){
                         BaseDatos.particulares.remove(BaseDatos.user.getPosicionArrayList());
-                        
-                        
+                            
                     }
+                    
                     else {
                             BaseDatos.anfitriones.remove(BaseDatos.user.getPosicionArrayList());
                             

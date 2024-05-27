@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class AlojamientoBoton extends javax.swing.JPanel {
 
-    
+    /*CONSTRUCTOR BÁSICO QUE NECESITA DEL PARÁMETRO INMUEBLE PARA MOSTRAR EN LA MINIATURA.*/
     Inmueble inmueble;
     public AlojamientoBoton(Inmueble inmueble) {
         this.inmueble = inmueble;
