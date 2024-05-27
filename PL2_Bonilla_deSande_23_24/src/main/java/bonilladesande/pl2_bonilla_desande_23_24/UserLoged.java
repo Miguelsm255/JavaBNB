@@ -117,8 +117,6 @@ public class UserLoged{
         this.tarjeta = tarjeta;
     }
     
-    
-    
     // CONSTRUCTOR
     
     public UserLoged(int tipo, int posicionArrayList) {
