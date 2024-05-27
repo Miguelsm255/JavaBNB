@@ -287,6 +287,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        GestorVentanas.cambioVentana("", "ReservarInmueble");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void volverButtonPaginaAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButtonPaginaAlojamientoActionPerformed
