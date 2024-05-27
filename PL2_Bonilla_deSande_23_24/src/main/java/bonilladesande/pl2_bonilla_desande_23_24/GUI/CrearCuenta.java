@@ -8,6 +8,11 @@ import javax.swing.JOptionPane;
 
 public class CrearCuenta extends javax.swing.JFrame {
 
+    /*COMPONENTES BÁSICOS, UTILIZAN UN CÓDIGO EXTERNO PARA CREAR UNOS PLACEHOLDERS EN LOS LUGARES
+    DONDE EL USUARIO DEBE INTRODUCIR LA INFORMACIÓN. ESTO HACE DE LA APLICACIÓN ALGO MÁS INTUITIVO,
+    YA QUE SI SE ESTABLECEN ALGUNOS PARÁMETROS CONCRETOS EL USUARIO SABRÁ QUÉ DEBE INTRODUCIR EN CADA
+    ESPACIO PARA CREAR UNA CUENTA DE FORMA EXITOSA. LA ÚLTIMA LÍNEA DE CÓDIGO HACE REFERENCIA A UNA JLABEL
+    OCULTA, LA CUÁL SOLO APARECE CON LETRAS ROJAS CUANDO EL USUARIO PROVOCA ALGÚN TIPO DE ERROR.*/
     public CrearCuenta() {
         initComponents();
         TextPrompt placenombre = new TextPrompt("Nombre de usuario", nombreFieldCrearCuenta);
@@ -32,13 +37,12 @@ public class CrearCuenta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        emailField = new javax.swing.JTextField();
         javabnbLabelCrearCuenta = new javax.swing.JLabel();
         tituloLabelCrearCuenta = new javax.swing.JLabel();
         nombreLabelCrearCuenta = new javax.swing.JLabel();
         nombreFieldCrearCuenta = new javax.swing.JTextField();
         dniLabelCrearCuenta = new javax.swing.JLabel();
-        emailLabelCrearCuenta = new javax.swing.JLabel();
+        emailLabel = new javax.swing.JLabel();
         emailFieldCrearCuenta = new javax.swing.JTextField();
         claveLabelCrearCuenta = new javax.swing.JLabel();
         tarjetaLabelCrearCuenta = new javax.swing.JLabel();
@@ -57,12 +61,6 @@ public class CrearCuenta extends javax.swing.JFrame {
         confirmaClaveFieldCrearCuenta = new javax.swing.JPasswordField();
         DNIfieldCrearCuenta = new javax.swing.JTextField();
         CuentaLiada = new javax.swing.JLabel();
-
-        emailField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailFieldActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,8 +83,8 @@ public class CrearCuenta extends javax.swing.JFrame {
         dniLabelCrearCuenta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         dniLabelCrearCuenta.setText("DNI:");
 
-        emailLabelCrearCuenta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        emailLabelCrearCuenta.setText("E-mail:");
+        emailLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        emailLabel.setText("E-mail:");
 
         emailFieldCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,7 +185,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(DNIfieldCrearCuenta))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(emailLabelCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                                 .addComponent(emailFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -250,7 +248,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                     .addComponent(DNIfieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLabelCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -287,47 +285,50 @@ public class CrearCuenta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA EL NOMBRE.
     private void nombreFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreFieldCrearCuentaActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA EL EMAIL.
     private void emailFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailFieldCrearCuentaActionPerformed
-
-    private void emailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emailFieldActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA LA TARJETA.
     private void TarjetaFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetaFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TarjetaFieldCrearCuentaActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA EL CVV.
     private void cvvTarjetaFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cvvTarjetaFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cvvTarjetaFieldCrearCuentaActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA LA CONTRASEÑA.
     private void claveFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claveFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_claveFieldCrearCuentaActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA LA FECHA DE CADUCIDAD DE LA TARJETA.
     private void caducidadTarjetaCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caducidadTarjetaCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_caducidadTarjetaCrearCuentaActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA EL TELÉFONO.
     private void telefonoFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_telefonoFieldCrearCuentaActionPerformed
-
+    //CHECKBOX QUE REVISA SI EL USUARIO ES ANFITRIÓN O NO.
     private void anfitrionChekboxCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anfitrionChekboxCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_anfitrionChekboxCrearCuentaActionPerformed
-
+    //ESPACIO PARA QUE EL USUARIO CONFIRME SU CONTRASEÑA.
     private void confirmaClaveFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmaClaveFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmaClaveFieldCrearCuentaActionPerformed
 
+    /*ESTA FUNCIÓN SE ACTIVA AL PULSAR EL BOTÓN DE CREAR CUENTA, Y SE ASEGURA DE RECOGER LA INFORMACIÓN
+    DEL USUARIO QUE USA LA APLICACIÓN, DE QUE LOS CAMPOS ESTÉN LLENOS, DE QUE LAS CIFRAS Y LOS FORMATOS 
+    SEAN CORRECTOS Y DE QUE NO HAYA NINGÚN TIPO DE ERROR. PARA ELLO UTILIZA VARIAS EXCEPCIONES
+    QUE SE PUEDEN VER EN LA CATEGORÍA "BIBLIOTECA DE EXCEPCIONES". SI TODO ESTO ES CORRECTO,
+    ALMACENARÁ AL USUARIO Y SUS DATOS EN LA BASE DE DATOS PARA PODER UTILIZAR SU INFORMACIÓN
+    CUANDO SEA PRECISA. DESPUÉS, LLEVARÁ AL USUARIO A LA PÁGINA PRINCIPAL.*/
     private void crearCuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaButtonActionPerformed
         try {
             boolean anfitrion = anfitrionChekboxCrearCuenta.isSelected();
@@ -336,32 +337,35 @@ public class CrearCuenta extends javax.swing.JFrame {
             String email = emailFieldCrearCuenta.getText();
             char[] claveChar = claveFieldCrearCuenta.getPassword();
             String clave = new String(claveChar);
+            /*SI ALGUNO DE LOS CAMPOS ESTÁ VACÍO, LANZA UN ERROR (SE ENTIENDE QUE TODOS LOS CAMPOS
+            DEBEN SER OBLIGATORIOS*/
             if (dni.isEmpty() || nombre.isEmpty() || email.isEmpty() || clave.isEmpty()) {
                 throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
-
             int telefono = Integer.parseInt(telefonoFieldCrearCuenta.getText());
             int digitostelef = String.valueOf(telefono).length();
+            //SI EL TELÉFONO NO TIENE NUEVE DÍGITOS, LANZA UN ERROR.
             if (digitostelef != 9) {
                 throw new BibliotecaExcepciones.TelefonoEscacharrado("El teléfono debe de contener exactamente 9 dígitos");
             }
             LocalDate fechaRegistro = LocalDate.now();
-
             String fechaCaducidadIntroducida = caducidadTarjetaCrearCuenta.getText();
             String[] fechaCaducidadSplit = fechaCaducidadIntroducida.split("/");
             LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt(fechaCaducidadSplit[0]), 1);
-
             int comparaFechas = caducidad.compareTo(fechaRegistro);
+            //SI LA TARJETA DE CRÉDITO INTRODUCIDA ESTÁ CADUCADA, LANZA UN ERROR.
             if (comparaFechas < 0) {
                 throw new BibliotecaExcepciones.TarjetaCaducada("La tarjeta introducida está fuera de fecha.");
             }
             int cvv = Integer.parseInt(cvvTarjetaFieldCrearCuenta.getText());
             int digitoscvv = String.valueOf(cvv).length();
+            //SI EL CVV NO TIENE TRES DÍGITOS, LANZA UN ERROR.
             if (digitoscvv != 3) {
                 throw new BibliotecaExcepciones.cvvEscacharrado("El CVV debe de contener exactamente 3 dígitos");
             }
             long numTarjeta = Long.parseLong(TarjetaFieldCrearCuenta.getText());
             long digitosTarjeta = String.valueOf(numTarjeta).length();
+            //SI LA TARJETA DE CRÉDITO NO TIENE 16 DÍGITOS, LANZA UN ERROR.
             if (digitosTarjeta != 16) {
                 throw new BibliotecaExcepciones.TarjetaEscacharrada("La tarjeta debe contener exactamente 16 dígitos.");
             }
@@ -371,6 +375,7 @@ public class CrearCuenta extends javax.swing.JFrame {
             boolean vip = false;
 
             UserLoged user = bonilladesande.pl2_bonilla_desande_23_24.CrearCuenta.crearCuenta(anfitrion, dni, nombre, email, clave, telefono, fechaRegistro, tarjeta, vip);
+            //SI EXISTE YA UN USUARIO QUE UTILIZA ESE CORREO, LANZA UN ERROR.
             if (user.getTipo() == -1 && user.getPosicionArrayList() == 0) {
                 throw new BibliotecaExcepciones.CorreoRepetido("Ya existe un usuario con este correo");
             }
@@ -380,11 +385,12 @@ public class CrearCuenta extends javax.swing.JFrame {
                 user = null;
                 CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
 
-            } // SI LOS DATOS SON CORRECTOS:
-            // ABRIR PÁGINA PRINCIPAL
+            } // SI LOS DATOS SON CORRECTOS, TE REDIRIGE A LA PÁGINA DE INICIO DE SESIÓN.
             else {
                 GestorVentanas.cambioVentana("CrearCuenta", "Login");
             }
+            /*AQUÍ ESTÁN LOS CATCHS PARA TODOS LOS ERRORES QUE PUEDE PROVOCAR EL USUARIO, ACOMPAÑADO DEL LABEL OCULTO
+            QUE MENCIONAMOS AL PRINCIPIO, EL CUÁL APARECERÁ CON LETRAS ROJAS.*/
         } catch (BibliotecaExcepciones.CorreoRepetido
                 | BibliotecaExcepciones.TarjetaEscacharrada
                 | BibliotecaExcepciones.cvvEscacharrado
@@ -449,9 +455,8 @@ public class CrearCuenta extends javax.swing.JFrame {
     private javax.swing.JTextField cvvTarjetaFieldCrearCuenta;
     private javax.swing.JLabel cvvTarjetaLabelCrearCuenta;
     private javax.swing.JLabel dniLabelCrearCuenta;
-    private javax.swing.JTextField emailField;
     private javax.swing.JTextField emailFieldCrearCuenta;
-    private javax.swing.JLabel emailLabelCrearCuenta;
+    private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel javabnbLabelCrearCuenta;
     private javax.swing.JLabel noTarjetaLabelCrearCuenta;
     private javax.swing.JTextField nombreFieldCrearCuenta;
