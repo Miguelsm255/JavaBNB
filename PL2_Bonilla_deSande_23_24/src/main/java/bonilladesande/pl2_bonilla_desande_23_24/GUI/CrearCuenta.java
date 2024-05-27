@@ -339,8 +339,7 @@ public class CrearCuenta extends javax.swing.JFrame {
             if (dni.isEmpty() || nombre.isEmpty() || email.isEmpty() || clave.isEmpty()) {
                 throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
-            
-            
+
             int telefono = Integer.parseInt(telefonoFieldCrearCuenta.getText());
             int digitostelef = String.valueOf(telefono).length();
             if (digitostelef != 9) {
@@ -372,7 +371,7 @@ public class CrearCuenta extends javax.swing.JFrame {
             boolean vip = false;
 
             UserLoged user = bonilladesande.pl2_bonilla_desande_23_24.CrearCuenta.crearCuenta(anfitrion, dni, nombre, email, clave, telefono, fechaRegistro, tarjeta, vip);
-            if (user.getTipo() == -1 && user.getPosicionArrayList() == 0){
+            if (user.getTipo() == -1 && user.getPosicionArrayList() == 0) {
                 throw new BibliotecaExcepciones.CorreoRepetido("Ya existe un usuario con este correo");
             }
             // SI LA INFORMACIÓN NO ES CORRECTA
@@ -386,15 +385,15 @@ public class CrearCuenta extends javax.swing.JFrame {
             else {
                 GestorVentanas.cambioVentana("CrearCuenta", "Login");
             }
-        } catch (BibliotecaExcepciones.CorreoRepetido | 
-       BibliotecaExcepciones.TarjetaEscacharrada | 
-       BibliotecaExcepciones.cvvEscacharrado | 
-       BibliotecaExcepciones.TarjetaCaducada | 
-       BibliotecaExcepciones.TelefonoEscacharrado | 
-       BibliotecaExcepciones.CamposVacios e) {
-    JOptionPane.showMessageDialog(this, e.getMessage());
-    CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-}
+        } catch (BibliotecaExcepciones.CorreoRepetido
+                | BibliotecaExcepciones.TarjetaEscacharrada
+                | BibliotecaExcepciones.cvvEscacharrado
+                | BibliotecaExcepciones.TarjetaCaducada
+                | BibliotecaExcepciones.TelefonoEscacharrado
+                | BibliotecaExcepciones.CamposVacios e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+            CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+        }
 
 
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
