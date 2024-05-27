@@ -391,7 +391,15 @@ public class CrearCuenta extends javax.swing.JFrame {
             }
             /*AQUÍ ESTÁN LOS CATCHS PARA TODOS LOS ERRORES QUE PUEDE PROVOCAR EL USUARIO, ACOMPAÑADO DEL LABEL OCULTO
             QUE MENCIONAMOS AL PRINCIPIO, EL CUÁL APARECERÁ CON LETRAS ROJAS.*/
-        } catch (BibliotecaExcepciones.CorreoRepetido
+        }catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
+                CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+
+            } 
+        catch (ArrayIndexOutOfBoundsException ex) {
+                JOptionPane.showMessageDialog(this, "El campo de las fechas es erróneo.");
+                CuentaLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo."); } 
+        catch (BibliotecaExcepciones.CorreoRepetido
                 | BibliotecaExcepciones.TarjetaEscacharrada
                 | BibliotecaExcepciones.cvvEscacharrado
                 | BibliotecaExcepciones.TarjetaCaducada

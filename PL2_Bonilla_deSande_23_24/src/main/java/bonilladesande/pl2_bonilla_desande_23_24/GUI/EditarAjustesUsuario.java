@@ -230,6 +230,10 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 GestorVentanas.cambioVentana("EditarAjustesUsuario", "AjustesUsuario");
             }
         } //RECIBE LAS EXCEPCIONES.
+        catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
+                edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
+            } 
         catch (BibliotecaExcepciones.TelefonoEscacharrado e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
