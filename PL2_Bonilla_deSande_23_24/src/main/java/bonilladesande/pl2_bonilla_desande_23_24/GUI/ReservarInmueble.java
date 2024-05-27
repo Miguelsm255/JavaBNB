@@ -9,6 +9,7 @@ import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
 import bonilladesande.pl2_bonilla_desande_23_24.Factura;
 import bonilladesande.pl2_bonilla_desande_23_24.Particular;
 import bonilladesande.pl2_bonilla_desande_23_24.Reserva;
+import bonilladesande.pl2_bonilla_desande_23_24.TextPrompt;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -25,10 +26,13 @@ public class ReservarInmueble extends javax.swing.JFrame {
     /**
      * Creates new form ReservarInmueble
      */
-    /*EL PRICIO FINAL SE INICIA COMO ALGO OCULTO, YA QUE NO SE PUEDE SABER HASTA
+    /*EL PRECIO FINAL SE INICIA COMO ALGO OCULTO, YA QUE NO SE PUEDE SABER HASTA
     QUE NO SE ESTABLEZCAN EL NÚMERO DE DÍAS QUE DURARÁ LA RESERVA. ADEMÁS DE ESO, NECESITAMOS
-    LOS NOMBRES DEL PARTICULAR QUE COMPRA EL INMUEBLE Y EL DEL PROPIO INMUEBLE.*/
+    LOS NOMBRES DEL PARTICULAR QUE COMPRA EL INMUEBLE Y EL DEL PROPIO INMUEBLE. TAMBIÉN
+    SE AÑADIERON PLACEHOLDERS PARA GARANTIZAR QUE LAS FECHAS SE INTRODUCEN EN EL FORMATO CORRECTO.*/
     public ReservarInmueble() {
+        TextPrompt fechainicioplace = new TextPrompt("dd/mm/yyyy", fechaInicioString);
+        TextPrompt fechafinplace = new TextPrompt("dd/mm/yyyy", fechaFinString);
         initComponents();
         PreciodelaReserva.setVisible(false);
         PrecioFinalReserva.setVisible(false);

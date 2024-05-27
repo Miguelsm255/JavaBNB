@@ -45,6 +45,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$17.class
+bonilladesande\pl2_bonilla_desande_23_24\BibliotecaExcepciones$FechaFinMenorInicio.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\ListaObjetos.class
 bonilladesande\pl2_bonilla_desande_23_24\Factura.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$8.class
@@ -74,7 +75,6 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$7.class
 bonilladesande\pl2_bonilla_desande_23_24\UserLoged.class
 bonilladesande\pl2_bonilla_desande_23_24\TarjetaCredito.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$14.class
-bonilladesande\pl2_bonilla_desande_23_24\GUI\Login$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\verObjetos.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirFoto$4.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$1.class

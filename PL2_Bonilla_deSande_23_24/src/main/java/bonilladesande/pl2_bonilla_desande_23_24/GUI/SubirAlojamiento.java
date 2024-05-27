@@ -30,7 +30,7 @@ public class SubirAlojamiento extends javax.swing.JPanel {
     private String nombreImagen, rutaImagen, extension = "jpg";
     private File file;
     private BufferedImage bimage;
-
+    
     /**
      * Creates new form SubirAlojamiento
      */
@@ -38,9 +38,21 @@ public class SubirAlojamiento extends javax.swing.JPanel {
     //CREAMOS PLACEHOLDERS PARA HACER EL PROCESO MÁS INTUITIVO.
     public SubirAlojamiento() {
         initComponents();
-        TextPrompt placenombreinmueble = new TextPrompt("Introduce el nombre del inmueble", NombreAlojamiento);
-        TextPrompt placedescripcion = new TextPrompt("Introduce una descripción para el alojamieneto", DescripcionAlojamiento);
-        TextPrompt placeservicios = new TextPrompt("Introduce una descripción para el alojamieneto", ServiciosAlojamiento);
+        TextPrompt placenombreinmueble = new TextPrompt("Introduce el nombre del inmueble.", NombreAlojamiento);
+        TextPrompt placedescripcion = new TextPrompt("Introduce una descripción para el alojamieneto.", DescripcionAlojamiento);
+        TextPrompt placeservicios = new TextPrompt("Introduce los servicios para el alojamieneto.", ServiciosAlojamiento);
+        TextPrompt placecalle = new TextPrompt("Introduce el nombre de la calle.", calleField);
+        TextPrompt placenumerocalle = new TextPrompt("Nº Calle", calleField);
+        TextPrompt placepostal = new TextPrompt("XXXXX", calleField);
+        TextPrompt placeciudad = new TextPrompt("Introduce el nombre de la ciudad.", ciudadField);
+        TextPrompt placebaños = new TextPrompt("Nº Baños", baniosField);
+        TextPrompt placehuespedes = new TextPrompt("Nº Huespedes", huespedesField);
+        TextPrompt placecamas = new TextPrompt("Nº Camas", camasField);
+        TextPrompt placehabitaciones = new TextPrompt("Nº Habitaciones", habitacionesField);
+        TextPrompt placenoches = new TextPrompt("Precio por noche.", precioNocheField);
+        
+        
+        
     }
 
     /**

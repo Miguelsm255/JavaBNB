@@ -6,8 +6,11 @@ import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
 
+    //SE AÑADEN PLACEHOLDERS PARA EL EMAIL Y LA CLAVE.
     public Login() {
         initComponents();
+        TextPrompt email = new TextPrompt("Introduce tu correo.", emailFieldLogin);
+        TextPrompt clave = new TextPrompt("Introduce tu clave.", claveFieldLogin);
     }
 
     /**
