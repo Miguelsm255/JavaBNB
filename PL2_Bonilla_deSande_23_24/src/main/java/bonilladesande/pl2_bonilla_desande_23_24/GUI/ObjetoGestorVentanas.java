@@ -201,6 +201,10 @@ public class ObjetoGestorVentanas {
             case "PaginaAlojamiento" -> {
                 BaseDatos.inmuebleSeleccionado = null;
             }
+            
+            case "EditarAjustesUsuario" -> {
+                ventanaEditarAjustesUsuario.dispose();
+            }
         }
         
         revalidateRepaint();

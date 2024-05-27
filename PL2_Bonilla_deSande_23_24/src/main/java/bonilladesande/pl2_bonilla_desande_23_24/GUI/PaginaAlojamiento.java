@@ -4,6 +4,7 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
 import javax.swing.ImageIcon;
 
@@ -36,7 +37,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         textoCalif = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fieldServiciosPagAlojamientos = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        reservarInmuebleBoton = new javax.swing.JButton();
         NombrelojamientoLabel = new javax.swing.JLabel();
         nombreAnfitrionLabel = new javax.swing.JLabel();
         precioLabelPaginaAlojamiento = new javax.swing.JLabel();
@@ -73,10 +74,10 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
 
         fieldServiciosPagAlojamientos.setEditable(false);
 
-        jButton1.setText("Reservar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        reservarInmuebleBoton.setText("Reservar");
+        reservarInmuebleBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                reservarInmuebleBotonActionPerformed(evt);
             }
         });
 
@@ -171,7 +172,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addComponent(calificacionLabelPaginaAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(reservarInmuebleBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(casa_apartamentoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(fotoAlojamientoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
@@ -239,7 +240,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                                     .addComponent(calificacionLabelPaginaAlojamiento)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(reservarInmuebleBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
@@ -283,12 +284,17 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(300, 191, 1));
         fotoAlojamientoLabel.setIcon(imgRedimensionada);
         
+        reservarInmuebleBoton.setVisible(true);
+        if (BaseDatos.user.getTipo() ==2){
+            reservarInmuebleBoton.setVisible(false);
+        }
+        
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void reservarInmuebleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservarInmuebleBotonActionPerformed
         // TODO add your handling code here:
         GestorVentanas.cambioVentana("", "ReservarInmueble");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_reservarInmuebleBotonActionPerformed
 
     private void volverButtonPaginaAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButtonPaginaAlojamientoActionPerformed
         GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
@@ -313,7 +319,6 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
     public javax.swing.JLabel fotoAlojamientoLabel;
     public javax.swing.JLabel habitacionesLabel;
     public javax.swing.JLabel huespedesLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
@@ -322,6 +327,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel nombreAnfitrionLabel;
     public javax.swing.JLabel precioLabelPaginaAlojamiento;
+    public javax.swing.JButton reservarInmuebleBoton;
     private javax.swing.JLabel textoCalif;
     private javax.swing.JLabel textoPrecioLabel;
     private javax.swing.JButton volverButtonPaginaAlojamiento;

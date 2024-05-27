@@ -49,7 +49,7 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="161" max="-2" attributes="0"/>
+                              <Component id="reservarInmuebleBoton" min="-2" pref="161" max="-2" attributes="0"/>
                           </Group>
                           <Component id="casa_apartamentoLabel" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
                           <Component id="fotoAlojamientoLabel" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
@@ -140,7 +140,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="39" max="-2" attributes="0"/>
+                              <Component id="reservarInmuebleBoton" min="-2" pref="39" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -238,13 +238,16 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="reservarInmuebleBoton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reservar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reservarInmuebleBotonActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="NombrelojamientoLabel">
       <Properties>

@@ -16,6 +16,10 @@ public class AjustesUsuario extends javax.swing.JPanel {
     public AjustesUsuario() {
         initComponents();
         
+        if (BaseDatos.user.getTipo()== 1 || BaseDatos.user.getTipo()== 0){
+            verInmuebles.setVisible(false);
+        }
+        
         //String userDir = System.getProperty("user.dir");
         //String ruta = userDir + File.separator + "resources" + File.separator + "Michi.png";
         //perfil.setIcon(setIcono(ruta, perfil));
@@ -44,8 +48,9 @@ public class AjustesUsuario extends javax.swing.JPanel {
         Settings = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         fotoUsuarioBoton = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        verReservas = new javax.swing.JButton();
         verClave = new javax.swing.JToggleButton();
+        verInmuebles = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jLabel1.setText("Nombre de Usuario:");
@@ -98,10 +103,10 @@ public class AjustesUsuario extends javax.swing.JPanel {
             }
         });
 
-        jButton4.setText("Mis Reservas");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        verReservas.setText("Mis Reservas");
+        verReservas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                verReservasActionPerformed(evt);
             }
         });
 
@@ -109,6 +114,13 @@ public class AjustesUsuario extends javax.swing.JPanel {
         verClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 verClaveActionPerformed(evt);
+            }
+        });
+
+        verInmuebles.setText("Mis Inmuebles");
+        verInmuebles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verInmueblesActionPerformed(evt);
             }
         });
 
@@ -150,7 +162,9 @@ public class AjustesUsuario extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(saludoLabelAjustesUsuario)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(verInmuebles, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(verReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(89, 89, 89))))
         );
         layout.setVerticalGroup(
@@ -159,7 +173,8 @@ public class AjustesUsuario extends javax.swing.JPanel {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(saludoLabelAjustesUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(verReservas, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(verInmuebles, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -201,9 +216,9 @@ public class AjustesUsuario extends javax.swing.JPanel {
         GestorVentanas.cambioVentana("AjustesUsuario", "PaginaPrincipal");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void verReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verReservasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_verReservasActionPerformed
 
     private void fotoUsuarioBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoUsuarioBotonActionPerformed
         // TODO add your handling code here:
@@ -213,6 +228,10 @@ public class AjustesUsuario extends javax.swing.JPanel {
     private void verClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verClaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_verClaveActionPerformed
+
+    private void verInmueblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verInmueblesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verInmueblesActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -221,7 +240,6 @@ public class AjustesUsuario extends javax.swing.JPanel {
     public javax.swing.JLabel correoLabelAjustesUsuario;
     public javax.swing.JButton fotoUsuarioBoton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -232,5 +250,7 @@ public class AjustesUsuario extends javax.swing.JPanel {
     public javax.swing.JLabel saludoLabelAjustesUsuario;
     public javax.swing.JLabel telefonoLabelAjustesUsuario;
     private javax.swing.JToggleButton verClave;
+    private javax.swing.JButton verInmuebles;
+    private javax.swing.JButton verReservas;
     // End of variables declaration//GEN-END:variables
 }
