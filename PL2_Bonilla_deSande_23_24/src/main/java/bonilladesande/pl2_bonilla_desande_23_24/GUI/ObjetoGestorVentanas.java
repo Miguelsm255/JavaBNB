@@ -130,7 +130,6 @@ public class ObjetoGestorVentanas {
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
                 
                 paginaPaginaAlojamiento.NombrelojamientoLabel.setText(BaseDatos.inmuebleSeleccionado.getTitulo());
-                paginaPaginaAlojamiento.nombreAnfitrionLabel.setText(BaseDatos.inmuebleSeleccionado.getAnfitrion().getNombre());
                 paginaPaginaAlojamiento.precioLabelPaginaAlojamiento.setText(BaseDatos.inmuebleSeleccionado.getPrecioNoche() +  "€/noche");
                 paginaPaginaAlojamiento.calificacionLabelPaginaAlojamiento.setText(String.valueOf(BaseDatos.inmuebleSeleccionado.getCalificacion()));
                 paginaPaginaAlojamiento.fieldServiciosPagAlojamientos.setText(BaseDatos.inmuebleSeleccionado.getServicios());
@@ -142,6 +141,13 @@ public class ObjetoGestorVentanas {
                 paginaPaginaAlojamiento.huespedesLabel.setText("Huéspedes: " + String.valueOf(BaseDatos.inmuebleSeleccionado.getDatos().getHuespedes()));
                 paginaPaginaAlojamiento.habitacionesLabel.setText("Habitaciones: " + String.valueOf(BaseDatos.inmuebleSeleccionado.getDatos().getHabitaciones()));
                 paginaPaginaAlojamiento.baniosLabel.setText("Baños: " + String.valueOf(BaseDatos.inmuebleSeleccionado.getDatos().getBaños()));
+                
+                if (BaseDatos.inmuebleSeleccionado.getAnfitrion().isSuperanfitrion()){
+                    paginaPaginaAlojamiento.nombreAnfitrionLabel.setText(BaseDatos.inmuebleSeleccionado.getAnfitrion().getNombre() + " (Super Anfitrión)");
+                }
+                else{
+                    paginaPaginaAlojamiento.nombreAnfitrionLabel.setText(BaseDatos.inmuebleSeleccionado.getAnfitrion().getNombre());
+                }
                 
                 if(BaseDatos.inmuebleSeleccionado.esCasa()){
                     paginaPaginaAlojamiento.casa_apartamentoLabel.setText("Casa");

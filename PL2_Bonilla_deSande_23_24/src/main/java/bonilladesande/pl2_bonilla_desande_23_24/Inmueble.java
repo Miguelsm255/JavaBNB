@@ -1,6 +1,7 @@
 package bonilladesande.pl2_bonilla_desande_23_24;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Inmueble implements Serializable{
 
@@ -14,7 +15,8 @@ public class Inmueble implements Serializable{
     private boolean casa;
     private double precioNoche;
     private String servicios;
-    private double calificacion;
+    private ArrayList<Integer> calificaciones = new ArrayList<>();
+    private double calificacion = 0;
     private String rutaFoto;
     private String descripcion;
 
@@ -30,6 +32,20 @@ public class Inmueble implements Serializable{
         this.rutaFoto = rutaFoto;
         this.descripcion = descripcion;
         this.anfitrion = anfitrion;
+    }
+    
+    public Inmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, double precioNoche, String servicios, String rutaFoto, String descripcion, Anfitrion anfitrion, ArrayList<Integer> calificaciones) {
+        this.titulo = titulo;
+        this.direccion = direccion;
+        this.datos = datos;
+        this.casa = casa;
+        this.precioNoche = precioNoche;
+        this.servicios = servicios;
+        this.calificacion = 0;
+        this.rutaFoto = rutaFoto;
+        this.descripcion = descripcion;
+        this.anfitrion = anfitrion;
+        this.calificaciones = calificaciones;
     }
 
     // GETTERS Y SETTERS
@@ -116,6 +132,19 @@ public class Inmueble implements Serializable{
 
     public void setAnfitrion(Anfitrion anfitrion) {
         this.anfitrion = anfitrion;
+    }
+    
+    public void calificar(int calificacion){
+        calificaciones.add(calificacion);
+        
+        int total = 0;
+        for (int i = 0; i < calificaciones.size(); i++){
+            total = total + calificaciones.get(i);
+        }
+        
+        double califFinal = (double) total/calificaciones.size();
+        this.calificacion = califFinal;
+        
     }
 
     @Override
