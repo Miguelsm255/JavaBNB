@@ -64,7 +64,6 @@ public class VerReserva extends javax.swing.JPanel {
         fechaInicio = new javax.swing.JLabel();
         fechaFin = new javax.swing.JLabel();
         cancelarReserva = new javax.swing.JButton();
-        descargarFactura = new javax.swing.JButton();
         puntuarInmueble = new javax.swing.JButton();
         volver = new javax.swing.JButton();
 
@@ -73,12 +72,6 @@ public class VerReserva extends javax.swing.JPanel {
         jLabel2.setText("Anfitrion:");
 
         jLabel3.setText("Particular:");
-
-        fotoParticular.setText("Foto Particular");
-
-        fotoAlojamiento.setText("Foto Alojamiento");
-
-        fotoAnfitrion.setText("Foto Anfitrion");
 
         nombreAlojamiento.setText("jLabel4");
 
@@ -94,13 +87,6 @@ public class VerReserva extends javax.swing.JPanel {
         cancelarReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelarReservaActionPerformed(evt);
-            }
-        });
-
-        descargarFactura.setText("Descargar Factura");
-        descargarFactura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                descargarFacturaActionPerformed(evt);
             }
         });
 
@@ -134,12 +120,13 @@ public class VerReserva extends javax.swing.JPanel {
                                 .addGap(207, 207, 207))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(volver)
-                                .addGap(60, 60, 60)))
+                                .addComponent(puntuarInmueble)
+                                .addGap(33, 33, 33)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(descargarFactura)
                             .addComponent(cancelarReserva)
-                            .addComponent(puntuarInmueble)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(volver))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,10 +166,8 @@ public class VerReserva extends javax.swing.JPanel {
                     .addComponent(fotoAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fotoAnfitrion, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fotoParticular, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fechaInicio)
-                    .addComponent(descargarFactura))
+                .addGap(32, 32, 32)
+                .addComponent(fechaInicio)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -194,7 +179,7 @@ public class VerReserva extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(puntuarInmueble)
                     .addComponent(volver))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -233,13 +218,6 @@ public class VerReserva extends javax.swing.JPanel {
     }//GEN-LAST:event_cancelarReservaActionPerformed
 
     
-    /** 
-     * @param 0
-     */
-    private void descargarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descargarFacturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_descargarFacturaActionPerformed
-
     
     /** 
      * @param 0
@@ -283,7 +261,6 @@ public class VerReserva extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelarReserva;
-    private javax.swing.JButton descargarFactura;
     private javax.swing.JLabel fechaFin;
     private javax.swing.JLabel fechaInicio;
     public javax.swing.JLabel fotoAlojamiento;
