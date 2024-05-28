@@ -304,9 +304,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
     //SI SE PRESIONA EL BOTÓN "RESERVAR", CAMBIA LA VENTANA HACIA LA DE RESERVAR INMUEBLES.
     private void reservarInmuebleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservarInmuebleBotonActionPerformed
         
-        System.out.println("BOTÓN PULSADO");
         if(BaseDatos.user.getTipo() == 1){
-            System.out.println("DETECTADO QUE ES PARTICULAR");
             GestorVentanas.cambioVentana("", "ReservarInmueble");
         }
         else if (BaseDatos.user.getTipo() == 0){
@@ -319,6 +317,13 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
 
                 //SI EL USUARIO RESPONDE QUE QUIERE SER ELIMINADO, SE RETIRARÁ SU INFORMACIÓN DE LA BASE DE DATOS.
                 if (response == JOptionPane.YES_OPTION) {
+                    
+                    for (int i = 0; i < BaseDatos.reservas.size(); i++){
+                        if(BaseDatos.reservas.get(i).getInmueble() == BaseDatos.inmuebleSeleccionado){
+                            BaseDatos.reservas.remove(i);
+                        }
+                    }
+                    
                     BaseDatos.inmuebles.remove(BaseDatos.inmuebleSeleccionado);
                     if(BaseDatos.user.getTipo() == 0){
                         GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaAdministrador");
