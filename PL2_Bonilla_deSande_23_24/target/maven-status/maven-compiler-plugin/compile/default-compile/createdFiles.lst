@@ -10,6 +10,7 @@ bonilladesande\pl2_bonilla_desande_23_24\Cliente.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\BotonInmueble.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\BotonReservas.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\SubirAlojamiento$15.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$6.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$9.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\PaginaAdministrador$5.class
@@ -34,10 +35,12 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\ObjetoGestorVentanas.class
 bonilladesande\pl2_bonilla_desande_23_24\Inmueble.class
 bonilladesande\pl2_bonilla_desande_23_24\DatosInmueble.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$7.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$5.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\BotonAnfitriones$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\BotonInmueble$1.class
 bonilladesande\pl2_bonilla_desande_23_24\UserLoged.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\JavaBNB$6.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$4.class
 bonilladesande\pl2_bonilla_desande_23_24\BibliotecaExcepciones$EmailSinEmail.class
@@ -45,6 +48,7 @@ bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$3.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\AjustesUsuario$2.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$6.class
+bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta$12.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\EditarAjustesUsuario$8.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\BotonParticulares$1.class
 bonilladesande\pl2_bonilla_desande_23_24\GUI\CrearCuenta.class
