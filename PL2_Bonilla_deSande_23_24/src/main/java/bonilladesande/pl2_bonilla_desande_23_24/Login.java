@@ -17,7 +17,7 @@ public class Login {
     public static UserLoged login(String email, String clave){
 
         UserLoged user;
-        if ("admin".equals(email) && "admin".equals(clave)){
+        if ("admin@javabnb.com".equals(email) && "admin".equals(clave)){
             user = new UserLoged(0,0);
         }
         else{
