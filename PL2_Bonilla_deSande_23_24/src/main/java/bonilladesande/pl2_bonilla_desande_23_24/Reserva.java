@@ -3,6 +3,7 @@ package bonilladesande.pl2_bonilla_desande_23_24;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 
 public class Reserva implements Serializable{
     
@@ -24,10 +25,19 @@ public class Reserva implements Serializable{
         BaseDatos.reservas.add(reserva);
     }
     
-    //public static void pago(double precio, Particular particular){
-        // Sacar la tarjeta de credito del particular
-        // comprobar si tiene saldo y si es así sacarlo y reservar.
-    //}
+    public static boolean ComprobarReserva(Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin){
+        boolean disponible = true;
+        
+        for (int i = 0; i < BaseDatos.reservas.size(); i++){
+            if (BaseDatos.reservas.get(i).getInmueble().getAnfitrion().getCorreo().equals(inmueble.getAnfitrion().getCorreo()) && BaseDatos.reservas.get(i).getInmueble().getTitulo().equals(inmueble.getTitulo())){
+                if ((fechaInicio.isAfter(BaseDatos.reservas.get(i).getFechaInicio()) && fechaInicio.isBefore(BaseDatos.reservas.get(i).getFechaFin())) || (fechaFin.isBefore(BaseDatos.reservas.get(i).getFechaFin()) && fechaFin.isAfter(BaseDatos.reservas.get(i).getFechaInicio())) || (fechaInicio.isBefore(BaseDatos.reservas.get(i).getFechaInicio()) && fechaFin.isAfter(BaseDatos.reservas.get(i).getFechaFin())) ){
+                    disponible = false;
+                }
+            }
+        }
+        
+        return disponible;
+    }
     
     
     public static double calcularPrecio(double precioNoche, LocalDate fechaInicio, LocalDate fechaFin, boolean vip){

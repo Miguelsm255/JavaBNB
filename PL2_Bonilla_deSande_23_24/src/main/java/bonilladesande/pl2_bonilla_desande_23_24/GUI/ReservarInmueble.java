@@ -222,6 +222,9 @@ public class ReservarInmueble extends javax.swing.JFrame {
             if (fin.isBefore(inicio)) {
                 throw new BibliotecaExcepciones.FechaFinMenorInicio("La fecha de fin de reserva no puede ser menor que la de inicio.");
             }
+            if (!Reserva.ComprobarReserva(BaseDatos.inmuebleSeleccionado, inicio, fin)){
+                throw new BibliotecaExcepciones.InmuebleOcupado("El inmueble ya está reservado entre esas fechas.");
+            }
 
             //CALCULA LA CANTIDAD DE DÍAS.
             long dias = ChronoUnit.DAYS.between(inicio, fin);
@@ -244,7 +247,7 @@ public class ReservarInmueble extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
             } catch (ArrayIndexOutOfBoundsException ex) {
                 JOptionPane.showMessageDialog(this, "El campo de las fechas es erróneo.");
-            } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaFinMenorInicio e) {
+            } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaFinMenorInicio | BibliotecaExcepciones.InmuebleOcupado e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }
     }//GEN-LAST:event_SeConfirmanLasFechasActionPerformed

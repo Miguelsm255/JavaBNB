@@ -1,13 +1,20 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import bonilladesande.pl2_bonilla_desande_23_24.*;
-import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class PaginaPrincipal extends javax.swing.JPanel {
 
+    public boolean filtrar = false;
+    
     public PaginaPrincipal() {
         initComponents();
         myInitComponents();
+    }
+    
+    public PaginaPrincipal(String ciudad, LocalDate fechaEntrada, LocalDate fechaSalida) {
+        initComponents();
+        myInitComponents(ciudad, fechaEntrada, fechaSalida);
     }
 
 
@@ -63,8 +70,17 @@ public class PaginaPrincipal extends javax.swing.JPanel {
         
         pintarLista("Inmuebles");
         
-        //pintarLista(BaseDatos.filtroAlojamientos(30, 20, 0, 0, 0, 0, 0, "", ""));
+        //SOLO LOS ANFITRIONES PUEDEN SUBIR INMUEBLES, POR LO TANTO EL BOTÓN ESTARÁ OCULTO PARA EL RESTO.
+        InmuebleSubida.setVisible(false);
+        if (BaseDatos.user.getTipo() ==2){
+            InmuebleSubida.setVisible(true);
+        }
+    }
+    
+    public void myInitComponents(String ciudad, LocalDate fechaEntrada, LocalDate fechaSalida) {
         
+        pintarLista("Inmuebles", ciudad, fechaEntrada, fechaSalida);
+
         //SOLO LOS ANFITRIONES PUEDEN SUBIR INMUEBLES, POR LO TANTO EL BOTÓN ESTARÁ OCULTO PARA EL RESTO.
         InmuebleSubida.setVisible(false);
         if (BaseDatos.user.getTipo() ==2){
@@ -74,6 +90,13 @@ public class PaginaPrincipal extends javax.swing.JPanel {
     
     public void pintarLista(String tipo){
         ListaObjetos listaObjetos = new ListaObjetos(tipo);
+        this.jScrollPane1.setViewportView(listaObjetos);
+        jScrollPane1.revalidate();
+        jScrollPane1.repaint();
+    }
+    
+    public void pintarLista(String tipo, String ciudad, LocalDate fechaEntrada, LocalDate fechaSalida){
+        ListaObjetos listaObjetos = new ListaObjetos(tipo, ciudad, fechaEntrada, fechaSalida);
         this.jScrollPane1.setViewportView(listaObjetos);
         jScrollPane1.revalidate();
         jScrollPane1.repaint();

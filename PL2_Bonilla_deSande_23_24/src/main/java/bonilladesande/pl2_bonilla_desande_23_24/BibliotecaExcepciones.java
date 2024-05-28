@@ -35,6 +35,13 @@ public class BibliotecaExcepciones {
             super(message);
         }
     }
+    //EXCEPCIÓN CREADA PARA LOS CASOS EN LOS QUE EL INMUEBLE YA ESTÉ RESERVADO EN LAS FECHAS SELECCIONADAS.
+    public static class InmuebleOcupado extends Exception {
+        
+        public InmuebleOcupado(String message) {
+            super(message);
+        }
+    }
     //EXCEPCIÓN CREADA PARA LOS CASOS EN LOS QUE SE INTENTA RESERVAR UN INMUEBLE QUE YA ESTÁ RESERVADO DURANTE UNA FECHA CONCRETA.
     public static class InmuebleYaReservado extends Exception {
 
