@@ -10,6 +10,11 @@ import java.util.ArrayList;
 
 public class AAA_PRUEBAS_MARCOS {
 
+    
+    /** 
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         GestorVentanas.iniciarPrograma();
         /*BaseDatos.BorrarListaAnfitriones();

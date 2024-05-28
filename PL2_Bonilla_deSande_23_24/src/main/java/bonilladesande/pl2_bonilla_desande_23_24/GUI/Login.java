@@ -122,11 +122,21 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param bonilladesande.pl2_bonilla_desande_23_24.Login.login(email
+     * @param -1
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA PREVIAMENTE SU CORREO INGRESADO EN "CREAR CUENTA"
     private void emailFieldLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailFieldLoginActionPerformed
 
+    
+    /** 
+     * @param bonilladesande.pl2_bonilla_desande_23_24.Login.login(email
+     * @param -1
+     */
     /*AL PULSAR EL BOTÓN DE INICIO DE SESIÓN, SE PRODUCEN VARIOS PROCESOS. BUSCA EN LA BASE
     DE DATOS POR UN USUARIO CON ESE CORREO Y CONTRASEÑA. SI NO LO ENCUENTRA, NO LE PERMITE ACCEDER,
     PERO SI LO ENCUENTRA, CAMBIA LA VENTANA DE LOGIN A LA DE PÁGINA PRINCIAL.*/
@@ -157,16 +167,29 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_iniciarSesionButtonLoginActionPerformed
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("Login"
+     * @param args[]
+     */
     //ABRE LA VENTANA DE CREAR CUENTA NUEVA.  
     private void crearCuentaButtonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMouseClicked
 
         GestorVentanas.cambioVentana("Login", "CrearCuenta");
     }//GEN-LAST:event_crearCuentaButtonLoginMouseClicked
 
+    
+    /** 
+     * @param args[]
+     */
     //SI SELECCIONAS EL BOTÓN DE CREAR UNA CUENTA NUEVA, SE PONE DE COLOR AZUL.
     private void crearCuentaButtonLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMousePressed
         crearCuentaButtonLogin.setForeground(Color.BLUE);
     }//GEN-LAST:event_crearCuentaButtonLoginMousePressed
+    
+    /** 
+     * @param args[]
+     */
     //SI LO SUELTAS, VUELVE A PONERSE DE COLOR NEGRO.
     private void crearCuentaButtonLoginMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMouseReleased
         crearCuentaButtonLogin.setForeground(Color.BLACK);

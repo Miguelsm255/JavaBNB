@@ -14,24 +14,43 @@ public class Anfitrion extends Cliente implements Serializable{
     private ArrayList<Integer> calificaciones = new ArrayList<>();
     
     
+    
+    
     // GETTER Y SETTER
 
+    /** 
+     * @return LocalDate
+     */
     public LocalDate getFechaRegistro() {
         return fechaRegistro;
     }
 
+    
+    /** 
+     * @param fechaRegistro
+     */
     public void setFechaRegistro(LocalDate fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
+    /** 
+     * @return boolean
+     */
     public boolean isSuperanfitrion() {
         return superanfitrion;
     }
 
+    /** 
+     * @param superanfitrion
+     */
     public void setSuperanfitrion(boolean superanfitrion) {
         this.superanfitrion = superanfitrion;
     }
     
+
+    /** 
+     * @param calificacion
+     */
     public void calificar(int calificacion){
         calificaciones.add(calificacion);
         
@@ -44,6 +63,8 @@ public class Anfitrion extends Cliente implements Serializable{
         this.calificacion = califFinal;
         actualizarSuperAnfitrion();
     }
+    
+
     
     private void actualizarSuperAnfitrion(){
         superanfitrion = calificacion >= 4;

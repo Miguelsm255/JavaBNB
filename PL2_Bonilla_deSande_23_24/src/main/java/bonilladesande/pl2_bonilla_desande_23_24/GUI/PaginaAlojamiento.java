@@ -282,6 +282,10 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param inmueble
+     */
     //OBTIENE LA RUTA DE LA FOTO DEL INMUEBLE Y LA COLOCA.
     private void myInitComponents(Inmueble inmueble) {
         ImageIcon imagen = new ImageIcon(inmueble.getRutaFoto());
@@ -301,6 +305,10 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         }
         
     }
+    
+    /** 
+     * @param 1
+     */
     //SI SE PRESIONA EL BOTÓN "RESERVAR", CAMBIA LA VENTANA HACIA LA DE RESERVAR INMUEBLES.
     private void reservarInmuebleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservarInmuebleBotonActionPerformed
         
@@ -341,6 +349,10 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
             GestorVentanas.cambioVentana("", "EditarDatosInmueble");
         }
     }//GEN-LAST:event_reservarInmuebleBotonActionPerformed
+    
+    /** 
+     * @param 0
+     */
     //SI SE PRESIONA EL BOTÓN "VOLVER", CAMBIA LA VENTANA HACIA LA PÁGINA PRINCIPAL.
     private void volverButtonPaginaAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButtonPaginaAlojamientoActionPerformed
         if(BaseDatos.user.getTipo() == 0){

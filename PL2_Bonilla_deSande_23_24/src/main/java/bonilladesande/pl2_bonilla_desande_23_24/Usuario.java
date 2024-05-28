@@ -15,51 +15,99 @@ public class Usuario implements Serializable{
   
 
     
+    
+    /** 
+     * @return String
+     */
     // GETTER Y SETTER
     public String getDni() {
         return dni;
     }
 
+    
+    /** 
+     * @param dni
+     */
     public void setDni(String dni) {
         this.dni = dni;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getNombre() {
         return nombre;
     }
 
+    
+    /** 
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getCorreo() {
         return correo;
     }
 
+    
+    /** 
+     * @param correo
+     */
     public void setCorreo(String correo) {
         this.correo = correo;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getClave() {
         return clave;
     }
 
+    
+    /** 
+     * @param clave
+     */
     public void setClave(String clave) {
         this.clave = clave;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getTelefono() {
         return telefono;
     }
 
+    
+    /** 
+     * @param telefono
+     */
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getFoto() {
         return foto;
     }
 
+    
+    /** 
+     * @param foto
+     */
     public void setFoto(String foto) {
         this.foto = foto;
     }

@@ -60,6 +60,11 @@ public class PaginaPrincipal extends javax.swing.JPanel {
                 .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("PaginaPrincipal"
+     * @param myInitComponents(
+     */
     //SI SE SELECCIONA EL BOTÓN "SUBIR UN INMUEBLE", SE CAMBIA DE LA PÁGINA PRINCIPAL A LA DE SUBIR UN ALOJAMIENTO
     
     private void InmuebleSubidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InmuebleSubidaActionPerformed
@@ -77,6 +82,12 @@ public class PaginaPrincipal extends javax.swing.JPanel {
         }
     }
     
+    
+    /** 
+     * @param ciudad
+     * @param fechaEntrada
+     * @param fechaSalida
+     */
     public void myInitComponents(String ciudad, LocalDate fechaEntrada, LocalDate fechaSalida) {
         
         pintarLista("Inmuebles", ciudad, fechaEntrada, fechaSalida);
@@ -88,6 +99,10 @@ public class PaginaPrincipal extends javax.swing.JPanel {
         }
     }
     
+    
+    /** 
+     * @param tipo
+     */
     public void pintarLista(String tipo){
         ListaObjetos listaObjetos = new ListaObjetos(tipo);
         this.jScrollPane1.setViewportView(listaObjetos);
@@ -95,6 +110,13 @@ public class PaginaPrincipal extends javax.swing.JPanel {
         jScrollPane1.repaint();
     }
     
+    
+    /** 
+     * @param tipo
+     * @param ciudad
+     * @param fechaEntrada
+     * @param fechaSalida
+     */
     public void pintarLista(String tipo, String ciudad, LocalDate fechaEntrada, LocalDate fechaSalida){
         ListaObjetos listaObjetos = new ListaObjetos(tipo, ciudad, fechaEntrada, fechaSalida);
         this.jScrollPane1.setViewportView(listaObjetos);

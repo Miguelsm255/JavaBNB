@@ -115,6 +115,10 @@ public class SubirFoto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     /*AL PULSAR EL BOTÓN DE SUBIR NUEVA FOTO DE PERFIL, EMPLEA EL "add.ChoosableFileFilter", LO QUE
     REGULA QUE SOLO SE PUEDAN ELEGIR FOTOS DE DETERMINADOS ARCHIVOS. DESPUÉS, TE DEJA SELECCIONAR UNA FOTO 
     DE LA RUTA QUE ELIJAS, CONSIGUE EL NOMBRE DE LA IMAGEN, Y LA IMPRIME.*/
@@ -139,6 +143,10 @@ public class SubirFoto extends javax.swing.JFrame {
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(FotoActual.getWidth(), FotoActual.getHeight(), 1));
         FotoActual.setIcon(imgRedimensionada);
     }//GEN-LAST:event_BotonSubirFotoActionPerformed
+    
+    /** 
+     * @param evt
+     */
     /*CUANDO GUARDAS LOS CAMBIOS, BUSCA EN EL PAQUETE DE IMÁGENES DEL MISMO PROGRAMA POR EL NOMBRE DE LA IMAGEN,
     LA COLOCA EN LA POSICIÓN DE FOTO DE PERFIL DE USUARIO, Y TE IMPRIME UN PANEL EN EL QUE TE CONFIRMA QUE SE 
     PUDO GUARDAR O QUE HUBO UN ERROR AL GUARDARLA.*/
@@ -162,6 +170,11 @@ public class SubirFoto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al guardar imagen");
         }
     }//GEN-LAST:event_GuardaCambiosActionPerformed
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("SubirFoto"
+     * @param myInitComponents(
+     */
     //SI SE PRESIONA EL BOTÓN DE VOLVER, CIERRA LA PESTAÑA DE SUBIR FOTO Y TE HACE VOLVER A LOS AJUSTES DE USUARIO.
     private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
         GestorVentanas.cambioVentana("SubirFoto", "AjustesUsuario");

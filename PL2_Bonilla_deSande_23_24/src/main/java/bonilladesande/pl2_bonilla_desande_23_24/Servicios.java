@@ -17,16 +17,28 @@ class Servicios implements Serializable{
         this.servicios = nombreServicio;
     }
     
+    
+    /** 
+     * @return ArrayList<String>
+     */
     // GETTERS Y SETTERS
     
        public ArrayList<String> getNombreServicio() {
         return servicios;
     }
 
+    
+    /** 
+     * @param nombreServicio
+     */
     public void setNombreServicio(ArrayList<String> nombreServicio) {
         this.servicios = nombreServicio;
     }
 
+    
+    /** 
+     * @param servicio
+     */
     //FUNCIONES
     
     public void añadirServicio(String servicio){
@@ -35,6 +47,10 @@ class Servicios implements Serializable{
         }
     }
     
+    
+    /** 
+     * @param servicio
+     */
     public void eliminarServicio(String servicio){
         if(servicios.contains(servicio)){
             servicios.remove(servicio);

@@ -13,6 +13,12 @@ public class Login {
     
     
     
+    
+    /** 
+     * @param email
+     * @param clave
+     * @return UserLoged
+     */
     // FUNCIÓN PRINCIPAL
     public static UserLoged login(String email, String clave){
 
@@ -72,6 +78,12 @@ public class Login {
     
     
     
+    
+    /** 
+     * @param email
+     * @param clave
+     * @return boolean
+     */
     // COMPROBAR SI EXISTE EL USUARIO Y, EN ESE CASO, COMPROBAR QUE LA CONTRASEÑA ES CORRECTA
     public static boolean comprobarUsuario(String email, String clave){  
         
@@ -111,6 +123,11 @@ public class Login {
     
     
     
+    
+    /** 
+     * @param email
+     * @return int[]
+     */
     // BUSCA SI EXISTE EL USUARIO EN LA "BASE DE DATOS"
     public static int[] busquedaUsuario(String email){
         
@@ -155,6 +172,13 @@ public class Login {
     
     
     
+    
+    /** 
+     * @param tipoUsuario
+     * @param posicionArrayList
+     * @param clave
+     * @return boolean
+     */
     // COMPROBAR SI LA CLAVE ES CORRECTA
     public static boolean claveCorrecta(int tipoUsuario, int posicionArrayList, String clave){
         

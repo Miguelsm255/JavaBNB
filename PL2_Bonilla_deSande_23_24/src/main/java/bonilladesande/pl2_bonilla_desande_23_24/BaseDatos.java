@@ -21,6 +21,10 @@ public class BaseDatos {
     public static String verObjetos;
 
     
+    
+    /** 
+     * @param listaInmuebles
+     */
     // GUARDAR Y CARGAR DATOS
     public static void guardarDatosInmuebles(ArrayList<Inmueble> listaInmuebles) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Inmuebles.dat"))) {
@@ -42,7 +46,9 @@ public class BaseDatos {
         inmuebles = listaInmuebles;
     }
     
-    
+    /** 
+     * @param listaInmuebles
+     */
     public static void guardarDatosParticulares(ArrayList<Particular> listaParticulares) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Particulares.dat"))) {
             oos.writeObject(listaParticulares);
@@ -63,7 +69,9 @@ public class BaseDatos {
         particulares = listaParticulares;
     }
     
-    
+    /** 
+     * @param listaAnfitriones
+     */
     public static void guardarDatosAnfitriones(ArrayList<Anfitrion> listaAnfitriones) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Anfitriones.dat"))) {
             oos.writeObject(listaAnfitriones);
@@ -84,7 +92,9 @@ public class BaseDatos {
         anfitriones = listaAnfitriones;
     }
     
-    
+    /** 
+     * @param listaReservas
+     */
     public static void guardarDatosReservas(ArrayList<Reserva> listaReservas) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./src/main/java/DataBase_Serializada/Reservas.dat"))) {
             oos.writeObject(listaReservas);
@@ -105,7 +115,21 @@ public class BaseDatos {
         reservas = listaReservas;
     }
     
-
+    
+    
+    /** 
+     * @param casa
+     * @param precioMax
+     * @param precioMin
+     * @param calificacionMin
+     * @param huespedesMin
+     * @param habitacionesMin
+     * @param camasMin
+     * @param banosMin
+     * @param titulo
+     * @param ciudad
+     * @return ArrayList<Inmueble>
+     */
     public static ArrayList<Inmueble> filtroAlojamientos(boolean casa, double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad ){
         
         ArrayList<Inmueble> listaFiltrada = new ArrayList<>();
@@ -122,6 +146,19 @@ public class BaseDatos {
         return listaFiltrada;
     }
     
+    
+    /** 
+     * @param precioMax
+     * @param precioMin
+     * @param calificacionMin
+     * @param huespedesMin
+     * @param habitacionesMin
+     * @param camasMin
+     * @param banosMin
+     * @param titulo
+     * @param ciudad
+     * @return ArrayList<Inmueble>
+     */
     //FILTRAR ALOJAMIENTOS COMPARANDO SUS PRECIOS, CALIFICACIONES, HUÉSPEDES, CAMAS, BAÑOS, Y/O DIRECCIONES.
     
     public static ArrayList<Inmueble> filtroAlojamientos(double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad ){
@@ -176,6 +213,13 @@ public class BaseDatos {
         return listaFiltrada;
     }
     
+    
+    /** 
+     * @param ciudad
+     * @param fechaEntrada
+     * @param fechaSalida
+     * @return ArrayList<Inmueble>
+     */
     public static ArrayList<Inmueble> filtroAlojamientos(String ciudad, LocalDate fechaEntrada, LocalDate fechaSalida){
         ArrayList<Inmueble> listaFiltrada = new ArrayList<>();
         

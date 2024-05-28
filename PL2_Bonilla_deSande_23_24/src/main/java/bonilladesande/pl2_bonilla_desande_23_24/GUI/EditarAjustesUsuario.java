@@ -205,10 +205,18 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA SU NUEVO NOMBRE DE USUARIO.
     private void nuevoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nuevoUserActionPerformed
+    
+    /** 
+     * @param evt
+     */
     /*ESPACIO PARA GUARDAR TODOS LOS CAMBIOS. TAMBIÉN TIRARÁ ERRORES SI ES OPORTUNO, Y LUEGO REEMPLAZARÁ LOS ESPACIOS
     MODIFICADOS POR EL USUARIO EN LA BASE DE DATOS. EN CASO DE NO ACTUALIZAR UNO DE LOS TEXTFIELDS, LO CUAL SÍ ES POSIBLE
     EN ESTA PESTAÑA, LA INFORMACIÓN SE MANTENDRÁ SIN ACTUALIZAR. ESTE ES UN MÉTODO DE SIMPLIFICAR LA INTERFAZ YA QUE 
@@ -288,18 +296,50 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
             edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         }
     }//GEN-LAST:event_GuardarCambiosActionPerformed
+    
+    /** 
+     * @param JOptionPane.showConfirmDialog(this
+     * @param usuario?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     //SI SE PRESIONA EL BOTÓN DE CANCELAR, SE ENTIENDE QUE EL USUARIO NO QUIERE REALIZAR CAMBIOS Y SE CIERRA LA VENTANA.
     private void CancelarAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAjustesActionPerformed
         dispose();
     }//GEN-LAST:event_CancelarAjustesActionPerformed
+    
+    /** 
+     * @param JOptionPane.showConfirmDialog(this
+     * @param usuario?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA SU NUEVO TELÉFONO
     private void nuevoTelefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoTelefActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nuevoTelefActionPerformed
+    
+    /** 
+     * @param JOptionPane.showConfirmDialog(this
+     * @param usuario?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA SU NUEVO CORREO
     private void nuevoCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nuevoCorreoActionPerformed
+    
+    /** 
+     * @param JOptionPane.showConfirmDialog(this
+     * @param usuario?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     //BOTÓN PARA ELIMINAR EL USUARIO ACTUAL, SE ABRIRÁ UN JPANEL CON LAS OPCIONES NECESARIAS PARA LLEVAR A CABO ESTE PROCESO.
     private void EliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarUsuarioActionPerformed
 
@@ -349,6 +389,10 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EliminarUsuarioActionPerformed
 
+    
+    /** 
+     * @param args[]
+     */
     private void serVipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serVipActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_serVipActionPerformed

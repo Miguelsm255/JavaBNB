@@ -13,6 +13,18 @@ import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
 
 
 public class OperacionesInmuebles {
+    
+    /** 
+     * @param titulo
+     * @param direccion
+     * @param datos
+     * @param casa
+     * @param precioNoche
+     * @param servicios
+     * @param calificacion
+     * @param rutaFoto
+     * @param descripcion
+     */
     //SUBE UN INMUEBLE CON LOS PARÁMETROS DEL CONSTRUCTOR.
     public static void subirInmueble(String titulo, Direccion direccion, DatosInmueble datos, boolean casa, double precioNoche, String servicios, int calificacion, String rutaFoto, String descripcion){
         Anfitrion anfitrion = BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList());

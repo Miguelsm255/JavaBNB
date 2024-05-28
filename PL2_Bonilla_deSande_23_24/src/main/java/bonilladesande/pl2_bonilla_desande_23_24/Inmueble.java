@@ -48,72 +48,140 @@ public class Inmueble implements Serializable{
         this.calificaciones = calificaciones;
     }
 
+    
+    /** 
+     * @return String
+     */
     // GETTERS Y SETTERS
     public String getTitulo() {
         return titulo;
     }
 
+    
+    /** 
+     * @param titulo
+     */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
+    
+    /** 
+     * @return Direccion
+     */
     public Direccion getDireccion() {
         return direccion;
     }
 
+    
+    /** 
+     * @param direccion
+     */
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
 
+    
+    /** 
+     * @return DatosInmueble
+     */
     public DatosInmueble getDatos() {
         return datos;
     }
 
+    
+    /** 
+     * @param datos
+     */
     public void setDatos(DatosInmueble datos) {
         this.datos = datos;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getPrecioNoche() {
         return precioNoche;
     }
 
+    
+    /** 
+     * @param precioNoche
+     */
     public void setPrecioNoche(int precioNoche) {
         this.precioNoche = precioNoche;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getServicios() {
         return servicios;
     }
 
+    
+    /** 
+     * @param servicios
+     */
     public void setServicios(String servicios) {
         this.servicios = servicios;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getCalificacion() {
         return calificacion;
     }
 
+    
+    /** 
+     * @param calificacion
+     */
     public void setCalificacion(int calificacion) {
         this.calificacion = calificacion;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getRutaFoto() {
         return rutaFoto;
     }
 
+    
+    /** 
+     * @param rutaFoto
+     */
     public void setRutaFoto(String rutaFoto) {
         this.rutaFoto = rutaFoto;
     }
 
 
+    
+    /** 
+     * @return String
+     */
     public String getDescripcion() {
         return descripcion;
     }
 
+    
+    /** 
+     * @param descripcion
+     */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean esCasa() {
         return casa;
     }
@@ -126,14 +194,26 @@ public class Inmueble implements Serializable{
         casa = true;
     }
 
+    
+    /** 
+     * @return Anfitrion
+     */
     public Anfitrion getAnfitrion() {
         return anfitrion;
     }
 
+    
+    /** 
+     * @param anfitrion
+     */
     public void setAnfitrion(Anfitrion anfitrion) {
         this.anfitrion = anfitrion;
     }
     
+    
+    /** 
+     * @param calificacion
+     */
     public void calificar(int calificacion){
         calificaciones.add(calificacion);
         
@@ -147,6 +227,10 @@ public class Inmueble implements Serializable{
         
     }
 
+    
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "Inmueble{" + "titulo=" + titulo + ", anfitrion=" + anfitrion + ", direccion=" + direccion + ", datos=" + datos + ", casa=" + casa + ", precioNoche=" + precioNoche + ", servicios=" + servicios + ", calificacion=" + calificacion + ", rutaFoto=" + rutaFoto + ", descripcion=" + descripcion + '}';

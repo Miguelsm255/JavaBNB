@@ -10,20 +10,36 @@ public class Particular extends Cliente implements Serializable{
     private TarjetaCredito tarjeta;
 
     
+    
+    /** 
+     * @return boolean
+     */
     // GETTER Y SETTER
     
     public boolean isVip() {
         return vip;
     }
 
+    
+    /** 
+     * @param vip
+     */
     public void setVip(boolean vip) {
         this.vip = vip;
     }
 
+    
+    /** 
+     * @return TarjetaCredito
+     */
     public TarjetaCredito getTarjeta() {
         return tarjeta;
     }
 
+    
+    /** 
+     * @param tarjeta
+     */
     public void setTarjeta(TarjetaCredito tarjeta) {
         this.tarjeta = tarjeta;
     }

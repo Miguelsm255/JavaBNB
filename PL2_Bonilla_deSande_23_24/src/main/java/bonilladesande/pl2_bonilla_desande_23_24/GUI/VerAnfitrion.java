@@ -156,15 +156,41 @@ public class VerAnfitrion extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("VerParticular"
+     * @param JOptionPane.showConfirmDialog(this
+     * @param usuario?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     private void fotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fotoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fotoActionPerformed
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("VerParticular"
+     * @param JOptionPane.showConfirmDialog(this
+     * @param usuario?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         // TODO add your handling code here:
         GestorVentanas.cambioVentana("VerParticular", "PaginaAdministrador");
     }//GEN-LAST:event_volverActionPerformed
 
+    
+    /** 
+     * @param JOptionPane.showConfirmDialog(this
+     * @param usuario?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     private void borrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarUsuarioActionPerformed
         // TODO add your handling code here:
         int response = JOptionPane.showConfirmDialog(

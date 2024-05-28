@@ -474,14 +474,26 @@ public class EditarDatosInmueble extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param evt
+     */
     private void ApartamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApartamentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ApartamentoActionPerformed
 
+    
+    /** 
+     * @param evt
+     */
     private void CasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CasaActionPerformed
 
     }//GEN-LAST:event_CasaActionPerformed
 
+    
+    /** 
+     * @param evt
+     */
     private void SubirAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirAlojamientoActionPerformed
         try {
             String ruta = "./src/main/java/imagenes/" + nombreImagen;
@@ -541,55 +553,112 @@ public class EditarDatosInmueble extends javax.swing.JFrame {
 
     }//GEN-LAST:event_SubirAlojamientoActionPerformed
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("EditarDatosInmueble"
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void calleFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calleFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_calleFieldActionPerformed
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("EditarDatosInmueble"
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void numeroFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numeroFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_numeroFieldActionPerformed
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("EditarDatosInmueble"
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void cpFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cpFieldActionPerformed
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("EditarDatosInmueble"
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void ciudadFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ciudadFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ciudadFieldActionPerformed
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("EditarDatosInmueble"
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void CancelarSubidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarSubidaActionPerformed
         // TODO add your handling code here:
         GestorVentanas.cambioVentana("EditarDatosInmueble", "PaginaAlojamiento");
     }//GEN-LAST:event_CancelarSubidaActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void baniosFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_baniosFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_baniosFieldActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void ServiciosAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ServiciosAlojamientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ServiciosAlojamientoActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void huespedesFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_huespedesFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_huespedesFieldActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void DescripcionAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescripcionAlojamientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DescripcionAlojamientoActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void camasFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_camasFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_camasFieldActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void habitacionesFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_habitacionesFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_habitacionesFieldActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void precioNocheFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioNocheFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_precioNocheFieldActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void SubirFotoAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirFotoAlojamientoActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new FiltraImagenes());
@@ -611,10 +680,26 @@ public class EditarDatosInmueble extends javax.swing.JFrame {
         FotoAloja.setIcon(imgRedimensionada);
     }//GEN-LAST:event_SubirFotoAlojamientoActionPerformed
 
+    
+    /** 
+     * @param JOptionPane.showConfirmDialog(this
+     * @param inmueble?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     private void NombreAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreAlojamientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreAlojamientoActionPerformed
 
+    
+    /** 
+     * @param JOptionPane.showConfirmDialog(this
+     * @param inmueble?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     private void SubirAlojamiento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirAlojamiento1ActionPerformed
         int response = JOptionPane.showConfirmDialog(
                 this, 

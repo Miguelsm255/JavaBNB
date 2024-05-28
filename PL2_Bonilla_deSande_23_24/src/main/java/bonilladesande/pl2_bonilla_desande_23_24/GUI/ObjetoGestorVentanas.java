@@ -54,6 +54,11 @@ public class ObjetoGestorVentanas {
         
     }
     
+    
+    /** 
+     * @param origen
+     * @param destino
+     */
     /*ESTA ES EL MÉTODO DE CAMBIO DE VENTANA. ESTÁ PROGRAMADA DE MANERA ESPACÍFICA
     PARA FACILITAR LA TAREA DE DESARROLLAR CÓDIGO QUE TE LLEVE DE UNA VENTANA A OTRA.
     LA FUNCIÓN SE COMPONE DE DOS STRINGS, UN ORIGEN (LA PÁGINA DE LA QUE VENIMOS), Y UN DESTINO (LA 

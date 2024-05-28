@@ -199,27 +199,47 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
 		}
 	}
 
+	
+	/** 
+	 * @param e
+	 */
 	// Implement FocusListener
 
 	public void focusGained(FocusEvent e) {
 		checkForPrompt();
 	}
 
+	
+	/** 
+	 * @param e
+	 */
 	public void focusLost(FocusEvent e) {
 		focusLost++;
 		checkForPrompt();
 	}
 
+	
+	/** 
+	 * @param e
+	 */
 	// Implement DocumentListener
 
 	public void insertUpdate(DocumentEvent e) {
 		checkForPrompt();
 	}
 
+	
+	/** 
+	 * @param e
+	 */
 	public void removeUpdate(DocumentEvent e) {
 		checkForPrompt();
 	}
 
+	
+	/** 
+	 * @param e
+	 */
 	public void changedUpdate(DocumentEvent e) {
 	}
 }

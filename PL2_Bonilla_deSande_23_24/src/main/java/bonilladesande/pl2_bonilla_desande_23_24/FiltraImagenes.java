@@ -19,6 +19,11 @@ public class FiltraImagenes extends FileFilter {
     public final static String TIF = "tif";
     public final static String PNG = "png";
 
+    
+    /** 
+     * @param f
+     * @return boolean
+     */
     @Override
     public boolean accept(File f) {
         if (f.isDirectory()) {
@@ -41,12 +46,21 @@ public class FiltraImagenes extends FileFilter {
         return false;
     }
     
+    
+    /** 
+     * @return String
+     */
     //AL BUSCAR, TE APARECE EL TEXTO "Seleccione la foto.".
     @Override
     public String getDescription() {
         return "Seleccione la foto.";
     }
 
+    
+    /** 
+     * @param f
+     * @return String
+     */
     String getExtension(File f) {
         String ext = null;
         String s = f.getName();

@@ -65,21 +65,57 @@ public final class ListaObjetos extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param tipo
+     * @param casa
+     * @param precioMax
+     * @param precioMin
+     * @param calificacionMin
+     * @param huespedesMin
+     * @param habitacionesMin
+     * @param camasMin
+     * @param banosMin
+     * @param titulo
+     * @param ciudad
+     */
     public void myInitComponents(String tipo, boolean casa, double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad){
         listaInmuebles = BaseDatos.filtroAlojamientos(casa, precioMax, precioMin, calificacionMin, huespedesMin, habitacionesMin, camasMin, banosMin, titulo, ciudad);
         hacerCosas(tipo);
     }
     
+    
+    /** 
+     * @param tipo
+     * @param precioMax
+     * @param precioMin
+     * @param calificacionMin
+     * @param huespedesMin
+     * @param habitacionesMin
+     * @param camasMin
+     * @param banosMin
+     * @param titulo
+     * @param ciudad
+     */
     public void myInitComponents(String tipo, double precioMax, double precioMin, double calificacionMin, int huespedesMin, int habitacionesMin, int camasMin, int banosMin, String titulo, String ciudad){
         listaInmuebles = BaseDatos.filtroAlojamientos(precioMax, precioMin, calificacionMin, huespedesMin, habitacionesMin, camasMin, banosMin, titulo, ciudad);
         hacerCosas(tipo);
     }
     
+    
+    /** 
+     * @param tipo
+     */
     public void myInitComponents(String tipo) {
         listaInmuebles = BaseDatos.inmuebles;
         hacerCosas(tipo);
     }
     
+    
+    /** 
+     * @param tipo
+     * @param anfitrion
+     */
     public void myInitComponents(String tipo, Anfitrion anfitrion) {
         
         for(int i = 0; i < BaseDatos.inmuebles.size(); i++){
@@ -96,6 +132,11 @@ public final class ListaObjetos extends javax.swing.JPanel {
         hacerCosas(tipo);
     }
     
+    
+    /** 
+     * @param tipo
+     * @param particular
+     */
     public void myInitComponents(String tipo, Particular particular) {
         
         for(int i = 0; i < BaseDatos.reservas.size(); i++){
@@ -106,12 +147,23 @@ public final class ListaObjetos extends javax.swing.JPanel {
         hacerCosas(tipo);
     }
     
+    
+    /** 
+     * @param tipo
+     * @param ciudad
+     * @param fechaInicio
+     * @param fechaFin
+     */
     public void myInitComponents(String tipo, String ciudad, LocalDate fechaInicio, LocalDate fechaFin){
         listaInmuebles = BaseDatos.filtroAlojamientos(ciudad, fechaInicio, fechaFin);
         
         hacerCosas(tipo);
     }
     
+    
+    /** 
+     * @param tipo
+     */
     private void hacerCosas(String tipo){
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         

@@ -293,45 +293,85 @@ public class CrearCuenta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA EL NOMBRE.
     private void nombreFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreFieldCrearCuentaActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA EL EMAIL.
     private void emailFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailFieldCrearCuentaActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA LA TARJETA.
     private void TarjetaFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetaFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TarjetaFieldCrearCuentaActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA EL CVV.
     private void cvvTarjetaFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cvvTarjetaFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cvvTarjetaFieldCrearCuentaActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA LA CONTRASEÑA.
     private void claveFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_claveFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_claveFieldCrearCuentaActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA LA FECHA DE CADUCIDAD DE LA TARJETA.
     private void caducidadTarjetaCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caducidadTarjetaCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_caducidadTarjetaCrearCuentaActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO INTRODUZCA EL TELÉFONO.
     private void telefonoFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_telefonoFieldCrearCuentaActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //CHECKBOX QUE REVISA SI EL USUARIO ES ANFITRIÓN O NO.
     private void anfitrionChekboxCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anfitrionChekboxCrearCuentaActionPerformed
 
         
         
     }//GEN-LAST:event_anfitrionChekboxCrearCuentaActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //ESPACIO PARA QUE EL USUARIO CONFIRME SU CONTRASEÑA.
     private void confirmaClaveFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmaClaveFieldCrearCuentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmaClaveFieldCrearCuentaActionPerformed
 
+    
+    /** 
+     * @param evt
+     */
     /*ESTA FUNCIÓN SE ACTIVA AL PULSAR EL BOTÓN DE CREAR CUENTA, Y SE ASEGURA DE RECOGER LA INFORMACIÓN
     DEL USUARIO QUE USA LA APLICACIÓN, DE QUE LOS CAMPOS ESTÉN LLENOS, DE QUE LAS CIFRAS Y LOS FORMATOS 
     SEAN CORRECTOS Y DE QUE NO HAYA NINGÚN TIPO DE ERROR. PARA ELLO UTILIZA VARIAS EXCEPCIONES
@@ -433,6 +473,10 @@ public class CrearCuenta extends javax.swing.JFrame {
 
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
 
+    
+    /** 
+     * @param args[]
+     */
     private void anfitrionChekboxCrearCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_anfitrionChekboxCrearCuentaMouseClicked
        
         esAnfitrion = anfitrionChekboxCrearCuenta.isSelected();
