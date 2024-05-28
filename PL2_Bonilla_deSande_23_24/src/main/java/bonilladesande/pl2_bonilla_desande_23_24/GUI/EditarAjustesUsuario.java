@@ -34,6 +34,15 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         TextPrompt placenuevoemail = new TextPrompt(BaseDatos.user.getCorreo(), nuevoCorreo);
         TextPrompt placenuevacontraseña = new TextPrompt(BaseDatos.user.getClave(), nuevaContra);
         TextPrompt placenuevotelefono = new TextPrompt(String.valueOf(BaseDatos.user.getTelefono()), nuevoTelef);
+        
+        if (BaseDatos.user.getTipo() == 1){
+            serVip.setSelected(BaseDatos.user.isVip());
+            serVip.setVisible(true);
+        }
+        else{
+            serVip.setVisible(false);
+        }
+        
         edicionliada.setForeground(Color.RED);
         EliminarUsuario.setForeground(Color.RED);
     }
@@ -60,6 +69,7 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         nuevaContra = new javax.swing.JPasswordField();
         edicionliada = new javax.swing.JLabel();
         EliminarUsuario = new javax.swing.JButton();
+        serVip = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,6 +127,14 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
             }
         });
 
+        serVip.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        serVip.setText("¿Eres usuario vip?");
+        serVip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serVipActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -147,7 +165,8 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                                         .addComponent(nuevoCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
                                         .addComponent(nuevoUser, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(nuevaContra, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(nuevoTelef, javax.swing.GroupLayout.Alignment.LEADING)))))
+                                        .addComponent(nuevoTelef, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addComponent(serVip, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -171,9 +190,11 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nuevoTelef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addComponent(edicionliada, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(25, 25, 25)
+                .addComponent(serVip)
+                .addGap(18, 18, 18)
+                .addComponent(edicionliada, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GuardarCambios)
                     .addComponent(CancelarAjustes)
@@ -216,7 +237,7 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
             //SE GUARDA LA INFORMACIÓN EN LA BASE DE DATOS.
             if(BaseDatos.user.getTipo() == 1){
                 
-                Particular particular = new Particular(BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).isVip(), BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getTarjeta(), BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getDni(), nuevoUsername, nuevoEmail, nuevaClaveString, nuevoTelefono);
+                Particular particular = new Particular(serVip.isSelected(), BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getTarjeta(), BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getDni(), nuevoUsername, nuevoEmail, nuevaClaveString, nuevoTelefono);
                 for(int i = 0; i < BaseDatos.reservas.size(); i++){
                     if(BaseDatos.reservas.get(i).getParticular().getCorreo().equals(BaseDatos.user.getCorreo())){
                         BaseDatos.reservas.get(i).setParticular(particular);
@@ -224,6 +245,7 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 }
                 
                 BaseDatos.particulares.set(BaseDatos.user.getPosicionArrayList(), particular);
+                BaseDatos.user.setVip(serVip.isSelected());
                 
             }
             else{
@@ -309,6 +331,10 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EliminarUsuarioActionPerformed
 
+    private void serVipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serVipActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serVipActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -358,5 +384,6 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField nuevoCorreo;
     private javax.swing.JTextField nuevoTelef;
     private javax.swing.JTextField nuevoUser;
+    private javax.swing.JCheckBox serVip;
     // End of variables declaration//GEN-END:variables
 }

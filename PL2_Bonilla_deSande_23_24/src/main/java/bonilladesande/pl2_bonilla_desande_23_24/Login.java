@@ -39,7 +39,7 @@ public class Login {
             user.setTelefono(particular.getTelefono());
             user.setCorreo(particular.getCorreo());
             user.setClave(particular.getClave());
-            user.setVip(false);
+            user.setVip(particular.isVip());
             user.setTarjeta(particular.getTarjeta());
         }
         
