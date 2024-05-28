@@ -3,6 +3,9 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import javax.swing.ImageIcon;
 
+/*ESTA CLASE HACE REFERENCIA A TODAS LAS VENTANAS QUE HAY EN LA APLICACIÓN, Y EL
+HECHO DE TENERLAS EN ESTA DISPOSICIÓN SERÁ DE GRAN AYUDA A LA HORA DE LLAMAR A ALGUNAS 
+FUNCIONES COMO EL CAMBIO DE VENTANA.*/
 public class ObjetoGestorVentanas {
     
     Login ventanaLogin;
@@ -27,12 +30,17 @@ public class ObjetoGestorVentanas {
     
     public JavaBNB ventanaJavaBNB = new JavaBNB();
     
+    /*GRACIAS A ESTE MÉTODO, PODEMOS VER SIEMPRE LA PARTE DE JAVA BNB,
+    ASÍ COMO EL USUARIO Y LA FOTO DE USUARIO.*/
     public void setViewpointView(){
         paginaPaginaPrincipal = new PaginaPrincipal();
         ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaPrincipal);
         ventanaJavaBNB.setVisible(true);
     }
     
+    /*ESTA ES EL MÉTODO QUE ACTIVA EL PROGRAMA. GRACIAS A ÉL SE CREA
+    LA PRIMERA VENTANA DE LOGIN, LA CUAL DA PIE A INICIAR SESIÓN O A
+    CREARSE UNA NUEVA CUENTA.*/
     public void iniciarPrograma(){
         ventanaLogin = new Login();
         ventanaJavaBNB.setLocationRelativeTo(null);
@@ -41,6 +49,13 @@ public class ObjetoGestorVentanas {
         
     }
     
+    /*ESTA ES EL MÉTODO DE CAMBIO DE VENTANA. ESTÁ PROGRAMADA DE MANERA ESPACÍFICA
+    PARA FACILITAR LA TAREA DE DESARROLLAR CÓDIGO QUE TE LLEVE DE UNA VENTANA A OTRA.
+    LA FUNCIÓN SE COMPONE DE DOS STRINGS, UN ORIGEN (LA PÁGINA DE LA QUE VENIMOS), Y UN DESTINO (LA 
+    PÁGINA A LA QUE VAMOS). EL MÉTODO EN SÍ MISMO ESTÁ COMPUESTO POR UN SWITCH QUE HACE NUEVAS COPIAS
+    DE LAS PÁGINAS DEL PROGRAMA. LUEGO EMPLEA UN "ventanaxxx.setLocationRelativeTo(null)", CUYA FUNCIÓN
+    ES POSICIONAR LAS VENTANAS QUE SE ABREN EN EL CENTRO DE LA PANTALLA. TRAS ESTO, SE APLICA EL
+    COMANDO ".setVisible", QUE ES LO QUE LO HACE VISIBLE.*/
     public void cambioVentana(String origen, String destino){
         
 
@@ -75,7 +90,8 @@ public class ObjetoGestorVentanas {
                 
                 
                 String ruta;
-        
+                
+                //LA RUTA PARA OBTENER LA FOTO CAMBIA DEPENDIENDO DE SI ES UN PARTICULAR O UN ANFITRIÓN.
                 if (BaseDatos.user.getTipo() == 1){
                     ruta = BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getFoto();
                 }
@@ -84,12 +100,13 @@ public class ObjetoGestorVentanas {
                 }
         
                 ImageIcon imagen = new ImageIcon(ruta);
-                //Se redimensiona
+                //LA IMAGEN SE REDIMENSIONA.
                 ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(54, 54, 1));
                 ventanaJavaBNB.fotoLabelJavaBNB.setIcon(imgRedimensionada);
             }
             
             case "AjustesUsuario" -> {
+                
                 paginaAjustesUsuario = new AjustesUsuario();
                 ventanaJavaBNB.frameJavaBNB.setViewportView(paginaAjustesUsuario);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(false);

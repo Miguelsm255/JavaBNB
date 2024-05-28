@@ -53,7 +53,8 @@ public class PaginaPrincipal extends javax.swing.JPanel {
                 .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //SI SE SELECCIONA EL BOTÓN "SUBIR UN INMUEBLE", SE CAMBIA DE LA PÁGINA PRINCIPAL A LA DE SUBIR UN ALOJAMIENTO
+    
     private void InmuebleSubidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InmuebleSubidaActionPerformed
        GestorVentanas.cambioVentana("PaginaPrincipal", "SubirAlojamiento");
     }//GEN-LAST:event_InmuebleSubidaActionPerformed
@@ -64,6 +65,7 @@ public class PaginaPrincipal extends javax.swing.JPanel {
         
         //pintarLista(BaseDatos.filtroAlojamientos(30, 20, 0, 0, 0, 0, 0, "", ""));
         
+        //SOLO LOS ANFITRIONES PUEDEN SUBIR INMUEBLES, POR LO TANTO EL BOTÓN ESTARÁ OCULTO PARA EL RESTO.
         InmuebleSubida.setVisible(false);
         if (BaseDatos.user.getTipo() ==2){
             InmuebleSubida.setVisible(true);

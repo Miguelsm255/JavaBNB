@@ -127,9 +127,9 @@
         <Property name="text" type="java.lang.String" value="No tienes cuenta? Reg&#xed;strate aqu&#xed;."/>
       </Properties>
       <Events>
-        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="crearCuentaButtonLoginFocusGained"/>
-        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="crearCuentaButtonLoginFocusLost"/>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="crearCuentaButtonLoginMouseClicked"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="crearCuentaButtonLoginMousePressed"/>
+        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="crearCuentaButtonLoginMouseReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="claveFieldLogin">

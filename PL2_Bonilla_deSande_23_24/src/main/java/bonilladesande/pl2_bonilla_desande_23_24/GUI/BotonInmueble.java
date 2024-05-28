@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class BotonInmueble extends javax.swing.JPanel {
 
-    /*CONSTRUCTOR BÁSICO QUE NECESITA DEL PARÁMETRO INMUEBLE PARA MOSTRAR EN LA MINIATURA.*/
+    /*CONSTRUCTOR BÁSICO QUE NECESITA DEL PARÁMETRO "INMUEBLE" PARA MOSTRAR EN LA MINIATURA.*/
     Inmueble inmueble;
     
     public BotonInmueble(Inmueble inmueble) {
@@ -85,8 +85,8 @@ public class BotonInmueble extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    /*EN TÉRMINOS DE INTERFAZ GRÁFICA, ESTE CÓDIGO ES EL QUE SE OCUPA DE PONER LAS MINIATURAS DE LOS INMUBLES
-    DISPONIBLES PARA LOS USUARIOS. SE OCUPA DE PONER EL PRECIO (PRIMERA LÍNEA DE CÓDIGO), EL NOMBRE (SEGUNDA
+    /*EN TÉRMINOS DE INTERFAZ GRÁFICA, ESTE CÓDIGO ES EL QUE SE OCUPA DE PONER LAS MINIATURAS DE LOS INMUEBLES
+    DISPONIBLES PARA LOS USUARIOS. SE OCUPA DE COLOCAR EL PRECIO (PRIMERA LÍNEA DE CÓDIGO), EL NOMBRE (SEGUNDA
     LÍNEA DE CÓDIGO), LA VALORACIÓN (TERCERA LÍNEA DE CÓDIGO), Y LA LA IMAGEN (CUARTA, QUINTA Y SEXTA LÍNEA DE CÓDIGO).*/
     public void myInitComponents(Inmueble inmueble) {
         precioAlojamientoBoton.setText(String.valueOf(inmueble.getPrecioNoche()) + "€/noche");

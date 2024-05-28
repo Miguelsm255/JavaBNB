@@ -5,11 +5,9 @@ import bonilladesande.pl2_bonilla_desande_23_24.*;
 import javax.swing.ImageIcon;
 
 public class BotonReservas extends javax.swing.JPanel {
-
+    /*CONSTRUCTOR BÁSICO QUE NECESITA DEL PARÁMETRO "RESERVA" PARA MOSTRAR EN LA MINIATURA.*/ 
     Reserva reserva;
-    
-    public BotonReservas(Reserva reserva) {
-        
+    public BotonReservas(Reserva reserva) {     
         this.reserva = reserva;
         initComponents();
         myInitComponents(reserva);
@@ -90,15 +88,15 @@ public class BotonReservas extends javax.swing.JPanel {
 
 
 
-
+    /*EN TÉRMINOS DE INTERFAZ GRÁFICA, ESTE CÓDIGO ES EL QUE SE OCUPA DE PONER LAS MINIATURAS DE LAS RESERVAS
+    DISPONIBLES PARA EL ADMINISTRADOR Y LOS PARTICULARES. SE OCUPA DE COLOCAR EL NOMBRE DEL INMUEBLE (PRIMERA LÍNEA DE CÓDIGO), EL NOMBRE DEL 
+    PARTICULAR (SEGUNDA LÍNEA DE CÓDIGO), LA FECHA DE ENTRADA (TERCERA LÍNEA DE CÓDIGO), LA FECHA DE SALIDA (CUARTA LÍNEA DE CÓDIGO)
+    Y LA FOTOGRAFÍA REDIMENSIONADA (EL RESTO DE LÍNEAS DE CÓDIGO).*/
     public void myInitComponents(Reserva reserva) {
         nombreInmuebleAlojamientoBoton.setText("Inmueble: " + reserva.getInmueble().getTitulo());
         nombreParticular.setText("Particular: " + reserva.getParticular().getNombre());
         fechaEntrada.setText("Fecha de entrada: " + String.valueOf(reserva.getFechaInicio()));
         fechaSalida.setText("Fecha de salida: " + String.valueOf(reserva.getFechaFin()));
-        
-        
-        
         ImageIcon imagen = new ImageIcon(reserva.getInmueble().getRutaFoto());
         //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(166, 109, 1));
@@ -107,7 +105,8 @@ public class BotonReservas extends javax.swing.JPanel {
 
 
 
-
+     /*AL PULSAR SOBRE UNA DE LAS RESERVAS, SE CAMBIA LA PÁGINA A UNA VENTANA MÁS AMPLIA DONDE SE PUEDEN VER
+    EN DETALLE LOS DATOS DE LA RESERVA EN CUESTIÓN.*/
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         
         GestorVentanas.gestorVentanas.paginaVerReserva = new VerReserva(reserva);

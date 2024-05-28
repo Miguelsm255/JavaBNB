@@ -11,7 +11,7 @@ import java.io.File;
 import javax.swing.filechooser.FileFilter;
 
 public class FiltraImagenes extends FileFilter {
-
+    //ESTABLECE LOS ÚNICOS TIPOS DE ARCHIVOS CON LOS QUE SE PUEDEN MANEJAR LAS IMÁGENES EN LA APLICACIÓN.
     public final static String JPEG = "jpeg";
     public final static String JPG = "jpg";
     public final static String GIF = "gif";
@@ -24,7 +24,7 @@ public class FiltraImagenes extends FileFilter {
         if (f.isDirectory()) {
             return true;
         }
-
+        
         String extension = getExtension(f);
         if (extension != null) {
             if (extension.equals(TIFF)
@@ -40,7 +40,8 @@ public class FiltraImagenes extends FileFilter {
         }
         return false;
     }
-
+    
+    //AL BUSCAR, TE APARECE EL TEXTO "Seleccione la foto.".
     @Override
     public String getDescription() {
         return "Seleccione la foto.";

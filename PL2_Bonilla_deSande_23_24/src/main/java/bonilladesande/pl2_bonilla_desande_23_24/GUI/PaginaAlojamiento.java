@@ -15,9 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class PaginaAlojamiento extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PaginaAlojamiento
-     */
+    //NECESITA UN OBJETO INMUEBLE PARA INTRODUCIR TODAS SUS CARACTERÍSTICAS
     public PaginaAlojamiento(Inmueble inmueble) {
         initComponents();
         myInitComponents(inmueble);
@@ -284,13 +282,13 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void myInitComponents(Inmueble inmueble){
-        
+    //OBTIENE LA RUTA DE LA FOTO DEL INMUEBLE Y LA COLOCA.
+    private void myInitComponents(Inmueble inmueble) {
         ImageIcon imagen = new ImageIcon(inmueble.getRutaFoto());
-        //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(300, 191, 1));
         fotoAlojamientoLabel.setIcon(imgRedimensionada);
-        
+        /*SOLO ESTÁ PERMITIDO RESERVAR INMUEBLES SI ERES UN PARTICULAR, POR LO TANTO
+    EL BOTÓN PARA RESERVAR INMUEBLES SOLO ESTARÁ DISPONIBLE SI ERES UN PARTICULAR.*/
         reservarInmuebleBoton.setVisible(true);
         if (BaseDatos.user.getTipo() == 2 && !BaseDatos.inmuebleSeleccionado.getAnfitrion().getCorreo().equals(BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getCorreo())){
             reservarInmuebleBoton.setVisible(false);
@@ -303,7 +301,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         }
         
     }
-    
+    //SI SE PRESIONA EL BOTÓN "RESERVAR", CAMBIA LA VENTANA HACIA LA DE RESERVAR INMUEBLES.
     private void reservarInmuebleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservarInmuebleBotonActionPerformed
         // TODO add your handling code here:
         if(BaseDatos.user.getTipo() == 1){
@@ -336,7 +334,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
             GestorVentanas.cambioVentana("", "EditarDatosInmueble");
         }
     }//GEN-LAST:event_reservarInmuebleBotonActionPerformed
-
+    //SI SE PRESIONA EL BOTÓN "VOLVER", CAMBIA LA VENTANA HACIA LA PÁGINA PRINCIPAL.
     private void volverButtonPaginaAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButtonPaginaAlojamientoActionPerformed
         if(BaseDatos.user.getTipo() == 0){
             GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaAdministrador");
@@ -345,7 +343,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
             GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
         }
     }//GEN-LAST:event_volverButtonPaginaAlojamientoActionPerformed
-
+    //??????????????
     private void fieldDescripcionPagAlojamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldDescripcionPagAlojamientosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldDescripcionPagAlojamientosActionPerformed

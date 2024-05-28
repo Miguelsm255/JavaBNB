@@ -18,6 +18,13 @@ import javax.swing.border.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
 
+
+/*ESTE CÓDIGO NO ES PROPIAMENTE NUESTRO, ES UN CÓDIGO EXTERNO QUE HEMOS UTILIZADO PARA REALIZAR
+UNA PEQUEÑA AMPLIACIÓN Y AÑADIR PLACEHOLDERS CON EL OBJETIVO DE OFRECER UNA MEJOR EXPERIENCIA.
+¡CRÉDITOS A https://youtu.be/PP-hBgaI8_A?si=6qaE6MN8BYHXYdHz !
+AL NO SER UN CÓDIGO PROPIAMENTE OBLIGATORIO Y SER SU FUNCIONAMIENTO MÁS BIEN ESTÉTICO Y NO TAN
+RELACIONADO CON EL TEMARIO, ESTE CÓDIGO NO SERÁ COMENTADO, SE TRATARÁ COMO SOLO ESO, UN AÑADIDO MÁS.*/
+
 /**
  * The TextPrompt class will display a prompt over top of a text component when
  * the Document of the text field is empty. The Show property is used to

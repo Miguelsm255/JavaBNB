@@ -5,11 +5,10 @@ import bonilladesande.pl2_bonilla_desande_23_24.*;
 import javax.swing.ImageIcon;
 
 public class BotonAnfitriones extends javax.swing.JPanel {
-
-    Anfitrion anfitrion;
     
-    public BotonAnfitriones(Anfitrion anfitrion) {
-        
+    /*CONSTRUCTOR BÁSICO QUE NECESITA DEL PARÁMETRO "ANFITRIÓN" PARA MOSTRAR EN LA MINIATURA.*/
+    Anfitrion anfitrion; 
+    public BotonAnfitriones(Anfitrion anfitrion) {    
         this.anfitrion = anfitrion;
         initComponents();
         myInitComponents(anfitrion);
@@ -76,20 +75,21 @@ public class BotonAnfitriones extends javax.swing.JPanel {
 
 
 
-
+    /*EN TÉRMINOS DE INTERFAZ GRÁFICA, ESTE CÓDIGO ES EL QUE SE OCUPA DE PONER LAS MINIATURAS DE LOS ANFITRIONES,
+    LOS CUALES PODRÁ VER EL ADMINISTRADOR. SE OCUPA DE COGER EL NOMBRE DE UN ANFITRIÓN YA INSERTADO Y SU FOTO DE
+    PERFIL, DE ESTA MANERA PODRÁ OFRECER UNA VISTA PREVIA AL ADMINISTRADOR DEL USUARIO EN CUESTIÓN.*/
     public void myInitComponents(Anfitrion anfitrion) {
         nombreInmuebleAlojamientoBoton.setText(anfitrion.getNombre());
-        //valoracionAlojamientoBoton.setText(String.valueOf(anfitrion.getCalificacion()));
-        
+        //valoracionAlojamientoBoton.setText(String.valueOf(anfitrion.getCalificacion()));    
         ImageIcon imagen = new ImageIcon(anfitrion.getFoto());
-        //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(166, 109, 1));
         fotoBotonAlojamientoLabel.setIcon(imgRedimensionada);
     }
 
 
 
-
+     /*AL PULSAR SOBRE UNO DE LOS ANFITRIONES, SE CAMBIA LA PÁGINA A UNA VENTANA MÁS AMPLIA DONDE SE PUEDEN VER
+    EN DETALLE LOS DATOS DEL ANFITRIÓN.*/
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         
         GestorVentanas.gestorVentanas.paginaVerAnfitrion = new VerAnfitrion(anfitrion);

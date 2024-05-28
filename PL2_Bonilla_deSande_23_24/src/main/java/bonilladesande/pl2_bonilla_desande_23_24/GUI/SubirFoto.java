@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
  *
  * @author marco
  */
+/*PARA SUBIR UNA FOTO DE PERFIL, NECESITAMOS UNA RUTA DE IMAGEN, Y PARA ELLOS UTILIZAMOS VARIOS IMPORTS, COMO
+EL IMPORT FILE O EL IMPORT BUFFERED IMAGE*/
 public class SubirFoto extends javax.swing.JFrame {
 
     private String nombreImagen, rutaImagen, extension = "jpg";
@@ -42,7 +44,7 @@ public class SubirFoto extends javax.swing.JFrame {
     private void initComponents() {
 
         GuardaCambios = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Volver = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         BotonSubirFoto = new javax.swing.JButton();
         FotoActual = new javax.swing.JLabel();
@@ -56,10 +58,10 @@ public class SubirFoto extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cancelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Volver.setText("Cancelar");
+        Volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                VolverActionPerformed(evt);
             }
         });
 
@@ -87,7 +89,7 @@ public class SubirFoto extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(GuardaCambios)
                         .addGap(31, 31, 31)
-                        .addComponent(jButton2))
+                        .addComponent(Volver))
                     .addComponent(FotoActual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27))
         );
@@ -105,7 +107,7 @@ public class SubirFoto extends javax.swing.JFrame {
                         .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GuardaCambios)
-                    .addComponent(jButton2)
+                    .addComponent(Volver)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
@@ -113,6 +115,9 @@ public class SubirFoto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*AL PULSAR EL BOTÓN DE SUBIR NUEVA FOTO DE PERFIL, EMPLEA EL "add.ChoosableFileFilter", LO QUE
+    REGULA QUE SOLO SE PUEDAN ELEGIR FOTOS DE DETERMINADOS ARCHIVOS. DESPUÉS, TE DEJA SELECCIONAR UNA FOTO 
+    DE LA RUTA QUE ELIJAS, CONSIGUE EL NOMBRE DE LA IMAGEN, Y LA IMPRIME.*/
     private void BotonSubirFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSubirFotoActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new FiltraImagenes());
@@ -125,15 +130,18 @@ public class SubirFoto extends javax.swing.JFrame {
             nombreImagen = file.getName();
             System.out.println("imagen: " + nombreImagen);
             String[] aux = nombreImagen.split("\\.");
-        } else {
+        } 
+        //EN CASO CONTRARIO, TE DIRÁ QUE NO HAY NINGÚN FICHERO SELECCIONADO.
+        else {
             JOptionPane.showMessageDialog(this, "Ningún fichero seleccionado", "Mensaje", JOptionPane.ERROR_MESSAGE);
         }
         ImageIcon imagen = new ImageIcon(rutaImagen);
-        //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(FotoActual.getWidth(), FotoActual.getHeight(), 1));
         FotoActual.setIcon(imgRedimensionada);
     }//GEN-LAST:event_BotonSubirFotoActionPerformed
-
+    /*CUANDO GUARDAS LOS CAMBIOS, BUSCA EN EL PAQUETE DE IMÁGENES DEL MISMO PROGRAMA POR EL NOMBRE DE LA IMAGEN,
+    LA COLOCA EN LA POSICIÓN DE FOTO DE PERFIL DE USUARIO, Y TE IMPRIME UN PANEL EN EL QUE TE CONFIRMA QUE SE 
+    PUDO GUARDAR O QUE HUBO UN ERROR AL GUARDARLA.*/
     private void GuardaCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardaCambiosActionPerformed
        
         try {
@@ -142,7 +150,8 @@ public class SubirFoto extends javax.swing.JFrame {
             ImageIO.write(bimage, extension, fout);
             JOptionPane.showMessageDialog(this, "Imagen guardada");
             
-            if (BaseDatos.user.getTipo() == 1){
+            //DEPENDIENDO DE SI EL USUARIO ES UN PARTICULAR O UN ANFITRIÓN, SE OPERARÁ DE UNA MANERA O DE OTRA.
+                if (BaseDatos.user.getTipo() == 1){
                 BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).setFoto("./src/main/java/imagenes/" + nombreImagen);
             }
             else{
@@ -153,12 +162,12 @@ public class SubirFoto extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Error al guardar imagen");
         }
     }//GEN-LAST:event_GuardaCambiosActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    //SI SE PRESIONA EL BOTÓN DE VOLVER, CIERRA LA PESTAÑA DE SUBIR FOTO Y TE HACE VOLVER A LOS AJUSTES DE USUARIO.
+    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
         GestorVentanas.cambioVentana("SubirFoto", "AjustesUsuario");
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_VolverActionPerformed
 
-    
+    //ESTE MÉTODO ESTÁ PARA QUE AL CERRAR LA PESTAÑA DE SUBIR FOTO NO SE CIERRE TODA LA APLICACIÓN. 
     private void myInitComponents(){
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
@@ -201,7 +210,7 @@ public class SubirFoto extends javax.swing.JFrame {
     private javax.swing.JButton BotonSubirFoto;
     private javax.swing.JLabel FotoActual;
     private javax.swing.JButton GuardaCambios;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Volver;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
