@@ -17,6 +17,14 @@ public class Reserva implements Serializable{
     private double precio;
     
     
+    
+    /** 
+     * @param particular
+     * @param inmueble
+     * @param fechaInicio
+     * @param fechaFin
+     * @param precio
+     */
     // MÉTODOS
     
     
@@ -25,6 +33,13 @@ public class Reserva implements Serializable{
         BaseDatos.reservas.add(reserva);
     }
     
+    
+    /** 
+     * @param inmueble
+     * @param fechaInicio
+     * @param fechaFin
+     * @return boolean
+     */
     public static boolean ComprobarReserva(Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin){
         boolean disponible = true;
         
@@ -40,6 +55,14 @@ public class Reserva implements Serializable{
     }
     
     
+    
+    /** 
+     * @param precioNoche
+     * @param fechaInicio
+     * @param fechaFin
+     * @param vip
+     * @return double
+     */
     public static double calcularPrecio(double precioNoche, LocalDate fechaInicio, LocalDate fechaFin, boolean vip){
         
         int dias = (int) ChronoUnit.DAYS.between(fechaInicio, fechaFin);
@@ -53,10 +76,23 @@ public class Reserva implements Serializable{
         return precioTotal;
     }
     
+    
+    /** 
+     * @param posReserva
+     */
     public static void cancelarReserva(int posReserva){
         BaseDatos.reservas.remove(posReserva);
     }
     
+    
+    /** 
+     * @param particular
+     * @param inmueble
+     * @param fechaInicio
+     * @param fechaFin
+     * @param precio
+     * @return Factura
+     */
     public Factura generarFactura(Particular particular, Inmueble inmueble, LocalDate fechaInicio, LocalDate fechaFin, double precio){
         Factura factura = new Factura(particular, inmueble, fechaInicio, fechaFin, precio);
         return factura;
@@ -65,52 +101,100 @@ public class Reserva implements Serializable{
     
     
     
+    
+    /** 
+     * @return Factura
+     */
     // GETTERS Y SETTERS
     
     public Factura getFactura() {
         return factura;
     }
 
+    
+    /** 
+     * @param factura
+     */
     public void setFactura(Factura factura) {
         this.factura = factura;
     }
 
+    
+    /** 
+     * @return Particular
+     */
     public Particular getParticular() {
         return particular;
     }
 
+    
+    /** 
+     * @param particular
+     */
     public void setParticular(Particular particular) {
         this.particular = particular;
     }
 
+    
+    /** 
+     * @return Inmueble
+     */
     public Inmueble getInmueble() {
         return inmueble;
     }
 
+    
+    /** 
+     * @param inmueble
+     */
     public void setInmueble(Inmueble inmueble) {
         this.inmueble = inmueble;
     }
 
+    
+    /** 
+     * @return LocalDate
+     */
     public LocalDate getFechaInicio() {
         return fechaInicio;
     }
 
+    
+    /** 
+     * @param fechaInicio
+     */
     public void setFechaInicio(LocalDate fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
+    
+    /** 
+     * @return LocalDate
+     */
     public LocalDate getFechaFin() {
         return fechaFin;
     }
 
+    
+    /** 
+     * @param fechaFin
+     */
     public void setFechaFin(LocalDate fechaFin) {
         this.fechaFin = fechaFin;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getPrecio() {
         return precio;
     }
 
+    
+    /** 
+     * @param precio
+     */
     public void setPrecio(double precio) {
         this.precio = precio;
     }

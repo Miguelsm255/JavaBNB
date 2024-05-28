@@ -198,6 +198,14 @@ public class VerReserva extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param JOptionPane.showConfirmDialog(this
+     * @param reserva?"
+     * @param "Confirmar"
+     * @param JOptionPane.YES_NO_OPTION
+     * @param JOptionPane.YES_OPTION
+     */
     private void cancelarReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarReservaActionPerformed
         int response = JOptionPane.showConfirmDialog(
                         this, 
@@ -224,10 +232,18 @@ public class VerReserva extends javax.swing.JPanel {
                 }
     }//GEN-LAST:event_cancelarReservaActionPerformed
 
+    
+    /** 
+     * @param 0
+     */
     private void descargarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descargarFacturaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_descargarFacturaActionPerformed
 
+    
+    /** 
+     * @param 0
+     */
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         if (BaseDatos.user.getTipo() != 0){
                         GestorVentanas.cambioVentana("VerReserva", "PaginaPrincipal");
@@ -237,6 +253,14 @@ public class VerReserva extends javax.swing.JPanel {
                     }
     }//GEN-LAST:event_volverActionPerformed
 
+    
+    /** 
+     * @param JOptionPane.showInputDialog(null
+     * @param alojamiento
+     * @param "
+     * @param texto"
+     * @param !input.trim().isEmpty()
+     */
     private void puntuarInmuebleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntuarInmuebleActionPerformed
         
         String input = JOptionPane.showInputDialog(null, "Califica el alojamiento, del 1 al 5: ", "Entrada de texto", JOptionPane.QUESTION_MESSAGE);

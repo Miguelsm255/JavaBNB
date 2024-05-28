@@ -167,29 +167,56 @@ public class JavaBNB extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("JavaBNB"
+     * @param evt)GestorVentanas.cambioVentana(""
+     * @param evt
+     */
     //SI SE PULSA EL BOTÓN DE USUARIO, REDIRIGE AL USUARIO A LA PÁGINA DE AJUSTES DE USUARIO
     private void usuarioJavaBNBbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioJavaBNBbotonActionPerformed
 
         GestorVentanas.cambioVentana("JavaBNB", "AjustesUsuario");
     }//GEN-LAST:event_usuarioJavaBNBbotonActionPerformed
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana(""
+     * @param evt
+     */
     //SI SE TOCA EL LABEL DE LA PÁGINA PRINCIPAL, LLEVA AL USUARIO A LA PÁGINA PRINCIPAL
     private void tituloLabelPaginaPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tituloLabelPaginaPrincipalMouseClicked
       
         GestorVentanas.cambioVentana("", "PaginaPrincipal");
     }//GEN-LAST:event_tituloLabelPaginaPrincipalMouseClicked
 
+    
+    /** 
+     * @param evt
+     */
     private void busquedaCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaCiudadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_busquedaCiudadActionPerformed
 
+    
+    /** 
+     * @param evt
+     */
     private void busquedaEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaEntradaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_busquedaEntradaActionPerformed
 
+    
+    /** 
+     * @param evt
+     */
     private void busquedaSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaSalidaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_busquedaSalidaActionPerformed
 
+    
+    /** 
+     * @param evt
+     */
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
         try{
             String ciudad = busquedaCiudad.getText();

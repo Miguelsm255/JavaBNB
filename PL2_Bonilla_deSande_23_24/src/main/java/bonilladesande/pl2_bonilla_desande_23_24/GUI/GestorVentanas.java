@@ -15,6 +15,11 @@ public class GestorVentanas {
         gestorVentanas.iniciarPrograma();
     }
     
+    
+    /** 
+     * @param origen
+     * @param destino
+     */
     /*ESTA FUNCIÓN SE OCUPA DE AÑADIR FACILIDAD A LA HORA DE PROGRAMAR LA VENTANA 
     QUE SE DEBE CERRAR Y LA QUE SE DEBE ABRIR EN SU LUGAR.*/   
     public static void cambioVentana(String origen, String destino){

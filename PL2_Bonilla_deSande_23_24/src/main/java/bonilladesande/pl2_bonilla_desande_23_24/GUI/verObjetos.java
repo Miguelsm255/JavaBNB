@@ -75,6 +75,10 @@ public class VerObjetos extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param 0
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         BaseDatos.verObjetos = null;
@@ -88,6 +92,10 @@ public class VerObjetos extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
+    
+    /** 
+     * @param tipo
+     */
     public void pintarLista(String tipo){
         ListaObjetos listaObjetos = new ListaObjetos(tipo);
         this.jScrollPane1.setViewportView(listaObjetos);
@@ -95,6 +103,11 @@ public class VerObjetos extends javax.swing.JPanel {
         jScrollPane1.repaint();
     }
     
+    
+    /** 
+     * @param tipo
+     * @param anfitrion
+     */
     public void pintarLista(String tipo, Anfitrion anfitrion){
         ListaObjetos listaObjetos = new ListaObjetos(tipo, BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()));
         this.jScrollPane1.setViewportView(listaObjetos);
@@ -102,6 +115,11 @@ public class VerObjetos extends javax.swing.JPanel {
         jScrollPane1.repaint();
     }
     
+    
+    /** 
+     * @param tipo
+     * @param particular
+     */
     public void pintarLista(String tipo, Particular particular){
         ListaObjetos listaObjetos = new ListaObjetos(tipo, BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()));
         this.jScrollPane1.setViewportView(listaObjetos);

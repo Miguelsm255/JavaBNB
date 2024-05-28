@@ -431,10 +431,18 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /** 
+     * @param evt
+     */
     private void DescripcionAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescripcionAlojamientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DescripcionAlojamientoActionPerformed
 
+    
+    /** 
+     * @param evt
+     */
     private void SubirAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirAlojamientoActionPerformed
         try {
             String ruta = "./src/main/java/imagenes/" + nombreImagen;
@@ -481,11 +489,20 @@ public class SubirAlojamiento extends javax.swing.JPanel {
 
     }//GEN-LAST:event_SubirAlojamientoActionPerformed
 
+    
+    /** 
+     * @param evt)GestorVentanas.cambioVentana("SubirAlojamiento"
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void CancelarSubidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarSubidaActionPerformed
         // TODO add your handling code here:
         GestorVentanas.cambioVentana("SubirAlojamiento", "PaginaPrincipal");
     }//GEN-LAST:event_CancelarSubidaActionPerformed
 
+    
+    /** 
+     * @param JFileChooser.APPROVE_OPTION
+     */
     private void SubirFotoAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirFotoAlojamientoActionPerformed
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new FiltraImagenes());

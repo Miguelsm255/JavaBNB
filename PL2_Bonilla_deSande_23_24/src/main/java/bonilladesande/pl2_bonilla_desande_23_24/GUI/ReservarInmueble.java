@@ -197,10 +197,18 @@ public class ReservarInmueble extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    /** 
+     * @param evt
+     */
     //SI SE PRESIONA EL BOTÓN SALIR, SE SALE DE LA APLICACIÓN.
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         dispose();
     }//GEN-LAST:event_SalirActionPerformed
+    
+    /** 
+     * @param evt
+     */
     //ESTE MÉTODO SIRVE PARA ASEGURARSE DE QUE LAS FECHAS INTRODUCIDAS SON CORRECTAS.
     private void SeConfirmanLasFechasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeConfirmanLasFechasActionPerformed
         try {
@@ -252,6 +260,15 @@ public class ReservarInmueble extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_SeConfirmanLasFechasActionPerformed
 
+    
+    /** 
+     * @param LocalDate.of(Integer.parseInt(fechaInicioSplit[2])
+     * @param Integer.parseInt(fechaInicioSplit[1])
+     * @param LocalDate.of(Integer.parseInt(fechaFinSplit[2])
+     * @param Integer.parseInt(fechaFinSplit[1])
+     * @param ChronoUnit.DAYS.between(inicio
+     * @param (BaseDatos.user.isVip()
+     */
     //UNA VEZ SE PRESIONA EL BOTÓN DE RESERVAR, SE LLEVAN A CABO UNA SERIE DE PROCESOS.                                       
     private void ReservaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservaButtonActionPerformed
                                        

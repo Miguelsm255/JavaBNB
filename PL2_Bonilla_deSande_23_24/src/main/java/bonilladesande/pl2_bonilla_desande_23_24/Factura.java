@@ -16,6 +16,15 @@ public class Factura implements Serializable{
     private LocalDate fechaFin;
     private double precio;
 
+    
+    /** 
+     * @param particular
+     * @param inmueble
+     * @param fechaInicio
+     * @param fechaFin
+     * @param precio
+     * @throws IOException
+     */
     // MÉTODOS
     
     /*IMPRIME UNA FACTURA CON UN FORMATO CONCRETO DESPUÉS DE CONSEGUIR EL NOMBRE DE UN PARTICULAR, 
@@ -31,24 +40,44 @@ public class Factura implements Serializable{
         factura.write("Precio final de la factura: " + precio + "€");
         
     }
+    
+    /** 
+     * @return Particular
+     */
     // GETTERS 
     
     public Particular getParticular() {
         return particular;
     }
 
+    
+    /** 
+     * @return Inmueble
+     */
     public Inmueble getInmueble() {
         return inmueble;
     }
 
+    
+    /** 
+     * @return LocalDate
+     */
     public LocalDate getFechaInicio() {
         return fechaInicio;
     }
 
+    
+    /** 
+     * @return LocalDate
+     */
     public LocalDate getFechaFin() {
         return fechaFin;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getPrecio() {
         return precio;
     }

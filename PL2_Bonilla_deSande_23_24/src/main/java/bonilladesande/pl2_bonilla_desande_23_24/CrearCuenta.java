@@ -4,6 +4,19 @@ import java.time.LocalDate;
 
 public class CrearCuenta {
     
+    
+    /** 
+     * @param anfitrion
+     * @param dni
+     * @param nombre
+     * @param email
+     * @param clave
+     * @param telefono
+     * @param fechaRegistro
+     * @param tarjeta
+     * @param vip
+     * @return UserLoged
+     */
     public static UserLoged crearCuenta(boolean anfitrion, String dni, String nombre, String email, String clave, int telefono, LocalDate fechaRegistro, TarjetaCredito tarjeta, boolean vip){
         
         
@@ -31,6 +44,18 @@ public class CrearCuenta {
         
     }
     
+    
+    
+    /** 
+     * @param anfitrion
+     * @param dni
+     * @param nombre
+     * @param email
+     * @param clave
+     * @param telefono
+     * @param fechaRegistro
+     * @return UserLoged
+     */
     public static UserLoged crearCuenta(boolean anfitrion, String dni, String nombre, String email, String clave, int telefono, LocalDate fechaRegistro){
         
         
@@ -61,6 +86,18 @@ public class CrearCuenta {
     
     
     
+    
+    /** 
+     * @param anfitrion
+     * @param dni
+     * @param nombre
+     * @param email
+     * @param clave
+     * @param telefono
+     * @param fechaRegistro
+     * @param tarjeta
+     * @param vip
+     */
     // AÑADIR LA CUENTA A LA "BASE DE DATOS"
     public static void anadirCuenta(boolean anfitrion, String dni, String nombre, String email, String clave, int telefono, LocalDate fechaRegistro, TarjetaCredito tarjeta, boolean vip){
         
@@ -81,6 +118,17 @@ public class CrearCuenta {
         }
     }
     
+    
+    
+    /** 
+     * @param anfitrion
+     * @param dni
+     * @param nombre
+     * @param email
+     * @param clave
+     * @param telefono
+     * @param fechaRegistro
+     */
     public static void anadirCuenta(boolean anfitrion, String dni, String nombre, String email, String clave, int telefono, LocalDate fechaRegistro){
         
         // SI ES UN ANFITRIÓN
