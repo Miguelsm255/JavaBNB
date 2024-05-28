@@ -4,8 +4,10 @@
  */
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
+import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,9 +15,7 @@ import javax.swing.ImageIcon;
  */
 public class PaginaAlojamiento extends javax.swing.JPanel {
 
-    /**
-     * Creates new form PaginaAlojamiento
-     */
+    //NECESITA UN OBJETO INMUEBLE PARA INTRODUCIR TODAS SUS CARACTERÍSTICAS
     public PaginaAlojamiento(Inmueble inmueble) {
         initComponents();
         myInitComponents(inmueble);
@@ -36,7 +36,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         textoCalif = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fieldServiciosPagAlojamientos = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        reservarInmuebleBoton = new javax.swing.JButton();
         NombrelojamientoLabel = new javax.swing.JLabel();
         nombreAnfitrionLabel = new javax.swing.JLabel();
         precioLabelPaginaAlojamiento = new javax.swing.JLabel();
@@ -73,10 +73,10 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
 
         fieldServiciosPagAlojamientos.setEditable(false);
 
-        jButton1.setText("Reservar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        reservarInmuebleBoton.setText("Reservar");
+        reservarInmuebleBoton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                reservarInmuebleBotonActionPerformed(evt);
             }
         });
 
@@ -171,7 +171,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addComponent(calificacionLabelPaginaAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(reservarInmuebleBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(casa_apartamentoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(fotoAlojamientoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
@@ -187,28 +187,33 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(56, 56, 56)))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ciudadLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cpLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(direccionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ciudadLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(cpLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(direccionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel8))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(70, 70, 70)
+                                .addComponent(jLabel7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(131, 131, 131)
+                                .addComponent(volverButtonPaginaAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(42, 42, 42))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel8))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(volverButtonPaginaAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(baniosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(camasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(habitacionesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                                .addComponent(huespedesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(13, 13, 13))))
-                .addGap(42, 42, 42))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(baniosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(camasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(huespedesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(habitacionesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(87, 87, 87))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,14 +244,12 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                                     .addComponent(calificacionLabelPaginaAlojamiento)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(36, 36, 36)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(reservarInmuebleBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(32, 32, 32)
                                 .addComponent(direccionLabel)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -262,10 +265,13 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(camasLabel)
                                     .addComponent(habitacionesLabel))
-                                .addGap(42, 42, 42)
-                                .addComponent(volverButtonPaginaAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
+                                .addComponent(volverButtonPaginaAlojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(fieldServiciosPagAlojamientos, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -276,23 +282,70 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void myInitComponents(Inmueble inmueble){
-        
+    //OBTIENE LA RUTA DE LA FOTO DEL INMUEBLE Y LA COLOCA.
+    private void myInitComponents(Inmueble inmueble) {
         ImageIcon imagen = new ImageIcon(inmueble.getRutaFoto());
-        //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(300, 191, 1));
         fotoAlojamientoLabel.setIcon(imgRedimensionada);
+        /*SOLO ESTÁ PERMITIDO RESERVAR INMUEBLES SI ERES UN PARTICULAR, POR LO TANTO
+    EL BOTÓN PARA RESERVAR INMUEBLES SOLO ESTARÁ DISPONIBLE SI ERES UN PARTICULAR.*/
+        reservarInmuebleBoton.setVisible(true);
+        if (BaseDatos.user.getTipo() == 2 && !BaseDatos.inmuebleSeleccionado.getAnfitrion().getCorreo().equals(BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getCorreo())){
+            reservarInmuebleBoton.setVisible(false);
+        }
+        else if(BaseDatos.user.getTipo() == 0){
+            reservarInmuebleBoton.setText("Borrar Inmueble");
+        }
+        else if(BaseDatos.user.getTipo() == 2){
+            reservarInmuebleBoton.setText("Editar Inmueble");
+        }
         
     }
-    
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    //SI SE PRESIONA EL BOTÓN "RESERVAR", CAMBIA LA VENTANA HACIA LA DE RESERVAR INMUEBLES.
+    private void reservarInmuebleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservarInmuebleBotonActionPerformed
+        
+        System.out.println("BOTÓN PULSADO");
+        if(BaseDatos.user.getTipo() == 1){
+            System.out.println("DETECTADO QUE ES PARTICULAR");
+            GestorVentanas.cambioVentana("", "ReservarInmueble");
+        }
+        else if (BaseDatos.user.getTipo() == 0){
+            int response = JOptionPane.showConfirmDialog(
+                this, 
+                "¿Desea eliminar el inmueble?", 
+                "Confirmar",
+                JOptionPane.YES_NO_OPTION, 
+                JOptionPane.QUESTION_MESSAGE);
 
+                //SI EL USUARIO RESPONDE QUE QUIERE SER ELIMINADO, SE RETIRARÁ SU INFORMACIÓN DE LA BASE DE DATOS.
+                if (response == JOptionPane.YES_OPTION) {
+                    BaseDatos.inmuebles.remove(BaseDatos.inmuebleSeleccionado);
+                    if(BaseDatos.user.getTipo() == 0){
+                        GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaAdministrador");
+                    }
+                    else{
+                        GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
+                    }
+                }  
+                else if (response == JOptionPane.NO_OPTION) {
+                    
+                
+            } 
+        }
+        else{
+            GestorVentanas.cambioVentana("", "EditarDatosInmueble");
+        }
+    }//GEN-LAST:event_reservarInmuebleBotonActionPerformed
+    //SI SE PRESIONA EL BOTÓN "VOLVER", CAMBIA LA VENTANA HACIA LA PÁGINA PRINCIPAL.
     private void volverButtonPaginaAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverButtonPaginaAlojamientoActionPerformed
-        GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
+        if(BaseDatos.user.getTipo() == 0){
+            GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaAdministrador");
+        }
+        else{
+            GestorVentanas.cambioVentana("PaginaAlojamiento", "PaginaPrincipal");
+        }
     }//GEN-LAST:event_volverButtonPaginaAlojamientoActionPerformed
-
+    //??????????????
     private void fieldDescripcionPagAlojamientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldDescripcionPagAlojamientosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldDescripcionPagAlojamientosActionPerformed
@@ -312,7 +365,6 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
     public javax.swing.JLabel fotoAlojamientoLabel;
     public javax.swing.JLabel habitacionesLabel;
     public javax.swing.JLabel huespedesLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
@@ -321,6 +373,7 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel nombreAnfitrionLabel;
     public javax.swing.JLabel precioLabelPaginaAlojamiento;
+    public javax.swing.JButton reservarInmuebleBoton;
     private javax.swing.JLabel textoCalif;
     private javax.swing.JLabel textoPrecioLabel;
     private javax.swing.JButton volverButtonPaginaAlojamiento;

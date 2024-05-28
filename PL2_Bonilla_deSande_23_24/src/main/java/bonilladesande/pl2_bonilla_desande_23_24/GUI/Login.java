@@ -2,12 +2,15 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import bonilladesande.pl2_bonilla_desande_23_24.*;
 import java.awt.Color;
-
+import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
 
+    //SE AÑADEN PLACEHOLDERS PARA EL EMAIL Y LA CLAVE.
     public Login() {
         initComponents();
+        TextPrompt email = new TextPrompt("Introduce tu correo.", emailFieldLogin);
+        TextPrompt clave = new TextPrompt("Introduce tu clave.", claveFieldLogin);
     }
 
     /**
@@ -54,17 +57,15 @@ public class Login extends javax.swing.JFrame {
         });
 
         crearCuentaButtonLogin.setText("No tienes cuenta? Regístrate aquí.");
-        crearCuentaButtonLogin.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                crearCuentaButtonLoginFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                crearCuentaButtonLoginFocusLost(evt);
-            }
-        });
         crearCuentaButtonLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 crearCuentaButtonLoginMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                crearCuentaButtonLoginMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                crearCuentaButtonLoginMouseReleased(evt);
             }
         });
 
@@ -121,25 +122,34 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //ESPACIO PARA QUE EL USUARIO INTRODUZCA PREVIAMENTE SU CORREO INGRESADO EN "CREAR CUENTA"
     private void emailFieldLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailFieldLoginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_emailFieldLoginActionPerformed
 
+    /*AL PULSAR EL BOTÓN DE INICIO DE SESIÓN, SE PRODUCEN VARIOS PROCESOS. BUSCA EN LA BASE
+    DE DATOS POR UN USUARIO CON ESE CORREO Y CONTRASEÑA. SI NO LO ENCUENTRA, NO LE PERMITE ACCEDER,
+    PERO SI LO ENCUENTRA, CAMBIA LA VENTANA DE LOGIN A LA DE PÁGINA PRINCIAL.*/
     private void iniciarSesionButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionButtonLoginActionPerformed
-        
+
         char[] passwordChars = claveFieldLogin.getPassword();
         String password = new String(passwordChars);
         String email = emailFieldLogin.getText();
-        
+
         System.out.println(email);
         System.out.println(password);
-        
+
         UserLoged user = bonilladesande.pl2_bonilla_desande_23_24.Login.login(email, password);
-       
+
         // SI LA INFORMACIÓN NO ES CORRECTA
-        if (user.getTipo() == -1){
+        if (user.getTipo() == -1) {
             // MOSTRAR LABEL DE "CORREO O CONTRASEÑA INCORRECTOS"
+            JOptionPane.showMessageDialog(this, "El correo y/o la contraseña introducidos son incorrectos. Inténtelo de nuevo.");
             user = null;
+        }
+        // SI ES ADMINISTRADOR
+        else if(user.getTipo() == 0){
+            GestorVentanas.cambioVentana("Login", "PaginaAdministrador");
         }
         // SI LA INFORMACIÓN SI ES CORRECTA
         else{
@@ -147,21 +157,20 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_iniciarSesionButtonLoginActionPerformed
 
-    private void crearCuentaButtonLoginFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginFocusGained
-        // TODO add your handling code here:
-        crearCuentaButtonLogin.setForeground(new Color(81, 186, 255)); //Azul claro
-    }//GEN-LAST:event_crearCuentaButtonLoginFocusGained
-
-    private void crearCuentaButtonLoginFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginFocusLost
-        // TODO add your handling code here:
-        crearCuentaButtonLogin.setForeground(new Color(53, 53, 239)); //Azul oscuro
-    }//GEN-LAST:event_crearCuentaButtonLoginFocusLost
-
+    //ABRE LA VENTANA DE CREAR CUENTA NUEVA.  
     private void crearCuentaButtonLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMouseClicked
-        
-        //ABRIR VENTANA DE CREAR CUENTA      
+
         GestorVentanas.cambioVentana("Login", "CrearCuenta");
     }//GEN-LAST:event_crearCuentaButtonLoginMouseClicked
+
+    //SI SELECCIONAS EL BOTÓN DE CREAR UNA CUENTA NUEVA, SE PONE DE COLOR AZUL.
+    private void crearCuentaButtonLoginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMousePressed
+        crearCuentaButtonLogin.setForeground(Color.BLUE);
+    }//GEN-LAST:event_crearCuentaButtonLoginMousePressed
+    //SI LO SUELTAS, VUELVE A PONERSE DE COLOR NEGRO.
+    private void crearCuentaButtonLoginMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_crearCuentaButtonLoginMouseReleased
+        crearCuentaButtonLogin.setForeground(Color.BLACK);
+    }//GEN-LAST:event_crearCuentaButtonLoginMouseReleased
 
     /**
      * @param args the command line arguments

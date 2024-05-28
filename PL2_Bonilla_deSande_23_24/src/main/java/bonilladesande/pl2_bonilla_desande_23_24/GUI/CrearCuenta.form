@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JTextField" name="emailField">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="emailFieldActionPerformed"/>
-      </Events>
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -52,7 +45,7 @@
                               <Component id="DNIfieldCrearCuenta" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="emailLabelCrearCuenta" min="-2" pref="61" max="-2" attributes="0"/>
+                              <Component id="emailLabel" min="-2" pref="61" max="-2" attributes="0"/>
                               <EmptySpace pref="53" max="32767" attributes="0"/>
                               <Component id="emailFieldCrearCuenta" min="-2" pref="256" max="-2" attributes="0"/>
                           </Group>
@@ -140,7 +133,7 @@
               </Group>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="emailLabelCrearCuenta" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="emailLabel" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="emailFieldCrearCuenta" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -223,7 +216,7 @@
         <Property name="text" type="java.lang.String" value="DNI:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="emailLabelCrearCuenta">
+    <Component class="javax.swing.JLabel" name="emailLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>

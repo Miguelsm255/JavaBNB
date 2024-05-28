@@ -7,13 +7,13 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
 import bonilladesande.pl2_bonilla_desande_23_24.Factura;
+import bonilladesande.pl2_bonilla_desande_23_24.GUI.GestorVentanas;
 import bonilladesande.pl2_bonilla_desande_23_24.Particular;
 import bonilladesande.pl2_bonilla_desande_23_24.Reserva;
+import bonilladesande.pl2_bonilla_desande_23_24.TextPrompt;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,12 +25,21 @@ public class ReservarInmueble extends javax.swing.JFrame {
     /**
      * Creates new form ReservarInmueble
      */
+    /*EL PRECIO FINAL SE INICIA COMO ALGO OCULTO, YA QUE NO SE PUEDE SABER HASTA
+    QUE NO SE ESTABLEZCAN EL NÚMERO DE DÍAS QUE DURARÁ LA RESERVA. ADEMÁS DE ESO, NECESITAMOS
+    LOS NOMBRES DEL PARTICULAR QUE COMPRA EL INMUEBLE Y EL DEL PROPIO INMUEBLE. TAMBIÉN
+    SE AÑADIERON PLACEHOLDERS PARA GARANTIZAR QUE LAS FECHAS SE INTRODUCEN EN EL FORMATO CORRECTO.*/
     public ReservarInmueble() {
         initComponents();
-        PreciodelaReserva.setVisible(false);
-        PrecioFinalReserva.setVisible(false);
+        TextPrompt fechainicioplace = new TextPrompt("dd/mm/yyyy", fechaInicioString);
+        TextPrompt fechafinplace = new TextPrompt("dd/mm/yyyy", fechaFinString);
+        
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         LabelParticular.setText(BaseDatos.user.getNombre());
         InmuebleCompra.setText(BaseDatos.inmuebleSeleccionado.getTitulo());
+        
+        precioReserva.setText("");
+        precioTotalReserva.setText("");
     }
 
     /**
@@ -51,13 +60,13 @@ public class ReservarInmueble extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         InmuebleCompra = new javax.swing.JLabel();
         LabelParticular = new javax.swing.JLabel();
-        PreciodelaReserva = new javax.swing.JLabel();
-        PrecioFinalReserva = new javax.swing.JLabel();
         Salir = new javax.swing.JButton();
         SeConfirmanLasFechas = new javax.swing.JButton();
-        FechaInicioString = new javax.swing.JTextField();
-        fechaFinString = new javax.swing.JButton();
+        fechaInicioString = new javax.swing.JTextField();
         ReservaButton = new javax.swing.JButton();
+        fechaFinString = new javax.swing.JTextField();
+        precioReserva = new javax.swing.JLabel();
+        precioTotalReserva = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,8 +82,6 @@ public class ReservarInmueble extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setText("Precio total de la reserva:");
-
-        PrecioFinalReserva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         Salir.setText("Cancelar");
         Salir.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +104,11 @@ public class ReservarInmueble extends javax.swing.JFrame {
             }
         });
 
+        precioReserva.setText("precio");
+
+        precioTotalReserva.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        precioTotalReserva.setText("jLabel8");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,38 +118,38 @@ public class ReservarInmueble extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ReservaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PrecioFinalReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(24, 24, 24)
+                        .addComponent(Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelParticular, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(InmuebleCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel6)
+                                .addGap(40, 40, 40)
+                                .addComponent(precioTotalReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PreciodelaReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(precioReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(SeConfirmanLasFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(fechaFinString, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(FechaInicioString, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(fechaFinString, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(fechaInicioString, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(InmuebleCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(LabelParticular, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -154,85 +166,95 @@ public class ReservarInmueble extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(LabelParticular, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(InmuebleCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(FechaInicioString, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fechaInicioString, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(fechaFinString, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(fechaFinString, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
                 .addComponent(SeConfirmanLasFechas, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PreciodelaReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(precioReserva))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PrecioFinalReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(precioTotalReserva))
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Salir, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(ReservaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ReservaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //SI SE PRESIONA EL BOTÓN SALIR, SE SALE DE LA APLICACIÓN.
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         dispose();
     }//GEN-LAST:event_SalirActionPerformed
-
+    //ESTE MÉTODO SIRVE PARA ASEGURARSE DE QUE LAS FECHAS INTRODUCIDAS SON CORRECTAS.
     private void SeConfirmanLasFechasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeConfirmanLasFechasActionPerformed
         try {
-        String fechaInicioIntroducida = FechaInicioString.getText();
-        String fechaFinIntroducida = fechaFinString.getText();
-        String[] fechaInicioSplit = fechaInicioIntroducida.split("/");
-        String[] fechaFinSplit = fechaFinIntroducida.split("/");
+            String fechaInicioIntroducida = fechaInicioString.getText();
+            String fechaFinIntroducida = fechaFinString.getText();
+            //SE UTILIZA SPLIT PARA SEPARAR LAS FECHAS POR EL SLASH.
+            String[] fechaInicioSplit = fechaInicioIntroducida.split("/");
+            String[] fechaFinSplit = fechaFinIntroducida.split("/");
+
+            LocalDate ahora = LocalDate.now();
+            //SE HACEN VARIABLES DE FECHAS CON LOS DATOS OBTENIDOS MEDIANTE EL SPLIT.
+            LocalDate inicio = LocalDate.of(Integer.parseInt(fechaInicioSplit[2]), Integer.parseInt(fechaInicioSplit[1]), Integer.parseInt(fechaInicioSplit[0]));
+            LocalDate fin = LocalDate.of(Integer.parseInt(fechaFinSplit[2]), Integer.parseInt(fechaFinSplit[1]), Integer.parseInt(fechaFinSplit[0]));
+
+            //COMPRUEBA SI LAS FECHAS SON VÁLIDAS.
+            if (inicio.isBefore(ahora) || fin.isBefore(ahora)) {
+                throw new BibliotecaExcepciones.FechaMenor("Las fechas no pueden ser menores que la fecha actual.");
+            }
+            if (fin.isBefore(inicio)) {
+                throw new BibliotecaExcepciones.FechaFinMenorInicio("La fecha de fin de reserva no puede ser menor que la de inicio.");
+            }
+
+            //CALCULA LA CANTIDAD DE DÍAS.
+            long dias = ChronoUnit.DAYS.between(inicio, fin);
+            double precionoche = BaseDatos.inmuebleSeleccionado.getPrecioNoche();
+            double precio = precionoche * dias;
+            double preciofinal;
         
-        LocalDate ahora = LocalDate.now();
-        LocalDate inicio = LocalDate.of(Integer.parseInt(fechaInicioSplit[2]), Integer.parseInt(fechaInicioSplit[1]), Integer.parseInt(fechaInicioSplit[0]));
-        LocalDate fin = LocalDate.of(Integer.parseInt(fechaFinSplit[2]), Integer.parseInt(fechaFinSplit[1]), Integer.parseInt(fechaFinSplit[0]));
+            // Calcular el precio final dependiendo del tipo de usuario
+            if (BaseDatos.user.isVip()) {
+                preciofinal = precio * 0.9;
+            } else {
+                preciofinal = precio;
+            }
         
-        // Comprobar si las fechas son válidas
-        if (inicio.isBefore(ahora) || fin.isBefore(ahora)) {
-            throw new BibliotecaExcepciones.FechaMenor("Las fechas no pueden ser menores que la fecha actual.");
-        }
-        if (fin.isBefore(inicio)) {
-            throw new BibliotecaExcepciones.FechaInicioMenorFin("La fecha de fin de reserva no puede ser menor que la de inicio.");
-        }
-        
-        // Calcular la cantidad de días
-        long dias = ChronoUnit.DAYS.between(inicio, fin);
-        double precionoche = BaseDatos.inmuebleSeleccionado.getPrecioNoche();
-        double preciofinal;
-        
-        // Calcular el precio final dependiendo del tipo de usuario
-        if (BaseDatos.user.isVip()) {
-            preciofinal = precionoche * dias * 0.9;
-        } else {
-            preciofinal = precionoche * dias;
-        }
-        
-        // Mostrar el precio final en el campo correspondiente
-        PrecioFinalReserva.setText(String.valueOf(preciofinal));
-        
-    } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaInicioMenorFin e) {
-        JOptionPane.showMessageDialog(this, e.getMessage());
-    }
+            // Mostrar el precio final en el campo correspondiente
+            precioReserva.setText(String.valueOf(precio) + "€");
+            precioTotalReserva.setText(String.valueOf(preciofinal) + "€");
+
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                JOptionPane.showMessageDialog(this, "El campo de las fechas es erróneo.");
+            } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaFinMenorInicio e) {
+                JOptionPane.showMessageDialog(this, e.getMessage());
+            }
     }//GEN-LAST:event_SeConfirmanLasFechasActionPerformed
 
+    //UNA VEZ SE PRESIONA EL BOTÓN DE RESERVAR, SE LLEVAN A CABO UNA SERIE DE PROCESOS.                                       
     private void ReservaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservaButtonActionPerformed
                                        
-    Particular particularcompra = new Particular(BaseDatos.user.isVip(), BaseDatos.user.getTarjeta(), BaseDatos.user.getDni(), BaseDatos.user.getNombre(), BaseDatos.user.getCorreo(), BaseDatos.user.getClave(), BaseDatos.user.getTelefono());
-    String fechaInicioIntroducida = FechaInicioString.getText();
+    //Particular particularcompra = new Particular(BaseDatos.user.isVip(), BaseDatos.user.getTarjeta(), BaseDatos.user.getDni(), BaseDatos.user.getNombre(), BaseDatos.user.getCorreo(), BaseDatos.user.getClave(), BaseDatos.user.getTelefono());
+    Particular particularcompra = BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList());
+    String fechaInicioIntroducida = fechaInicioString.getText();
     String fechaFinIntroducida = fechaFinString.getText();
     String[] fechaInicioSplit = fechaInicioIntroducida.split("/");
     String[] fechaFinSplit = fechaFinIntroducida.split("/");
@@ -244,12 +266,12 @@ public class ReservarInmueble extends javax.swing.JFrame {
     if (BaseDatos.user.isVip()) {
         preciofinal *= 0.9; // Aplicar descuento del 10% para clientes VIP
     }
-    
     // Añadir reserva y tratar de imprimir factura
     try {
         Reserva.anadirReserva(particularcompra, BaseDatos.inmuebleSeleccionado, inicio, fin, preciofinal);
         Factura.imprimirFactura(particularcompra, BaseDatos.inmuebleSeleccionado, inicio, fin, preciofinal);
         JOptionPane.showMessageDialog(this, "Reserva completada correctamente.");
+        GestorVentanas.cambioVentana("ReservarInmueble", "PaginaPrincipal");
     } catch (IOException ex) {
         JOptionPane.showMessageDialog(this, "Error durante la impresión de la factura.");
     }
@@ -293,15 +315,13 @@ public class ReservarInmueble extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField FechaInicioString;
     private javax.swing.JLabel InmuebleCompra;
     private javax.swing.JLabel LabelParticular;
-    private javax.swing.JLabel PrecioFinalReserva;
-    private javax.swing.JLabel PreciodelaReserva;
     private javax.swing.JButton ReservaButton;
     private javax.swing.JButton Salir;
     private javax.swing.JButton SeConfirmanLasFechas;
-    private javax.swing.JButton fechaFinString;
+    private javax.swing.JTextField fechaFinString;
+    private javax.swing.JTextField fechaInicioString;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -309,5 +329,7 @@ public class ReservarInmueble extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel precioReserva;
+    private javax.swing.JLabel precioTotalReserva;
     // End of variables declaration//GEN-END:variables
 }

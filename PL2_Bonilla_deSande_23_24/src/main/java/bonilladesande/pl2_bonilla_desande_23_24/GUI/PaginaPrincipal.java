@@ -1,7 +1,6 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
-import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
-import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
+import bonilladesande.pl2_bonilla_desande_23_24.*;
 import java.util.ArrayList;
 
 public class PaginaPrincipal extends javax.swing.JPanel {
@@ -9,10 +8,6 @@ public class PaginaPrincipal extends javax.swing.JPanel {
     public PaginaPrincipal() {
         initComponents();
         myInitComponents();
-        InmuebleSubida.setVisible(false);
-        if (BaseDatos.user.getTipo() ==2){
-            InmuebleSubida.setVisible(true);
-        }
     }
 
 
@@ -22,6 +17,7 @@ public class PaginaPrincipal extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         InmuebleSubida = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         InmuebleSubida.setText("Subir un inmueble");
         InmuebleSubida.addActionListener(new java.awt.event.ActionListener() {
@@ -35,10 +31,12 @@ public class PaginaPrincipal extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(InmuebleSubida, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(InmuebleSubida, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -48,24 +46,35 @@ public class PaginaPrincipal extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(14, 14, 14)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(InmuebleSubida, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //SI SE SELECCIONA EL BOTÓN "SUBIR UN INMUEBLE", SE CAMBIA DE LA PÁGINA PRINCIPAL A LA DE SUBIR UN ALOJAMIENTO
+    
     private void InmuebleSubidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InmuebleSubidaActionPerformed
        GestorVentanas.cambioVentana("PaginaPrincipal", "SubirAlojamiento");
     }//GEN-LAST:event_InmuebleSubidaActionPerformed
 
     public void myInitComponents() {
-        pintarLista(BaseDatos.inmuebles);
+        
+        pintarLista("Inmuebles");
+        
         //pintarLista(BaseDatos.filtroAlojamientos(30, 20, 0, 0, 0, 0, 0, "", ""));
+        
+        //SOLO LOS ANFITRIONES PUEDEN SUBIR INMUEBLES, POR LO TANTO EL BOTÓN ESTARÁ OCULTO PARA EL RESTO.
+        InmuebleSubida.setVisible(false);
+        if (BaseDatos.user.getTipo() ==2){
+            InmuebleSubida.setVisible(true);
+        }
     }
     
-    public void pintarLista(ArrayList<Inmueble> lista){
-        ListaAlojamientos listaAlojamientos = new ListaAlojamientos(lista);
-        this.jScrollPane1.setViewportView(listaAlojamientos);
+    public void pintarLista(String tipo){
+        ListaObjetos listaObjetos = new ListaObjetos(tipo);
+        this.jScrollPane1.setViewportView(listaObjetos);
         jScrollPane1.revalidate();
         jScrollPane1.repaint();
     }
@@ -74,5 +83,6 @@ public class PaginaPrincipal extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton InmuebleSubida;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

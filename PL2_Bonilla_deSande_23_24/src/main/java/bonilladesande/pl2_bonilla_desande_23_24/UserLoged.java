@@ -21,6 +21,9 @@ public class UserLoged{
     
     // ATRIBUTOS ESPECÍFICOS DEL PARTICULAR (SI NO LO ES, NO SE USAN)
     private boolean vip;
+    private TarjetaCredito tarjeta;
+
+    
 
     
     
@@ -104,6 +107,14 @@ public class UserLoged{
 
     public void setVip(boolean vip) {
         this.vip = vip;
+    }
+
+    public TarjetaCredito getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(TarjetaCredito tarjeta) {
+        this.tarjeta = tarjeta;
     }
     
     // CONSTRUCTOR

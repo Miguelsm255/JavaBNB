@@ -16,11 +16,16 @@ public class Login {
     // FUNCIÓN PRINCIPAL
     public static UserLoged login(String email, String clave){
 
+        UserLoged user;
+        if ("admin".equals(email) && "admin".equals(clave)){
+            user = new UserLoged(0,0);
+        }
+        else{
         // COMPROBAR SI EL EMAIL Y LA CONTRASEÑA ESTÁN BIEN (INCLUYE COMPROBAR LA EXISTENCIA DE LA CUENTA)
         comprobarUsuario(email, clave);
         
         // CREAR UN NUEVO OBJETO CON LOS DATOS NECESARIOS PARA OBTENER LA INFORMACIÓN DE LA SESIÓN
-        UserLoged user = new UserLoged(tipoUsuario, posicionArrayList);
+        user = new UserLoged(tipoUsuario, posicionArrayList);
         
         
         // SI ES UN CLIENTE
@@ -57,7 +62,7 @@ public class Login {
         System.out.println(user.getCorreo());
         System.out.println(user.getClave());
         System.out.println(user.getTelefono());
-        
+        }
         // DEVOLVER EL OBJETO DEL USUARIO LOGEADO CON TODA SU INFORMACIÓN
         BaseDatos.user = user;
         return user;

@@ -12,7 +12,7 @@ public class JavaBNB extends javax.swing.JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                // Llamar a la función guardarDatos al cerrar la ventana
+                //LLAMA A LA FUNCIÓN DE GUARDAR DATOS ANTES DE CERRAR UNA VENTANA
                 BaseDatos.guardarDatosAnfitriones(BaseDatos.anfitriones);
                 BaseDatos.guardarDatosInmuebles(BaseDatos.inmuebles);
                 BaseDatos.guardarDatosParticulares(BaseDatos.particulares);
@@ -92,14 +92,14 @@ public class JavaBNB extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //SI SE PULSA EL BOTÓN DE USUARIO, REDIRIGE AL USUARIO A LA PÁGINA DE AJUSTES DE USUARIO
     private void usuarioJavaBNBbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioJavaBNBbotonActionPerformed
-        
+
         GestorVentanas.cambioVentana("JavaBNB", "AjustesUsuario");
     }//GEN-LAST:event_usuarioJavaBNBbotonActionPerformed
-
+    //SI SE TOCA EL LABEL DE LA PÁGINA PRINCIPAL, LLEVA AL USUARIO A LA PÁGINA PRINCIPAL
     private void tituloLabelPaginaPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tituloLabelPaginaPrincipalMouseClicked
-        // TODO add your handling code here:
+      
         GestorVentanas.cambioVentana("", "PaginaPrincipal");
     }//GEN-LAST:event_tituloLabelPaginaPrincipalMouseClicked
 
@@ -145,7 +145,7 @@ public class JavaBNB extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JLabel fotoLabelJavaBNB;
     public javax.swing.JScrollPane frameJavaBNB;
-    private javax.swing.JLabel tituloLabelPaginaPrincipal;
+    public javax.swing.JLabel tituloLabelPaginaPrincipal;
     public javax.swing.JButton usuarioJavaBNBboton;
     // End of variables declaration//GEN-END:variables
 }

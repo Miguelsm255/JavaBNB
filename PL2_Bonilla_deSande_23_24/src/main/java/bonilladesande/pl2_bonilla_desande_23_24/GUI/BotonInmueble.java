@@ -4,11 +4,12 @@ import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.Inmueble;
 import javax.swing.ImageIcon;
 
-public class AlojamientoBoton extends javax.swing.JPanel {
+public class BotonInmueble extends javax.swing.JPanel {
 
+    /*CONSTRUCTOR BÁSICO QUE NECESITA DEL PARÁMETRO "INMUEBLE" PARA MOSTRAR EN LA MINIATURA.*/
     Inmueble inmueble;
     
-    public AlojamientoBoton(Inmueble inmueble) {
+    public BotonInmueble(Inmueble inmueble) {
         
         this.inmueble = inmueble;
         initComponents();
@@ -59,13 +60,13 @@ public class AlojamientoBoton extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(valoracionAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
                         .addComponent(precioAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(nombreInmuebleAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(108, Short.MAX_VALUE))))
+                        .addComponent(nombreInmuebleAlojamientoBoton, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,29 +85,29 @@ public class AlojamientoBoton extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
-
-
+    /*EN TÉRMINOS DE INTERFAZ GRÁFICA, ESTE CÓDIGO ES EL QUE SE OCUPA DE PONER LAS MINIATURAS DE LOS INMUEBLES
+    DISPONIBLES PARA LOS USUARIOS. SE OCUPA DE COLOCAR EL PRECIO (PRIMERA LÍNEA DE CÓDIGO), EL NOMBRE (SEGUNDA
+    LÍNEA DE CÓDIGO), LA VALORACIÓN (TERCERA LÍNEA DE CÓDIGO), Y LA LA IMAGEN (CUARTA, QUINTA Y SEXTA LÍNEA DE CÓDIGO).*/
     public void myInitComponents(Inmueble inmueble) {
         precioAlojamientoBoton.setText(String.valueOf(inmueble.getPrecioNoche()) + "€/noche");
         nombreInmuebleAlojamientoBoton.setText(inmueble.getTitulo());
         valoracionAlojamientoBoton.setText(String.valueOf(inmueble.getCalificacion()));
-        
         ImageIcon imagen = new ImageIcon(inmueble.getRutaFoto());
         //Se redimensiona
         ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(166, 109, 1));
         fotoBotonAlojamientoLabel.setIcon(imgRedimensionada);
     }
 
-
-
-
+    /*AL PULSAR SOBRE UNO DE LOS INMUEBLES, EL INMUEBLE PASA A REGISTRARSE EN LA BASE DE DATOS COMO UN "INMUEBLE
+    SELECCIONADO", CATEGORÍA QUE NOS AYUDARÁ MÁS ADELANTE A LA HORA DE TRABAJAR CON UN INMUEBLE CONCRETO. ASÍMISMO, PARA
+    VER LA INFORMACIÓN DE UN INMUEBLES MÁS A FONDO, LLEVA AL USUARIO A LA PÁGINA DE ALOJAMIENTO, DONDE SE ENCUENTRA
+    LA INFORMACIÓN DEL INMUEBLE EN CUESTIÓN Y LA POSIBILIDAD DE RESERVAR.*/
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         BaseDatos.inmuebleSeleccionado = inmueble;
         GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaAlojamiento");
-        
+
     }//GEN-LAST:event_formMouseClicked
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel fotoBotonAlojamientoLabel;
