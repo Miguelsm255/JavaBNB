@@ -209,7 +209,9 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         }
         else{
             
-            
+            if (!nuevoEmail.contains("@gmail.com")) {
+                throw new BibliotecaExcepciones.EmailSinEmail("El email introducido no es válido.");
+            }
             
             //SE GUARDA LA INFORMACIÓN EN LA BASE DE DATOS.
             if(BaseDatos.user.getTipo() == 1){
@@ -223,9 +225,6 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
                 
                 BaseDatos.particulares.set(BaseDatos.user.getPosicionArrayList(), particular);
                 
-                if (!nuevoEmail.contains("@gmail.com")) {
-                    throw new BibliotecaExcepciones.EmailSinEmail("El email introducido no es válido.");
-                }
             }
             else{
                 

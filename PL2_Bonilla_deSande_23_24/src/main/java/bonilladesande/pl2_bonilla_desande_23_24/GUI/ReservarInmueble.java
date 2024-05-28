@@ -7,14 +7,13 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
 import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
 import bonilladesande.pl2_bonilla_desande_23_24.Factura;
+import bonilladesande.pl2_bonilla_desande_23_24.GUI.GestorVentanas;
 import bonilladesande.pl2_bonilla_desande_23_24.Particular;
 import bonilladesande.pl2_bonilla_desande_23_24.Reserva;
 import bonilladesande.pl2_bonilla_desande_23_24.TextPrompt;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -226,63 +225,30 @@ public class ReservarInmueble extends javax.swing.JFrame {
             //CALCULA LA CANTIDAD DE DÍAS.
             long dias = ChronoUnit.DAYS.between(inicio, fin);
             double precionoche = BaseDatos.inmuebleSeleccionado.getPrecioNoche();
+            double precio = precionoche * dias;
             double preciofinal;
-
-            //CALCULA EL PRECIO FINAL, AÑADIENDO, EN CASO DE SER VIP, UN 10% DE DESCUENTO.
+        
+            // Calcular el precio final dependiendo del tipo de usuario
             if (BaseDatos.user.isVip()) {
-                preciofinal = precionoche * dias * 0.9;
+                preciofinal = precio * 0.9;
             } else {
-                preciofinal = precionoche * dias;
+                preciofinal = precio;
             }
+        
+            // Mostrar el precio final en el campo correspondiente
+            precioReserva.setText(String.valueOf(precio) + "€");
+            precioTotalReserva.setText(String.valueOf(preciofinal) + "€");
 
-            //MUESTRA EL PRECIO FINAL EN EL CAMPO CIRRESPONDIENTE.
-            PrecioFinalReserva.setText(String.valueOf(preciofinal));
-
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
-        } catch (ArrayIndexOutOfBoundsException ex) {
-            JOptionPane.showMessageDialog(this, "El campo de las fechas es erróneo.");}
-            catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaFinMenorInicio e) {
-        JOptionPane.showMessageDialog(this, e.getMessage());
-    }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
+            } catch (ArrayIndexOutOfBoundsException ex) {
+                JOptionPane.showMessageDialog(this, "El campo de las fechas es erróneo.");
+            } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaFinMenorInicio e) {
+                JOptionPane.showMessageDialog(this, e.getMessage());
+            }
     }//GEN-LAST:event_SeConfirmanLasFechasActionPerformed
 
-    //UNA VEZ SE PRESIONA EL BOTÓN DE RESERVAR, SE LLEVAN A CABO UNA SERIE DE PROCESOS.
-    private void ReservaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservaButtonActionPerformed
-
-        //Particular particularcompra = new Particular(BaseDatos.user.isVip(), BaseDatos.user.getTarjeta(), BaseDatos.user.getDni(), BaseDatos.user.getNombre(), BaseDatos.user.getCorreo(), BaseDatos.user.getClave(), BaseDatos.user.getTelefono());
-        /*CREA UN OBJETO PARTICULAR (EL ÚNICO TIPO DE USUARIO QUE PUEDE COMPRAR UN INMUEBLE), Y TAMBIÉN CREA FECHAS DE 
-    MANERA SIMILAR AL CÓMO LO HACÍA EN EL APARTADO ANTERIOR.*/
-        Particular particularcompra = BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList());
-        String fechaInicioIntroducida = fechaInicioString.getText();
-        String fechaFinIntroducida = fechaFinString.getText();
-        String[] fechaInicioSplit = fechaInicioIntroducida.split("/");
-        String[] fechaFinSplit = fechaFinIntroducida.split("/");
-        LocalDate inicio = LocalDate.of(Integer.parseInt(fechaInicioSplit[2]), Integer.parseInt(fechaInicioSplit[1]), Integer.parseInt(fechaInicioSplit[0]));
-        LocalDate fin = LocalDate.of(Integer.parseInt(fechaFinSplit[2]), Integer.parseInt(fechaFinSplit[1]), Integer.parseInt(fechaFinSplit[0]));
-        long dias = ChronoUnit.DAYS.between(inicio, fin);
-
-        //CONOCIENDO EL PRECIO POR NOCHE DEL OBJETO SELECCIONADO, SE PUEDE CALCULAR EL PRECIO FINAL Y TRAS ESTO APLICARLE EL DESCUENTO.
-        double precionoche = BaseDatos.inmuebleSeleccionado.getPrecioNoche();
-        double precio = precionoche * dias;
-        double preciofinal;
-        
-        // Calcular el precio final dependiendo del tipo de usuario
-        if (BaseDatos.user.isVip()) {
-            preciofinal = precio * 0.9;
-        } else {
-            preciofinal = precio;
-        }
-        
-        // Mostrar el precio final en el campo correspondiente
-        precioReserva.setText(String.valueOf(precio) + "€");
-        precioTotalReserva.setText(String.valueOf(preciofinal) + "€");
-
-        } catch (BibliotecaExcepciones.FechaMenor | BibliotecaExcepciones.FechaInicioMenorFin e) {
-        JOptionPane.showMessageDialog(this, e.getMessage());
-        }
-    }//GEN-LAST:event_SeConfirmanLasFechasActionPerformed
-
+    //UNA VEZ SE PRESIONA EL BOTÓN DE RESERVAR, SE LLEVAN A CABO UNA SERIE DE PROCESOS.                                       
     private void ReservaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReservaButtonActionPerformed
                                        
     //Particular particularcompra = new Particular(BaseDatos.user.isVip(), BaseDatos.user.getTarjeta(), BaseDatos.user.getDni(), BaseDatos.user.getNombre(), BaseDatos.user.getCorreo(), BaseDatos.user.getClave(), BaseDatos.user.getTelefono());

@@ -144,6 +144,7 @@ public class Login extends javax.swing.JFrame {
         // SI LA INFORMACIÓN NO ES CORRECTA
         if (user.getTipo() == -1) {
             // MOSTRAR LABEL DE "CORREO O CONTRASEÑA INCORRECTOS"
+            JOptionPane.showMessageDialog(this, "El correo y/o la contraseña introducidos son incorrectos. Inténtelo de nuevo.");
             user = null;
         }
         // SI ES ADMINISTRADOR
@@ -153,7 +154,6 @@ public class Login extends javax.swing.JFrame {
         // SI LA INFORMACIÓN SI ES CORRECTA
         else{
             GestorVentanas.cambioVentana("Login", "PaginaPrincipal");
-            JOptionPane.showMessageDialog(this, "El correo y/o la contraseña introducidos son incorrectos. Inténtelo de nuevo.");
         }
     }//GEN-LAST:event_iniciarSesionButtonLoginActionPerformed
 
