@@ -226,6 +226,9 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         //SE INTENTA RECOGER TODA LA INFORMACIÓN DE LOS TEXTFIELDS PARA ACTUALIZAR LA BASE DE DATOS.
         try {
 
+            if ("".equals(nuevoUser.getText()) || "".equals(nuevoCorreo.getText()) || "".equals(new String(nuevaContra.getPassword()))  || "".equals(nuevoTelef.getText())){
+                throw new BibliotecaExcepciones.CamposVacios("Rellena todos los campos.");
+            }
             String nuevoUsername = nuevoUser.getText();
             String nuevoEmail = nuevoCorreo.getText();
             char[] nuevaClave = nuevaContra.getPassword();
@@ -291,7 +294,8 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
             edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         } catch (BibliotecaExcepciones.EmailSinEmail
-                | BibliotecaExcepciones.TelefonoEscacharrado e) {
+                | BibliotecaExcepciones.TelefonoEscacharrado 
+                | BibliotecaExcepciones.CamposVacios e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             edicionliada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         }

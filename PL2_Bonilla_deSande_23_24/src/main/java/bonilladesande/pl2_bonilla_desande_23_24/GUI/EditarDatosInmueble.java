@@ -496,6 +496,9 @@ public class EditarDatosInmueble extends javax.swing.JFrame {
      */
     private void SubirAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirAlojamientoActionPerformed
         try {
+            if ("".equals(NombreAlojamiento.getText()) || "".equals(DescripcionAlojamiento.getText()) || "".equals(ServiciosAlojamiento.getText()) || "".equals(calleField.getText()) || "".equals(numeroField.getText()) || "".equals(cpField.getText()) || "".equals(ciudadField.getText()) || "".equals(baniosField.getText()) || "".equals(camasField.getText()) || "".equals(habitacionesField.getText()) || "".equals(huespedesField.getText())){
+                throw new BibliotecaExcepciones.CamposVacios("Rellena todos los campos. (Se debe resubir la imagen)");
+            }
             String ruta = "./src/main/java/imagenes/" + nombreImagen;
             bimage = ImageIO.read(file);
             File fout = new File(ruta);
