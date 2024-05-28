@@ -3,6 +3,7 @@ package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 import bonilladesande.pl2_bonilla_desande_23_24.*;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -33,6 +34,11 @@ public final class ListaObjetos extends javax.swing.JPanel {
     public ListaObjetos(String tipo, Particular particular) {
         initComponents();
         myInitComponents(tipo, particular);
+    }
+    
+    public ListaObjetos(String tipo, String ciudad, LocalDate fechaInicio, LocalDate fechaFin){
+        initComponents();
+        myInitComponents(tipo, ciudad, fechaInicio, fechaFin);
     }
     
     ArrayList<Inmueble> listaInmuebles = new ArrayList<>();
@@ -97,6 +103,12 @@ public final class ListaObjetos extends javax.swing.JPanel {
                 listaReservas.add(BaseDatos.reservas.get(i));
             }
         }
+        hacerCosas(tipo);
+    }
+    
+    public void myInitComponents(String tipo, String ciudad, LocalDate fechaInicio, LocalDate fechaFin){
+        listaInmuebles = BaseDatos.filtroAlojamientos(ciudad, fechaInicio, fechaFin);
+        
         hacerCosas(tipo);
     }
     

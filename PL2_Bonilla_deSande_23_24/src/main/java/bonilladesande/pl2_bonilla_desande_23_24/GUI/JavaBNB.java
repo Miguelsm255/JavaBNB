@@ -1,8 +1,11 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
+import bonilladesande.pl2_bonilla_desande_23_24.BibliotecaExcepciones;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
 
 public class JavaBNB extends javax.swing.JFrame {
 
@@ -39,9 +42,9 @@ public class JavaBNB extends javax.swing.JFrame {
         busquedaCiudad = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        busquedaCiudad1 = new javax.swing.JTextField();
-        busquedaCiudad2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        busquedaEntrada = new javax.swing.JTextField();
+        busquedaSalida = new javax.swing.JTextField();
+        buscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,19 +85,24 @@ public class JavaBNB extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Fecha salida:");
 
-        busquedaCiudad1.addActionListener(new java.awt.event.ActionListener() {
+        busquedaEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                busquedaCiudad1ActionPerformed(evt);
+                busquedaEntradaActionPerformed(evt);
             }
         });
 
-        busquedaCiudad2.addActionListener(new java.awt.event.ActionListener() {
+        busquedaSalida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                busquedaCiudad2ActionPerformed(evt);
+                busquedaSalidaActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Buscar");
+        buscar.setText("Buscar");
+        buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,21 +112,22 @@ public class JavaBNB extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(20, 20, 20)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(busquedaCiudad))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(busquedaCiudad1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(busquedaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(busquedaCiudad2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(busquedaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(busquedaCiudad))
                 .addGap(29, 29, 29)
-                .addComponent(jButton1)
+                .addComponent(buscar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(usuarioJavaBNBboton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -138,19 +147,19 @@ public class JavaBNB extends javax.swing.JFrame {
                         .addComponent(tituloLabelPaginaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(usuarioJavaBNBboton, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                            .addComponent(jButton1))
+                            .addComponent(buscar))
                         .addComponent(fotoLabelJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(busquedaCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(busquedaCiudad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel2)
-                                .addComponent(busquedaCiudad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)))))
+                                .addComponent(busquedaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3))
+                            .addComponent(busquedaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(frameJavaBNB, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
                 .addContainerGap())
@@ -173,13 +182,67 @@ public class JavaBNB extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_busquedaCiudadActionPerformed
 
-    private void busquedaCiudad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaCiudad1ActionPerformed
+    private void busquedaEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaEntradaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_busquedaCiudad1ActionPerformed
+    }//GEN-LAST:event_busquedaEntradaActionPerformed
 
-    private void busquedaCiudad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaCiudad2ActionPerformed
+    private void busquedaSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaSalidaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_busquedaCiudad2ActionPerformed
+    }//GEN-LAST:event_busquedaSalidaActionPerformed
+
+    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+        try{
+            String ciudad = busquedaCiudad.getText();
+            String entrada = busquedaEntrada.getText();
+            String salida = busquedaSalida.getText();
+            
+            if((entrada.isEmpty() && !salida.isEmpty()) || (!entrada.isEmpty() && salida.isEmpty()) || ((!entrada.isEmpty() && !salida.isEmpty() && "".equals(ciudad) )) ){
+                throw new BibliotecaExcepciones.CamposVacios("Si filtras por fecha, debes rellenar la entrada, la salida y la ciudad.");
+            }
+
+            if ("".equals(ciudad) && "".equals(entrada) && "".equals(salida)){
+                GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaPrincipal");
+            }
+            else {
+            
+                LocalDate fechaEntrada;
+                LocalDate fechaSalida;
+                
+                if (!"".equals(ciudad) && "".equals(entrada) && "".equals(salida)){
+                    fechaEntrada = LocalDate.of(2100, 01, 01);
+                    fechaSalida = LocalDate.of(2100, 01, 02);
+
+
+                }
+
+                else{
+                    String[] entradaSplit = entrada.split("/");
+                    String[] salidaSplit = salida.split("/");
+
+                    fechaEntrada = LocalDate.of(Integer.parseInt(entradaSplit[2]), Integer.parseInt(entradaSplit[1]), Integer.parseInt(entradaSplit[0]));
+                    fechaSalida = LocalDate.of(Integer.parseInt(salidaSplit[2]), Integer.parseInt(salidaSplit[1]), Integer.parseInt(salidaSplit[0]));
+
+                    if (fechaEntrada.isAfter(fechaSalida)){
+                        throw new BibliotecaExcepciones.FechaFinMenorInicio("No puedes poner la fecha de salida menor a la de entrada");
+                    }
+                }
+
+                GestorVentanas.gestorVentanas.ciudad = ciudad;
+                GestorVentanas.gestorVentanas.fechaEntrada = fechaEntrada;
+                GestorVentanas.gestorVentanas.fechaSalida = fechaSalida;
+
+                GestorVentanas.cambioVentana("PaginaPrincipal", "PaginaPrincipalFiltrada");
+
+                GestorVentanas.gestorVentanas.ciudad = null;
+                GestorVentanas.gestorVentanas.fechaEntrada = null;
+                GestorVentanas.gestorVentanas.fechaSalida = null;
+                
+            }
+        }
+        catch (BibliotecaExcepciones.CamposVacios | BibliotecaExcepciones.FechaFinMenorInicio e){
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
+    }//GEN-LAST:event_buscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,16 +283,16 @@ public class JavaBNB extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField busquedaCiudad;
-    private javax.swing.JTextField busquedaCiudad1;
-    private javax.swing.JTextField busquedaCiudad2;
+    public javax.swing.JButton buscar;
+    public javax.swing.JTextField busquedaCiudad;
+    public javax.swing.JTextField busquedaEntrada;
+    public javax.swing.JTextField busquedaSalida;
     private javax.swing.ButtonGroup buttonGroup1;
     public javax.swing.JLabel fotoLabelJavaBNB;
     public javax.swing.JScrollPane frameJavaBNB;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
     public javax.swing.JLabel tituloLabelPaginaPrincipal;
     public javax.swing.JButton usuarioJavaBNBboton;
     // End of variables declaration//GEN-END:variables

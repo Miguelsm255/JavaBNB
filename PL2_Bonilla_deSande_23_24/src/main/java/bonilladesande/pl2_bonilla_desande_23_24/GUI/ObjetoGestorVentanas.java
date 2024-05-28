@@ -1,12 +1,17 @@
 package bonilladesande.pl2_bonilla_desande_23_24.GUI;
 
 import bonilladesande.pl2_bonilla_desande_23_24.BaseDatos;
+import java.time.LocalDate;
 import javax.swing.ImageIcon;
 
 /*ESTA CLASE HACE REFERENCIA A TODAS LAS VENTANAS QUE HAY EN LA APLICACIÓN, Y EL
 HECHO DE TENERLAS EN ESTA DISPOSICIÓN SERÁ DE GRAN AYUDA A LA HORA DE LLAMAR A ALGUNAS 
 FUNCIONES COMO EL CAMBIO DE VENTANA.*/
 public class ObjetoGestorVentanas {
+    
+    public String ciudad;
+    public LocalDate fechaEntrada;
+    public LocalDate fechaSalida;
     
     Login ventanaLogin;
     CrearCuenta ventanaCrearCuenta;
@@ -20,7 +25,7 @@ public class ObjetoGestorVentanas {
     BotonInmueble paginaAlojamientoBoton;
     ListaObjetos paginaListaAlojamiento;
     PaginaAlojamiento paginaPaginaAlojamiento;
-    PaginaPrincipal paginaPaginaPrincipal;
+    public PaginaPrincipal paginaPaginaPrincipal;
     SubirAlojamiento paginaSubirAlojamiento;
     VerObjetos paginaVerObjetos;
     PaginaAdministrador paginaAdministrador;
@@ -85,7 +90,47 @@ public class ObjetoGestorVentanas {
                 ventanaJavaBNB.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
                 ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
+                ventanaJavaBNB.tituloLabelPaginaPrincipal.setVisible(true);
+                ventanaJavaBNB.jLabel1.setVisible(true);
+                ventanaJavaBNB.jLabel2.setVisible(true);
+                ventanaJavaBNB.jLabel3.setVisible(true);
+                ventanaJavaBNB.busquedaCiudad.setVisible(true);
+                ventanaJavaBNB.busquedaEntrada.setVisible(true);
+                ventanaJavaBNB.busquedaSalida.setVisible(true);
+                ventanaJavaBNB.buscar.setVisible(true);
+                ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
                 
+                
+                String ruta;
+                
+                //LA RUTA PARA OBTENER LA FOTO CAMBIA DEPENDIENDO DE SI ES UN PARTICULAR O UN ANFITRIÓN.
+                if (BaseDatos.user.getTipo() == 1){
+                    ruta = BaseDatos.particulares.get(BaseDatos.user.getPosicionArrayList()).getFoto();
+                }
+                else{
+                    ruta = BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()).getFoto();
+                }
+        
+                ImageIcon imagen = new ImageIcon(ruta);
+                //LA IMAGEN SE REDIMENSIONA.
+                ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(54, 54, 1));
+                ventanaJavaBNB.fotoLabelJavaBNB.setIcon(imgRedimensionada);
+            }
+            
+            case "PaginaPrincipalFiltrada" -> {
+                paginaPaginaPrincipal = new PaginaPrincipal(ciudad, fechaEntrada, fechaSalida);
+                ventanaJavaBNB.frameJavaBNB.setViewportView(paginaPaginaPrincipal);
+                ventanaJavaBNB.setVisible(true);
+                ventanaJavaBNB.usuarioJavaBNBboton.setVisible(true);
+                ventanaJavaBNB.fotoLabelJavaBNB.setVisible(true);
+                ventanaJavaBNB.tituloLabelPaginaPrincipal.setVisible(true);
+                ventanaJavaBNB.jLabel1.setVisible(true);
+                ventanaJavaBNB.jLabel2.setVisible(true);
+                ventanaJavaBNB.jLabel3.setVisible(true);
+                ventanaJavaBNB.busquedaCiudad.setVisible(true);
+                ventanaJavaBNB.busquedaEntrada.setVisible(true);
+                ventanaJavaBNB.busquedaSalida.setVisible(true);
+                ventanaJavaBNB.buscar.setVisible(true);
                 ventanaJavaBNB.usuarioJavaBNBboton.setText(BaseDatos.user.getNombre());
                 
                 
@@ -216,7 +261,14 @@ public class ObjetoGestorVentanas {
                 ventanaJavaBNB.usuarioJavaBNBboton.setVisible(false);
                 ventanaJavaBNB.fotoLabelJavaBNB.setVisible(false);
                 ventanaJavaBNB.tituloLabelPaginaPrincipal.setVisible(false);
-                
+                ventanaJavaBNB.jLabel1.setVisible(false);
+                ventanaJavaBNB.jLabel2.setVisible(false);
+                ventanaJavaBNB.jLabel3.setVisible(false);
+                ventanaJavaBNB.busquedaCiudad.setVisible(false);
+                ventanaJavaBNB.busquedaEntrada.setVisible(false);
+                ventanaJavaBNB.busquedaSalida.setVisible(false);
+                ventanaJavaBNB.buscar.setVisible(false);
+               
                 ImageIcon imagen = new ImageIcon("./src/main/java/imagenes/fotoAdmin.jpg");
                 //Se redimensiona
                 ImageIcon imgRedimensionada = new ImageIcon(imagen.getImage().getScaledInstance(382, 243, 1));
@@ -296,7 +348,7 @@ public class ObjetoGestorVentanas {
         
     }
     
-    private void revalidateRepaint(){
+    public void revalidateRepaint(){
         ventanaJavaBNB.frameJavaBNB.revalidate();
         ventanaJavaBNB.frameJavaBNB.repaint();
     }

@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class BaseDatos {
@@ -172,6 +173,18 @@ public class BaseDatos {
                     }  
             }
         }
+        return listaFiltrada;
+    }
+    
+    public static ArrayList<Inmueble> filtroAlojamientos(String ciudad, LocalDate fechaEntrada, LocalDate fechaSalida){
+        ArrayList<Inmueble> listaFiltrada = new ArrayList<>();
+        
+        for(int i = 0; i < BaseDatos.inmuebles.size(); i++){
+            if (Reserva.ComprobarReserva(BaseDatos.inmuebles.get(i), fechaEntrada, fechaSalida) && BaseDatos.inmuebles.get(i).getDireccion().getCiudad().equals(ciudad)){
+                listaFiltrada.add(BaseDatos.inmuebles.get(i));
+            }
+        }
+        
         return listaFiltrada;
     }
     
