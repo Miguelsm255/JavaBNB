@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 
 public class CrearCuenta extends javax.swing.JFrame {
 
+    public boolean esAnfitrion = false;
+    public UserLoged user;
     /*COMPONENTES BÁSICOS, UTILIZAN UN CÓDIGO EXTERNO PARA CREAR UNOS PLACEHOLDERS EN LOS LUGARES
     DONDE EL USUARIO DEBE INTRODUCIR LA INFORMACIÓN. ESTO HACE DE LA APLICACIÓN ALGO MÁS INTUITIVO,
     YA QUE SI SE ESTABLECEN ALGUNOS PARÁMETROS CONCRETOS EL USUARIO SABRÁ QUÉ DEBE INTRODUCIR EN CADA
@@ -142,6 +144,11 @@ public class CrearCuenta extends javax.swing.JFrame {
 
         anfitrionChekboxCrearCuenta.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         anfitrionChekboxCrearCuenta.setText("¿Quieres ser anfitrión?");
+        anfitrionChekboxCrearCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                anfitrionChekboxCrearCuentaMouseClicked(evt);
+            }
+        });
         anfitrionChekboxCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 anfitrionChekboxCrearCuentaActionPerformed(evt);
@@ -274,7 +281,7 @@ public class CrearCuenta extends javax.swing.JFrame {
                     .addComponent(TarjetaFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cvvTarjetaFieldCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(caducidadTarjetaCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(anfitrionChekboxCrearCuenta)
                     .addComponent(crearCuentaButton))
@@ -316,7 +323,9 @@ public class CrearCuenta extends javax.swing.JFrame {
     }//GEN-LAST:event_telefonoFieldCrearCuentaActionPerformed
     //CHECKBOX QUE REVISA SI EL USUARIO ES ANFITRIÓN O NO.
     private void anfitrionChekboxCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anfitrionChekboxCrearCuentaActionPerformed
-        // TODO add your handling code here:
+
+        
+        
     }//GEN-LAST:event_anfitrionChekboxCrearCuentaActionPerformed
     //ESPACIO PARA QUE EL USUARIO CONFIRME SU CONTRASEÑA.
     private void confirmaClaveFieldCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmaClaveFieldCrearCuentaActionPerformed
@@ -332,11 +341,13 @@ public class CrearCuenta extends javax.swing.JFrame {
     private void crearCuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaButtonActionPerformed
         try {
             boolean anfitrion = anfitrionChekboxCrearCuenta.isSelected();
+            esAnfitrion = anfitrion;
             String dni = DNIfieldCrearCuenta.getText();
             String nombre = nombreFieldCrearCuenta.getText();
             String email = emailFieldCrearCuenta.getText();
             char[] claveChar = claveFieldCrearCuenta.getPassword();
             String clave = new String(claveChar);
+            LocalDate fechaRegistro = LocalDate.now();
             /*SI ALGUNO DE LOS CAMPOS ESTÁ VACÍO, LANZA UN ERROR (SE ENTIENDE QUE TODOS LOS CAMPOS
             DEBEN SER OBLIGATORIOS*/
             if (dni.isEmpty() || nombre.isEmpty() || email.isEmpty() || clave.isEmpty()) {
@@ -351,33 +362,40 @@ public class CrearCuenta extends javax.swing.JFrame {
             if (!email.contains("@gmail.com")){
             throw new BibliotecaExcepciones.EmailSinEmail("El email introducido no es válido.");
         }
-            LocalDate fechaRegistro = LocalDate.now();
-            String fechaCaducidadIntroducida = caducidadTarjetaCrearCuenta.getText();
-            String[] fechaCaducidadSplit = fechaCaducidadIntroducida.split("/");
-            LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt(fechaCaducidadSplit[0]), 1);
-            int comparaFechas = caducidad.compareTo(fechaRegistro);
-            //SI LA TARJETA DE CRÉDITO INTRODUCIDA ESTÁ CADUCADA, LANZA UN ERROR.
-            if (comparaFechas < 0) {
-                throw new BibliotecaExcepciones.TarjetaCaducada("La tarjeta introducida está fuera de fecha.");
+            
+            if (anfitrion){
+                user = bonilladesande.pl2_bonilla_desande_23_24.CrearCuenta.crearCuenta(anfitrion, dni, nombre, email, clave, telefono, fechaRegistro);
             }
-            int cvv = Integer.parseInt(cvvTarjetaFieldCrearCuenta.getText());
-            int digitoscvv = String.valueOf(cvv).length();
-            //SI EL CVV NO TIENE TRES DÍGITOS, LANZA UN ERROR.
-            if (digitoscvv != 3) {
-                throw new BibliotecaExcepciones.cvvEscacharrado("El CVV debe de contener exactamente 3 dígitos");
+            else{
+                
+                String fechaCaducidadIntroducida = caducidadTarjetaCrearCuenta.getText();
+                String[] fechaCaducidadSplit = fechaCaducidadIntroducida.split("/");
+                LocalDate caducidad = LocalDate.of(Integer.parseInt(fechaCaducidadSplit[1]), Integer.parseInt(fechaCaducidadSplit[0]), 1);
+                int comparaFechas = caducidad.compareTo(fechaRegistro);
+                //SI LA TARJETA DE CRÉDITO INTRODUCIDA ESTÁ CADUCADA, LANZA UN ERROR.
+                if (comparaFechas < 0) {
+                    throw new BibliotecaExcepciones.TarjetaCaducada("La tarjeta introducida está fuera de fecha.");
+                }
+                int cvv = Integer.parseInt(cvvTarjetaFieldCrearCuenta.getText());
+                int digitoscvv = String.valueOf(cvv).length();
+                //SI EL CVV NO TIENE TRES DÍGITOS, LANZA UN ERROR.
+                if (digitoscvv != 3) {
+                    throw new BibliotecaExcepciones.cvvEscacharrado("El CVV debe de contener exactamente 3 dígitos");
+                }
+                long numTarjeta = Long.parseLong(TarjetaFieldCrearCuenta.getText());
+                long digitosTarjeta = String.valueOf(numTarjeta).length();
+                //SI LA TARJETA DE CRÉDITO NO TIENE 16 DÍGITOS, LANZA UN ERROR.
+                if (digitosTarjeta != 16) {
+                    throw new BibliotecaExcepciones.TarjetaEscacharrada("La tarjeta debe contener exactamente 16 dígitos.");
+                }
+
+                TarjetaCredito tarjeta = new TarjetaCredito(nombre, Long.parseLong(TarjetaFieldCrearCuenta.getText()), caducidad, cvv);
+
+                boolean vip = false;
+                
+                user = bonilladesande.pl2_bonilla_desande_23_24.CrearCuenta.crearCuenta(anfitrion, dni, nombre, email, clave, telefono, fechaRegistro, tarjeta, vip);
             }
-            long numTarjeta = Long.parseLong(TarjetaFieldCrearCuenta.getText());
-            long digitosTarjeta = String.valueOf(numTarjeta).length();
-            //SI LA TARJETA DE CRÉDITO NO TIENE 16 DÍGITOS, LANZA UN ERROR.
-            if (digitosTarjeta != 16) {
-                throw new BibliotecaExcepciones.TarjetaEscacharrada("La tarjeta debe contener exactamente 16 dígitos.");
-            }
-
-            TarjetaCredito tarjeta = new TarjetaCredito(nombre, Long.parseLong(TarjetaFieldCrearCuenta.getText()), caducidad, cvv);
-
-            boolean vip = false;
-
-            UserLoged user = bonilladesande.pl2_bonilla_desande_23_24.CrearCuenta.crearCuenta(anfitrion, dni, nombre, email, clave, telefono, fechaRegistro, tarjeta, vip);
+            
             //SI EXISTE YA UN USUARIO QUE UTILIZA ESE CORREO, LANZA UN ERROR.
             if (user.getTipo() == -1 && user.getPosicionArrayList() == 0) {
                 throw new BibliotecaExcepciones.CorreoRepetido("Ya existe un usuario con este correo");
@@ -414,6 +432,19 @@ public class CrearCuenta extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
+
+    private void anfitrionChekboxCrearCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_anfitrionChekboxCrearCuentaMouseClicked
+       
+        esAnfitrion = anfitrionChekboxCrearCuenta.isSelected();
+        tarjetaLabelCrearCuenta.setVisible(!esAnfitrion);
+        noTarjetaLabelCrearCuenta.setVisible(!esAnfitrion);
+        caducidadTarjetaLabelCrearCuenta.setVisible(!esAnfitrion);
+        cvvTarjetaLabelCrearCuenta.setVisible(!esAnfitrion);
+        TarjetaFieldCrearCuenta.setVisible(!esAnfitrion);
+        caducidadTarjetaCrearCuenta.setVisible(!esAnfitrion);
+        cvvTarjetaFieldCrearCuenta.setVisible(!esAnfitrion);
+        
+    }//GEN-LAST:event_anfitrionChekboxCrearCuentaMouseClicked
 
     /**
      * @param args the command line arguments
