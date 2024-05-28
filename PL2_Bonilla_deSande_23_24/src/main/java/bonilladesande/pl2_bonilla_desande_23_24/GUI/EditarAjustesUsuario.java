@@ -314,11 +314,29 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         if (response == JOptionPane.YES_OPTION) {
             //SI ES UN PARTIICULAR, SE OPERARÁ DE LA SIGUIENTE MANERA.
             if (BaseDatos.user.getTipo() == 1) {
+                for (int i = 0; i < BaseDatos.reservas.size(); i++){
+                    if(BaseDatos.reservas.get(i).getParticular().getCorreo().equals(BaseDatos.user.getCorreo())){
+                        BaseDatos.reservas.remove(i);
+                    }
+                }
                 BaseDatos.particulares.remove(BaseDatos.user.getPosicionArrayList());
                 //SI ES UN ANFITRIÓN EN CAMBIO, SE OPERARÁ DE LA SIGUIENTE MANERA.    
             } else {
+                for (int i = 0; i < BaseDatos.reservas.size(); i++){
+                    if(BaseDatos.reservas.get(i).getInmueble().getAnfitrion().getCorreo().equals(BaseDatos.user.getCorreo())){
+                        BaseDatos.reservas.remove(i);
+                    }
+                }
+                
+                for (int i = 0; i < BaseDatos.inmuebles.size(); i++){
+                    if(BaseDatos.inmuebles.get(i).getAnfitrion().getCorreo().equals(BaseDatos.user.getCorreo())){
+                        BaseDatos.inmuebles.remove(i);
+                    }
+                }
                 BaseDatos.anfitriones.remove(BaseDatos.user.getPosicionArrayList());
             }
+            
+            
             //DESPUÉS CAMBIA LA VENTANA, CIERRA LA VENTANA ACTUAL Y TE LLEVA A LA PÁGINA DE INICIO DE SESIÓN
             GestorVentanas.cambioVentana("EditarAjustesUsuario", "Login");
             GestorVentanas.gestorVentanas.ventanaJavaBNB.dispose();
