@@ -128,7 +128,7 @@ public class EditarAjustesUsuario extends javax.swing.JFrame {
         });
 
         serVip.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        serVip.setText("¿Eres usuario vip?");
+        serVip.setText("¿Eres usuario VIP?");
         serVip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 serVipActionPerformed(evt);
