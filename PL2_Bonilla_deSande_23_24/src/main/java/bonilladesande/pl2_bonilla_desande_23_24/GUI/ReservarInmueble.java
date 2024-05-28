@@ -30,9 +30,10 @@ public class ReservarInmueble extends javax.swing.JFrame {
     LOS NOMBRES DEL PARTICULAR QUE COMPRA EL INMUEBLE Y EL DEL PROPIO INMUEBLE. TAMBIÉN
     SE AÑADIERON PLACEHOLDERS PARA GARANTIZAR QUE LAS FECHAS SE INTRODUCEN EN EL FORMATO CORRECTO.*/
     public ReservarInmueble() {
+        initComponents();
         TextPrompt fechainicioplace = new TextPrompt("dd/mm/yyyy", fechaInicioString);
         TextPrompt fechafinplace = new TextPrompt("dd/mm/yyyy", fechaFinString);
-        initComponents();
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         LabelParticular.setText(BaseDatos.user.getNombre());
         InmuebleCompra.setText(BaseDatos.inmuebleSeleccionado.getTitulo());

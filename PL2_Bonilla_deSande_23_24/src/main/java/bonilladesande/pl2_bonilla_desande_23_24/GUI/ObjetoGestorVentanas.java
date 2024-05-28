@@ -196,7 +196,9 @@ public class ObjetoGestorVentanas {
             }
             
             case "ReservarInmueble" -> {
+                System.out.println("HE ENTRADO EN EL OBJETOGESTORVENTANAS");
                 ventanaReservarInmueble = new ReservarInmueble();
+                System.out.println("SE HA TERMINADO DE INSTANCIAR RESERVAR INMUEBLE");
                 ventanaReservarInmueble.setLocationRelativeTo(null);
                 ventanaReservarInmueble.setVisible(true);
             }
@@ -282,6 +284,12 @@ public class ObjetoGestorVentanas {
             case "ReservarInmueble" -> {
                 ventanaReservarInmueble.dispose();
             }
+            
+            case "PaginaAdministrador" -> {
+                //ventanaJavaBNB.dispose();
+                 
+            }
+            
         }
         
         revalidateRepaint();

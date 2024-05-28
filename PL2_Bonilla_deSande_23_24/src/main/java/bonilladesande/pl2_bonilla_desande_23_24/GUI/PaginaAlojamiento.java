@@ -303,8 +303,10 @@ public class PaginaAlojamiento extends javax.swing.JPanel {
     }
     //SI SE PRESIONA EL BOTÓN "RESERVAR", CAMBIA LA VENTANA HACIA LA DE RESERVAR INMUEBLES.
     private void reservarInmuebleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reservarInmuebleBotonActionPerformed
-        // TODO add your handling code here:
+        
+        System.out.println("BOTÓN PULSADO");
         if(BaseDatos.user.getTipo() == 1){
+            System.out.println("DETECTADO QUE ES PARTICULAR");
             GestorVentanas.cambioVentana("", "ReservarInmueble");
         }
         else if (BaseDatos.user.getTipo() == 0){

@@ -23,36 +23,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-/*PARA SUBIR UN ALOJAMIENTO, NECESITAMOS UNA RUTA DE IMAGEN, Y PARA ELLOS UTILIZAMOS VARIOS IMPORTS, COMO
-EL IMPORT FILE O EL IMPORT BUFFERED IMAGE*/
 public class SubirAlojamiento extends javax.swing.JPanel {
 
     private String nombreImagen, rutaImagen, extension = "jpg";
     private File file;
     private BufferedImage bimage;
-    
+
     /**
      * Creates new form SubirAlojamiento
      */
-    
-    //CREAMOS PLACEHOLDERS PARA HACER EL PROCESO MÁS INTUITIVO.
     public SubirAlojamiento() {
         initComponents();
-        TextPrompt placenombreinmueble = new TextPrompt("Introduce el nombre del inmueble.", NombreAlojamiento);
-        TextPrompt placedescripcion = new TextPrompt("Introduce una descripción para el alojamieneto.", DescripcionAlojamiento);
-        TextPrompt placeservicios = new TextPrompt("Introduce los servicios para el alojamieneto.", ServiciosAlojamiento);
-        TextPrompt placecalle = new TextPrompt("Introduce el nombre de la calle.", calleField);
-        TextPrompt placenumerocalle = new TextPrompt("Nº Calle", calleField);
-        TextPrompt placepostal = new TextPrompt("XXXXX", calleField);
-        TextPrompt placeciudad = new TextPrompt("Introduce el nombre de la ciudad.", ciudadField);
-        TextPrompt placebaños = new TextPrompt("Nº Baños", baniosField);
-        TextPrompt placehuespedes = new TextPrompt("Nº Huespedes", huespedesField);
-        TextPrompt placecamas = new TextPrompt("Nº Camas", camasField);
-        TextPrompt placehabitaciones = new TextPrompt("Nº Habitaciones", habitacionesField);
-        TextPrompt placenoches = new TextPrompt("Precio por noche.", precioNocheField);
-        
-        
-        
+        TextPrompt placenombreinmueble = new TextPrompt("Introduce el nombre del inmueble", NombreAlojamiento);
+        TextPrompt placedescripcion = new TextPrompt("Introduce una descripción para el alojamieneto", DescripcionAlojamiento);
+        TextPrompt placeservicios = new TextPrompt("Introduce una descripción para el alojamieneto", ServiciosAlojamiento);
     }
 
     /**
@@ -272,10 +256,14 @@ public class SubirAlojamiento extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(AlojamientoLiada, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
                         .addComponent(jLabel6)
                         .addGap(115, 115, 115)
                         .addComponent(jLabel4)
@@ -330,11 +318,8 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                                                 .addGap(22, 22, 22)
                                                 .addComponent(precioNocheField)))
                                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(calle)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(calle)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -387,31 +372,6 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                         .addComponent(calle)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(calleField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(numeroField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cpField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ciudadField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(33, 33, 33)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(Casa)
-                                            .addComponent(Apartamento)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(36, 36, 36)
-                                        .addComponent(SubirFotoAlojamiento))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel8)
@@ -470,14 +430,11 @@ public class SubirAlojamiento extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-    //EN ESTE ESPACIO, EL ANFITRIÓN PUEDE ESCRIBIR UNA DESCRIPCIÓN SOBRE EL APARTAMENTO QUE VA A SUBIR.
+
     private void DescripcionAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DescripcionAlojamientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DescripcionAlojamientoActionPerformed
-    /*AL PRESIONAR EL BOTÓN DE SUBIR ALOJAMIENTO, OCURREN UNA SERIE DE COSAS: EN PRIMER LUGAR, SE CONSIGUE LA
-    FOTO DE PERFIL SUBIDA DEL APARTAMENTO. LUEGO SE OBTIENE EL NOMBRE DEL ALOJAMIENTO, SU DESCRIPCIÓN, SUS SERVICIOS,
-    SU CALLE (Y SU NÚMERO DE CALLE), SU CÓDIGO POSTAL, SU CIUDAD, SU NÚMERO DE BAÑOS, SU NÚMERO DE CAMAS, SU NÚMERO DE
-    HABITACIONES Y SU NÚMERO DE HUÉSPEDES.*/
+
     private void SubirAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubirAlojamientoActionPerformed
         try {
             String ruta = "./src/main/java/imagenes/" + nombreImagen;
@@ -496,37 +453,24 @@ public class SubirAlojamiento extends javax.swing.JPanel {
             int camas = Integer.parseInt(camasField.getText());
             int habitaciones = Integer.parseInt(habitacionesField.getText());
             int huespedes = Integer.parseInt(huespedesField.getText());
-            //SI ALGUNO DE LOS CAMPOS ESTÁ VACÍO, TIRA UN ERROR.
+
             if (alojamiento.isEmpty() || descripcion.isEmpty() || serviciosalojamiento.isEmpty()) {
                 throw new BibliotecaExcepciones.CamposVacios("Todos los campos deben estar llenos.");
             }
-            int digitospostal = String.valueOf(cp).length();
-            //SI EL CÓDIGO POSTAL NO TIENE CINCO DÍGITOS, TIRA UN ERROR.
-            if (digitospostal != 5){
-                 throw new BibliotecaExcepciones.PostalEscacharrado("El código postal debe de contener exactamente 5 dígitos");
-            }
-            //SI NI APARTAMENTO NI CASA ESTÁ SELECCIONADO, TIRA OTRO ERROR.
             if (!Casa.isSelected() && !Apartamento.isSelected()) {
                 throw new BibliotecaExcepciones.BotonesSinSeleccionar("Debes elegir si es una casa o un apartamento.");
             }
-            //CREA UN NUEVO INMUEBLE CON LOS DATOS OBTENIDOS Y LO SUBE AL ARRAY DE LA BASE DE DATOS.
+
             DatosInmueble datos = new DatosInmueble(huespedes, habitaciones, camas, banios);
             Direccion direccion = new Direccion(calle, numero, cp, ciudad);
             Inmueble inmueble = new Inmueble(alojamiento, direccion, datos, Casa.isEnabled(), Integer.parseInt(precioNocheField.getText()), serviciosalojamiento, ruta, descripcion, BaseDatos.anfitriones.get(BaseDatos.user.getPosicionArrayList()));
             BaseDatos.inmuebles.add(inmueble);
-            
-            //UNA VEZ SUBIDO, CAMBIA LA VENTANA A LA PÁGINA PRINCIPAL.
+
             GestorVentanas.cambioVentana("SubirAlojamiento", "PaginaPrincipal");
 
-            //TE IMPRIME UN MENSAJE PARA COMUNICARTE QUE EL APARTAMENTO SE HA PUBLICADO EXITOSAMENTE.
             JOptionPane.showMessageDialog(this, "Alojamiento subido con éxito.");
-        }catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(this, "Alguno de los formatos numéricos es erróneo.");
-                AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
-            }  
-        catch (BibliotecaExcepciones.CamposVacios
-                | BibliotecaExcepciones.BotonesSinSeleccionar 
-                | BibliotecaExcepciones.PostalEscacharrado e) {
+        } catch (BibliotecaExcepciones.CamposVacios
+                | BibliotecaExcepciones.BotonesSinSeleccionar e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             AlojamientoLiada.setText("Por favor, revise todos los campos e inténtelo de nuevo.");
         } catch (IOException e) {
