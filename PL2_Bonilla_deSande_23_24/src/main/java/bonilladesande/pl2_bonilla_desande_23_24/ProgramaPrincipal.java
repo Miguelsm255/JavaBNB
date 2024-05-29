@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import bonilladesande.pl2_bonilla_desande_23_24.GUI.*;
 import java.util.ArrayList;
 
-public class AAA_PRUEBAS_MIGUEL {
+public class ProgramaPrincipal {
 
     
     

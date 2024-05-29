@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JLabel" name="fotoAnfitrion">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+  </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -53,10 +60,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="fotoAnfitrion" max="32767" attributes="0"/>
-                              <Component id="nombreAnfitrion" min="-2" pref="167" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="nombreAnfitrion" min="-2" pref="167" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
@@ -91,7 +95,6 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="fotoAlojamiento" alignment="3" min="-2" pref="121" max="-2" attributes="0"/>
-                  <Component id="fotoAnfitrion" alignment="3" min="-2" pref="121" max="-2" attributes="0"/>
                   <Component id="fotoParticular" alignment="3" min="-2" pref="121" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -138,11 +141,6 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="fotoAlojamiento">
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="fotoAnfitrion">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
